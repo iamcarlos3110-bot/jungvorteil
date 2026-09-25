@@ -133,6 +133,7 @@ export interface Offer {
 
 export interface OfferFilters {
   category?: string;
+  brand?: string;
   city?: string;
   age?: number;
   student?: boolean;

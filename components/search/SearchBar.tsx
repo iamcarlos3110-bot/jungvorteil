@@ -56,7 +56,7 @@ export default function SearchBar({ placeholder = "Suchen...", onSearch, onNavig
 
   return (
     <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto">
-      <div className="relative flex items-center w-full h-14 rounded-2xl bg-white border-2 border-gray-100 shadow-sm focus-within:border-purple-500 focus-within:ring-4 focus-within:ring-purple-500/10 transition-all duration-200 overflow-hidden">
+      <div className="relative flex items-center w-full h-14 rounded-2xl bg-white border-2 border-gray-100 shadow-sm focus-within:border-[#3F5E39] focus-within:ring-4 focus-within:ring-[#3F5E39]/10 transition-all duration-200 overflow-hidden">
         <div className="pl-4 pr-2 text-gray-400">
           <Search className="w-6 h-6" />
         </div>
@@ -69,7 +69,7 @@ export default function SearchBar({ placeholder = "Suchen...", onSearch, onNavig
         />
         <div className="pr-4 pl-2 flex items-center justify-center gap-2">
           {isSearching && (
-            <Loader2 className="w-5 h-5 text-purple-500 animate-spin" />
+            <Loader2 className="w-5 h-5 text-[#3F5E39] animate-spin" />
           )}
           {query && !isSearching && (
             <button

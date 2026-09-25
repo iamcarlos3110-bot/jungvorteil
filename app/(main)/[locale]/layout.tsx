@@ -7,6 +7,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import CookieBanner from '@/components/ui/CookieBanner';
+import Script from 'next/script';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -24,12 +25,17 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   
   return (
     <html lang={locale}>
-      <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <GoogleAnalytics />
+          {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
+            <Script
+              async
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+              crossOrigin="anonymous"
+              strategy="afterInteractive"
+            />
+          )}
           <Header locale={locale} />
           <main id="main-content">{children}</main>
           <Footer locale={locale} />
@@ -39,3 +45,4 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     </html>
   );
 }
+

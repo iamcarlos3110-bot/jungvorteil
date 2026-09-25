@@ -1,0 +1,3 @@
+# Google AdSense Publisher ID
+# WICHTIG: Ersetze 'pub-0000000000000000' durch deine echte Google AdSense Publisher ID aus deinem Google AdSense Konto
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

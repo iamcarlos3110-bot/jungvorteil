@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "@/lib/i18n/routing";
+import { createServerClient } from "@supabase/ssr";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -14,21 +15,51 @@ export async function proxy(request: NextRequest) {
       return NextResponse.next();
     }
 
-    // Check for admin session cookie
-    const sessionCookie =
-      request.cookies.get("sb-access-token") ||
-      request.cookies.get("sb-refresh-token") ||
-      request.cookies.get(
-        `sb-${process.env.NEXT_PUBLIC_SUPABASE_URL?.split("//")[1]?.split(".")[0]}-auth-token`
-      );
+    let response = NextResponse.next({
+      request: {
+        headers: request.headers,
+      },
+    });
 
-    if (!sessionCookie) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseAnonKey) {
       const loginUrl = new URL("/admin/login", request.url);
       loginUrl.searchParams.set("redirected", "1");
       return NextResponse.redirect(loginUrl);
     }
 
-    return NextResponse.next();
+    const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          );
+          response = NextResponse.next({
+            request,
+          });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            response.cookies.set(name, value, options)
+          );
+        },
+      },
+    });
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      const loginUrl = new URL("/admin/login", request.url);
+      loginUrl.searchParams.set("redirected", "1");
+      return NextResponse.redirect(loginUrl);
+    }
+
+    return response;
   }
 
   // --- i18n for public routes ---

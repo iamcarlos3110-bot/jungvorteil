@@ -63,7 +63,7 @@ export default function CookieBanner() {
             <button onClick={acceptNecessary} className="px-4 py-2 text-sm border border-gray-600 rounded-md hover:bg-gray-800 transition">
               Nur notwendige
             </button>
-            <button onClick={acceptAll} className="px-4 py-2 text-sm bg-purple-600 rounded-md hover:bg-purple-700 transition font-medium">
+            <button onClick={acceptAll} className="px-4 py-2 text-sm bg-[#3F5E39] rounded-md hover:bg-[#324B2D] transition font-medium">
               Alle akzeptieren
             </button>
           </div>
@@ -88,7 +88,7 @@ export default function CookieBanner() {
                 type="checkbox" 
                 checked={settings.analytics} 
                 onChange={(e) => setSettings({...settings, analytics: e.target.checked})}
-                className="w-4 h-4 cursor-pointer accent-purple-600" 
+                className="w-4 h-4 cursor-pointer accent-[#3F5E39]" 
               />
             </div>
             <div className="flex items-center justify-between p-3 bg-gray-800 rounded">
@@ -100,7 +100,7 @@ export default function CookieBanner() {
                 type="checkbox" 
                 checked={settings.advertising} 
                 onChange={(e) => setSettings({...settings, advertising: e.target.checked})}
-                className="w-4 h-4 cursor-pointer accent-purple-600" 
+                className="w-4 h-4 cursor-pointer accent-[#3F5E39]" 
               />
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function CookieBanner() {
             <button onClick={acceptAll} className="px-4 py-2 text-sm border border-gray-600 rounded-md hover:bg-gray-800 transition">
               Alle akzeptieren
             </button>
-            <button onClick={saveSettings} className="px-4 py-2 text-sm bg-purple-600 rounded-md hover:bg-purple-700 transition font-medium">
+            <button onClick={saveSettings} className="px-4 py-2 text-sm bg-[#3F5E39] rounded-md hover:bg-[#324B2D] transition font-medium">
               Auswahl speichern
             </button>
           </div>

@@ -38,9 +38,9 @@ export default async function SearchPage({ params, searchParams }: { params: Pro
               <div className="text-sm text-gray-500">
                 <p>Beliebte Suchbegriffe:</p>
                 <div className="flex gap-2 justify-center mt-2">
-                  <Link href={`/${locale}/suche?q=apple`} className="text-purple-600 hover:underline">Apple</Link>
-                  <Link href={`/${locale}/suche?q=sbb`} className="text-purple-600 hover:underline">SBB</Link>
-                  <Link href={`/${locale}/suche?q=fitness`} className="text-purple-600 hover:underline">Fitness</Link>
+                  <Link href={`/${locale}/suche?q=apple`} className="text-[#3F5E39] hover:underline">Apple</Link>
+                  <Link href={`/${locale}/suche?q=sbb`} className="text-[#3F5E39] hover:underline">SBB</Link>
+                  <Link href={`/${locale}/suche?q=fitness`} className="text-[#3F5E39] hover:underline">Fitness</Link>
                 </div>
               </div>
             </div>

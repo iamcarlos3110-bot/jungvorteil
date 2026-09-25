@@ -14,7 +14,7 @@ export default async function MarkenPage({ params }: { params: Promise<{ locale:
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 min-h-[60vh]">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EAF0E5] text-[#3F5E39] text-sm font-semibold mb-4">
           <Building2 className="w-4 h-4" /> Partnerunternehmen
         </div>
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Alle Marken & Anbieter</h1>

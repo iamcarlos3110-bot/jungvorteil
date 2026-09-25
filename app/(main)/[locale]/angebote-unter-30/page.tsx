@@ -17,12 +17,12 @@ export default async function Under30Page() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-violet-600 to-blue-600 py-16 px-4">
+      <section className="bg-gradient-to-br from-[#1C331B] via-[#2F5229] to-[#162916] py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">
             Angebote unter 30 Jahren
           </h1>
-          <p className="text-violet-100 text-lg">
+          <p className="text-[#EAF0E5] text-lg">
             Spezielle Vergünstigungen für junge Leute unter 30 in der Schweiz
           </p>
         </div>
@@ -32,13 +32,13 @@ export default async function Under30Page() {
       <section className="max-w-7xl mx-auto px-4 py-12">
         <div className="mb-8">
           <div className="flex flex-wrap gap-3">
-            <span className="bg-violet-100 text-violet-700 px-4 py-2 rounded-full text-sm font-semibold">
+            <span className="bg-[#EAF0E5] text-[#3F5E39] px-4 py-2 rounded-full text-sm font-semibold">
               Unter 25
             </span>
-            <span className="bg-violet-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+            <span className="bg-[#3F5E39] text-white px-4 py-2 rounded-full text-sm font-semibold">
               Unter 28
             </span>
-            <span className="bg-violet-100 text-violet-700 px-4 py-2 rounded-full text-sm font-semibold">
+            <span className="bg-[#EAF0E5] text-[#3F5E39] px-4 py-2 rounded-full text-sm font-semibold">
               Unter 30
             </span>
           </div>
@@ -72,7 +72,7 @@ export default async function Under30Page() {
                 )}
                 <a
                   href={`/de/angebot/${offer.slug}`}
-                  className="mt-4 block w-full bg-violet-600 text-white text-center py-2.5 rounded-xl text-sm font-semibold hover:bg-violet-700 transition-colors"
+                  className="mt-4 block w-full bg-[#3F5E39] text-white text-center py-2.5 rounded-xl text-sm font-semibold hover:bg-[#324B2D] transition-colors"
                 >
                   Angebot ansehen
                 </a>

@@ -70,7 +70,7 @@ export default function ContactPage() {
               id="name" 
               name="name" 
               required 
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#3F5E39] focus:border-transparent outline-none"
             />
           </div>
           <div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               id="email" 
               name="email" 
               required 
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#3F5E39] focus:border-transparent outline-none"
             />
           </div>
           <div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
               name="message" 
               rows={5} 
               required 
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none resize-none"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#3F5E39] focus:border-transparent outline-none resize-none"
             ></textarea>
           </div>
           {status === 'error' && (
@@ -101,7 +101,7 @@ export default function ContactPage() {
           <button 
             type="submit" 
             disabled={status === 'loading'}
-            className="w-full bg-purple-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-purple-700 transition disabled:opacity-50"
+            className="w-full bg-[#3F5E39] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#324B2D] transition disabled:opacity-50"
           >
             {status === 'loading' ? 'Wird gesendet...' : 'Nachricht senden'}
           </button>

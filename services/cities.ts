@@ -1,5 +1,5 @@
 // services/cities.ts
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient as createClient } from "@/lib/supabase/server";
 import { City } from "@/types";
 
 export async function getAllCities(): Promise<City[]> {

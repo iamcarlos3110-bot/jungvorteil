@@ -17,7 +17,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps | Te
   ({ label, error, helperText, leftIcon, rightIcon, textarea, className, ...props }, ref) => {
     const inputClassName = cn(
       "w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-2.5 text-[#111827] outline-none transition-all duration-200 placeholder:text-gray-400",
-      "focus:border-[#6D28D9] focus:ring-2 focus:ring-[#6D28D9]/20",
+      "focus:border-[#3F5E39] focus:ring-2 focus:ring-[#3F5E39]/20",
       error && "border-red-500 focus:border-red-500 focus:ring-red-500/20",
       leftIcon && "pl-10",
       rightIcon && "pr-10",

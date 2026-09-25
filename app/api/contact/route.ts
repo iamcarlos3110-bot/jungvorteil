@@ -1,6 +1,6 @@
-// app/api/contact/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { createClient } from "@/lib/supabase/server";
 
 const contactSchema = z.object({
   name: z.string().min(2).max(100),
@@ -8,8 +8,6 @@ const contactSchema = z.object({
   message: z.string().min(10).max(2000),
 });
 
-// Simple in-memory rate limiting (resets on server restart)
-const submissions = new Map<string, number>();
 const RATE_LIMIT_MS = 60 * 1000; // 1 per minute per IP
 
 export async function POST(request: NextRequest) {
@@ -18,28 +16,70 @@ export async function POST(request: NextRequest) {
     request.headers.get("x-real-ip") ??
     "unknown";
 
-  const lastSubmit = submissions.get(ip);
-  if (lastSubmit && Date.now() - lastSubmit < RATE_LIMIT_MS) {
-    return NextResponse.json(
-      { error: "Bitte warte eine Minute, bevor du erneut sendest." },
-      { status: 429 }
-    );
+  const supabase = await createClient();
+
+  // Rate limiting check via Supabase contact_rate_limits table
+  try {
+    const { data: limitData } = await supabase
+      .from("contact_rate_limits")
+      .select("last_submit_at")
+      .eq("ip", ip)
+      .maybeSingle();
+
+    if (limitData?.last_submit_at) {
+      const lastSubmitTime = new Date(limitData.last_submit_at).getTime();
+      if (Date.now() - lastSubmitTime < RATE_LIMIT_MS) {
+        return NextResponse.json(
+          { error: "Bitte warte eine Minute, bevor du erneut sendest." },
+          { status: 429 }
+        );
+      }
+    }
+  } catch {
+    // Fallback if table not ready
   }
 
   try {
     const body = await request.json();
     const data = contactSchema.parse(body);
 
-    // TODO: Configure email provider (e.g., Resend, SendGrid, Postmark)
-    // For now, log the contact request
-    console.log("📬 Kontaktanfrage:", {
-      name: data.name,
-      email: data.email,
-      message: data.message.slice(0, 50) + "...",
-      timestamp: new Date().toISOString(),
-    });
+    const resendApiKey = process.env.RESEND_API_KEY;
 
-    submissions.set(ip, Date.now());
+    if (resendApiKey) {
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${resendApiKey}`,
+        },
+        body: JSON.stringify({
+          from: "JungVorteil Kontakt <kontakt@jungvorteil.ch>",
+          to: ["admin@jungvorteil.ch"],
+          subject: `Neue Kontaktanfrage von ${data.name}`,
+          html: `<p><strong>Name:</strong> ${data.name}</p>
+                <p><strong>E-Mail:</strong> ${data.email}</p>
+                <p><strong>Nachricht:</strong></p>
+                <p>${data.message.replace(/\n/g, "<br>")}</p>`,
+        }),
+      });
+
+      if (!res.ok) {
+        console.error("Resend email error:", await res.text());
+      }
+    } else if (process.env.NODE_ENV === "development") {
+      console.log("📬 Kontaktanfrage (Dev Mode):", {
+        name: data.name,
+        email: data.email,
+        message: data.message.slice(0, 50) + "...",
+        timestamp: new Date().toISOString(),
+      });
+    }
+
+    // Upsert rate limit record for IP
+    await supabase.from("contact_rate_limits").upsert({
+      ip,
+      last_submit_at: new Date().toISOString(),
+    });
 
     return NextResponse.json({
       success: true,

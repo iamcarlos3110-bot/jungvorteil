@@ -1,12 +1,15 @@
 "use client";
 import Link from "next/link";
-import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay } from "@/lib/utils";
+import Image from "next/image";
+import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay, getDeviceCategory } from "@/lib/utils";
 import { Offer } from "@/types";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { toggleFavorite } from "@/lib/favorites";
 import { Heart, Check } from "lucide-react";
 import { useState, useEffect } from "react";
+
+import { getBrandLogo, getOfferCover } from "@/lib/brandAssets";
 
 interface OfferCardProps {
   offer: Offer;
@@ -38,7 +41,10 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
     fetch("/api/click", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ offerId: offer.id }),
+      body: JSON.stringify({
+        offer_id: offer.id,
+        device_category: getDeviceCategory(),
+      }),
     }).catch(() => {});
   };
 
@@ -47,37 +53,52 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
   const saving = getSavingDisplay(offer.discount_percent, offer.discount_amount, offer.normal_price, offer.young_price);
   
   const brandName = offer.brand?.name ?? "JungVorteil";
-  const brandLogo = offer.brand?.logo_url;
+  const brandLogo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
+  const coverImage = getOfferCover(offer.slug, offer.image_url);
 
   return (
     <Link
       href={`/${locale}/angebot/${offer.slug}`}
       onClick={handleActionClick}
       className={cn(
-        "offer-card group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 h-full",
+        "floating-card group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-stone-200/90 hover:border-[#3F5E39]/40 h-full",
         expired && "opacity-75 grayscale-[0.3]",
-        expiringSoon && "border-amber-200"
+        expiringSoon && "border-amber-300 ring-2 ring-amber-100"
       )}
     >
-      {/* Cover Image */}
-      {offer.image_url && !coverError && (
-        <div className="w-full h-32 bg-gray-100 overflow-hidden shrink-0 relative z-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={offer.image_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={() => setCoverError(true)} />
-        </div>
-      )}
+      {/* Cover Image Banner (with fallback gradient header) */}
+      <div className="w-full h-36 bg-gradient-to-br from-[#EAF0E5] via-[#D6E2CE] to-[#3F5E39]/15 overflow-hidden shrink-0 relative z-0">
+        {coverImage && !coverError && (
+          <Image
+            src={coverImage}
+            alt={offer.title_de}
+            fill
+            unoptimized={typeof coverImage === "string" && coverImage.startsWith("http")}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onError={() => setCoverError(true)}
+          />
+        )}
+      </div>
 
       <div className="p-5 flex flex-col flex-grow relative z-10 bg-white">
         {/* Top Section */}
-        <div className={cn("flex justify-between items-start mb-4", offer.image_url && "-mt-10")}>
-          <div className="w-12 h-12 rounded-xl bg-[#EAF0E5] flex items-center justify-center overflow-hidden border border-gray-200/80 shadow-sm shrink-0">
+        <div className="flex justify-between items-start mb-4 -mt-10">
+          <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center overflow-hidden border border-stone-200 shadow-md shrink-0 relative p-1 z-20">
             {brandLogo && !logoError ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={brandLogo} alt={brandName} className="w-full h-full object-contain p-1 bg-white" onError={() => setLogoError(true)} />
+              <Image
+                src={brandLogo}
+                alt={brandName}
+                fill
+                unoptimized={typeof brandLogo === "string" && brandLogo.startsWith("http")}
+                sizes="48px"
+                className="w-full h-full object-contain p-1 bg-white rounded-lg"
+                onError={() => setLogoError(true)}
+              />
             ) : (
-              <span className="text-lg font-black text-[#3F5E39] uppercase">
+              <div className="w-full h-full bg-[#EAF0E5] text-[#3F5E39] rounded-lg flex items-center justify-center font-black text-lg uppercase">
                 {brandName.charAt(0)}
-              </span>
+              </div>
             )}
           </div>
           <div className="flex flex-col gap-1 items-end mr-8">

@@ -5,24 +5,28 @@ export const metadata = {
   title: 'Alle Angebote | JungVorteil',
 };
 
-export default async function AngebotePage({ params, searchParams }: { params: Promise<{ locale: string }>, searchParams: Promise<{ category?: string, brand?: string }> }) {
+export default async function AngebotePage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ category?: string; brand?: string }>;
+}) {
   const { locale } = await params;
   const { category, brand } = await searchParams;
-  
-  const result = await getPublishedOffers();
-  let offers = result.offers;
-  
-  if (category) {
-    offers = offers.filter((o) => o.category?.slug === category);
-  }
-  if (brand) {
-    offers = offers.filter((o) => o.brand?.slug === brand);
-  }
+
+  const result = await getPublishedOffers({
+    category,
+    brand,
+    limit: 50,
+  });
+
+  const offers = result.offers;
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 min-h-[60vh]">
       <div className="mb-10">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900">
+        <h1 className="text-4xl font-bold mb-4 text-gray-900 capitalize">
           {category ? `Angebote: ${category}` : brand ? `Angebote: ${brand}` : 'Alle Vorteile'}
         </h1>
         <p className="text-gray-600 text-lg">Entdecke {offers.length} geprüfte Angebote.</p>

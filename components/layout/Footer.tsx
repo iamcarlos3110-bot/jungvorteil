@@ -20,7 +20,7 @@ export default function Footer({ locale }: FooterProps) {
               className="flex items-center gap-1.5 text-xl font-bold text-white group"
             >
               JungVorteil
-              <Sparkles className="w-5 h-5 text-purple-400" />
+              <Sparkles className="w-5 h-5 text-[#537A4B]" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               {t("tagline")}

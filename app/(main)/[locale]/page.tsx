@@ -21,6 +21,11 @@ import { getTranslations } from 'next-intl/server';
 import Script from 'next/script';
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { safeJsonLd } from '@/lib/utils';
+import SafeImage from '@/components/ui/SafeImage';
+import { getBrandLogo, getOfferCover } from '@/lib/brandAssets';
+
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -86,7 +91,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Script
         id="schema-home"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
       />
       
       {/* Hero Section */}
@@ -164,8 +169,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </Link>
              </div>
              <div className="w-full md:w-1/3 flex-shrink-0">
-                {vorteilDerWoche.image_url ? (
-                   <img src={vorteilDerWoche.image_url} alt="" className="w-full h-auto rounded-2xl shadow-lg border border-emerald-100/50 bg-white" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                {getOfferCover(vorteilDerWoche.slug, vorteilDerWoche.image_url) ? (
+                   <SafeImage src={getOfferCover(vorteilDerWoche.slug, vorteilDerWoche.image_url)!} alt={vorteilDerWoche.title_de || ""} width={600} height={400} className="w-full h-auto rounded-2xl shadow-lg border border-emerald-100/50 bg-white object-cover" />
                 ) : (
                    <div className="w-full aspect-video bg-emerald-100 rounded-2xl shadow-inner flex items-center justify-center">
                       <span className="text-emerald-700 font-bold text-xl">{vorteilDerWoche.brand?.name}</span>
@@ -255,21 +260,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h3 className="text-xl font-bold text-blue-900">Für Studierende</h3>
               </div>
               <div className="space-y-4 mb-6">
-                {studentOffers.map(offer => (
-                  <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
-                     <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100">
-                        {offer.brand?.logo_url ? (
-                           <img src={offer.brand.logo_url} alt="" className="w-full h-full object-cover" />
-                        ) : (
-                           <span className="font-bold text-gray-400">{offer.brand?.name?.charAt(0)}</span>
-                        )}
-                     </div>
-                     <div>
-                       <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
-                       <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
-                     </div>
-                  </Link>
-                ))}
+                {studentOffers.map(offer => {
+                  const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
+                  return (
+                    <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
+                       <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
+                          {logo ? (
+                             <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
+                          ) : (
+                             <span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>
+                          )}
+                       </div>
+                       <div>
+                         <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
+                         <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
+                       </div>
+                    </Link>
+                  );
+                })}
               </div>
               <Link href={`/${locale}/studentenrabatte`} className="block text-center text-sm font-bold text-blue-700 hover:text-blue-800">
                 Alle Studentenrabatte &rarr;
@@ -287,21 +295,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h3 className="text-xl font-bold text-teal-900">Unter 25 Jahre</h3>
               </div>
               <div className="space-y-4 mb-6">
-                {under25Offers.map(offer => (
-                  <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
-                     <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100">
-                        {offer.brand?.logo_url ? (
-                           <img src={offer.brand.logo_url} alt="" className="w-full h-full object-cover" />
-                        ) : (
-                           <span className="font-bold text-gray-400">{offer.brand?.name?.charAt(0)}</span>
-                        )}
-                     </div>
-                     <div>
-                       <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
-                       <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
-                     </div>
-                  </Link>
-                ))}
+                {under25Offers.map(offer => {
+                  const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
+                  return (
+                    <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
+                       <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
+                          {logo ? (
+                             <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
+                          ) : (
+                             <span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>
+                          )}
+                       </div>
+                       <div>
+                         <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
+                         <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
+                       </div>
+                    </Link>
+                  );
+                })}
               </div>
               <Link href={`/${locale}/unter-25`} className="block text-center text-sm font-bold text-teal-700 hover:text-teal-800">
                 Alle Unter 25 Angebote &rarr;
@@ -319,21 +330,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h3 className="text-xl font-bold text-green-900">Kostenlos</h3>
               </div>
               <div className="space-y-4 mb-6">
-                {freeOffers.map(offer => (
-                  <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
-                     <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100">
-                        {offer.brand?.logo_url ? (
-                           <img src={offer.brand.logo_url} alt="" className="w-full h-full object-cover" />
-                        ) : (
-                           <span className="font-bold text-gray-400">{offer.brand?.name?.charAt(0)}</span>
-                        )}
-                     </div>
-                     <div>
-                       <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
-                       <div className="text-xs text-green-600 font-bold">Gratis</div>
-                     </div>
-                  </Link>
-                ))}
+                {freeOffers.map(offer => {
+                  const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
+                  return (
+                    <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
+                       <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
+                          {logo ? (
+                             <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
+                          ) : (
+                             <span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>
+                          )}
+                       </div>
+                       <div>
+                         <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
+                         <div className="text-xs text-green-600 font-bold">Gratis</div>
+                       </div>
+                    </Link>
+                  );
+                })}
               </div>
               <Link href={`/${locale}/gratis`} className="block text-center text-sm font-bold text-green-700 hover:text-green-800">
                 Alle Gratis-Angebote &rarr;

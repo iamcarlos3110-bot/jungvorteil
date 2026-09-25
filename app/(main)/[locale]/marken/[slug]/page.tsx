@@ -1,7 +1,8 @@
 import { getBrandBySlug, getOffersByBrand } from '@/lib/api/offers';
 import { notFound } from 'next/navigation';
 import OfferGrid from '@/components/offers/OfferGrid';
-import Script from 'next/script';
+import { safeJsonLd } from '@/lib/utils';
+import SafeImage from '@/components/ui/SafeImage';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -35,13 +36,13 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
-      <Script id="schema-org" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script id="schema-org" type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(organizationSchema) }} />
       
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="bg-white p-8 rounded-2xl shadow-sm border mb-12 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-          <div className="w-32 h-32 bg-gray-50 rounded-xl p-4 flex-shrink-0 flex items-center justify-center border">
+          <div className="w-32 h-32 bg-gray-50 rounded-xl p-4 flex-shrink-0 flex items-center justify-center border relative">
             {brand.logo_url && (
-              <img src={brand.logo_url} alt={brand.name} className="max-w-full max-h-full object-contain" />
+              <SafeImage src={brand.logo_url} alt={brand.name} fill sizes="128px" className="object-contain p-2" />
             )}
           </div>
           <div>

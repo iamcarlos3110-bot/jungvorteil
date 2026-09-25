@@ -1,5 +1,5 @@
 // services/categories.ts
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient as createClient } from "@/lib/supabase/server";
 import { Category } from "@/types";
 
 export async function getAllCategories(): Promise<Category[]> {

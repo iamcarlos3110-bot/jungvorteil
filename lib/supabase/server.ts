@@ -1,7 +1,12 @@
-// lib/supabase/server.ts
-// Server-side Supabase client (RSC, Server Actions, Route Handlers)
 import { createServerClient } from "@supabase/ssr";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
+
+export function createPublicClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://dummy-url.supabase.co";
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "dummy-key";
+  return createSupabaseClient(supabaseUrl, supabaseKey);
+}
 
 export async function createClient() {
   const cookieStore = await cookies();

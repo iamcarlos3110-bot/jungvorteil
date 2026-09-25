@@ -17,7 +17,6 @@ import {
   Settings,
   LogOut,
   Menu,
-  X,
   ChevronRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -52,7 +51,7 @@ function SidebarContent({ pathname, userEmail, onNavigate, onLogout }: SidebarCo
       {/* Logo */}
       <div className="px-4 py-5 border-b border-gray-800">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#3F5E39] rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">J</span>
           </div>
           <div>
@@ -75,7 +74,7 @@ function SidebarContent({ pathname, userEmail, onNavigate, onLogout }: SidebarCo
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
                 active
-                  ? "bg-violet-600 text-white"
+                  ? "bg-[#3F5E39] text-white"
                   : "text-gray-400 hover:bg-gray-800 hover:text-white"
               )}
             >
@@ -117,17 +116,67 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const isLoginPage = pathname === "/admin/login";
+  const [loading, setLoading] = useState(() => !isLoginPage);
   const supabase = createClient();
 
   useEffect(() => {
+    if (isLoginPage) return;
+
+    let isMounted = true;
+
     supabase.auth.getUser().then(({ data: { user } }) => {
-      setUserEmail(user?.email ?? null);
+      if (!isMounted) return;
+      if (!user) {
+        router.replace("/admin/login");
+      } else {
+        setUserEmail(user.email ?? null);
+        setLoading(false);
+      }
     });
-  }, []);
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!session && !isLoginPage) {
+        setUserEmail(null);
+        router.replace("/admin/login");
+      } else if (session?.user) {
+        setUserEmail(session.user.email ?? null);
+        setLoading(false);
+      }
+    });
+
+    return () => {
+      isMounted = false;
+      subscription.unsubscribe();
+    };
+  }, [isLoginPage, pathname, router, supabase]);
 
   async function handleLogout() {
     await supabase.auth.signOut();
-    router.push("/admin/login");
+    router.replace("/admin/login");
+  }
+
+  if (isLoginPage) {
+    return (
+      <html lang="es">
+        <body className="bg-gray-950 min-h-screen">{children}</body>
+      </html>
+    );
+  }
+
+  if (loading) {
+    return (
+      <html lang="es">
+        <body className="bg-gray-950 min-h-screen flex items-center justify-center">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-8 h-8 border-4 border-[#3F5E39] border-t-transparent rounded-full animate-spin" />
+            <p className="text-gray-400 text-sm font-medium">Cargando panel...</p>
+          </div>
+        </body>
+      </html>
+    );
   }
 
   return (

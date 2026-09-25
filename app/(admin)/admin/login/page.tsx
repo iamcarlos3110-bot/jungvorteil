@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-2">
-            <div className="w-10 h-10 bg-violet-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-[#3F5E39] rounded-xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">J</span>
             </div>
             <span className="text-white text-2xl font-bold">JungVorteil</span>
@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-gray-800 border border-gray-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-violet-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#3F5E39] transition-colors"
                 placeholder="admin@jungvorteil.ch"
                 id="admin-email"
               />
@@ -78,7 +78,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full bg-gray-800 border border-gray-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-violet-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#3F5E39] transition-colors"
                 placeholder="••••••••"
                 id="admin-password"
               />
@@ -93,7 +93,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-violet-600 hover:bg-violet-700 text-white font-semibold py-3 rounded-xl transition-colors disabled:opacity-60 cursor-pointer"
+              className="w-full bg-[#3F5E39] hover:bg-[#324B2D] text-white font-semibold py-3 rounded-xl transition-colors disabled:opacity-60 cursor-pointer shadow-sm"
               id="admin-login-btn"
             >
               {loading ? "Anmelden..." : "Anmelden"}

@@ -45,7 +45,8 @@ export default function Header({ locale }: HeaderProps) {
   ];
 
   return (
-    <header
+    <>
+      <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
         isTransparent
@@ -203,6 +204,8 @@ export default function Header({ locale }: HeaderProps) {
         </div>
       </div>
     </header>
+      {!isTransparent && <div className="h-16 lg:h-20 shrink-0" aria-hidden="true" />}
+    </>
   );
 }
 

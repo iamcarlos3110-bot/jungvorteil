@@ -30,14 +30,14 @@ export default function OfferFilters({ filters, onChange, categories, cities }: 
   };
 
   return (
-    <div className="flex flex-col gap-4 bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+    <div className="flex flex-col gap-4 bg-white p-5 rounded-2xl shadow-lg border border-stone-200/90 hover:border-[#3F5E39]/30 transition-all">
       {/* Top row: Categories mobile scrollable */}
       <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
         <button
           onClick={() => onChange({ ...filters, category: undefined })}
           className={cn(
             "flex items-center whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-colors shrink-0",
-            !filters.category ? "bg-purple-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            !filters.category ? "bg-[#3F5E39] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           )}
         >
           Alle
@@ -48,7 +48,7 @@ export default function OfferFilters({ filters, onChange, categories, cities }: 
             onClick={() => onChange({ ...filters, category: cat.slug })}
             className={cn(
               "flex items-center gap-1.5 whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-colors shrink-0",
-              filters.category === cat.slug ? "bg-purple-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              filters.category === cat.slug ? "bg-[#3F5E39] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             )}
           >
             {cat.icon && <span>{cat.icon}</span>}
@@ -63,7 +63,7 @@ export default function OfferFilters({ filters, onChange, categories, cities }: 
           <select
             value={filters.city || ""}
             onChange={(e) => onChange({ ...filters, city: e.target.value || undefined })}
-            className="bg-white border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block px-3 py-2 cursor-pointer font-medium outline-none"
+            className="bg-white border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-[#3F5E39] focus:border-[#3F5E39] block px-3 py-2 cursor-pointer font-medium outline-none"
           >
             <option value="">Alle Städte</option>
             {cities.map((city) => (
@@ -75,7 +75,7 @@ export default function OfferFilters({ filters, onChange, categories, cities }: 
             onClick={() => onChange({ ...filters, student: !filters.student })}
             className={cn(
               "flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium border transition-colors cursor-pointer",
-              filters.student ? "bg-purple-50 border-purple-200 text-purple-700" : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50"
+              filters.student ? "bg-[#EAF0E5] border-[#D6E2CE] text-[#3F5E39]" : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50"
             )}
           >
             {filters.student && <Check className="w-4 h-4" />}
@@ -86,7 +86,7 @@ export default function OfferFilters({ filters, onChange, categories, cities }: 
             onClick={() => onChange({ ...filters, online: !filters.online })}
             className={cn(
               "flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium border transition-colors cursor-pointer",
-              filters.online ? "bg-purple-50 border-purple-200 text-purple-700" : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50"
+              filters.online ? "bg-[#EAF0E5] border-[#D6E2CE] text-[#3F5E39]" : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50"
             )}
           >
             {filters.online && <Check className="w-4 h-4" />}

@@ -1,6 +1,6 @@
 import { getStudentOffers, getAllCities } from '@/lib/api/offers';
 import OfferGrid from '@/components/offers/OfferGrid';
-import Script from 'next/script';
+import { safeJsonLd } from '@/lib/utils';
 
 export const metadata = {
   title: 'Studentenrabatte Schweiz – Die besten Deals | JungVorteil',
@@ -37,9 +37,9 @@ export default async function StudentsPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <Script id="schema-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script id="schema-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqSchema) }} />
       
-      <div className="bg-purple-900 text-white py-16">
+      <div className="bg-[#1C331B] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Studentenrabatte Schweiz</h1>
           <p className="text-xl max-w-2xl mx-auto opacity-90">
@@ -53,7 +53,7 @@ export default async function StudentsPage({ params }: { params: Promise<{ local
           <div className="flex gap-4 min-w-max">
             <span className="font-medium py-2">Nach Stadt:</span>
             {cities.map(city => (
-              <a key={city.id} href={`/${locale}/stadt/${city.slug}`} className="px-4 py-2 bg-white rounded-full text-sm hover:bg-purple-50 transition shadow-sm">
+              <a key={city.id} href={`/${locale}/stadt/${city.slug}`} className="px-4 py-2 bg-white rounded-full text-sm hover:bg-[#EAF0E5] hover:text-[#3F5E39] transition shadow-sm">
                 {city.name_de}
               </a>
             ))}

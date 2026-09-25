@@ -1,5 +1,5 @@
 // services/brands.ts
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient as createClient } from "@/lib/supabase/server";
 import { Brand } from "@/types";
 
 export async function getAllBrands(): Promise<Brand[]> {

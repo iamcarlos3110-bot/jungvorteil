@@ -4,7 +4,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16 prose prose-purple">
+    <div className="max-w-4xl mx-auto px-4 py-16 prose prose-emerald">
       <h1>Nutzungsbedingungen</h1>
       
       <h2>1. Nutzung der Plattform</h2>

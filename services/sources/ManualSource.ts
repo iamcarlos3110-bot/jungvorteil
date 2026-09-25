@@ -31,7 +31,9 @@ export class CSVSource implements SourceAdapter {
     // 2. Parse with a CSV parser
     // 3. Map columns to RawOffer fields
     // 4. Return array of RawOffer
-    console.log(`CSVSource: Would fetch from ${this.csvUrl}`);
+    if (process.env.NODE_ENV === "development") {
+      console.log(`CSVSource: Would fetch from ${this.csvUrl}`);
+    }
     return [];
   }
 }
@@ -50,7 +52,9 @@ export class JSONSource implements SourceAdapter {
 
   async fetchOffers(): Promise<RawOffer[]> {
     // TODO: Implement JSON fetching and mapping
-    console.log(`JSONSource: Would fetch from ${this.jsonUrl}`);
+    if (process.env.NODE_ENV === "development") {
+      console.log(`JSONSource: Would fetch from ${this.jsonUrl}`);
+    }
     return [];
   }
 }

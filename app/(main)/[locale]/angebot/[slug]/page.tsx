@@ -1,12 +1,15 @@
 import { getOfferBySlug, getSimilarOffers } from "@/lib/api/offers";
+import SafeImage from "@/components/ui/SafeImage";
 import { notFound } from "next/navigation";
 import AdSlot from "@/components/ads/AdSlot";
 import OfferGrid from "@/components/offers/OfferGrid";
+import OfferCtaLink from "@/components/offers/OfferCtaLink";
 import Script from "next/script";
 import { incrementOfferView } from "@/lib/actions/offers";
-import { formatDate, isExpired, getSavingDisplay, formatCHF } from "@/lib/utils";
+import { formatDate, isExpired, getSavingDisplay, formatCHF, safeJsonLd } from "@/lib/utils";
 import Link from "next/link";
 import { ExternalLink, MapPin, GraduationCap, Globe, CheckCircle, Clock } from "lucide-react";
+import { getBrandLogo, getOfferCover } from "@/lib/brandAssets";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug } = await params;
@@ -75,8 +78,8 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
-      <Script id="schema-offer" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }} />
-      <Script id="schema-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script id="schema-offer" type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(offerSchema) }} />
+      <Script id="schema-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }} />
 
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100 pt-20 lg:pt-24">
@@ -117,31 +120,39 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Header */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-              <div className="flex items-start gap-4 mb-5">
-                <div className="w-16 h-16 rounded-2xl bg-[#EAF0E5] border border-[#D6E2CE] p-1 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
-                  {offer.logo_url || offer.brand?.logo_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={offer.logo_url || offer.brand?.logo_url || ""}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+              {getOfferCover(offer.slug, offer.image_url) && (
+                <div className="w-full h-56 bg-gray-100 relative overflow-hidden">
+                  <SafeImage
+                    src={getOfferCover(offer.slug, offer.image_url)!}
+                    alt={offer.title_de}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="flex items-start gap-4 mb-5">
+                <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200/80 p-1 flex items-center justify-center overflow-hidden shrink-0 shadow-sm relative">
+                  {getBrandLogo(offer.brand?.slug, offer.logo_url || offer.brand?.logo_url) ? (
+                    <SafeImage
+                      src={getBrandLogo(offer.brand?.slug, offer.logo_url || offer.brand?.logo_url)!}
                       alt={offer.brand?.name ?? ""}
-                      className="w-full h-full object-contain rounded-xl"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                        const parent = e.currentTarget.parentElement;
-                        if (parent) {
-                          const fallback = parent.querySelector(".logo-fallback");
-                          if (fallback) (fallback as HTMLElement).style.display = "flex";
-                        }
-                      }}
+                      fill
+                      sizes="64px"
+                      className="w-full h-full object-contain p-1"
+                      fallback={
+                        <span className="font-black text-2xl text-[#3F5E39] uppercase">
+                          {(offer.brand?.name ?? offer.title_de).charAt(0)}
+                        </span>
+                      }
                     />
-                  ) : null}
-                  <span
-                    className="logo-fallback font-black text-2xl text-[#3F5E39] uppercase"
-                    style={{ display: (offer.logo_url || offer.brand?.logo_url) ? "none" : "flex" }}
-                  >
-                    {(offer.brand?.name ?? offer.title_de).charAt(0)}
-                  </span>
+                  ) : (
+                    <span className="font-black text-2xl text-[#3F5E39] uppercase">
+                      {(offer.brand?.name ?? offer.title_de).charAt(0)}
+                    </span>
+                  )}
                 </div>
                 <div className="flex-1 min-w-0">
                   {offer.brand?.name && <p className="text-sm text-gray-500 font-medium mb-1">{offer.brand.name}</p>}
@@ -209,15 +220,14 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
               )}
 
               {/* CTA */}
-              <a
-                href={externalUrl}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
+              <OfferCtaLink
+                offerId={offer.id}
+                url={externalUrl}
                 className="flex items-center justify-center gap-2 w-full bg-[#3F5E39] hover:bg-[#324B2D] text-white font-bold py-4 rounded-2xl text-lg transition-colors shadow-sm"
                 id={`offer-cta-${offer.id}`}
               >
                 Angebot ansehen <ExternalLink className="w-5 h-5" />
-              </a>
+              </OfferCtaLink>
 
               {offer.end_date && !expired && (
                 <p className="text-center text-xs text-gray-400 mt-3">
@@ -227,6 +237,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
               {offer.is_sponsored && (
                 <p className="text-center text-xs text-gray-400 mt-2">Gesponsert</p>
               )}
+              </div>
             </div>
 
             {/* Description */}
@@ -303,14 +314,13 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                   </div>
                 )}
               </div>
-              <a
-                href={externalUrl}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
+              <OfferCtaLink
+                offerId={offer.id}
+                url={externalUrl}
                 className="mt-5 flex items-center justify-center gap-2 w-full bg-[#3F5E39] hover:bg-[#324B2D] text-white font-semibold py-3 rounded-xl text-sm transition-colors shadow-sm"
               >
                 Angebot ansehen <ExternalLink className="w-4 h-4" />
-              </a>
+              </OfferCtaLink>
             </div>
 
             <AdSlot slot="AD_SIDEBAR_TOP" />

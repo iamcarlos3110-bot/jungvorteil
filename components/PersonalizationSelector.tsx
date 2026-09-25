@@ -45,7 +45,7 @@ export default function PersonalizationSelector() {
   const hasSelections = age || situation || city;
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border p-6 md:p-8">
+    <div className="floating-widget bg-white rounded-3xl shadow-xl border border-stone-200/90 p-6 md:p-10 hover:border-[#3F5E39]/30 transition-all">
       <h2 className="text-xl font-bold mb-6 text-center">Finde Angebote, die zu dir passen</h2>
       
       <div className="space-y-6">
@@ -57,7 +57,7 @@ export default function PersonalizationSelector() {
                 key={r.label}
                 onClick={() => setAge(age === r.value ? undefined : r.value)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-                  age === r.value ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  age === r.value ? 'bg-[#3F5E39] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 {r.label}
@@ -74,7 +74,7 @@ export default function PersonalizationSelector() {
                 key={s.label}
                 onClick={() => setSituation(situation === s.value ? undefined : s.value)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-                  situation === s.value ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  situation === s.value ? 'bg-[#3F5E39] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 {s.label}
@@ -91,7 +91,7 @@ export default function PersonalizationSelector() {
                 key={c}
                 onClick={() => setCity(city === c ? '' : c)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-                  city === c ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  city === c ? 'bg-[#3F5E39] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 {c}
@@ -105,7 +105,7 @@ export default function PersonalizationSelector() {
         <div className="mt-8 text-center">
           <button 
             onClick={handleSave}
-            className="bg-purple-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-purple-700 transition shadow-sm"
+            className="bg-[#3F5E39] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#324B2D] transition shadow-sm"
           >
             Für mich anzeigen
           </button>

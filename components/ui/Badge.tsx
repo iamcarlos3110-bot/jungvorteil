@@ -20,7 +20,7 @@ interface BadgeProps {
 const tagStyles: Record<OfferTag | "DEMO", string> = {
   NEU: "bg-green-100 text-green-700 animate-pulse",
   HEUTE: "bg-orange-100 text-orange-700",
-  BELIEBT: "bg-purple-100 text-purple-700",
+  BELIEBT: "bg-[#EAF0E5] text-[#3F5E39]",
   STUDENTEN: "bg-blue-100 text-blue-700",
   UNTER_25: "bg-teal-100 text-teal-700",
   UNTER_30: "bg-indigo-100 text-indigo-700",

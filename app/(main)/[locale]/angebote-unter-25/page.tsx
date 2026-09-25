@@ -16,12 +16,12 @@ export default async function Under25Page() {
 
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-indigo-600 to-violet-600 py-16 px-4">
+      <section className="bg-gradient-to-br from-[#1C331B] via-[#2F5229] to-[#162916] py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">
             Angebote unter 25 Jahren
           </h1>
-          <p className="text-indigo-100 text-lg">
+          <p className="text-[#EAF0E5] text-lg">
             Die besten Vergünstigungen für junge Leute unter 25 in der Schweiz
           </p>
         </div>
@@ -56,7 +56,7 @@ export default async function Under25Page() {
                 )}
                 <a
                   href={`/de/angebot/${offer.slug}`}
-                  className="mt-4 block w-full bg-violet-600 text-white text-center py-2.5 rounded-xl text-sm font-semibold hover:bg-violet-700 transition-colors"
+                  className="mt-4 block w-full bg-[#3F5E39] text-white text-center py-2.5 rounded-xl text-sm font-semibold hover:bg-[#324B2D] transition-colors"
                 >
                   Angebot ansehen
                 </a>

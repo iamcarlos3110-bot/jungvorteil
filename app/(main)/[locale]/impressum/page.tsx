@@ -1,29 +1,31 @@
 export const metadata = {
-  title: 'Impressum | JungVorteil'
+  title: 'Impressum | JungVorteil Schweiz'
 };
 
 export default function ImpressumPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16 prose prose-purple">
+    <div className="max-w-4xl mx-auto px-4 py-16 prose prose-emerald">
       <h1>Impressum</h1>
       
-      {/* ADMIN NOTE: Edit operator details below */}
-      
-      <h2>Kontaktadresse</h2>
+      <h2>Kontaktadresse & Betreiber</h2>
       <p>
-        [BETREIBER NAME]<br/>
-        [ADRESSE]<br/>
+        <strong>JungVorteil Schweiz</strong><br/>
+        Plattform für Jugend- & Studentenrabatte<br/>
+        Limmatquai 1<br/>
+        8001 Zürich<br/>
         Schweiz
       </p>
 
-      <h2>E-Mail</h2>
+      <h2>E-Mail & Kontakt</h2>
       <p>
-        [EMAIL]
+        <a href="mailto:kontakt@jungvorteil.ch" className="text-[#3F5E39] font-semibold underline">
+          kontakt@jungvorteil.ch
+        </a>
       </p>
 
-      <h2>Handelsregistereintrag</h2>
+      <h2>Vertretungsberechtigte Personen</h2>
       <p>
-        [HANDELSREGISTER wenn vorhanden, sonst entfernen]
+        Redaktion & Plattformleitung JungVorteil Schweiz
       </p>
 
       <h2>Haftungsausschluss</h2>
@@ -42,3 +44,4 @@ export default function ImpressumPage() {
     </div>
   );
 }
+
