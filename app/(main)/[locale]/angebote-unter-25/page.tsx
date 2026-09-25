@@ -1,0 +1,70 @@
+// app/[locale]/angebote-unter-25/page.tsx
+import { Metadata } from "next";
+import { getPublishedOffers } from "@/services/offers";
+
+export const metadata: Metadata = {
+  title: "Angebote unter 25 Schweiz – Rabatte für junge Leute | JungVorteil",
+  description:
+    "Alle Angebote und Rabatte für Personen unter 25 Jahren in der Schweiz. Spezielle Tarife, Vergünstigungen und kostenlose Angebote.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/de/angebote-unter-25`,
+  },
+};
+
+export default async function Under25Page() {
+  const offersData = await getPublishedOffers({ age: 24, limit: 24 });
+
+  return (
+    <div className="min-h-screen">
+      <section className="bg-gradient-to-br from-indigo-600 to-violet-600 py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">
+            Angebote unter 25 Jahren
+          </h1>
+          <p className="text-indigo-100 text-lg">
+            Die besten Vergünstigungen für junge Leute unter 25 in der Schweiz
+          </p>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 py-12">
+        {offersData.offers.length === 0 ? (
+          <div className="text-center py-20">
+            <p className="text-6xl mb-4">🔍</p>
+            <h2 className="text-xl font-bold text-gray-800 mb-2">
+              Noch keine Angebote vorhanden
+            </h2>
+            <p className="text-gray-500">
+              Angebote werden über das Admin-Panel hinzugefügt.
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {offersData.offers.map((offer) => (
+              <div
+                key={offer.id}
+                className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <p className="text-sm font-medium text-gray-500 mb-1">
+                  {offer.brand?.name ?? "Anbieter"}
+                </p>
+                <h3 className="font-bold text-gray-900 mb-3">{offer.title_de}</h3>
+                {offer.discount_percent && (
+                  <p className="text-green-600 font-bold text-lg">
+                    {offer.discount_percent}% Rabatt
+                  </p>
+                )}
+                <a
+                  href={`/de/angebot/${offer.slug}`}
+                  className="mt-4 block w-full bg-violet-600 text-white text-center py-2.5 rounded-xl text-sm font-semibold hover:bg-violet-700 transition-colors"
+                >
+                  Angebot ansehen
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}

@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "angebote": "Offerte",
+    "rabatte": "Sconti",
+    "studierende": "Studenti",
+    "unter30": "Under 30",
+    "staedte": "Città",
+    "kategorien": "Categorie",
+    "magazin": "Rivista"
+  },
+  "hero": {
+    "title": "I tuoi vantaggi in Svizzera.",
+    "subtitle": "Trova sconti, offerte e agevolazioni per giovani e studenti.",
+    "searchPlaceholder": "Cosa cerchi?",
+    "cta": "Scopri i vantaggi",
+    "examples": [
+      "Mobile",
+      "Netflix",
+      "Treno",
+      "Fitness",
+      "Ristoranti",
+      "Cinema"
+    ]
+  },
+  "personalization": {
+    "title": "Was passt zu dir?",
+    "age": "Dein Alter",
+    "situation": "Deine Situation",
+    "city": "Deine Stadt",
+    "ages": {
+      "18_20": "18–20",
+      "21_24": "21–24",
+      "25_27": "25–27",
+      "28_30": "28–30"
+    },
+    "situations": {
+      "student": "Student/in",
+      "apprentice": "Lernende/r",
+      "employed": "Berufstätig",
+      "all": "Alle"
+    },
+    "cities": {
+      "all": "Alle Städte",
+      "other": "Andere"
+    },
+    "save": "Speichern",
+    "skip": "Überspringen"
+  },
+  "categories": {
+    "title": "Alle Kategorien",
+    "viewAll": "Alle anzeigen",
+    "offers": "Angebote"
+  },
+  "offers": {
+    "topToday": "Top Vorteile heute",
+    "new": "Neue Angebote",
+    "viewOffer": "Vedi l'offerta",
+    "saveNow": "Jetzt sparen",
+    "showMore": "Mehr anzeigen",
+    "forMe": "Für mich anzeigen",
+    "nationwide": "Tutta la Svizzera",
+    "online": "Online",
+    "student": "Für Studierende",
+    "verified": "Geprüft",
+    "updatedAt": "Aktualisiert am",
+    "validUntil": "Gültig bis",
+    "expiringSoon": "Läuft bald ab",
+    "expired": "Scaduto",
+    "maybeExpired": "Questa offerta potrebbe essere scaduta.",
+    "noOffers": "Nessuna offerta trovata.",
+    "tryOther": "Versuche eine andere Kategorie oder Stadt.",
+    "demoLabel": "DEMO – Offerta di esempio",
+    "similarOffers": "Ähnliche Vorteile",
+    "moreFromCategory": "Mehr Vorteile dieser Kategorie",
+    "youMightLike": "Diese Vorteile könnten dir auch gefallen",
+    "howToGet": "So bekommst du diesen Vorteil",
+    "knowMore": "Das solltest du wissen",
+    "conditions": "Bedingungen",
+    "saving": "Du sparst",
+    "normalPrice": "Normalpreis",
+    "youngPrice": "Jungtarif",
+    "discount": "Rabatt",
+    "minAge": "Ab",
+    "maxAge": "Bis",
+    "years": "Jahren",
+    "free": "Kostenlos",
+    "sponsored": "Gesponsert",
+    "source": "Quelle",
+    "checkedAt": "Zuletzt geprüft",
+    "favorite": "Zu Favoriten hinzufügen",
+    "favoriteAdded": "Zu deinen Favoriten gespeichert",
+    "favoriteRemoved": "Aus Favoriten entfernt",
+    "favorites": "Meine Favoriten",
+    "noFavorites": "Noch keine Favoriten gespeichert.",
+    "copyCode": "Code kopieren",
+    "codeCopied": "Code kopiert!"
+  },
+  "filters": {
+    "title": "Filtern & Sortieren",
+    "age": "Alter",
+    "student": "Nur Studenten",
+    "city": "Stadt",
+    "category": "Kategorie",
+    "type": "Art des Vorteils",
+    "online": "Nur Online",
+    "expiry": "Ablaufdatum",
+    "sortBy": "Sortieren nach",
+    "sort": {
+      "popular": "Beliebt",
+      "newest": "Neueste",
+      "saving": "Meiste Ersparnis",
+      "expiring": "Bald ablaufend"
+    },
+    "reset": "Filter zurücksetzen",
+    "apply": "Anwenden",
+    "results": "Ergebnisse",
+    "all": "Alle"
+  },
+  "search": {
+    "title": "Suche",
+    "placeholder": "Was suchst du?",
+    "resultsFor": "Ergebnisse für",
+    "noResults": "Keine Ergebnisse für",
+    "suggestions": "Vorschläge",
+    "allResults": "Alle Ergebnisse anzeigen"
+  },
+  "cities": {
+    "title": "Vorteile nach Stadt",
+    "subtitle": "Finde lokale Angebote in deiner Stadt",
+    "viewCity": "Angebote in",
+    "nationwide": "Schweizweit"
+  },
+  "brands": {
+    "title": "Marken & Anbieter",
+    "allOffers": "Alle Angebote von",
+    "currentOffers": "Aktuelle Angebote",
+    "lastUpdated": "Zuletzt aktualisiert"
+  },
+  "students": {
+    "title": "Studentenrabatte Schweiz",
+    "subtitle": "Alle Vergünstigungen für Studierende auf einen Blick",
+    "metaTitle": "Studentenrabatte Schweiz – Alle Vorteile für Studierende | JungVorteil",
+    "metaDescription": "Entdecke alle Studentenrabatte in der Schweiz. Sparen bei Mobilfunk, Streaming, Transport, Fitness und mehr.",
+    "byCity": "Studentenrabatte nach Stadt"
+  },
+  "under30": {
+    "title": "Angebote unter 30",
+    "subtitle": "Spezielle Vergünstigungen für junge Leute unter 30 Jahren",
+    "under25": "Unter 25",
+    "under28": "Unter 28",
+    "under30": "Unter 30"
+  },
+  "magazin": {
+    "title": "JungVorteil Magazin",
+    "subtitle": "Tipps & Tricks zum Sparen in der Schweiz",
+    "readMore": "Weiterlesen",
+    "comingSoon": "Bald verfügbar – Tipps und Artikel rund ums Sparen in der Schweiz."
+  },
+  "footer": {
+    "tagline": "JungVorteil ist eine unabhängige Plattform für Angebote und Vorteile für junge Leute und Studierende in der Schweiz.",
+    "columns": {
+      "vorteile": "Vorteile",
+      "kategorien": "Kategorien",
+      "staedte": "Städte",
+      "studierende": "Für Studierende",
+      "junge": "Für Junge",
+      "ueber": "Über JungVorteil",
+      "unternehmen": "Unternehmen",
+      "fuerJunge": "Für Junge"
+    },
+    "links": {
+      "studentenrabatte": "Studentenrabatte",
+      "unter30": "Angebote unter 30",
+      "gratis": "Kostenlos",
+      "topAngebote": "Top Angebote",
+      "datenschutz": "Datenschutz",
+      "impressum": "Impressum",
+      "nutzungsbedingungen": "Nutzungsbedingungen",
+      "cookies": "Cookie-Einstellungen",
+      "kontakt": "Kontakt",
+      "magazin": "Magazin",
+      "unternehmen": "Unternehmen"
+    },
+    "copyright": "Alle Rechte vorbehalten.",
+    "disclaimer": "Alle Angebote ohne Gewähr. Preise und Konditionen können sich ändern.",
+    "adLabel": "WERBUNG"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Hast du eine Frage oder möchtest ein Angebot melden?",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "success": "Deine Nachricht wurde gesendet. Wir melden uns so bald wie möglich.",
+    "error": "Es ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "required": "Pflichtfeld"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "cookies": {
+      "title": "Cookie-Einstellungen",
+      "necessary": "Notwendige Cookies",
+      "analytics": "Analytics-Cookies",
+      "advertising": "Werbe-Cookies",
+      "save": "Einstellungen speichern",
+      "acceptAll": "Alle akzeptieren",
+      "rejectAll": "Nur notwendige"
+    }
+  },
+  "impressum": {
+    "title": "Impressum"
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen"
+  },
+  "notFound": {
+    "title": "Ops! Questo vantaggio non è stato trovato.",
+    "subtitle": "La pagina non esiste o è stata rimossa.",
+    "cta": "Scopri tutti i vantaggi"
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen.",
+    "subtitle": "Bitte lade die Seite neu oder versuche es später.",
+    "retry": "Erneut versuchen"
+  },
+  "loading": "Laden...",
+  "meta": {
+    "home": {
+      "title": "JungVorteil – Rabatte & Vorteile für junge Leute in der Schweiz",
+      "description": "Entdecke Rabatte, Angebote und Vergünstigungen für junge Leute und Studierende in der Schweiz. Nach Alter, Stadt und Kategorie."
+    },
+    "search": {
+      "title": "Suche – JungVorteil",
+      "description": "Suche nach Rabatten und Vorteilen für junge Leute in der Schweiz."
+    },
+    "contact": {
+      "title": "Kontakt – JungVorteil",
+      "description": "Kontaktiere das JungVorteil-Team."
+    },
+    "students": {
+      "title": "Studentenrabatte Schweiz – JungVorteil",
+      "description": "Alle Studentenrabatte in der Schweiz: Mobilfunk, Transport, Streaming, Fitness und mehr."
+    },
+    "under30": {
+      "title": "Angebote unter 30 Schweiz – JungVorteil",
+      "description": "Spezielle Vergünstigungen und Angebote für junge Leute unter 30 Jahren in der Schweiz."
+    }
+  }
+}

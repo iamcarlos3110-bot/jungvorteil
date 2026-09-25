@@ -1,0 +1,166 @@
+"use client";
+import Link from "next/link";
+import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay } from "@/lib/utils";
+import { Offer } from "@/types";
+import Badge from "@/components/ui/Badge";
+import Button from "@/components/ui/Button";
+import { toggleFavorite } from "@/lib/favorites";
+import { Heart, Check } from "lucide-react";
+import { useState, useEffect } from "react";
+
+interface OfferCardProps {
+  offer: Offer;
+  locale?: string;
+}
+
+export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
+  const [favorite, setFavorite] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem(`jv_fav_${offer.id}`) === "true";
+  });
+  const [isClient, setIsClient] = useState(false);
+  const [coverError, setCoverError] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsClient(true);
+  }, []);
+
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const newState = toggleFavorite(offer.id);
+    setFavorite(newState);
+  };
+
+  const handleActionClick = () => {
+    fetch("/api/click", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ offerId: offer.id }),
+    }).catch(() => {});
+  };
+
+  const expired = isExpired(offer.end_date);
+  const expiringSoon = !expired && isExpiringSoon(offer.end_date);
+  const saving = getSavingDisplay(offer.discount_percent, offer.discount_amount, offer.normal_price, offer.young_price);
+  
+  const brandName = offer.brand?.name ?? "JungVorteil";
+  const brandLogo = offer.brand?.logo_url;
+
+  return (
+    <Link
+      href={`/${locale}/angebot/${offer.slug}`}
+      onClick={handleActionClick}
+      className={cn(
+        "offer-card group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 h-full",
+        expired && "opacity-75 grayscale-[0.3]",
+        expiringSoon && "border-amber-200"
+      )}
+    >
+      {/* Cover Image */}
+      {offer.image_url && !coverError && (
+        <div className="w-full h-32 bg-gray-100 overflow-hidden shrink-0 relative z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={offer.image_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={() => setCoverError(true)} />
+        </div>
+      )}
+
+      <div className="p-5 flex flex-col flex-grow relative z-10 bg-white">
+        {/* Top Section */}
+        <div className={cn("flex justify-between items-start mb-4", offer.image_url && "-mt-10")}>
+          <div className="w-12 h-12 rounded-xl bg-[#EAF0E5] flex items-center justify-center overflow-hidden border border-gray-200/80 shadow-sm shrink-0">
+            {brandLogo && !logoError ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={brandLogo} alt={brandName} className="w-full h-full object-contain p-1 bg-white" onError={() => setLogoError(true)} />
+            ) : (
+              <span className="text-lg font-black text-[#3F5E39] uppercase">
+                {brandName.charAt(0)}
+              </span>
+            )}
+          </div>
+          <div className="flex flex-col gap-1 items-end mr-8">
+            {offer.is_demo && <Badge tag="DEMO" className="bg-red-100 text-red-700 border border-red-200" />}
+            {offer.is_sponsored && <Badge tag="GESPONSERT" />}
+            {expiringSoon && <Badge tag="HEUTE" className="bg-amber-100 text-amber-700" />}
+          </div>
+        </div>
+
+        {/* Favorite Button */}
+        {isClient && (
+          <button
+            onClick={handleFavoriteClick}
+            className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 text-gray-400 hover:text-red-500 transition-colors z-20 bg-white/90 backdrop-blur-sm shadow-sm border border-gray-100 flex items-center justify-center"
+            aria-label="Zu Favoriten hinzufügen"
+          >
+            <Heart className={cn("w-4 h-4 transition-colors", favorite ? "text-red-500 fill-red-500" : "text-gray-400")} />
+          </button>
+        )}
+
+        {/* Main Content */}
+        <div className="flex-grow flex flex-col gap-2 relative z-10 mt-1">
+          {saving && (
+            <div className="text-2xl font-black text-green-600 tracking-tight">
+              {saving}
+            </div>
+          )}
+          <h3 className="text-lg font-bold text-gray-900 line-clamp-2 leading-tight group-hover:text-[#3F5E39] transition-colors">
+            {offer.title_de}
+          </h3>
+          <p className="text-sm font-medium text-gray-500">{brandName}</p>
+          
+          {offer.age_max && (
+            <p className="text-xs font-semibold text-[#3F5E39] mt-1">
+              Bis {offer.age_max} Jahre
+            </p>
+          )}
+        </div>
+
+        {/* Tags row */}
+        <div className="flex flex-wrap gap-2 my-4 relative z-10">
+          {offer.is_nationwide && (
+            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-100">
+              <Check className="w-3 h-3 text-green-500" /> Schweizweit
+            </span>
+          )}
+          {offer.is_online && (
+            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-100">
+              <Check className="w-3 h-3 text-green-500" /> Online
+            </span>
+          )}
+          {offer.student_required && (
+            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-100">
+              <Check className="w-3 h-3 text-green-500" /> Studierende
+            </span>
+          )}
+        </div>
+
+        {/* Expired Overlay text */}
+        {expired && (
+          <div className="absolute inset-0 z-0 bg-white/40 flex items-center justify-center rounded-2xl">
+            <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-bold text-red-600 shadow-sm border border-red-100 rotate-[-5deg]">
+              Möglicherweise abgelaufen
+            </div>
+          </div>
+        )}
+
+        {/* Footer */}
+        <div className="mt-auto relative z-10 pt-2 border-t border-gray-50">
+          <Button
+            fullWidth
+            variant={expired ? "outline" : "primary"}
+            className="pointer-events-none mb-3" 
+          >
+            Angebot ansehen
+          </Button>
+          {offer.checked_at && (
+            <p className="text-[11px] text-gray-500 text-center font-medium flex items-center justify-center gap-1">
+              <Check className="w-3 h-3 text-green-500" /> Geprüft am {formatDate(offer.checked_at)}
+            </p>
+          )}
+        </div>
+      </div>
+    </Link>
+  );
+}
