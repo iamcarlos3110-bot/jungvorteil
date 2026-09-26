@@ -4,7 +4,8 @@ import AdSlot from "@/components/ads/AdSlot";
 import { BookOpen, Newspaper } from "lucide-react";
 import Newsletter from "@/components/Newsletter";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata = {
   title: "Magazin & Ratgeber | JungVorteil Schweiz",

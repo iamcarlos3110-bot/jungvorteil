@@ -8,7 +8,8 @@ import ArticleCard from "@/components/magazin/ArticleCard";
 import ShareButton from "@/components/magazin/ShareButton";
 import Script from "next/script";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug } = await params;
@@ -80,7 +81,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
                 {article.category || "Ratgeber"}
               </span>
               <span className="flex items-center gap-1 text-xs text-gray-500">
-                <Clock className="w-3.5 h-3.5" /> 5 Min. Lesezeit
+                <Clock className="w-3.5 h-3.5" /> {Math.max(1, Math.ceil((article.content ? article.content.trim().split(/\s+/).length : 0) / 180))} Min. Lesezeit
               </span>
               <span className="flex items-center gap-1 text-xs text-gray-500">
                 <Calendar className="w-3.5 h-3.5" /> {formatDate(article.published_at || article.created_at)}
