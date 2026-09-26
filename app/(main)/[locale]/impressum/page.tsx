@@ -15,13 +15,6 @@ export default function ImpressumPage() {
         Spanien
       </p>
 
-      <h2>E-Mail & Kontakt</h2>
-      <p>
-        <a href="mailto:kontakt@jungvorteil.ch" className="text-[#3F5E39] font-semibold underline">
-          kontakt@jungvorteil.ch
-        </a>
-      </p>
-
       <h2>Vertretungsberechtigte Person</h2>
       <p>
         Carlos Piñeiro
