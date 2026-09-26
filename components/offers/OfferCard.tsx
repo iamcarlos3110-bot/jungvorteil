@@ -1,19 +1,26 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay, getDeviceCategory } from "@/lib/utils";
 import { Offer } from "@/types";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { toggleFavorite } from "@/lib/favorites";
-import { Heart, Check } from "lucide-react";
+import { Heart, Check, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
-
 import { getBrandLogo, getOfferCover } from "@/lib/brandAssets";
 
 interface OfferCardProps {
   offer: Offer;
   locale?: string;
+}
+
+function getExternalUrl(offer: Offer): string {
+  const raw = offer.affiliate_url || offer.external_url;
+  if (raw && raw.startsWith("http")) return raw;
+  if (offer.brand?.website_url && offer.brand.website_url.startsWith("http")) return offer.brand.website_url;
+  return `https://www.google.com/search?q=${encodeURIComponent(
+    (offer.brand?.name ? offer.brand.name + " " : "") + offer.title_de + " Schweiz Angebot"
+  )}`;
 }
 
 export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
@@ -26,7 +33,6 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
   const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsClient(true);
   }, []);
 
@@ -37,7 +43,8 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
     setFavorite(newState);
   };
 
-  const handleActionClick = () => {
+  const handleCardClick = () => {
+    // Track click analytics
     fetch("/api/click", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,28 +52,32 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
         offer_id: offer.id,
         device_category: getDeviceCategory(),
       }),
+      keepalive: true,
     }).catch(() => {});
   };
 
   const expired = isExpired(offer.end_date);
   const expiringSoon = !expired && isExpiringSoon(offer.end_date);
   const saving = getSavingDisplay(offer.discount_percent, offer.discount_amount, offer.normal_price, offer.young_price);
-  
+
   const brandName = offer.brand?.name ?? "JungVorteil";
   const brandLogo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
   const coverImage = getOfferCover(offer.slug, offer.image_url);
+  const externalUrl = getExternalUrl(offer);
 
   return (
-    <Link
-      href={`/${locale}/angebot/${offer.slug}`}
-      onClick={handleActionClick}
+    <a
+      href={externalUrl}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      onClick={handleCardClick}
       className={cn(
-        "floating-card group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-stone-200/90 hover:border-[#3F5E39]/40 h-full",
+        "floating-card group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-stone-200/90 hover:border-[#3F5E39]/40 h-full cursor-pointer",
         expired && "opacity-75 grayscale-[0.3]",
         expiringSoon && "border-amber-300 ring-2 ring-amber-100"
       )}
     >
-      {/* Cover Image Banner (with fallback gradient header) */}
+      {/* Cover Image Banner */}
       <div className="w-full h-36 bg-gradient-to-br from-[#EAF0E5] via-[#D6E2CE] to-[#3F5E39]/15 overflow-hidden shrink-0 relative z-0">
         {coverImage && !coverError && (
           <Image
@@ -79,6 +90,10 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
             onError={() => setCoverError(true)}
           />
         )}
+        {/* External link indicator */}
+        <div className="absolute top-2 left-2 bg-black/30 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          <ExternalLink className="w-3 h-3" />
+        </div>
       </div>
 
       <div className="p-5 flex flex-col flex-grow relative z-10 bg-white">
@@ -130,7 +145,7 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
             {offer.title_de}
           </h3>
           <p className="text-sm font-medium text-gray-500">{brandName}</p>
-          
+
           {offer.age_max && (
             <p className="text-xs font-semibold text-[#3F5E39] mt-1">
               Bis {offer.age_max} Jahre
@@ -157,7 +172,7 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           )}
         </div>
 
-        {/* Expired Overlay text */}
+        {/* Expired Overlay */}
         {expired && (
           <div className="absolute inset-0 z-0 bg-white/40 flex items-center justify-center rounded-2xl">
             <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-bold text-red-600 shadow-sm border border-red-100 rotate-[-5deg]">
@@ -171,9 +186,9 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           <Button
             fullWidth
             variant={expired ? "outline" : "primary"}
-            className="pointer-events-none mb-3" 
+            className="pointer-events-none mb-3 flex items-center justify-center gap-2"
           >
-            Angebot ansehen
+            Angebot ansehen <ExternalLink className="w-3.5 h-3.5" />
           </Button>
           {offer.checked_at && (
             <p className="text-[11px] text-gray-500 text-center font-medium flex items-center justify-center gap-1">
@@ -182,6 +197,6 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           )}
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

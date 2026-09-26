@@ -282,7 +282,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {filteredStudentOffers.map(offer => {
                   const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
                   return (
-                    <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
+                    <a key={offer.id} href={offer.affiliate_url || offer.external_url || offer.brand?.website_url || `https://www.google.com/search?q=${encodeURIComponent(offer.title_de)}`} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
                        <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
                           {logo ? (
                              <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
@@ -294,7 +294,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                          <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
                          <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
                        </div>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
@@ -317,7 +317,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {filteredUnder25Offers.map(offer => {
                   const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
                   return (
-                    <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
+                    <a key={offer.id} href={offer.affiliate_url || offer.external_url || offer.brand?.website_url || `https://www.google.com/search?q=${encodeURIComponent(offer.title_de)}`} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
                        <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
                           {logo ? (
                              <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
@@ -329,7 +329,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                          <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
                          <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
                        </div>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
@@ -352,7 +352,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {filteredFreeOffers.map(offer => {
                   const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
                   return (
-                    <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
+                    <a key={offer.id} href={offer.affiliate_url || offer.external_url || offer.brand?.website_url || `https://www.google.com/search?q=${encodeURIComponent(offer.title_de)}`} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
                        <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
                           {logo ? (
                              <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
@@ -364,7 +364,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                          <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
                          <div className="text-xs text-green-600 font-bold">Gratis</div>
                        </div>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>

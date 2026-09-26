@@ -23,6 +23,7 @@ export const BRAND_LOGOS: Record<string, string> = {
   neon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mastercard.svg",
   zkb: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visa.svg",
   asvz: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adidas.svg",
+  sanitas: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sanitas.svg",
   mobility: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sbb.svg",
   amazon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazon.svg",
   adobe: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adobe.svg",
@@ -57,6 +58,7 @@ export const OFFER_COVERS: Record<string, string> = {
   "projekt-neptun-laptops": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=80",
   "microsoft-365-student": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80",
   "uber-eats-student": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=80",
+  "sanitas-fitness-cashback": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&auto=format&fit=crop&q=80"
   "mcdonalds-menu": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&auto=format&fit=crop&q=80"
 };
 
