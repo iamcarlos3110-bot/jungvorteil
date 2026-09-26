@@ -346,4 +346,79 @@ Dreimal im Jahr (Verkaufsfenster im Frühjahr und Herbst) öffnet **Projekt Nept
 
 Vergleiche alle Tech-Rabatte auf **JungVorteil.ch** vor deinem Kauf!`
   }
+,
+  {
+    id: "a0000000-0000-4000-8000-03e900000008",
+    slug: "studenten-leben-genf-budget-guide",
+    title: "Studentenleben in Genf: Der ultimative Budget-Guide für UniGE Studierende (2026)",
+    excerpt: "Genf ist weltbekannt für UNO und CERN. Entdecke, wie Studierende an der UniGE bei Miete, Mensa, TPG-ÖV und Freizeit tausende Franken sparen.",
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: "2026-09-27T01:16:00.000Z",
+    created_at: "2026-09-27T01:16:00.000Z",
+    updated_at: "2026-09-27T01:16:00.000Z",
+    content: `# Studentenleben in Genf: Der ultimative Budget-Guide für UniGE Studierende (2026)
+
+Genf ist weltweit bekannt als globales Zentrum für Diplomatie, die Vereinten Nationen (UNO), das Rote Kreuz (IKRK) und Spitzenforschung am CERN. Doch für Studierende an der Université de Genève (UniGE) und der HES-SO Genève hat die Calvinstadt auch den Ruf, einer der teuersten Studienorte Europas zu sein. Zwischen hohen Mieten, teuren Lebensmitteln und den täglichen Ausgaben kann das Budget schnell knapp werden.
+
+Mit den richtigen Insider-Strategien lässt sich das Leben in Genf jedoch überraschend preiswert gestalten. In diesem umfassenden Ratgeber zeigen wir dir, wie du als Student in Genf bei Miete, Verpflegung, öffentlichen Verkehrsmitteln und Freizeit tausende Franken pro Jahr sparst.
+
+---
+
+## 1. Günstig Wohnen in Genf: WIZO, Cité Universitaire & WG-Tipps
+Der Wohnungsmarkt in Genf gehört zu den angespanntesten der Schweiz. Reguläre Studio-Mieten beginnen selten unter CHF 1'200.– pro Monat. Für Studierende gibt es jedoch spezialisierte Organisationen:
+
+* **Cité Universitaire de Genève (Champel)**: Das grösste studentische Wohnheim der Stadt bietet möblierte Zimmer ab ca. CHF 500.– bis CHF 750.– pro Monat. Der Komplex verfügt über eigene Lernräume, ein Café und eine direkte Busanbindung.
+* **Bureau des Logements UniGE**: Die universitäre Zimmervermittlung vermietet günstige Zimmer in WGs und Wohnheimen exklusiv an immatrikulierte UniGE-Studierende.
+* **Wohnen im Grenzgebiet (Frankreich)**: Viele Genfer Studierende wohnen in französischen Nachbarorten wie Annemasse, Gaillard oder Saint-Genis-Pouilly. Dank des Tramnetzes (Tram 17 & Léman Express) bist du in 20 bis 30 Minuten an den Uni-Standorten, zahlst aber oft nur die Hälfte an Miete.
+
+---
+
+## 2. Mensa UniGE & Günstig Essen im Petit-Saconnex
+Auswärts essen in Genfer Restaurants kostet im Schnitt CHF 25.– bis CHF 35.– pro Hauptgang. Studierende nutzen stattdessen universitäre Einrichtungen und Food-Saving:
+
+* **UniGE Mensen (Uni Dufour, Uni Mail & Bastions)**: Die UniGE-Mensen servieren ausgewogene Tagesgerichte (*Menu du Jour*) für Studierende gegen Vorweis der Legi für ca. CHF 7.00 bis CHF 9.50.
+* **Bains des Pâquis**: Direkt am Genfersee gelegen, bietet dieses ikonische Seebad im Winter das günstigste und beliebteste Fondue der Stadt (ca. CHF 25.– für eine grosse Portion) sowie preiswerte Tagessuppen im Sommer.
+* **Too Good To Go & Migros Discount**: Kurz vor Ladenschluss bieten Genfer Bäckereien und Supermärkte (Migros, Coop, Manor) Lebensmittel-Tüten mit bis zu 70% Rabatt an.
+
+---
+
+## 3. Mobilität in Genf: TPG Unipass & Léman Express Hacks
+Das öffentliche Verkehrsnetz TPG (Transports Publics Genevois) verbindet alle Stadtteile und das Umland im Minutentakt.
+
+* **TPG Unipass Junior (unter 25 Jahre)**: Das Jahresabo für die Zone 10 (ganzer Kanton Genf) kostet für Jugendliche unter 25 Jahren nur CHF 400.– pro Jahr (statt CHF 500.– für Erwachsene).
+* **Léman Express**: Die grenzüberschreitende S-Bahn verbindet Genf mit Vaud und Frankreich. Wer ein SBB Halbtax Jugend besitzt, spart bei Fahrten in der gesamten Region 50%.
+* **Velospot & Donkey Republic**: Genf ist flach und perfekt für das Velo. Über *Genève Roule* kannst du in den Sommermonaten an ausgewählten Stationen Fahrräder kostenlos leihen (gegen Depot).
+
+---
+
+## 4. Krankenkasse & Prämienverbilligung (IPV) im Kanton Genf
+Die obligatorische Krankenversicherung ist die grösste monatliche Fixkostennote für junge Erwachsene in Genf.
+
+* **SAM (Service de l'assurance-maladie)**: Der Kanton Genf gewährt Studierenden und jungen Erwachsenen mit kleinem Einkommen erhebliche Prämienverbilligungen. Bei Studierenden ohne eigenes Hoheinkommen übernimmt der Kanton oft bis zu 80% der monatlichen Grundversicherungsprämie.
+* **Franchise-Wahl**: Wer jung und gesund ist, wählt stets die maximale Franchise von CHF 2'500.–, um die monatlichen Prämien auf das gesetzliche Minimum zu senken.
+
+---
+
+## 5. Kultur, Sport & Freizeit gratis oder vergünstigt
+Das Kulturangebot in Genf ist erstklassig und bietet extrem viele Vorteile für Studierende:
+
+* **Chèque-Culture Genève**: Die Stadt Genf stellt Kultur-Gutscheine für Jugendliche und Studierende aus, mit denen Kinotickets, Theaterkarten und Konzerte um bis zu 50% vergünstigt werden.
+* **Gratis Museen am 1. Sonntag im Monat**: Alle städtischen Museen (Musée d'art et d'histoire, Muséum d'histoire naturelle, Maison Tavel) bieten jeden ersten Sonntag im Monat 100% freien Eintritt.
+* **UniGE Sport**: Der Hochschulsport der Universität Genf bietet über 80 Sportarten (Fitness, Yoga, Rudern auf dem Genfersee, Skiausflüge in die Alpen) kostenlos oder zu symbolischen Preisen von CHF 20.– bis CHF 50.– pro Semester an.
+
+---
+
+## 6. Häufig gestellte Fragen (FAQ) zum Studium in Genf
+
+### Was kostet das Leben als Student in Genf durchschnittlich pro Monat?
+Ein realistisches Monatsbudget für Studierende in Genf liegt zwischen CHF 1'500.– und CHF 1'900.– inklusive Miete (in einem Wohnheim oder Zimmer), TPG-Abo, Mensa-Verpflegung und Krankenversicherung (nach Abzug der Prämienverbilligung).
+
+### Wo kann man in Genf kostenlos und ruhig lernen?
+Die Bibliothek **Uni Mail** und die historische **Bibliothèque de Genève (Bastions)** bieten hunderte moderne Arbeitsplätze mit schnellem Eduroam-WLAN und Steckdosen.
+
+### Lohnt sich der Einkauf in Frankreich für Genfer Studierende?
+Ja. Supermärkte in Annemasse oder Ferney-Voltaire (Frankreich) liegen direkt an der Grenze und bieten Fleisch, Drogerieartikel und Grundnahrungsmittel zu deutlich niedrigeren Preisen als in der Schweiz. Beachte dabei die Zollfreigrenzen (z.B. max. 1 kg Fleisch pro Person).`
+  }
 ];
