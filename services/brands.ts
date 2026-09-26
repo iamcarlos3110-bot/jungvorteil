@@ -25,7 +25,7 @@ export async function getAllBrands(): Promise<Brand[]> {
       ),
     ]);
 
-    if (error || !data || data.length === 0) return STATIC_BRANDS;
+    if (!data || data.length === 0) return STATIC_BRANDS;
     return (data as Brand[]) ?? [];
   } catch {
     return STATIC_BRANDS;
@@ -35,7 +35,7 @@ export async function getAllBrands(): Promise<Brand[]> {
 export async function getBrandBySlug(slug: string): Promise<Brand | null> {
   try {
     const supabase = await createClient();
-    const { data, error } = await Promise.race([
+    const { data } = await Promise.race([
       supabase.from("brands").select("*").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null; error: Error }>((_, reject) =>
         setTimeout(() => reject(new Error("Timeout")), 2000)
@@ -60,7 +60,7 @@ export async function getTopBrands(limit = 12): Promise<Brand[]> {
       ),
     ]);
 
-    if (error || !data || data.length === 0) return STATIC_BRANDS.slice(0, limit);
+    if (!data || data.length === 0) return STATIC_BRANDS.slice(0, limit);
 
     const brandsWithCount = (data as (Brand & { offers?: { count: number }[] })[]).map((b) => ({
       ...b,
