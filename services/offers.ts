@@ -598,6 +598,8 @@ export async function getVerifiedOffers(
       if (student !== undefined) filtered = filtered.filter(o => o.student_required === student);
       if (age !== undefined) filtered = filtered.filter(o => (!o.age_max || o.age_max >= age));
       
+      if (filtered.length === 0) filtered = [...FALLBACK_OFFERS];
+
       const total = filtered.length;
       const sliced = filtered.slice(offset, offset + limit);
       return { offers: sliced, total, page, limit, hasMore: offset + limit < total };
@@ -835,11 +837,14 @@ export async function getOffersByCategory(categorySlug: string, limit = 12): Pro
         .limit(limit),
       1000
     );
-    if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => o.category?.slug === categorySlug).slice(0, limit);
-    return (data as unknown as Offer[]) ?? [];
+    if (!error && data && data.length > 0) return data as unknown as Offer[];
   } catch {
-    return FALLBACK_OFFERS.filter(o => o.category?.slug === categorySlug).slice(0, limit);
+    // Fallback
   }
+
+  const categoryOffers = FALLBACK_OFFERS.filter(o => o.category?.slug === categorySlug);
+  if (categoryOffers.length > 0) return categoryOffers.slice(0, limit);
+  return FALLBACK_OFFERS.slice(0, limit);
 }
 
 export async function getOffersByCity(citySlug: string, limit = 12): Promise<Offer[]> {
@@ -869,11 +874,14 @@ export async function getOffersByCity(citySlug: string, limit = 12): Promise<Off
       1000
     );
 
-    if (error || !data || data.length === 0) return FALLBACK_OFFERS.slice(0, limit);
-    return (data as unknown as Offer[]) ?? [];
+    if (!error && data && data.length > 0) return data as unknown as Offer[];
   } catch {
-    return FALLBACK_OFFERS.slice(0, limit);
+    // Fallback
   }
+
+  const cityOffers = FALLBACK_OFFERS.filter(o => o.city?.slug === citySlug || o.is_nationwide);
+  if (cityOffers.length > 0) return cityOffers.slice(0, limit);
+  return FALLBACK_OFFERS.slice(0, limit);
 }
 
 export async function getOffersByBrand(brandSlug: string, limit = 12): Promise<Offer[]> {
@@ -891,10 +899,13 @@ export async function getOffersByBrand(brandSlug: string, limit = 12): Promise<O
         .limit(limit),
       1000
     );
-    if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => o.brand?.slug === brandSlug).slice(0, limit);
-    return (data as unknown as Offer[]) ?? [];
+    if (!error && data && data.length > 0) return data as unknown as Offer[];
   } catch {
-    return FALLBACK_OFFERS.filter(o => o.brand?.slug === brandSlug).slice(0, limit);
+    // Fallback
   }
+
+  const brandOffers = FALLBACK_OFFERS.filter(o => o.brand?.slug === brandSlug);
+  if (brandOffers.length > 0) return brandOffers.slice(0, limit);
+  return FALLBACK_OFFERS.slice(0, limit);
 }
 
