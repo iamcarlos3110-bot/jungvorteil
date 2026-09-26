@@ -1,4 +1,3 @@
-// app/robots.ts
 import { MetadataRoute } from "next";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jungvorteil.ch";
@@ -8,34 +7,18 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: [
-          "/",
-          "/de/",
-          "/de/angebot/",
-          "/de/marken/",
-          "/de/rabatte/",
-          "/de/studentenrabatte/",
-          "/de/stadt/",
-          "/de/angebote-unter-30",
-          "/de/angebote-unter-25",
-          "/de/junge-leute",
-          "/de/kontakt",
-          "/de/datenschutz",
-          "/de/impressum",
-          "/de/nutzungsbedingungen",
-          "/de/magazin",
-        ],
+        allow: "/",
         disallow: [
           "/admin",
-          "/admin/",
-          "/api/",
-          "/de/suche",
+          "/admin/*",
+          "/api/*",
+          "/*/suche",
           "/_next/",
         ],
       },
       {
-        // Block AI training bots
-        userAgent: ["GPTBot", "ChatGPT-User", "Google-Extended", "CCBot", "anthropic-ai"],
+        // Block scrapers/AI content aggregators if needed, but allow Search Engines
+        userAgent: ["GPTBot", "ChatGPT-User", "CCBot"],
         disallow: "/",
       },
     ],

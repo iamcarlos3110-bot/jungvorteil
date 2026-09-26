@@ -3,172 +3,144 @@ import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { CATEGORIES } from "@/config/categories";
 import { CITIES } from "@/config/cities";
 import { FALLBACK_OFFERS } from "@/services/offers";
-import { FALLBACK_ARTICLES } from "@/services/articles";
+import { ARTICLES_DATA } from "@/config/articlesData";
 import { fetchWithTimeout } from "@/lib/fetchWithTimeout";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jungvorteil.ch";
+const LOCALES = ["de", "fr", "it"] as const;
+
+function createLocalizedEntries(
+  path: string,
+  priority: number,
+  changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" = "weekly",
+  lastMod?: Date
+): MetadataRoute.Sitemap {
+  const lastModified = lastMod || new Date();
+  
+  return LOCALES.map((locale) => ({
+    url: `${BASE_URL}/${locale}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+    alternates: {
+      languages: {
+        de: `${BASE_URL}/de${path}`,
+        fr: `${BASE_URL}/fr${path}`,
+        it: `${BASE_URL}/it${path}`,
+      },
+    },
+  }));
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Static hub pages
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/de`, lastModified: new Date(), changeFrequency: "daily", priority: 1.0 },
-    { url: `${BASE_URL}/de/studentenrabatte`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
-    { url: `${BASE_URL}/de/angebote-unter-30`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
-    { url: `${BASE_URL}/de/angebote-unter-25`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
-    { url: `${BASE_URL}/de/gratis`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
-    { url: `${BASE_URL}/de/kategorien`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/de/marken`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/de/staedte`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/de/magazin`, lastModified: new Date(), changeFrequency: "daily", priority: 0.85 },
-    { url: `${BASE_URL}/de/ueber-uns`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE_URL}/de/kontakt`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${BASE_URL}/de/datenschutz`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.2 },
-    { url: `${BASE_URL}/de/impressum`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.2 },
-    { url: `${BASE_URL}/de/nutzungsbedingungen`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.2 },
+  const staticPaths = [
+    { path: "", priority: 1.0, changeFrequency: "daily" as const },
+    { path: "/studentenrabatte", priority: 0.9, changeFrequency: "daily" as const },
+    { path: "/angebote-unter-30", priority: 0.9, changeFrequency: "daily" as const },
+    { path: "/angebote-unter-25", priority: 0.9, changeFrequency: "daily" as const },
+    { path: "/gratis", priority: 0.9, changeFrequency: "daily" as const },
+    { path: "/kategorien", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/marken", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/staedte", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/magazin", priority: 0.85, changeFrequency: "daily" as const },
+    { path: "/ueber-uns", priority: 0.7, changeFrequency: "weekly" as const },
+    { path: "/kontakt", priority: 0.3, changeFrequency: "monthly" as const },
+    { path: "/datenschutz", priority: 0.2, changeFrequency: "monthly" as const },
+    { path: "/impressum", priority: 0.2, changeFrequency: "monthly" as const },
+    { path: "/nutzungsbedingungen", priority: 0.2, changeFrequency: "monthly" as const },
   ];
 
-  // Category pages (15 categories)
-  const categoryPages: MetadataRoute.Sitemap = CATEGORIES.map((cat) => ({
-    url: `${BASE_URL}/de/rabatte/${cat.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.85,
-  }));
+  const staticEntries: MetadataRoute.Sitemap = staticPaths.flatMap((sp) =>
+    createLocalizedEntries(sp.path, sp.priority, sp.changeFrequency)
+  );
 
-  // City pages (9 cities)
-  const cityPages: MetadataRoute.Sitemap = CITIES.map((city) => ({
-    url: `${BASE_URL}/de/stadt/${city.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.8,
-  }));
+  // Category pages
+  const categoryEntries: MetadataRoute.Sitemap = CATEGORIES.flatMap((cat) =>
+    createLocalizedEntries(`/rabatte/${cat.slug}`, 0.85, "daily")
+  );
 
-  // Student pages by city (9 cities)
-  const studentCityPages: MetadataRoute.Sitemap = CITIES.map((city) => ({
-    url: `${BASE_URL}/de/studentenrabatte/${city.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.8,
-  }));
+  // City pages
+  const cityEntries: MetadataRoute.Sitemap = CITIES.flatMap((city) =>
+    createLocalizedEntries(`/stadt/${city.slug}`, 0.8, "daily")
+  );
 
-  // Magazine articles (25 articles)
-  const magazinePages: MetadataRoute.Sitemap = FALLBACK_ARTICLES.map((article) => ({
-    url: `${BASE_URL}/de/magazin/${article.slug}`,
-    lastModified: new Date(article.updated_at || article.published_at || new Date()),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+  // Student city pages
+  const studentCityEntries: MetadataRoute.Sitemap = CITIES.flatMap((city) =>
+    createLocalizedEntries(`/studentenrabatte/${city.slug}`, 0.8, "daily")
+  );
 
-  // Published offers (from DB or fallback)
-  let offerPages: MetadataRoute.Sitemap = [];
-  let brandPages: MetadataRoute.Sitemap = [];
+  // Magazine articles
+  const magazineEntries: MetadataRoute.Sitemap = ARTICLES_DATA.flatMap((article) =>
+    createLocalizedEntries(
+      `/magazin/${article.slug}`,
+      0.8,
+      "weekly",
+      new Date(article.updated_at || article.published_at || new Date())
+    )
+  );
 
-  if (!isSupabaseConfigured()) {
-    offerPages = FALLBACK_OFFERS.map((offer) => ({
-      url: `${BASE_URL}/de/angebot/${offer.slug}`,
-      lastModified: new Date(offer.updated_at),
-      changeFrequency: "weekly" as const,
-      priority: 0.75,
-    }));
-
-    const fallbackBrands = Array.from(
-      new Set(FALLBACK_OFFERS.map((o) => o.brand?.slug).filter(Boolean))
-    );
-    brandPages = fallbackBrands.map((slug) => ({
-      url: `${BASE_URL}/de/marken/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    }));
-
-    return [
-      ...staticPages,
-      ...categoryPages,
-      ...cityPages,
-      ...studentCityPages,
-      ...magazinePages,
-      ...offerPages,
-      ...brandPages,
-    ];
-  }
+  // Offers & Brands
+  let offerEntries: MetadataRoute.Sitemap = [];
+  let brandEntries: MetadataRoute.Sitemap = [];
 
   try {
-    const supabase = await createClient();
-    const { data: offers } = await fetchWithTimeout(
-      supabase
-        .from("offers")
-        .select("slug, updated_at")
-        .eq("status", "published")
-        .eq("is_demo", false)
-        .order("updated_at", { ascending: false })
-        .limit(5000),
-      500
-    ).catch(() => ({ data: null }));
+    if (isSupabaseConfigured()) {
+      const supabase = await createClient();
+      const { data: offers } = await fetchWithTimeout(
+        supabase
+          .from("offers")
+          .select("slug, updated_at")
+          .eq("status", "published")
+          .eq("is_demo", false)
+          .order("updated_at", { ascending: false })
+          .limit(5000),
+        600
+      ).catch(() => ({ data: null }));
 
-    if (offers && offers.length > 0) {
-      offerPages = offers.map((offer) => ({
-        url: `${BASE_URL}/de/angebot/${offer.slug}`,
-        lastModified: new Date(offer.updated_at),
-        changeFrequency: "weekly" as const,
-        priority: 0.75,
-      }));
-    } else {
-      offerPages = FALLBACK_OFFERS.map((offer) => ({
-        url: `${BASE_URL}/de/angebot/${offer.slug}`,
-        lastModified: new Date(offer.updated_at),
-        changeFrequency: "weekly" as const,
-        priority: 0.75,
-      }));
+      if (offers && offers.length > 0) {
+        offerEntries = offers.flatMap((offer) =>
+          createLocalizedEntries(`/angebot/${offer.slug}`, 0.75, "weekly", new Date(offer.updated_at))
+        );
+      }
+
+      const { data: brands } = await fetchWithTimeout(
+        supabase.from("brands").select("slug, updated_at").order("updated_at", { ascending: false }),
+        600
+      ).catch(() => ({ data: null }));
+
+      if (brands && brands.length > 0) {
+        brandEntries = brands.flatMap((brand) =>
+          createLocalizedEntries(`/marken/${brand.slug}`, 0.7, "weekly", new Date(brand.updated_at))
+        );
+      }
     }
+  } catch (e) {
+    console.error("Error generating sitemap from Supabase:", e);
+  }
 
-    const { data: brands } = await fetchWithTimeout(
-      supabase.from("brands").select("slug, updated_at").order("updated_at", { ascending: false }),
-      500
-    ).catch(() => ({ data: null }));
+  // Fallbacks if Supabase empty
+  if (offerEntries.length === 0) {
+    offerEntries = FALLBACK_OFFERS.flatMap((offer) =>
+      createLocalizedEntries(`/angebot/${offer.slug}`, 0.75, "weekly", new Date(offer.updated_at))
+    );
+  }
 
-    if (brands && brands.length > 0) {
-      brandPages = brands.map((brand) => ({
-        url: `${BASE_URL}/de/marken/${brand.slug}`,
-        lastModified: new Date(brand.updated_at),
-        changeFrequency: "weekly" as const,
-        priority: 0.7,
-      }));
-    } else {
-      const fallbackBrands = Array.from(
-        new Set(FALLBACK_OFFERS.map((o) => o.brand?.slug).filter(Boolean))
-      );
-      brandPages = fallbackBrands.map((slug) => ({
-        url: `${BASE_URL}/de/marken/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.7,
-      }));
-    }
-  } catch {
-    offerPages = FALLBACK_OFFERS.map((offer) => ({
-      url: `${BASE_URL}/de/angebot/${offer.slug}`,
-      lastModified: new Date(offer.updated_at),
-      changeFrequency: "weekly" as const,
-      priority: 0.75,
-    }));
-    const fallbackBrands = Array.from(
+  if (brandEntries.length === 0) {
+    const fallbackBrandSlugs = Array.from(
       new Set(FALLBACK_OFFERS.map((o) => o.brand?.slug).filter(Boolean))
     );
-    brandPages = fallbackBrands.map((slug) => ({
-      url: `${BASE_URL}/de/marken/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    }));
+    brandEntries = fallbackBrandSlugs.flatMap((slug) =>
+      createLocalizedEntries(`/marken/${slug}`, 0.7, "weekly")
+    );
   }
 
   return [
-    ...staticPages,
-    ...categoryPages,
-    ...cityPages,
-    ...studentCityPages,
-    ...magazinePages,
-    ...offerPages,
-    ...brandPages,
+    ...staticEntries,
+    ...categoryEntries,
+    ...cityEntries,
+    ...studentCityEntries,
+    ...magazineEntries,
+    ...offerEntries,
+    ...brandEntries,
   ];
 }
