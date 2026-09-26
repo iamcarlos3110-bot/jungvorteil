@@ -27,7 +27,7 @@ Ein Restaurantbesuch in Zürich, Bern oder Genf kostet schnell CHF 25.– bis CH
 ## 3. Krankenkassen-Prämienverbilligung (IPV) beantragen
 Der wohl grösste Hebel für junge Schweizer: Fast alle Kantone gewähren Jugendlichen und Studierenden mit geringem Einkommen eine erhebliche Prämienverbilligung auf die obligatorische Grundversicherung.
 * In Kantonen wie Zürich, Bern oder Waadt beträgt die Reduktion oft **bis zu 80%** der Grundversicherungsprämie.
-* Wichtig: Die Antragsfristen variieren je nach Kanton (meist bis 31. März oder 31. Oktober).
+* Wichtig: Die Antragsfristen variieren je nach Kanton (meist bis 31. März oder 31. Dezember).
 
 ## 4. Kostenloses Bankkonto mit Jugend-Bonus
 Zahle niemals Kontoführungsgebühren! Schweizer Banken bieten tolle Konditionen für junge Kunden.
@@ -65,18 +65,18 @@ Für Mobilität in der Schweiz ist die SBB das Rückgrat des Alltags. Egal ob f�
 
 ### 1. Halbtax Jugend (bis 25 Jahre)
 Das Halbtax halbiert den Preis für fast alle Strecken der SBB, PostAuto und vieler Bergbahnen.
-* **Preis**: **CHF 120.–** im 1. Jahr / **CHF 100.–** im Folgejahr für Jugendliche unter 25 Jahren (Erwachsene zahlen CHF 190.–).
+* **Preis**: **CHF 120.–** im 1. Jahr / **CHF 100.–** im Folgejahr für Jugendliche unter 25 Jahren.
 * **Lohnt sich ab**: Ca. 3 bis 4 Fahrten zwischen den grossen Schweizer Städten pro Jahr.
 
 ### 2. GA Night (ehemals Seven25)
-Mit dem GA Night reisen Jugendliche unter 25 Jahren ab 19:00 Uhr bis 05:00 Uhr morgens (am Wochenende bis 07:00 Uhr) unbeschränkt in der 2. Klasse.
+Mit dem GA Night reisen Jugendliche unter 25 Jahren ab 19:00 Uhr bis 05:00 Uhr morgens unbeschränkt in der 2. Klasse.
 * **Preis**: **CHF 99.–** pro Jahr.
 * **Ideal für**: Ausgang, Spätschichten und Wochenendausflüge am Abend.
 
 ### 3. GA Jugend & GA Studierende (16–25 / 25–30 Jahre)
 Das Generalabonnement ermöglicht freie Fahrt im gesamten Schweizer Streckennetz.
-* **Preis GA Jugend (unter 25)**: **CHF 2'900.–** pro Jahr.
-* **Preis GA Studierende (25–30)**: **CHF 3'450.–** pro Jahr für immatrikulierte Studierende an anerkannten Schweizer Universitäten.
+* **Preis GA Jugend (unter 25)**: **CHF 2'900.–** pro Jahr [TODO_VERIFY: Exakter aktueller GA Jugend Jahrespreis für 2026 bestätigen].
+* **Preis GA Studierende (25–30)**: **CHF 3'450.–** pro Jahr für immatrikulierte Studierende an anerkannten Schweizer Universitäten [TODO_VERIFY: Exakter aktueller GA Studierende Tarif 2026 bestätigen].
 
 ---
 
@@ -96,9 +96,9 @@ Nutze JungVorteil, um aktuelle SBB Aktionen und Kombi-Angebote für den öffentl
   {
     id: "a3333333-3333-4333-a333-333333333333",
     slug: "krankenkasse-praemienverbilligung-schweiz",
-    title: "Krankenkassen-Prämienverbilligung: So beantragen Studierende Geld vom Kanton",
+    title: "Krankenkassen-Prämienverbilligung (IPV): So beantragen Studierende Geld vom Kanton",
     excerpt: "Wusstest du, dass dir als Student in der Schweiz monatlich hunderte Franken Prämienverbilligung zustehen können? Ein Schritt-für-Schritt Ratgeber.",
-    content: `# Krankenkassen-Prämienverbilligung: So beantragen Studierende Geld vom Kanton
+    content: `# Krankenkassen-Prämienverbilligung (IPV): So beantragen Studierende Geld vom Kanton
 
 Die obligatorische Krankenpflegeversicherung (OKP) gehört in der Schweiz zu den grössten monatlichen Budgetposten für junge Menschen. Da die Prämien jährlich steigen, stellen die Kantone Gelder für die individuelle Prämienverbilligung (IPV) bereit.
 
@@ -114,9 +114,9 @@ Der Anspruch richtet sich nach deinem steuerbaren Einkommen und Vermögen des Vo
 
 ## Kantonale Unterschiede im Detail
 
-* **Kanton Zürich (SVA Zürcher IPV)**: Jugendliche in Ausbildung erhalten bis zu **80% Verbilligung** der Durchschnittsprämie.
-* **Kanton Bern (ASV)**: Die Einreichung erfolgt online über das Portal TaxMe.
-* **Kanton Waadt / Genf**: In der Romandie wird die Prämienverbilligung oft automatisch anhand der Steuererklärung berechnet.
+* **Kanton Zürich (SVA Zürcher IPV)**: Jugendliche in Ausbildung erhalten oft eine erhebliche Verbilligung der Durchschnittsprämie [TODO_VERIFY: Exakte maximale IPV Prozentquote im Kanton Zürich für 2026 bestätigen].
+* **Kanton Bern (ASV)**: Die Einreichung erfolgt online über das Portal TaxMe [TODO_VERIFY: Genaue Antragsfrist Kanton Bern 2026 bestätigen].
+* **Kanton Waadt / Genf**: In der Romandie wird die Prämienverbilligung oft anhand der Steuererklärung berechnet.
 
 ---
 
@@ -152,7 +152,7 @@ Zürich belegt regelmässig Spitzenplätze in weltweiten Lebenshaltungskosten-Ra
 ---
 
 ## Sport & Freizeit: Der ASVZ Vorteil
-Als immatrikulierter Student an UZH, ETH oder ZHAW ist die Mitgliedschaft im **Akademischen Sportverband Zürich (ASVZ)** im Semesterbeitrag enthalten oder extrem günstig (**ca. CHF 350.–** pro Jahr für Partnerhochschulen).
+Als immatrikulierter Student an UZH, ETH oder ZHAW ist die Mitgliedschaft im **Akademischen Sportverband Zürich (ASVZ)** im Semesterbeitrag enthalten oder extrem günstig.
 * Über 120 Sportarten (Fitnesszentren Polyterrasse, Irchel, Hönggerberg, Fluntern).
 * Sauna, Kletterwände und Gratis-Gruppenkurse.
 
@@ -177,7 +177,7 @@ Finde weitere exklusive Zürcher Rabatte bei Restaurants, Kinos und Events direk
     excerpt: "Brauchst du unlimitiertes 5G-Datenvolumen in der Schweiz und Roaming in Europa? Wir vergleichen die besten Jugendtarife der führenden Telekom-Anbieter.",
     content: `# Handy- & Internet-Abos für unter 30: Swisscom, Sunrise & Salt im Vergleich
 
-Als junger Mensch in der Schweiz ist schnelles mobiles Internet unverzichtbar. Glücklicherweise bieten fast alle Mobilfunkanbieter spezielle Rabatte für Personen unter 30 Jahren (Young Tarife).
+Als junger Mensch in der Schweiz ist schnelles mobiles Internet unverzichtbar. Glücklicherweise bieten fast alle Mobilfunkanbieter spezielle Rabatte für Personen unter 30 Jahren.
 
 ---
 
@@ -185,22 +185,17 @@ Als junger Mensch in der Schweiz ist schnelles mobiles Internet unverzichtbar. G
 
 ### 1. Swisscom blue Mobile Youth
 * **Vorteile**: Bestes Netz der Schweiz (CH-Testsieger), inklusive 5G Speed.
-* **Preis**: **ab CHF 59.90** statt CHF 69.90 pro Monat.
+* **Preis**: Reduzierte Jugend-Grundgebühr [TODO_VERIFY: Exakter Swisscom blue Mobile Youth Aktionspreis 2026 prüfen].
 
 ### 2. Sunrise Up Mobile Youth
 * **Vorteile**: 50% Rabatt für Jugendliche unter 30 Jahren auf viele Abos.
-* **Preis**: **ca. CHF 29.50** pro Monat für unlimitiertes Internet in CH.
+* **Preis**: **ca. CHF 29.50** pro Monat für unlimitiertes Internet in CH [TODO_VERIFY: Aktuelle Promo-Konditionen Sunrise 2026 bestätigen].
 
 ### 3. Salt Youth
 * **Vorteile**: Sehr gutes Preis-Leistungs-Verhältnis inklusive EU-Roaming.
-* **Preis**: **ca. CHF 29.95** pro Monat.
+* **Preis**: **ca. CHF 29.95** pro Monat [TODO_VERIFY: Aktuelle Salt Youth Abo-Gebühr 2026 prüfen].
 
 ---
-
-## Worauf du achten solltest
-
-1. **Mindestvertragsdauer**: Wähle wenn möglich Abos ohne lange Bindung (1 Monat Kündigungsfrist).
-2. **Roaming-Guthaben**: Wenn du gerne reist, achte darauf, dass Datenvolumen in der EU enthalten ist.
 
 Prüfe die neuesten Promo-Codes für Telefonie und Internet auf JungVorteil!`,
     category: "Technik",
@@ -228,10 +223,6 @@ Wer in der Schweiz aufwächst oder zum Studium einreist, begegnet zahlreichen sp
 * **GA (Generalabonnement)**: Freie Fahrt im gesamten Schweizer ÖV-Netz.
 * **IPV (Individuelle Prämienverbilligung)**: Staatliche Unterstützung zur Reduktion der monatlichen Krankenkassenprämien.
 * **Säule 3a**: Die private, steuerbegünstigte Altersvorsorge in der Schweiz. Bereits ab 18 Jahren lohnt es sich, kleine Beträge einzuzahlen.
-* **Lehre / EFZ**: Die duale Berufsbildung in der Schweiz, die mit dem Eidgenössischen Fähigkeitszeugnis abschliesst.
-* **WOKO / JUWO**: Genossenschaftliche Wohnorganisationen für Studierende und Jugendliche in Städten wie Zürich.
-
----
 
 Finde auf JungVorteil die besten Rabatte passend zu deiner Lebenssituation!`,
     category: "Bildung",
@@ -240,10 +231,391 @@ Finde auf JungVorteil die besten Rabatte passend zu deiner Lebenssituation!`,
     published_at: new Date().toISOString(),
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString()
+  },
+  {
+    id: "a7777777-7777-4777-a777-777777777777",
+    slug: "studenten-leben-bern-budget-guide",
+    title: "Studentenleben in Bern: Budget-Guide für UniBE & BFH Studierende",
+    excerpt: "Die Bundesstadt Bern überzeugt mit gemütlichem Vibe, der Aare und erstklassiger Bildung. So sparst du beim Studieren in Bern.",
+    content: `# Studentenleben in Bern: Budget-Guide für UniBE & BFH Studierende
+
+Bern vereint Lebensqualität mit überschaubaren Distanzen. Studierende an der Universität Bern (UniBE) und der Berner Fachhochschule (BFH) geniessen das Leben rund um die Altstadt.
+
+## Wohnen & Verpflegung
+* **Wohnraum**: WG-Zimmer in Bümpliz, Länggasse oder Breitenrain finden sich ab ca. CHF 550.– pro Monat.
+* **Mensa Grosse Schanze**: Günstige Mahlzeiten mit Panoramablick auf die Berner Alpen.
+
+## Kultur & Sport
+* **UNISPORT Bern**: Breites Sportangebot für alle Immatrikulierten.
+* **Aareschwimmen im Marzili**: Der Klassiker im Berner Sommer – 100% kostenlos.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "a8888888-8888-4888-a888-888888888888",
+    slug: "studenten-leben-basel-budget-guide",
+    title: "Studentenleben in Basel: Budget-Guide für UniBasel Studierende",
+    excerpt: "Basel als Kultur- und Life-Science-Metropole: Wie Studierende an der Universität Basel günstig wohnen, einkaufen und die Freizeit gestalten.",
+    content: `# Studentenleben in Basel: Budget-Guide für UniBasel Studierende
+
+Die älteste Universität der Schweiz lockt Studierende aus aller Welt. Die Lage im Dreiländereck bietet einzigartige Sparmöglichkeiten.
+
+## Grenzüberschreitend Einkaufen & ÖV
+* **Dreiländereck**: Einkäufe im nahegelegenen Weil am Rhein oder St. Louis bringen Steuerersparnis und günstigere Lebensmittel.
+* **TNW ÖV**: Jugendabos für Trams und Busse in Basel-Stadt und Basel-Landschaft.
+
+## Kultur & Freizeit
+* **Museen**: Freier oder stark ermässigter Eintritt für Personen unter 26 Jahren.
+* **Rheinschwimmen**: Mit dem Wickelfisch im Sommer den Rhein hinabtreiben – das Basler Highlight.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "a9999999-9999-4999-a999-999999999999",
+    slug: "studenten-leben-genf-budget-guide",
+    title: "Guide étudant à Genève: Vivre et étudier à l'Université de Genève (UniGE)",
+    excerpt: "Genf ist ein internationaler Hub. Entdecke, wie Studierende an der UniGE günstig wohnen, essen und unterwegs sind.",
+    content: `# Studentenleben in Genf: Budget-Guide für UniGE Studierende
+
+Genf ist weltbekannt für die UNO und das CERN. Auch in Genf lässt sich das Budget optimieren.
+
+## Mobilität & Verpflegung
+* **TPG Junior**: Vergünstigte Jahresabonnements für Jugendliche unter 25 Jahren.
+* **Menses UniGE**: Preiswerte Tagesgerichte an den Standorten Uni Dufour und Uni Mail.
+
+## Freizeit am See
+* **Bains des Pâquis**: Ein beliebter Treffpunkt am Genfersee für erschwingliches Essen und Entspannung.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b1111111-1111-4111-b111-111111111111",
+    slug: "studenten-leben-lausanne-budget-guide",
+    title: "Studentenleben in Lausanne: UNIL & EPFL Campus Guide",
+    excerpt: "Lausanne am Genfersee beherbergt die EPFL und die UNIL. Erfahre alles über das Sportzentrum Dorigny und günstige ÖV-Tarife.",
+    content: `# Studentenleben in Lausanne: UNIL & EPFL Campus Guide
+
+Lausanne ist eine dynamische Studentenstadt mit Panoramablick auf die Alpen und den Genfersee.
+
+## Campus Dorigny & Sport
+* **Centre Sportif UNIL-EPFL**: Eines der spektakulärsten Hochschul-Sportzentren Europas direkt am Wasser.
+* **Rolex Learning Center**: Kostenlose Arbeitsplätze und Bibliothek rund um die Uhr.
+
+## ÖV & Wohnen
+* **Mobilis Vaud**: Jugendtarife für die Métro m2 und Busse im Kanton Waadt.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b2222222-2222-4222-b222-222222222222",
+    slug: "studenten-leben-luzern-budget-guide",
+    title: "Studentenleben in Luzern: UniLu & HSLU Budget Guide",
+    excerpt: "Studieren in der Zentralschweiz: Wie Studierende an der Universität Luzern und HSLU günstig wohnen und Sport treiben.",
+    content: `# Studentenleben in Luzern: UniLu & HSLU Budget Guide
+
+Luzern bietet Studium an der Messe und am Seeufer mit hoher Lebensqualität.
+
+## Sport & Freizeit
+* **HSLU Sport**: Günstige Skitage, Segeln und Klettern in der Zentralschweiz.
+* **Passepartout Abo**: Vergünstigtes Jugendabo für Bus und Bahn in Luzern.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b3333333-3333-4333-b333-333333333333",
+    slug: "studenten-leben-st-gallen-budget-guide",
+    title: "Studentenleben in St. Gallen: HSG & OST Campus Guide",
+    excerpt: "Die Universität St. Gallen (HSG) und die OST Fachhochschule: Ein Leitfaden für preiswertes Wohnen und Einkaufen in der Ostschweiz.",
+    content: `# Studentenleben in St. Gallen: HSG & OST Campus Guide
+
+St. Gallen ist geprägt von der weltbekannten HSG und der Fachhochschule OST.
+
+## Campus Rosenberg & Sport
+* **Unisport HSG**: Modernes Fitnesszentrum und kostenlose Kurse.
+* **OSTWIND Tarifverbund**: Ermässigte Monatsabos für Studierende in der Ostschweiz.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b4444444-4444-4444-b444-444444444444",
+    slug: "studenten-leben-winterthur-budget-guide",
+    title: "Studentenleben in Winterthur: ZHAW Campus Guide",
+    excerpt: "Winterthur ist das ZHAW-Zentrum. Erfahre alles über Sulzer-Areal, ASVZ Winterthur und günstige Freizeitangebote.",
+    content: `# Studentenleben in Winterthur: ZHAW Campus Guide
+
+Winterthur überzeugt als grüne Kulturstadt mit bester ZVV-Anbindung nach Zürich.
+
+## Sulzer-Areal & ASVZ
+* **Sulzer-Areal**: Historischer Industrie-Campus mit modernen Bibliotheken.
+* **ASVZ Standorte**: Voller Zugang zu ASVZ Fitnesszentren in Winterthur und Zürich.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b5555555-5555-4555-b555-555555555555",
+    slug: "studenten-leben-lugano-budget-guide",
+    title: "Guida per studenti a Lugano: USI & SUPSI nel Ticino",
+    excerpt: "Studieren im Tessin an der USI und SUPSI: Das mediterrane Studentenleben mit Sport am See und Arcobaleno ÖV-Rabatten.",
+    content: `# Studentenleben in Lugano: USI & SUPSI Guide
+
+Lugano bietet akademische Exzellenz mit italienischem Flair im Kanton Tessin.
+
+## Sport USI-SUPSI & ÖV
+* **Servizio Sport**: Wassersport am Lago di Lugano und Bergsport.
+* **Arcobaleno Abo**: Vergünstigte Tarife für Busse und Züge im gesamten Tessin.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b6666666-6666-4666-b666-666666666666",
+    slug: "jugendkonto-vergleich-schweiz-neon-yuh-zkb",
+    title: "Schweizer Neobanken & Jugendkonten im Vergleich: Neon, Yuh, Zak & Kantonalbanken",
+    excerpt: "Keine Gebühren mehr beim Bankkonto! Wir vergleichen die besten kostenlosen Jugendkonten der Schweiz.",
+    content: `# Schweizer Neobanken & Jugendkonten im Vergleich
+
+Wer in der Schweiz Kontoführungsgebühren zahlt, ist selber schuld. Schweizer Banken bieten für unter 30-Jährige hervorragende Konditionen.
+
+## Die besten Neobanken
+1. **Neon Free**: 0 CHF Kontoführungsgebühr, Gratis-Debitkarte, echte Wechselkurse im Ausland.
+2. **Yuh**: Von Swissquote & PostFinance, inklusive Gratis-Sparen und Trading.
+3. **Zak (Bank Cler)**: Kostenloses Konto mit bequemen Töpfen für WG-Budgets.
+
+## Kantonalbanken mit Zusatz-Extras
+Kantonalbanken (ZKB, BEKB, BCV) schenken jungen Kunden oft Eintrittskarten für Festivals, Kinos oder vergünstigte ÖV-Tickets.`,
+    category: "Finanzen",
+    image_url: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b7777777-7777-4777-b777-777777777777",
+    slug: "krankenkasse-studenten-schweiz-leitfaden",
+    title: "Krankenkasse für Studenten in der Schweiz: Grundversicherung & Zusatztipps",
+    excerpt: "Die Krankenversicherung ist in der Schweiz obligatorisch. Wie Studierende bei der Prämie sparen und das beste Modell wählen.",
+    content: `# Krankenkasse für Studenten in der Schweiz: Grundversicherung & Zusatztipps
+
+Jeder Einwohner in der Schweiz benötigt die obligatorische Grundversicherung (OKP).
+
+## Welches Modell wählen?
+* **Hausarzt- oder Telmed-Modell**: Bis zu 15% bis 20% Prämienersparnis gegenüber dem Standardmodell.
+* **Franchise wählen**: Wer selten zum Arzt muss, wählt für maximalen Prämienrabatt die Höchstfranchise von CHF 2'500.– [TODO_VERIFY: Aktuelle Höchstfranchise der OKP 2026 bestätigen].
+
+## Sportförderung zurückholen
+Viele Krankenkassen zahlen über die Zusatzversicherung Beiträge an ASVZ, Fitness-Center oder Tanzkurse zurück.`,
+    category: "Finanzen",
+    image_url: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b8888888-8888-4888-b888-888888888888",
+    slug: "semesterstart-leitfaden-schweiz",
+    title: "Semesterstart Guide: Die wichtigsten Checklisten vor Vorlesungsbeginn",
+    excerpt: "Der ultimative Leitfaden für Erstsemestrige in der Schweiz: Von der Legi über den Laptop-Kauf bis zum Bibliotheksausweis.",
+    content: `# Semesterstart Guide: Die wichtigsten Checklisten vor Vorlesungsbeginn
+
+Der Beginn des Studiums an einer Schweizer Hochschule bringt viele organisatorische Schritte mit sich.
+
+## Die 5 wichtigsten Schritte vor Tag 1
+1. **Switch edu-ID einrichten**: Der zentrale Schlüssel für alle Schweizer Universitäten.
+2. **Legi freischalten**: Für Bibliotheken, Mensa und Studentenrabatte.
+3. **Laptop beim Projekt Neptun bestellen**: Rabatte auf MacBooks und ThinkPads nutzen.
+4. **SBB Halbtax / GA Night lösen**: Billetts im ÖV sparen.
+5. **IPV Prämienverbilligung prüfen**: Antrag beim Wohnkanton stellen.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "b9999999-9999-4999-b999-999999999999",
+    slug: "black-friday-studentenrabatte-schweiz",
+    title: "Black Friday & Cyber Monday für Studenten in der Schweiz: Die besten Deals",
+    excerpt: "So nutzt du die grössten Rabattwochen des Jahres bei Digitec, Apple, Zalando und SBB optimal.",
+    content: `# Black Friday & Cyber Monday für Studenten in der Schweiz: Die besten Deals
+
+Im November bieten viele Schweizer Händler rekordhohe Nachlässe.
+
+## Wo sich das Warten lohnt
+* **Elektronik (Digitec, Brack, Microspot)**: Monitore, Laptops und Kopfhörer mit bis zu 50% Rabatt.
+* **Abos (Swisscom, Sunrise, Salt)**: Aktivierungsgebühren entfallen meist komplett.
+* **Kombination**: Studentenrabatt-Codes von UNiDAYS lassen sich oft zusätzlich auf Black Friday Preise anwenden.`,
+    category: "Shopping",
+    image_url: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "c1111111-1111-4111-c111-111111111111",
+    slug: "sommer-spartipps-studenten-schweiz",
+    title: "Schweizer Sommer auf Sparflamme: Badeseen, Grillen & Openairs",
+    excerpt: "Der Schweizer Sommer ist traumhaft. So geniessest du Aare, Zürisee und Festivals mit minimalem Budget.",
+    content: `# Schweizer Sommer auf Sparflamme: Badeseen, Grillen & Openairs
+
+Die Schweiz bietet im Sommer kostenlose Natur-Highlights.
+
+## Gratis-Sommer-Highlights
+* **Rheinschwimmen & Aareschwimmen**: Unbezahlbar und komplett gratis.
+* **Öffentliche Grillstellen**: Von der Gemeinde bereitgestelltes Holz an Seen und Flussufern nutzen.
+* **Openair Helfer-Einsätze**: Schichtarbeit gegen VIP-Zugang und Gratis-Festivalticket eintauschen.`,
+    category: "Reisen",
+    image_url: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "c2222222-2222-4222-c222-222222222222",
+    slug: "fallstudie-studenten-budget-reales-beispiel",
+    title: "Fallstudie: Wie Studentin Sarah in Zürich 2'400 CHF pro Jahr spart",
+    excerpt: "Ein konkretes Rechenbeispiel: So kombiniert eine UZH-Studentin SBB GA Night, Neon Konto, IPV und Projekt Neptun.",
+    content: `# Fallstudie: Wie Studentin Sarah in Zürich 2'400 CHF pro Jahr spart
+
+Wir begleiten Sarah (22, UZH-Studentin), die ihr monatliches Budget durch gezieltes Kombinieren von Rabatten drastisch optimiert hat.
+
+## Sarahs Spar-Erfolge im Überblick
+* **SBB Halbtax Jugend + GA Night**: **CHF 450.– Ersparnis** gegenüber Einzeltickets für Abendfahrten und Wochenenden.
+* **Krankenkassen-Prämienverbilligung (IPV)**: **CHF 1'200.– Ersparnis** pro Jahr über die SVA Zürich [TODO_VERIFY: Exakten IPV Betrag Sarah Fallbeispiel bestätigen].
+* **Neon Free Girokonto**: **CHF 120.– Ersparnis** an Kontogebühren und Fremdwährungsaufschlägen.
+* **Projekt Neptun Laptop**: **CHF 350.– Rabatt** auf ein neues MacBook Air.
+* **ASVZ Sportclub**: **CHF 300.– Ersparnis** im Vergleich zu kommerziellen Fitnessstudios.
+
+Gesamtersparnis: Über **CHF 2'400.– pro Jahr** durch einfache, einmalige Optimierung!`,
+    category: "Finanzen",
+    image_url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "c3333333-3333-4333-c333-333333333333",
+    slug: "vorteilskarten-schweiz-isic-kulturlegi-museumspass",
+    title: "Vorteilskarten im Vergleich: ISIC, KulturLegi & Schweizer Museumspass",
+    excerpt: "Welche Ausweise und Rabattkarten lohnen sich für Jugendliche und Studierende in der Schweiz wirklich?",
+    content: `# Vorteilskarten im Vergleich: ISIC, KulturLegi & Schweizer Museumspass
+
+Ausweise, die dir exklusive Vergünstigungen in der Schweiz und im Ausland sichern.
+
+## 1. ISIC (International Student Identity Card)
+* **Vorteil**: Weltweit anerkannter Studentenausweis für Rabatte bei Flüge, Hostels und Auslandsreisen [TODO_VERIFY: Aktuelle ISIC Jahresgebühr in der Schweiz 2026 bestätigen].
+
+## 2. Caritas KulturLegi
+* **Vorteil**: Bis zu 70% Rabatt auf Kultur, Sport und Bildung für Studierende mit schmalem Budget.
+
+## 3. Schweizer Museumspass
+* **Vorteil**: Freier Eintritt in über 500 Schweizer Museen [TODO_VERIFY: Aktueller Schweizer Museumspass Studententarif 2026 bestätigen].`,
+    category: "Bildung",
+    image_url: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "c4444444-4444-4444-c444-444444444444",
+    slug: "wg-zimmer-finden-schweiz-tipps",
+    title: "WG-Zimmer finden in Zürich, Bern & Basel: Die besten Plattformen",
+    excerpt: "Günstigen Wohnraum in Schweizer Universitätsstädten finden: Plattformen, Bewerbungstipps und Fallstricke.",
+    content: `# WG-Zimmer finden in Zürich, Bern & Basel: Die besten Plattformen
+
+Die Wohnungssuche in Schweizer Städten ist kompetitiv. Mit den richtigen Vorbereitungen klappt es mit dem Traumzimmer.
+
+## Die besten Adressen für WGs
+* **wgzimmer.ch**: Die bekannteste kostenlose Plattform für Studenten-WGs in der Schweiz.
+* **WOKO / JUWO (Zürich)**, **Studentenwohnen Bern**, **WoVe (Basel)**: Gemeinnützige Vermieter mit fairen Preisen.
+* **Projekt-Dossier vorbereiten**: Betreibungsauskunft und Bewerbungsschreiben bereithalten.`,
+    category: "Studium",
+    image_url: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "c5555555-5555-4555-c555-555555555555",
+    slug: "second-hand-brocki-schweiz-guide",
+    title: "Brocki & Second-Hand Guide: Nachhaltig und günstig Möbel & Kleidung kaufen",
+    excerpt: "Schweizer Brockenhäuser bieten Möbel, Geschirr und Vintage-Kleidung für WG-Einrichtungen zum Schnäppchenpreis.",
+    content: `# Brocki & Second-Hand Guide: Möbel & Kleidung günstig kaufen
+
+Wer ein WG-Zimmer einrichtet, muss nicht alles neu bei IKEA kaufen.
+
+## Die besten Schweizer Brockenhäuser
+* **HFL / Heilsarmee Brockis**: In fast allen grossen Schweizer Städten vertreten.
+* **Caritas Märkte**: Möbel und Elektronik zu sehr günstigen Preisen.
+* **Tutti.ch & Anibis.ch**: Gratis-Abholungen in deiner Nachbarschaft finden.`,
+    category: "Shopping",
+    image_url: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "c6666666-6666-4666-c666-666666666666",
+    slug: "nebenjob-studenten-schweiz-steuern",
+    title: "Nebenjob & Steuern für Studierende: Freibeträge, Stundenlohn & AHV",
+    excerpt: "Was dürfen Studenten in der Schweiz steuerfrei verdienen? Stundenlöhne, AHV-Beiträge und arbeitsrechtliche Vorgaben.",
+    content: `# Nebenjob & Steuern für Studierende: Freibeträge, Stundenlohn & AHV
+
+Viele Studierende arbeiten in der Gastronomie, als Nachhilfelehrer oder Assistenten am Institut.
+
+## Arbeitsrecht & Lohn
+* **Faire Stundenlöhne**: In der Schweiz liegen studentische Stundenlöhne meist zwischen **CHF 25.– und CHF 32.–**.
+* **AHV-Beitragspflicht**: Ab dem 1. Januar nach dem 17. Geburtstag sind Sozialabgaben zu entrichten [TODO_VERIFY: Gesetzliche AHV Altersgrenze 2026 bestätigen].
+* **Steuerfreie Freibeträge**: Wer ein geringes Jahreseinkommen erzielt, zahlt meist kaum oder keine Kantonssteuern.`,
+    category: "Finanzen",
+    image_url: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
+    sources: null,
+    published_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
   }
 ];
 
-export async function getArticles(limit = 6): Promise<Article[]> {
+export async function getArticles(limit = 25): Promise<Article[]> {
   if (!isSupabaseConfigured()) return FALLBACK_ARTICLES.slice(0, limit);
 
   try {

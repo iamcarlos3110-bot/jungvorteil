@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import { Sparkles, ShieldCheck, HeartHandshake, Eye, Award, CheckCircle2, Mail, Users } from "lucide-react";
+import { ShieldCheck, HeartHandshake, Eye, Award, CheckCircle2, Mail, User } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 import { safeJsonLd } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Über uns – Das Schweizer Vorteilsportal | JungVorteil",
-  description: "Erfahre mehr über JungVorteil: Das unabhängige Schweizer Sparportal für Studierende, Lernende und junge Erwachsene unter 30.",
+  description: "Erfahre mehr über JungVorteil: Das transparente Schweizer Sparportal gegründet von Carlos Piñeiro für Studierende, Lernende und junge Erwachsene unter 30.",
 };
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -18,6 +18,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     "name": "JungVorteil",
     "url": "https://jungvorteil.ch",
     "logo": "https://jungvorteil.ch/favicon.ico",
+    "foundingDate": "2026",
+    "founder": {
+      "@type": "Person",
+      "name": "Carlos Piñeiro"
+    },
     "description": "Unabhängiges Schweizer Vorteilsportal für Studierende, Lernende und junge Erwachsene unter 30.",
     "address": {
       "@type": "PostalAddress",
@@ -39,44 +44,46 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
           <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#EAF0E5] text-xs sm:text-sm font-semibold mb-6 shadow-sm">
-              <Users className="w-4 h-4 text-[#A3E635]" /> Unabhängig & Transparent
+              <User className="w-4 h-4 text-[#A3E635]" /> Unabhängiges Eigenprojekt
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
               Über JungVorteil
             </h1>
             <p className="text-base sm:text-xl text-gray-200 font-normal leading-relaxed max-w-2xl mx-auto">
-              Wir machen das Leben und Studieren in der Schweiz bezahlbarer. Die Plattform von jungen Leuten für junge Leute.
+              Ein transparentes Projekt mit dem Ziel, das Leben und Studieren in der Schweiz bezahlbarer zu machen.
             </p>
           </div>
         </section>
 
         {/* Content Section */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {/* Mission & Vision */}
+          {/* Story & Background */}
           <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-12 shadow-sm space-y-6">
             <div className="inline-flex items-center gap-2 text-[#3F5E39] font-bold text-sm bg-[#EAF0E5] px-3 py-1 rounded-full">
-              <Award className="w-4 h-4" /> Unsere Mission
+              <Award className="w-4 h-4" /> Wer steckt dahinter?
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 leading-tight">
-              Geprüfte Vorteile ohne Abo-Fallen und Versteckte Kosten
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              Gegründet von Carlos Piñeiro als unabhängiges Vorteilsportal
             </h2>
             <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-              Die Schweiz gehört weltweit zu den Ländern mit den höchsten Lebenshaltungskosten. Besonders während der Ausbildung, des Studiums oder beim Berufseinstieg ist das Budget oft knapp bemessen. Ob hohe ÖV-Preise, Krankenkassenprämien, Handyabos oder Ausrüstung für die Universität – Fixkosten belasten junge Erwachsene stark.
+              Hallo! Ich bin <strong>Carlos Piñeiro</strong>, der Gründer und Entwickler von JungVorteil. 
+              JungVorteil ist kein riesiges Konzernunternehmen und keine unpersönliche Werbeagentur mit dutzenden Mitarbeitern. 
+              Es ist ein von mir als Privatperson betriebenes, unabhängiges Portal, das aus einer einfachen Beobachtung heraus entstanden ist: Die Schweiz bietet zwar fantastische Vergünstigungen für junge Leute (wie das SBB GA Night, Halbtax Jugend, Konten ohne Gebühren oder Projekt Neptun), aber diese Informationen sind oft über etliche Websites verstreut oder gut versteckt.
             </p>
             <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-              <strong>JungVorteil</strong> wurde ins Leben gerufen, um alle echten Jugendtarife, Legi-Rabatte, Gratis-Angebote und Promotionscodes der Schweiz übersichtlich und unabhängig an einem Ort zu bündeln.
+              Mein Ziel ist es, Licht in diesen Dschungel zu bringen. Ich sammle, teste und strukturiere Angebote aus allen Schweizer Kantonen, damit Studierende, Lernende und junge Erwachsene unter 30 Jahren Zeit und Geld sparen können.
             </p>
           </div>
 
-          {/* 4 Core Pillars */}
+          {/* Core Values */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">100% Manuell Manuell Geprüft</h3>
+              <h3 className="font-bold text-xl text-gray-900">Manuell Geprüfte Links</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Wir testen jedes Angebot selbst. Bevor ein Rabattcode auf unserer Seite erscheint, prüfen unsere Redaktoren die Gültigkeit, Bedingungen und Fristen.
+                Ich verlinke ausschließlich auf offizielle Seiten und geprüfte Rabattaktionen (z.B. SBB, Apple, Neon, Sunrise). Abgelaufene Angebote werden bereinigt.
               </p>
             </div>
 
@@ -84,9 +91,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <Eye className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">Komplett Kostenlos</h3>
+              <h3 className="font-bold text-xl text-gray-900">100% Kostenfrei für Nutzer</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Für Nutzer ist JungVorteil zu 100% kostenfrei. Du musst dich weder registrieren noch ein kostenpflichtiges Abonnement eingehen.
+                Die Nutzung von JungVorteil erfordert weder eine Registrierung noch den Kauf von Mitgliedschaften. Alle Vorteile sind sofort zugänglich.
               </p>
             </div>
 
@@ -94,55 +101,55 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <HeartHandshake className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">Transparent & Ethisch</h3>
+              <h3 className="font-bold text-xl text-gray-900">Ehrliche Finanzierung</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Sollten wir für die Vermittlung eines Rabattcodes eine kleine Provision vom Anbieter erhalten, hat dies keinen Einfluss auf den Rabattpreis für dich.
+                Falls bei einzelnen Links eine Vermittlungsprovision anfällt, verändert das den Endpreis für Nutzer in keiner Weise. Qualität geht vor Provision.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
-                <Sparkles className="w-6 h-6" />
+                <CheckCircle2 className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-xl text-gray-900">Fokus auf die Schweiz</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Unsere Inhalte beziehen sich speziell auf Schweizer Kantone, ÖV-Netze (SBB, ZVV), Schweizer Banken, Universitäten (ETH, UZH, EPFL) und Partner.
+                Speziell zugeschnitten auf Schweizer Städte (Zürich, Bern, Basel, Genf, Lausanne etc.), Schweizer ÖV-Abos und universitäre Besonderheiten.
               </p>
             </div>
           </div>
 
-          {/* Editorial Standard & Transparency */}
+          {/* Editorial Standard */}
           <div className="bg-gradient-to-r from-emerald-900 to-green-950 text-white rounded-3xl p-8 sm:p-12 shadow-md space-y-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-emerald-300">
-              Unser Redaktionsstandard & Transparenzhinweis
+              Verlässlichkeit & Redaktionsversprechen
             </h2>
             <p className="text-emerald-100 text-base sm:text-lg leading-relaxed">
-              Die Redaktion von JungVorteil recherchiert täglich Angebote von Marken wie SBB, Apple, Spotify, Swisscom, Neon, Sunrise, Salt, Pathé und ASVZ. 
+              Jedes auf JungVorteil veröffentlichte Angebot basiert auf einer sorgfältigen Prüfung der Konditionen und Fristen der jeweiligen Schweizer Anbieter.
             </p>
             <div className="space-y-3 text-sm sm:text-base text-emerald-100 border-t border-emerald-800/80 pt-6">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-lime-400 shrink-0 mt-0.5" />
-                <span>Wir listen Angebote unabhängig von Werbepartnerschaften auf, wenn sie echten Nutzen bieten.</span>
+                <span>Transparente Angabe von Mindestalter, Fristen und Voraussetzungen (z.B. Immatrikulationsbescheinigung oder Legi).</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-lime-400 shrink-0 mt-0.5" />
-                <span>Abgelaufene oder irreführende Aktionen werden unverzüglich entfernt.</span>
+                <span>Keine Falschversprechen oder künstlich überhöhte Rabattprozente.</span>
               </div>
             </div>
           </div>
 
           {/* Contact Box */}
           <div className="bg-white rounded-3xl border border-stone-200/90 p-8 text-center space-y-4">
-            <h3 className="text-xl font-bold text-gray-900">Fragen, Feedback oder ein Angebot einreichen?</h3>
+            <h3 className="text-xl font-bold text-gray-900">Möchtest du Feedback geben oder eine Aktion melden?</h3>
             <p className="text-stone-600 text-sm max-w-lg mx-auto">
-              Du hast einen neuen Studentenrabatt entdeckt oder möchtest als Schweizer Marke mit uns kooperieren? Wir freuen uns über deine Nachricht.
+              Hast du einen nützlichen Studentendeal entdeckt, der auf der Seite fehlt? Schreib mir gerne eine Nachricht.
             </p>
             <div>
               <Link
                 href={`/${locale}/kontakt`}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#3F5E39] text-white font-bold text-sm hover:bg-[#324B2D] transition-colors shadow-sm"
               >
-                <Mail className="w-4 h-4" /> Kontakt aufnehmen
+                <Mail className="w-4 h-4" /> Nachricht an Carlos senden
               </Link>
             </div>
           </div>

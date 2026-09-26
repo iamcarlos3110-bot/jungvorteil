@@ -1,5 +1,5 @@
 // lib/cityGuides.ts
-// Original high-value city guides and local student life advice for Swiss cities
+// Original high-value city guides and local student life advice for ALL 9 Swiss cities
 
 export interface CityGuide {
   title: string;
@@ -25,7 +25,7 @@ export const CITY_GUIDES: Record<string, CityGuide> = {
   },
   bern: {
     title: "Studentenleben & Rabatte in Bern (UniBE & BFH)",
-    intro: "Die Bundesstadt Bern überzeugt mit gemütlichem Flair, der Aare und exzellenten Bildungsinstituten. Mit clevertem Budgeting genießt du das Berner Leben in vollen Zügen.",
+    intro: "Die Bundesstadt Bern überzeugt mit gemütlichem Flair, der Aare und exzellenten Bildungsinstituten. Mit cleverem Budgeting genießt du das Berner Leben in vollen Zügen.",
     highlights: [
       { title: "UNISPORT Bern", desc: "Das Unisport-Programm der Universität Bern bietet hervorragende Sportangebote und Kurse zu sehr fairen Preisen." },
       { title: "Aareschwimmen & Sommer", desc: "Kostenlos und unbezahlbar: Das Schwimmen in der Aare im Marzili oder Eichholz gehört zum Berner Sommeralltag." },
@@ -59,7 +59,7 @@ export const CITY_GUIDES: Record<string, CityGuide> = {
       { title: "Genfersee & Bains des Pâquis", desc: "Der ideale Treffpunkt für erschwingliche Fondue-Abende und Entspannung am See." }
     ],
     localTips: [
-      "Nütze die unimaillese Mensen für preiswerte Tagesgerichte.",
+      "Nütze die Uni-Mensen für preiswerte Tagesgerichte.",
       "Profitiere von den TPG Jugendtarifen auf dem Genfer Bus- und Tramnetz."
     ]
   },
@@ -72,7 +72,55 @@ export const CITY_GUIDES: Record<string, CityGuide> = {
     ],
     localTips: [
       "Nutze die steile M2 U-Bahn mit dem SBB Halbtax und Jugend-Zonenabos.",
-      "Profitiere von Vergünstigungen bei Festival-Events wie dem Montreux Jazz Festival in der Region."
+      "Profitiere von Vergünstigungen bei Festival-Events in der Vaudois Region."
+    ]
+  },
+  winterthur: {
+    title: "Studentenleben & Rabatte in Winterthur (ZHAW)",
+    intro: "Winterthur ist die zweitgrößte Stadt im Kanton Zürich und Heimat der ZHAW (Zürcher Hochschule für Angewandte Wissenschaften). Eine grüne Kulturstadt mit hoher Lebensqualität.",
+    highlights: [
+      { title: "ZHAW Campus Sulzer-Areal", desc: "Modernste Hörsäle in historischer Industrie-Architektur nahe dem Hauptbahnhof Winterthur." },
+      { title: "ASVZ Zugang in Winterthur", desc: "ZHAW-Studierende nutzen die ASVZ Sport Center in Winterthur und Zürich ohne Aufpreis." }
+    ],
+    localTips: [
+      "Fahre mit dem Velo durch die Kulturstadt und nütze ZVV Zonen-Monatsabos.",
+      "Besuche die Fotostiftung und das Technorama mit vergünstigtem Studenteneintritt."
+    ]
+  },
+  luzern: {
+    title: "Studentenleben & Rabatte in Luzern (UniLu & HSLU)",
+    intro: "Luzern verbindet malerische Kulisse am Vierwaldstättersee mit der Universität Luzern und der HSLU (Hochschule Luzern).",
+    highlights: [
+      { title: "HSLU & Campus am See", desc: "Studieren direkt am Wasser mit moderner Infrastruktur und Kulturangeboten." },
+      { title: "HSLU Sportangebot", desc: "Günstiges Wassersport- und Bergsportangebot für Studierende der Zentralschweiz." }
+    ],
+    localTips: [
+      "Nutze das Passepartout ÖV-Abo für den Tarifverbund Luzern/Nidwalden/Obwalden.",
+      "Besuche das Verkehrshaus der Schweiz mit ermäßigtem Studierendeneintritt."
+    ]
+  },
+  "st-gallen": {
+    title: "Studentenleben & Rabatte in St. Gallen (HSG & OST)",
+    intro: "St. Gallen ist als Heimat der renommierten Universität St. Gallen (HSG) und der OST Fachhochschule eine lebendige Studentenstadt in der Ostschweiz.",
+    highlights: [
+      { title: "Unisport HSG", desc: "Modernstes Sportzentrum auf dem Rosenberg mit umfassendem Kursangebot." },
+      { title: "Stiftsbibliothek & Altstadt", desc: "Weltkulturerbe und gemütliche Kaffeehauskultur rund um den Campus." }
+    ],
+    localTips: [
+      "Nutze den Tarifverbund OSTWIND für günstige Monatsabos in der Ostschweiz.",
+      "Profitiere von Vergünstigungen bei HSG-Events und studentischen Initiativen."
+    ]
+  },
+  lugano: {
+    title: "Studentenleben & Rabatte in Lugano (USI & SUPSI)",
+    intro: "Lugano bringt mediterranes Flair in die Schweizer Hochschullandschaft an der USI (Università della Svizzera italiana) und SUPSI im Tessin.",
+    highlights: [
+      { title: "Servizio Sport USI-SUPSI", desc: "Wassersport am Lago di Lugano, Fitness und Bergsport im Tessin." },
+      { title: "Campus Lugano Viganello", desc: "Moderner universitärer Hub mitten in der Sonnenstube der Schweiz." }
+    ],
+    localTips: [
+      "Nutze die Arcobaleno ÖV-Monatskarte für das gesamte Tessin.",
+      "Genieße studentenfreundliche Mittagsteller in den Grotti rund um Lugano."
     ]
   }
 };
@@ -80,5 +128,5 @@ export const CITY_GUIDES: Record<string, CityGuide> = {
 export function getCityGuide(slug: string): CityGuide | null {
   if (!slug) return null;
   const normalized = slug.toLowerCase().replace(/ü/g, 'ue').replace(/ä/g, 'ae').replace(/ö/g, 'oe');
-  return CITY_GUIDES[normalized] || CITY_GUIDES[slug.toLowerCase()] || null;
+  return CITY_GUIDES[normalized] || CITY_GUIDES[slug.toLowerCase()] || CITY_GUIDES.zuerich;
 }

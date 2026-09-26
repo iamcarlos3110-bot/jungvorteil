@@ -1,5 +1,5 @@
 // lib/categoryGuides.ts
-// Original high-value editorial guides and savings advice for all categories in Switzerland
+// Original high-value editorial guides and savings advice for ALL 15 categories in Switzerland
 
 export interface CategoryGuide {
   title: string;
@@ -15,15 +15,11 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Halbtax Jugend & GA Night optimal kombinieren",
-        body: "Personen unter 25 Jahren erhalten das SBB Halbtax Jugend für nur CHF 120.– im ersten Jahr (Folgejahr CHF 100.–). Kombiniert mit dem GA Night (CHF 99.– / Jahr) fährst du ab 19:00 Uhr auf dem gesamten SBB-Netz und bei fast allen Privatbahnen komplett kostenlos in der 2. Klasse."
+        body: "Personen unter 25 Jahren erhalten das SBB Halbtax Jugend für nur CHF 120.– im ersten Jahr. Kombiniert mit dem GA Night (CHF 99.– / Jahr) fährst du ab 19:00 Uhr auf dem gesamten SBB-Netz und bei fast allen Privatbahnen komplett kostenlos in der 2. Klasse."
       },
       {
         heading: "2. Sparbillette & Spartageskarten richtig timen",
         body: "Über die SBB Mobile App werden bis zu 60 Tage im Voraus Sparbillette mit bis zu 70% Rabatt freigeschaltet. Wer flexibel plant oder Randzeiten nutzt, fährt oft für unter CHF 10.– quer durch die Schweiz."
-      },
-      {
-        heading: "3. Internationale Zugreisen mit Jugendtarif",
-        body: "Für Fahrten nach Deutschland (DB Supersparpreis Europa ab CHF 20.–), Frankreich (TGV Lyria) oder Italien bieten die Partnerbahnen der SBB attraktive Nachlässe für Reisende unter 27 Jahren."
       }
     ],
     proTips: [
@@ -38,7 +34,7 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Swisscom, Sunrise und Salt Jugendvorteile",
-        body: "Sunrise bietet mit 'Up Mobile Youth' 50% Rabatt bis zum 30. Geburtstag. Swisscom gewährt mit 'blue Mobile Youth' reduzierte Grundgebühren und doppelte Speed-Optionen. Salt Youth überzeugt mit inklusivem Roaming-Datenvolumen in Europa."
+        body: "Sunrise bietet mit 'Up Mobile Youth' 50% Rabatt bis zum 30. Geburtstag. Swisscom gewährt mit 'blue Mobile Youth' reduzierte Grundgebühren. Salt Youth überzeugt mit inklusivem Roaming-Datenvolumen in Europa."
       },
       {
         heading: "2. Neobanken & Prepaid-Alternativen ohne Laufzeit",
@@ -47,7 +43,7 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     ],
     proTips: [
       "Wähle Verträge mit 1 Monat Kündigungsfrist, um jederzeit auf günstigere Aktionen zu wechseln.",
-      "Überprüfe vor dem Abo-Abschluss die Netzabdeckung (Swisscom vs. Sunrise vs. Salt) an deinem Wohn- und Studienort.",
+      "Überprüfe vor dem Abo-Abschluss die Netzabdeckung an deinem Wohn- und Studienort.",
       "Nütze eSIM-Optionen für die kostenlose Sofortaktivierung auf dem Smartphone."
     ]
   },
@@ -57,15 +53,15 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Neobanken: Neon, Yuh & Zak im Vergleich",
-        body: "Schweizer Neobanken bieten 100% kostenlose Girokonten inklusive Gratis-Debicard, TWINT-Anbindung und fairen Wechselkursen beim Bezahlen im Ausland. Neon Free und Yuh gehören zu den beliebtesten Angeboten unter jungen Erwachsenen."
+        body: "Schweizer Neobanken bieten 100% kostenlose Girokonten inklusive Gratis-Debitcard, TWINT-Anbindung und fairen Wechselkursen beim Bezahlen im Ausland. Neon Free und Yuh gehören zu den beliebtesten Angeboten."
       },
       {
         heading: "2. Krankenkassen-Prämienverbilligung (IPV)",
-        body: "Ein wesentlicher Hebel für das Budget: Die Kantone gewähren Jugendlichen und Studierenden mit geringem Einkommen eine erhebliche Verbilligung der Grundversicherungsprämie (oft bis zu 80%). Reiche den Antrag bei der SVA deines Kantons rechtzeitig ein."
+        body: "Ein wesentlicher Hebel für das Budget: Die Kantone gewähren Jugendlichen und Studierenden mit geringem Einkommen eine erhebliche Verbilligung der Grundversicherungsprämie. Reiche den Antrag bei der SVA deines Kantons rechtzeitig ein."
       }
     ],
     proTips: [
-      "Beantrage die IPV Prämienverbilligung vor Ablauf der kantonalen Frist (meist 31. März oder 31. Dezember).",
+      "Beantrage die IPV Prämienverbilligung vor Ablauf der kantonalen Frist.",
       "Kopple dein Gratiskonto direkt mit TWINT für bequeme Zahlungen unter Freunden.",
       "Starte frühzeitig mit kleinen Beträgen in der Säule 3a für die steuerbegünstigte Vorsorge."
     ]
@@ -76,16 +72,16 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Projekt Neptun Verkaufsfenster",
-        body: "Dreimal im Jahr öffnen die Schweizer Hochschulen das Projekt Neptun. Studierende und Lehrpersonen bestellen dort MacBooks, ThinkPads und HP-Laptops mit bis zu 40% Rabatt und erweiterter Garantie."
+        body: "Dreimal im Jahr öffnen die Schweizer Hochschulen das Projekt Neptun. Studierende und Lehrpersonen bestellen dort MacBooks, ThinkPads und HP-Laptops mit bis zu 40% Rabatt."
       },
       {
         heading: "2. Apple Education Store & UNiDAYS",
-        body: "Ganzjährig erhalten Immatrikulierte ca. 10% Rabatt auf Macs und iPads im Apple Education Store sowie kostenlose Zusatzleistungen wie Apple Pencil während der Back-to-School Aktion."
+        body: "Ganzjährig erhalten Immatrikulierte ca. 10% Rabatt auf Macs und iPads im Apple Education Store sowie kostenlose Zubehöraktionen."
       }
     ],
     proTips: [
-      "Nutze deine universitäre E-Mail-Adresse (@student.ethz.ch, @uzh.ch etc.) für Gratis-Lizenzen von Microsoft 365, JetBrains und GitHub.",
-      "Vergleiche Preise bei refurbed.ch oder Digitec Second Life für geprüfte Occasion-Geräte mit Garantie.",
+      "Nutze deine universitäre E-Mail-Adresse für Gratis-Lizenzen von Microsoft 365, JetBrains und GitHub.",
+      "Vergleiche Preise bei refurbed.ch oder Digitec Second Life für geprüfte Occasion-Geräte.",
       "Verwende für die Verifizierung UNiDAYS oder den Switch edu-ID Login."
     ]
   },
@@ -95,16 +91,16 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Pathé & Blue Cinema Student Tarife",
-        body: "Gegen Vorweisen des Legi-Ausweises oder Personalausweises kosten Kinotickets bei Pathé (Zürich, Bern, Basel, Genf, Lausanne) ab CHF 14.– statt CHF 22.–. Auch Blue Cinema bietet vergünstigte Studententage."
+        body: "Gegen Vorweisen des Legi-Ausweises kosten Kinotickets bei Pathé ab CHF 14.– statt CHF 22.–. Auch Blue Cinema bietet vergünstigte Studententage."
       },
       {
         heading: "2. Kultur-Karten & Theatertickets",
-        body: "Viele Kantone bieten Kulturpässe (z.B. Kulturlegi der Caritas oder Carte Culture) an, mit denen Kinokarten, Museumseintritte und Theaterbillette um bis zu 50% bis 70% reduziert werden."
+        body: "Viele Kantone bieten Kulturpässe (z.B. Kulturlegi der Caritas) an, mit denen Kinokarten, Museumseintritte und Theaterbillette um bis zu 70% reduziert werden."
       }
     ],
     proTips: [
       "Zeige deine Legi unaufgefordert an der Kinokasse vor.",
-      "Besuche Kinos an den offiziellen Kinotagen (meist Montag oder Mittwoch) für zusätzliche Rabatte.",
+      "Besuche Kinos an den offiziellen Kinotagen (Montag oder Mittwoch) für zusätzliche Rabatte.",
       "Achte auf Festival-Tagespässe mit Studentenrabatt."
     ]
   },
@@ -114,16 +110,16 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Akademische Sportverbände (ASVZ, UNISPORT)",
-        body: "Der ASVZ (Zürich), UNISPORT Bern, Basel oder Genf bieten Zugang zu über 120 Sportarten, modernsten Krafträumen, Saunen und Kursen. Bei Universitäten ist der Beitrag im Semesterbeitrag enthalten."
+        body: "Der ASVZ (Zürich), UNISPORT Bern, Basel oder Genf bieten Zugang zu über 120 Sportarten, modernsten Krafträumen und Saunen extrem günstig."
       },
       {
         heading: "2. Fitnessstudio-Ketten mit Jugendrabatt",
-        body: "Ketten wie PureGym, Activ Fitness oder Fitnesspark gewähren Abonnementsnachlässe für Schüler, Lernende und Studierende unter 25 bis 30 Jahren."
+        body: "Ketten wie PureGym, Activ Fitness oder Fitnesspark gewähren Abonnementsnachlässe für Schüler, Lernende und Studierende."
       }
     ],
     proTips: [
       "Nutze die Krankenkassen-Sportförderung (QualiCert): Viele Zusatzversicherungen zahlen bis zu CHF 500.– an dein Fitnessabo zurück.",
-      "Installiere die ASVZ App für den schlüssellosen Zugang per Drehkreuz.",
+      "Installiere die Hochschulsport App für den schlüssellosen Zugang.",
       "Teste Gratis-Probetrainings vor dem Abo-Abschluss."
     ]
   },
@@ -133,17 +129,17 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Spotify Premium Student & Apple Music",
-        body: "Spotify bietet Premium Student für CHF 7.50 pro Monat (statt CHF 13.95). Die Verifizierung erfolgt einfach online via SheerID mit deiner Legi oder Immatrikulationsbescheinigung."
+        body: "Spotify bietet Premium Student für CHF 7.50 pro Monat (statt CHF 13.95). Die Verifizierung erfolgt einfach online via SheerID mit deiner Legi."
       },
       {
         heading: "2. Gratis-Streaming in der Schweiz",
-        body: "Mit Play SRF, Arte und den Mediatheken der öffentlich-rechtlichen Sender schaust du hochwertige Dokus, Filme und Sportübertragungen kostenlos und ohne Abo."
+        body: "Mit Play SRF, Arte und den Mediatheken schaust du hochwertige Dokus, Filme und Sportübertragungen kostenlos und ohne Abo."
       }
     ],
     proTips: [
       "Verlängere die Spotify Student Verifizierung einmal jährlich vor Ablauf.",
       "Nütze Familien- oder Duo-Abos mit WG-Mitbewohnern für noch günstigere Monatsbeiträge.",
-      "Achte auf Aktionen wie 3 Monate Gratis-Testphase bei Apple Music oder Tidal."
+      "Achte auf Aktionen wie 3 Monate Gratis-Testphase bei Apple Music."
     ]
   },
   bildung: {
@@ -152,17 +148,17 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Bibliotheksnetze & Swisscovery",
-        body: "Über Swisscovery hast du kostenlosen Zugriff auf Millionen wissenschaftlicher Bücher, E-Books und Fachzeitschriften aller Schweizer Hochschulbibliotheken."
+        body: "Über Swisscovery hast du kostenlosen Zugriff auf Millionen wissenschaftlicher Bücher, E-Books und Fachzeitschriften aller Schweizer Hochschulen."
       },
       {
         heading: "2. Buchrabatte & Software-Lizenzen",
-        body: "Verlage wie Haupt, Payot oder Ex Libris bieten Studentenrabatte auf Fachliteratur. Zudem stellen Hochschulen Programme wie SPSS, MATLAB oder Adobe Creative Cloud vergünstigt bereit."
+        body: "Verlage wie Haupt oder Payot bieten Studentenrabatte auf Fachliteratur. Zudem stellen Hochschulen Programme wie SPSS oder MATLAB vergünstigt bereit."
       }
     ],
     proTips: [
-      "Prüfe vor dem Buchkauf, ob der Titel als E-Book in deiner Universitätsbibliothek gratis als PDF vorliegt.",
-      "Nutze das GitHub Student Developer Pack für kostenlose Entwickler-Tools im Wert von über $2000.",
-      "Verkaufe gelesene Fachbücher am Semesterende über Studiladen oder Buchplattformen."
+      "Prüfe vor dem Buchkauf, ob der Titel als E-Book in deiner Universitätsbibliothek gratis vorliegt.",
+      "Nutze das GitHub Student Developer Pack für kostenlose Entwickler-Tools.",
+      "Verkaufe gelesene Fachbücher am Semesterende über Studiladen."
     ]
   },
   restaurants: {
@@ -171,16 +167,16 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Hochschulmensen nutzen",
-        body: "Mensen an der ETH, UZH, UniBE, EPFL oder FHNW servieren ausgewogene Menüs ab CHF 6.50 bis CHF 9.50. Meist steht auch eine vegetarische oder vegane Option zur Auswahl."
+        body: "Mensen an der ETH, UZH, UniBE, EPFL oder FHNW servieren ausgewogene Menüs ab CHF 6.50 bis CHF 9.50."
       },
       {
         heading: "2. Too Good To Go & Foodsharing",
-        body: "Mit Apps wie Too Good To Go rettest du leckere Mahlzeiten aus Bäckereien, Supermärkten und Restaurants kurz vor Ladenschluss zum Sparpreis."
+        body: "Mit Apps wie Too Good To Go rettest du leckere Mahlzeiten aus Bäckereien und Restaurants kurz vor Ladenschluss zum Sparpreis."
       }
     ],
     proTips: [
       "Nütze Gutschein-Coupons in Schnellrestaurants via offizieller Marken-Apps.",
-      "Achte auf Happy-Hour Angebote und studentenfreundliche Mittagsmenüs in Universitätsstädten.",
+      "Achte auf studentenfreundliche Mittagsmenüs in Universitätsstädten.",
       "Packe Selbstgekochtes für Mikrowellen-Stationen am Campus ein."
     ]
   },
@@ -190,21 +186,118 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. UNiDAYS & StudentBeans Codes",
-        body: "Marken wie ASOS, Nike, adidas, Zalando Lounge und Levi's bieten dauerhaft 10% bis 20% Rabatt für Studierende nach Verifizierung auf Portalen wie UNiDAYS."
+        body: "Marken wie ASOS, Nike, adidas und Levi's bieten dauerhaft 10% bis 20% Rabatt für Studierende nach Verifizierung."
       },
       {
         heading: "2. Second-Hand & Brockenhäuser in der Schweiz",
-        body: "Nachhaltig und individuell: Brockis (HFL, Caritas, Zürcher Brockenhaus) bieten Vintage-Mode und Kleidung zu unschlagbaren Preisen."
+        body: "Nachhaltig und individuell: Brockis (HFL, Caritas, Zürcher Brockenhaus) bieten Vintage-Mode zu unschlagbaren Preisen."
       }
     ],
     proTips: [
       "Kombiniere Studentenrabattcodes mit Saisonsales für maximale Ersparnis.",
-      "Melde dich für kostenlose Member-Clubs von Modemarken an für Willkommensgutscheine.",
+      "Melde dich für kostenlose Member-Clubs von Modemarken an.",
       "Verkaufe ungetragene Kleidung auf Vinted oder Tutti.ch."
+    ]
+  },
+  gaming: {
+    title: "Ratgeber: Gaming, Consoles & PC Software Rabatte",
+    intro: "Gaming gehört zu den beliebtesten Freizeitbeschäftigungen. Erfahre, wie du bei Games, Konsolen und PC-Hardware in der Schweiz sparst.",
+    sections: [
+      {
+        heading: "1. Steam, Epic Games & Studentendeals",
+        body: "Digitale Spieleplattformen bieten regelmäßig Seasonsales. Kombiniere Rabatte mit Zahlungskarten ohne Auslandsgebühren."
+      },
+      {
+        heading: "2. Hardware über Studentenprogramme",
+        body: "Hersteller wie Samsung Education, Dell und Lenovo gewähren bis zu 25% Rabatt auf Gaming-Monitore, Laptops und Peripherie."
+      }
+    ],
+    proTips: [
+      "Nutze Twitch Prime / Amazon Prime Student für monatliche Gratis-Spiele.",
+      "Kaufe Guthabenkarten im Schweizer Handel während Rabattwochen.",
+      "Nutze Discord und Universitäts-E-Sport-Clubs für Mitspieler."
+    ]
+  },
+  hotels: {
+    title: "Ratgeber: Günstig Übernachten in der Schweiz & Europa",
+    intro: "Ob Städterise oder Kurztrip in die Berge: Unterkünfte in der Schweiz lassen sich mit Jugendherbergen und Plattformen preiswert buchen.",
+    sections: [
+      {
+        heading: "1. Schweizer Jugendherbergen (Swiss Youth Hostels)",
+        body: "Mit der Membercard der Schweizer Jugendherbergen übernachtest du an Traumlagen in der Schweiz ab ca. CHF 35.– inklusive Frühstück."
+      },
+      {
+        heading: "2. Booking.com Genius & StudentBeans",
+        body: "Reiseportale bieten 10% bis 15% Rabatt auf Unterkünfte für Studierende mit verifizierten Rabattcodes."
+      }
+    ],
+    proTips: [
+      "Achte auf Hostels mit Gästeküche zum Selberkochen.",
+      "Nutze Tagesausflüge mit dem GA Night statt Übernachtungen.",
+      "Buche Unterkünfte außerhalb der Hochsaison."
+    ]
+  },
+  events: {
+    title: "Ratgeber: Festivaltickets, Party & Kulturangebote",
+    intro: "Konzerte, Openairs und Studentenfeste sind Highlights im Schweizer Studienjahr. Spare beim Ticketkauf für deine Lieblings-Events.",
+    sections: [
+      {
+        heading: "1. Openair-Rabatte & Helfer-Einsätze",
+        body: "Viele Schweizer Openairs (Gurtenfestival, OpenAir St. Gallen, Royal Arena) bieten vergünstigte Anwohnertickets oder Gratis-Eintritt für Helfer."
+      },
+      {
+        heading: "2. Studentenevents & Vorverkauf",
+        body: "Fachvereine und Studentenverbindungen organisieren legendäre Partys mit fairen Getränkepreisen und kostenlosem Eintritt."
+      }
+    ],
+    proTips: [
+      "Kaufe Tickets im offiziellen Vorverkauf, um Wucherpreise zu vermeiden.",
+      "Nutze SBB RailAway Kombi-Angebote mit Rabatt auf Zug und Event-Ticket.",
+      "Folge Fachvereins-Kanälen auf Instagram für Ticket-Verlosungen."
+    ]
+  },
+  shopping: {
+    title: "Ratgeber: Alltagseinkäufe, Haushalt & Lifestyle",
+    intro: "Von Lebensmitteln bis zu Drogerieartikeln: Wer im Alltag in der Schweiz klug einkauft, spart aufs Jahr gerechnet beträchtliche Summen.",
+    sections: [
+      {
+        heading: "1. Cumulus & Supercard Vorteilsprogramme",
+        body: "Migros Cumulus und Coop Supercard sammeln Punkte, die sich direkt in Einkaufsgutscheine umwandeln lassen."
+      },
+      {
+        heading: "2. Eigenmarken statt Markenprodukte",
+        body: "M-Budget (Migros), Prix Garantie (Coop) sowie Denner, Aldi und Lidl bieten hervorragende Qualität zu einem Bruchteil des Markenpreises."
+      }
+    ],
+    proTips: [
+      "Kaufe frische Produkte samstags vor Ladenschluss mit 50% Rabatt-Klebern.",
+      "Nutze Einkaufslisten, um Spontankäufe zu vermeiden.",
+      "Nütze die Caritas Markt Angebote bei schmalem Budget."
+    ]
+  },
+  gratis: {
+    title: "Ratgeber: 100% Kostenlose Angebote in der Schweiz",
+    intro: "Es gibt Dinge im Leben, die tatsächlich keinen Rappen kosten. Wir listen alle echten Gratisproben, gebührenfreien Services und Geschenke.",
+    sections: [
+      {
+        heading: "1. Gebührenfreie Konten & Gratis-Mitgliedschaften",
+        body: "Schweizer Neobanken und Hochschul-Sportverbände bieten kostenlose Zugänge und Gratis-Kreditkarten."
+      },
+      {
+        heading: "2. Geburtsgeschenke & Willkommens-Boni",
+        body: "Viele Schweizer Unternehmen schenken Neukunden unter 30 Willkommensgutscheine, Produkte oder Testmonate."
+      }
+    ],
+    proTips: [
+      "Prüfe stets, ob bei Gratis-Testphasen eine automatische Verlängerung droht und kündige rechtzeitig.",
+      "Nutze Wegwerf-E-Mails für Newsletter-Gratisgeschenke.",
+      "Teile funktionierende Gratisdeals in deiner Community."
     ]
   }
 };
 
 export function getCategoryGuide(slug: string): CategoryGuide | null {
-  return CATEGORY_GUIDES[slug.toLowerCase()] || null;
+  if (!slug) return null;
+  const key = slug.toLowerCase();
+  return CATEGORY_GUIDES[key] || CATEGORY_GUIDES.gratis;
 }
