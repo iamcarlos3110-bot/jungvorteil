@@ -78,5 +78,7 @@ export const CITY_GUIDES: Record<string, CityGuide> = {
 };
 
 export function getCityGuide(slug: string): CityGuide | null {
-  return CITY_GUIDES[slug.toLowerCase()] || null;
+  if (!slug) return null;
+  const normalized = slug.toLowerCase().replace(/ü/g, 'ue').replace(/ä/g, 'ae').replace(/ö/g, 'oe');
+  return CITY_GUIDES[normalized] || CITY_GUIDES[slug.toLowerCase()] || null;
 }
