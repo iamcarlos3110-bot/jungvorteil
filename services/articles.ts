@@ -281,7 +281,7 @@ Die älteste Universität der Schweiz lockt Studierende aus aller Welt. Die Lage
   {
     id: "a9999999-9999-4999-a999-999999999999",
     slug: "studenten-leben-genf-budget-guide",
-    title: "Guide étudant à Genève: Vivre et étudier à l'Université de Genève (UniGE)",
+    title: "Studentenleben in Genf: Budget-Guide für UniGE Studierende",
     excerpt: "Genf ist ein internationaler Hub. Entdecke, wie Studierende an der UniGE günstig wohnen, essen und unterwegs sind.",
     content: `# Studentenleben in Genf: Budget-Guide für UniGE Studierende
 

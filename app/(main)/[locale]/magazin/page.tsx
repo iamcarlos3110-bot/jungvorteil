@@ -11,7 +11,7 @@ export const metadata = {
 
 export default async function MagazinPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const articles = await getArticles(12);
+  const articles = await getArticles(50);
 
   const categories = ["Alle", "Finanzen", "Reisen", "Studium", "Technik", "Bildung"];
 
