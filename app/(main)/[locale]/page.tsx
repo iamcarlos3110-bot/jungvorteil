@@ -57,7 +57,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     articles
   ] = await Promise.all([
     getVorteilDerWoche(),
-    getVerifiedTopOffers(12),
+    getVerifiedTopOffers(6),
     getVerifiedNewOffers(8),
     getVerifiedExpiringOffers(8),
     getVerifiedStudentOffers(8),
@@ -71,8 +71,27 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     getArticles(3)
   ]);
 
-  // We strictly use topOffers for the main section, no fallback to demo.
-  const mainOffers = topOffers;
+  // Deduplicate offers across sections so no offer appears twice on the homepage
+  const seenIds = new Set<string>();
+  if (vorteilDerWoche) seenIds.add(vorteilDerWoche.id);
+
+  const mainOffers = topOffers.filter(o => !seenIds.has(o.id));
+  mainOffers.forEach(o => seenIds.add(o.id));
+
+  const filteredNewOffers = newOffers.filter(o => !seenIds.has(o.id));
+  filteredNewOffers.forEach(o => seenIds.add(o.id));
+
+  const filteredStudentOffers = studentOffers.filter(o => !seenIds.has(o.id));
+  filteredStudentOffers.forEach(o => seenIds.add(o.id));
+
+  const filteredUnder25Offers = under25Offers.filter(o => !seenIds.has(o.id));
+  filteredUnder25Offers.forEach(o => seenIds.add(o.id));
+
+  const filteredFreeOffers = freeOffers.filter(o => !seenIds.has(o.id));
+  filteredFreeOffers.forEach(o => seenIds.add(o.id));
+
+  const filteredExpiringOffers = expiringOffers.filter(o => !seenIds.has(o.id));
+  filteredExpiringOffers.forEach(o => seenIds.add(o.id));
 
   const schema = {
     "@context": "https://schema.org",
@@ -236,7 +255,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <AdSlot slot="AD_BETWEEN_OFFERS_1" />
 
         {/* New Offers Section */}
-        {newOffers.length > 0 && (
+        {filteredNewOffers.length > 0 && (
           <section>
             <div className="flex items-end justify-between mb-8">
               <div>
@@ -244,14 +263,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <p className="text-gray-500">Frisch hinzugefügt und geprüft</p>
               </div>
             </div>
-            <OfferGrid offers={newOffers} locale={locale} />
+            <OfferGrid offers={filteredNewOffers} locale={locale} />
           </section>
         )}
 
         {/* Specific Hubs: Student, Under 25, Free */}
         <div className="grid md:grid-cols-3 gap-8">
           {/* Student Hub */}
-          {studentOffers.length > 0 && (
+          {filteredStudentOffers.length > 0 && (
             <div className="bg-blue-50 rounded-3xl p-6 md:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-blue-600 text-white p-2 rounded-lg">
@@ -260,7 +279,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h3 className="text-xl font-bold text-blue-900">Für Studierende</h3>
               </div>
               <div className="space-y-4 mb-6">
-                {studentOffers.map(offer => {
+                {filteredStudentOffers.map(offer => {
                   const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
                   return (
                     <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
@@ -286,7 +305,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           )}
 
           {/* Under 25 Hub */}
-          {under25Offers.length > 0 && (
+          {filteredUnder25Offers.length > 0 && (
             <div className="bg-teal-50 rounded-3xl p-6 md:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-teal-600 text-white p-2 rounded-lg font-bold">
@@ -295,7 +314,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h3 className="text-xl font-bold text-teal-900">Unter 25 Jahre</h3>
               </div>
               <div className="space-y-4 mb-6">
-                {under25Offers.map(offer => {
+                {filteredUnder25Offers.map(offer => {
                   const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
                   return (
                     <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
@@ -321,7 +340,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           )}
 
           {/* Free Hub */}
-          {freeOffers.length > 0 && (
+          {filteredFreeOffers.length > 0 && (
             <div className="bg-green-50 rounded-3xl p-6 md:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-green-600 text-white p-2 rounded-lg">
@@ -330,7 +349,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h3 className="text-xl font-bold text-green-900">Kostenlos</h3>
               </div>
               <div className="space-y-4 mb-6">
-                {freeOffers.map(offer => {
+                {filteredFreeOffers.map(offer => {
                   const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
                   return (
                     <Link key={offer.id} href={`/${locale}/angebot/${offer.slug}`} className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
@@ -374,7 +393,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         )}
 
         {/* Expiring Soon */}
-        {expiringOffers.length > 0 && (
+        {filteredExpiringOffers.length > 0 && (
           <section className="bg-amber-50 -mx-4 px-4 py-16 md:rounded-3xl md:mx-0 md:px-12 border border-amber-100">
             <div className="flex items-end justify-between mb-10">
               <div>
@@ -385,7 +404,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <p className="text-gray-600">Diese Angebote sind nur noch für kurze Zeit gültig.</p>
               </div>
             </div>
-            <OfferGrid offers={expiringOffers} locale={locale} />
+            <OfferGrid offers={filteredExpiringOffers} locale={locale} />
           </section>
         )}
 

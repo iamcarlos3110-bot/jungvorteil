@@ -44,7 +44,7 @@ Vor Semesterbeginn sollten Laptops und Tablets niemals zum Vollpreis gekauft wer
 ## Fazit
 Wer seine Fixkosten bei ÖV, Banken, Telefonie und Versicherung einmalig optimiert, spart pro Jahr rasch mehr als **CHF 2'000.–**. Entdecke alle aktuellen Rabattcodes auf JungVorteil!`,
     category: "Finanzen",
-    image_url: null,
+    image_url: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
     sources: null,
     published_at: new Date().toISOString(),
     created_at: new Date().toISOString(),
@@ -87,7 +87,7 @@ Das Generalabonnement ermöglicht freie Fahrt im gesamten Schweizer Streckennetz
 
 Nutze JungVorteil, um aktuelle SBB Aktionen und Kombi-Angebote für den öffentlichen Verkehr zu finden!`,
     category: "Reisen",
-    image_url: null,
+    image_url: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&auto=format&fit=crop&q=80",
     sources: null,
     published_at: new Date().toISOString(),
     created_at: new Date().toISOString(),
@@ -128,7 +128,7 @@ Der Anspruch richtet sich nach deinem steuerbaren Einkommen und Vermögen des Vo
 
 Bleibe informiert mit JungVorteil über finanzielle Entlastungen im Schweizer Studienalltag!`,
     category: "Finanzen",
-    image_url: null,
+    image_url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80",
     sources: null,
     published_at: new Date().toISOString(),
     created_at: new Date().toISOString(),
@@ -164,7 +164,7 @@ Als immatrikulierter Student an UZH, ETH oder ZHAW ist die Mitgliedschaft im **A
 
 Finde weitere exklusive Zürcher Rabatte bei Restaurants, Kinos und Events direkt auf JungVorteil!`,
     category: "Studium",
-    image_url: null,
+    image_url: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&auto=format&fit=crop&q=80",
     sources: null,
     published_at: new Date().toISOString(),
     created_at: new Date().toISOString(),
@@ -204,7 +204,7 @@ Als junger Mensch in der Schweiz ist schnelles mobiles Internet unverzichtbar. G
 
 Prüfe die neuesten Promo-Codes für Telefonie und Internet auf JungVorteil!`,
     category: "Technik",
-    image_url: null,
+    image_url: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80",
     sources: null,
     published_at: new Date().toISOString(),
     created_at: new Date().toISOString(),
@@ -235,7 +235,7 @@ Wer in der Schweiz aufwächst oder zum Studium einreist, begegnet zahlreichen sp
 
 Finde auf JungVorteil die besten Rabatte passend zu deiner Lebenssituation!`,
     category: "Bildung",
-    image_url: null,
+    image_url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
     sources: null,
     published_at: new Date().toISOString(),
     created_at: new Date().toISOString(),
