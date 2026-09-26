@@ -11,7 +11,16 @@ export function isSupabaseConfigured(): boolean {
 export function createPublicClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://dummy-url.supabase.co";
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "dummy-key";
-  return createSupabaseClient(supabaseUrl, supabaseKey);
+  return createSupabaseClient(supabaseUrl, supabaseKey, {
+    global: {
+      fetch: (url, options) =>
+        fetch(url, {
+          ...options,
+          cache: "no-store",
+          next: { revalidate: 0 },
+        }),
+    },
+  });
 }
 
 export async function createClient() {
@@ -23,6 +32,14 @@ export async function createClient() {
     supabaseUrl || "https://dummy-url.supabase.co",
     supabaseKey || "dummy-key",
     {
+      global: {
+        fetch: (url, options) =>
+          fetch(url, {
+            ...options,
+            cache: "no-store",
+            next: { revalidate: 0 },
+          }),
+      },
       cookies: {
         getAll() {
           return cookieStore.getAll();
