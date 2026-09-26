@@ -8,6 +8,7 @@ import ArticleCard from "@/components/magazin/ArticleCard";
 import ShareButton from "@/components/magazin/ShareButton";
 import Script from "next/script";
 
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug } = await params;
