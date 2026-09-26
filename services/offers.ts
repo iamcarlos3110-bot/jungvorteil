@@ -597,26 +597,34 @@ export async function getDemoOffers(limit = 20): Promise<Offer[]> {
 export async function getOfferBySlug(slug: string): Promise<Offer | null> {
   try {
     const supabase = await createClient();
-    const { data, error } = await supabase
-      .from("offers")
-      .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
-      .eq("slug", slug)
-      .single();
-    if (error || !data) {
-      return FALLBACK_OFFERS.find(o => o.slug === slug) || null;
-    }
-    return data as unknown as Offer;
-  } catch {
-    return FALLBACK_OFFERS.find(o => o.slug === slug) || null;
+    const { data } = await Promise.race([
+      supabase
+        .from("offers")
+        .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
+        .eq("slug", slug)
+        .maybeSingle(),
+      new Promise<{ data: null }>((_, reject) =>
+        setTimeout(() => reject(new Error("Timeout")), 2500)
+      ),
+    ]);
+    if (data) return data as unknown as Offer;
+  } catch (err) {
+    console.error("Error/Timeout fetching offer by slug:", err);
   }
+
+  // Exact match fallback only. If slug does not exist, returns null (triggering 404)
+  return FALLBACK_OFFERS.find((o) => o.slug === slug) || null;
 }
 
 export async function incrementOfferView(offerId: string): Promise<void> {
   try {
     const supabase = await createClient();
-    await supabase.rpc("increment_offer_view", { offer_id: offerId });
+    Promise.race([
+      supabase.rpc("increment_offer_view", { offer_id: offerId }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error("RPC Timeout")), 1000)),
+    ]).catch(() => {});
   } catch {
-    // Ignore RPC failure in offline/fallback mode
+    // Non-blocking catch
   }
 }
 

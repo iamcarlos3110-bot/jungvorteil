@@ -6,7 +6,8 @@ import { createClient } from "@/lib/supabase/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { offer_id, device_category, utm_source, utm_medium, utm_campaign } = body;
+    const offer_id = body.offer_id || body.offerId;
+    const { device_category, utm_source, utm_medium, utm_campaign } = body;
 
     if (!offer_id) {
       return NextResponse.json({ error: "offer_id required" }, { status: 400 });

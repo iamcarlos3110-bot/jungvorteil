@@ -7,6 +7,7 @@ export default function ImpressumPage() {
     <div className="max-w-4xl mx-auto px-4 py-16 prose prose-emerald">
       <h1>Impressum</h1>
       
+      {/* TODO_LEGAL_DATA: Esperando confirmación de datos legales reales del usuario (Nombre, Dirección, Entidad) */}
       <h2>Kontaktadresse & Betreiber</h2>
       <p>
         <strong>JungVorteil Schweiz</strong><br/>

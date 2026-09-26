@@ -246,19 +246,23 @@ Finde auf JungVorteil die besten Rabatte passend zu deiner Lebenssituation!`,
 export async function getArticles(limit = 6): Promise<Article[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await supabase
-      .from("articles")
-      .select("*")
-      .not("published_at", "is", null)
-      .order("published_at", { ascending: false })
-      .limit(limit);
+    const { data, error } = await Promise.race([
+      supabase
+        .from("articles")
+        .select("*")
+        .not("published_at", "is", null)
+        .order("published_at", { ascending: false })
+        .limit(limit),
+      new Promise<{ data: null; error: Error }>((_, reject) =>
+        setTimeout(() => reject(new Error("Timeout")), 2500)
+      ),
+    ]);
 
     if (error || !data || data.length === 0) {
       return FALLBACK_ARTICLES.slice(0, limit);
     }
     return data as Article[];
-  } catch (err) {
-    console.error("Network error fetching articles, using fallback:", err);
+  } catch {
     return FALLBACK_ARTICLES.slice(0, limit);
   }
 }
@@ -266,20 +270,20 @@ export async function getArticles(limit = 6): Promise<Article[]> {
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
   try {
     const supabase = await createClient();
-    const { data, error } = await supabase
-      .from("articles")
-      .select("*")
-      .eq("slug", slug)
-      .single();
+    const { data } = await Promise.race([
+      supabase.from("articles").select("*").eq("slug", slug).maybeSingle(),
+      new Promise<{ data: null }>((_, reject) =>
+        setTimeout(() => reject(new Error("Timeout")), 2500)
+      ),
+    ]);
 
-    if (error || !data) {
-      const fallback = FALLBACK_ARTICLES.find(a => a.slug === slug);
-      return fallback || null;
-    }
-    return data as Article;
-  } catch {
-    return FALLBACK_ARTICLES.find(a => a.slug === slug) || null;
+    if (data) return data as Article;
+  } catch (err) {
+    console.error("Error/Timeout fetching article by slug:", err);
   }
+
+  // Exact match fallback only. If slug does not exist, returns null (triggering 404)
+  return FALLBACK_ARTICLES.find((a) => a.slug === slug) || null;
 }
 
 

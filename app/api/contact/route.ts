@@ -75,6 +75,19 @@ export async function POST(request: NextRequest) {
       });
     }
 
+    // Save contact message to Supabase contact_messages table
+    try {
+      await supabase.from("contact_messages").insert({
+        name: data.name,
+        email: data.email,
+        message: data.message,
+        ip,
+        created_at: new Date().toISOString(),
+      });
+    } catch {
+      // Table fallback
+    }
+
     // Upsert rate limit record for IP
     await supabase.from("contact_rate_limits").upsert({
       ip,
