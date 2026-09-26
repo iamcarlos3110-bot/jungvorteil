@@ -2,7 +2,7 @@
 
 export async function fetchWithTimeout<T>(
   promise: PromiseLike<T>,
-  ms = 1000
+  ms = 5000
 ): Promise<T> {
   return Promise.race([
     promise,

@@ -2131,17 +2131,28 @@ export async function getOffers(filters?: OfferFilters, page = 1, limit = 20): P
 }
 
 export async function getOfferBySlug(slug: string): Promise<Offer | null> {
-  const fallback = FALLBACK_OFFERS.find((o) => o.slug === slug) || null;
+  const normSlug = slug.toLowerCase().trim();
+  const fallback = FALLBACK_OFFERS.find(
+    (o) => o.slug.toLowerCase() === normSlug || o.id === slug
+  ) || null;
+
   if (!isSupabaseConfigured()) return fallback;
 
   try {
     const supabase = await createClient();
-    const { data } = await Promise.race([
-      supabase.from("offers").select("*, brand:brands(*), category:categories(*), city:cities(*)").eq("slug", slug).maybeSingle(),
-      new Promise<{ data: null }>((_, reject) => setTimeout(() => reject(new Error("Timeout")), 1000))
-    ]);
+    const { data } = await fetchWithTimeout(
+      supabase
+        .from("offers")
+        .select("*, brand:brands(*), category:categories(*), city:cities(*)")
+        .eq("slug", normSlug)
+        .maybeSingle(),
+      5000
+    ).catch(() => ({ data: null }));
+
     if (data) return data as Offer;
-  } catch {}
+  } catch (e) {
+    console.error("getOfferBySlug error:", e);
+  }
 
   return fallback;
 }

@@ -3,6 +3,7 @@ import { createPublicClient as createClient, isSupabaseConfigured } from "@/lib/
 import { Category } from "@/types";
 import { CATEGORIES } from "@/config/categories";
 import { FALLBACK_OFFERS } from "@/services/offers";
+import { fetchWithTimeout } from "@/lib/fetchWithTimeout";
 
 const STATIC_CATEGORIES: Category[] = CATEGORIES.map((c, index) => {
   const count = FALLBACK_OFFERS.filter((o) => o.category?.slug === c.slug).length;
@@ -25,14 +26,12 @@ export async function getAllCategories(): Promise<Category[]> {
 
   try {
     const supabase = await createClient();
-    const { data, error } = await Promise.race([
+    const { data } = await fetchWithTimeout(
       supabase.from("categories").select("*, offers(count)").order("sort_order"),
-      new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 500)
-      ),
-    ]);
+      5000
+    ).catch(() => ({ data: null }));
 
-    if (error || !data || data.length === 0) return STATIC_CATEGORIES;
+    if (!data || data.length === 0) return STATIC_CATEGORIES;
 
     return (data as (Category & { offers?: { count: number }[] })[]).map((c) => {
       const dbCount = c.offers && c.offers[0] ? c.offers[0].count : 0;
@@ -48,18 +47,15 @@ export async function getAllCategories(): Promise<Category[]> {
 }
 
 export async function getCategoryBySlug(slug: string): Promise<Category | null> {
-  if (!isSupabaseConfigured()) {
-    return STATIC_CATEGORIES.find((c) => c.slug === slug) || null;
-  }
+  const fallback = STATIC_CATEGORIES.find((c) => c.slug.toLowerCase() === slug.toLowerCase()) || null;
+  if (!isSupabaseConfigured()) return fallback;
 
   try {
     const supabase = await createClient();
-    const { data } = await Promise.race([
-      supabase.from("categories").select("*, offers(count)").eq("slug", slug).maybeSingle(),
-      new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 500)
-      ),
-    ]);
+    const { data } = await fetchWithTimeout(
+      supabase.from("categories").select("*, offers(count)").eq("slug", slug.toLowerCase()).maybeSingle(),
+      5000
+    ).catch(() => ({ data: null }));
 
     if (data) {
       return {
@@ -68,8 +64,8 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
       } as Category;
     }
   } catch {
-    // Fall through to static
+    // Fall through
   }
 
-  return STATIC_CATEGORIES.find((c) => c.slug === slug) || null;
+  return fallback;
 }

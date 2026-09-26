@@ -2,6 +2,7 @@
 import { createPublicClient as createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { City } from "@/types";
 import { CITIES } from "@/config/cities";
+import { fetchWithTimeout } from "@/lib/fetchWithTimeout";
 
 const STATIC_CITIES: City[] = CITIES.map((c, idx) => ({
   id: `city-static-${idx + 1}`,
@@ -20,14 +21,12 @@ export async function getAllCities(): Promise<City[]> {
 
   try {
     const supabase = await createClient();
-    const { data, error } = await Promise.race([
+    const { data } = await fetchWithTimeout(
       supabase.from("cities").select("*, offers(count)"),
-      new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 500)
-      ),
-    ]);
+      5000
+    ).catch(() => ({ data: null }));
 
-    if (error || !data || data.length === 0) return STATIC_CITIES;
+    if (!data || data.length === 0) return STATIC_CITIES;
 
     const citiesWithCount = (data as (City & { offers?: { count: number }[] })[]).map((c) => ({
       ...c,
@@ -45,18 +44,15 @@ export async function getAllCities(): Promise<City[]> {
 }
 
 export async function getCityBySlug(slug: string): Promise<City | null> {
-  if (!isSupabaseConfigured()) {
-    return STATIC_CITIES.find((c) => c.slug === slug) || null;
-  }
+  const fallback = STATIC_CITIES.find((c) => c.slug.toLowerCase() === slug.toLowerCase()) || null;
+  if (!isSupabaseConfigured()) return fallback;
 
   try {
     const supabase = await createClient();
-    const { data } = await Promise.race([
-      supabase.from("cities").select("*, offers(count)").eq("slug", slug).maybeSingle(),
-      new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 500)
-      ),
-    ]);
+    const { data } = await fetchWithTimeout(
+      supabase.from("cities").select("*, offers(count)").eq("slug", slug.toLowerCase()).maybeSingle(),
+      5000
+    ).catch(() => ({ data: null }));
 
     if (data) {
       return {
@@ -68,5 +64,5 @@ export async function getCityBySlug(slug: string): Promise<City | null> {
     // Fall through
   }
 
-  return STATIC_CITIES.find((c) => c.slug === slug) || null;
+  return fallback;
 }
