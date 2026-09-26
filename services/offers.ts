@@ -3,6 +3,7 @@
 
 import { createPublicClient as createClient } from "@/lib/supabase/server";
 import { Offer, OfferFilters, PaginatedOffers } from "@/types";
+import { fetchWithTimeout } from "@/lib/fetchWithTimeout";
 
 function buildVerifiedQuery(supabase: Awaited<ReturnType<typeof createClient>>) {
   const now = new Date().toISOString();
@@ -448,7 +449,7 @@ export async function getVerifiedOffers(
 
     query = query.range(offset, offset + limit - 1);
 
-    const { data, error, count } = await query;
+    const { data, error, count } = await fetchWithTimeout(query, 1000);
 
     if (error || !data || data.length === 0) {
       let filtered = [...FALLBACK_OFFERS];
@@ -478,9 +479,10 @@ export async function getVerifiedOffers(
 export async function getVerifiedTopOffers(limit = 12): Promise<Offer[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await buildVerifiedQuery(supabase)
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      buildVerifiedQuery(supabase).order("view_count", { ascending: false }).limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -491,9 +493,10 @@ export async function getVerifiedTopOffers(limit = 12): Promise<Offer[]> {
 export async function getVerifiedNewOffers(limit = 8): Promise<Offer[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await buildVerifiedQuery(supabase)
-      .order("created_at", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      buildVerifiedQuery(supabase).order("created_at", { ascending: false }).limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -505,14 +508,17 @@ export async function getVerifiedExpiringOffers(limit = 8): Promise<Offer[]> {
   try {
     const supabase = await createClient();
     const now = new Date().toISOString();
-    const { data, error } = await supabase
-      .from("offers")
-      .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
-      .eq("status", "published")
-      .not("end_date", "is", null)
-      .gt("end_date", now)
-      .order("end_date", { ascending: true })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      supabase
+        .from("offers")
+        .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
+        .eq("status", "published")
+        .not("end_date", "is", null)
+        .gt("end_date", now)
+        .order("end_date", { ascending: true })
+        .limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -523,10 +529,10 @@ export async function getVerifiedExpiringOffers(limit = 8): Promise<Offer[]> {
 export async function getVerifiedStudentOffers(limit = 8): Promise<Offer[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await buildVerifiedQuery(supabase)
-      .eq("student_required", true)
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      buildVerifiedQuery(supabase).eq("student_required", true).order("view_count", { ascending: false }).limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => o.student_required).slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -537,10 +543,10 @@ export async function getVerifiedStudentOffers(limit = 8): Promise<Offer[]> {
 export async function getVerifiedUnderAgeOffers(age: number, limit = 8): Promise<Offer[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await buildVerifiedQuery(supabase)
-      .lte("age_max", age)
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      buildVerifiedQuery(supabase).lte("age_max", age).order("view_count", { ascending: false }).limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => !o.age_max || o.age_max >= age).slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -548,14 +554,13 @@ export async function getVerifiedUnderAgeOffers(age: number, limit = 8): Promise
   }
 }
 
-
 export async function getVerifiedFreeOffers(limit = 8): Promise<Offer[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await buildVerifiedQuery(supabase)
-      .eq("advantage_type", "free")
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      buildVerifiedQuery(supabase).eq("advantage_type", "free").order("view_count", { ascending: false }).limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => o.advantage_type === "free").slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -566,10 +571,10 @@ export async function getVerifiedFreeOffers(limit = 8): Promise<Offer[]> {
 export async function getVorteilDerWoche(): Promise<Offer | null> {
   try {
     const supabase = await createClient();
-    const { data, error } = await buildVerifiedQuery(supabase)
-      .order("view_count", { ascending: false })
-      .limit(1)
-      .single();
+    const { data, error } = await fetchWithTimeout(
+      buildVerifiedQuery(supabase).order("view_count", { ascending: false }).limit(1).single(),
+      1000
+    );
     if (error || !data) return FALLBACK_OFFERS[0] || null;
     return data as unknown as Offer;
   } catch {
@@ -580,12 +585,15 @@ export async function getVorteilDerWoche(): Promise<Offer | null> {
 export async function getDemoOffers(limit = 20): Promise<Offer[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await supabase
-      .from("offers")
-      .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
-      .eq("status", "published")
-      .order("created_at", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      supabase
+        .from("offers")
+        .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
+        .eq("status", "published")
+        .order("created_at", { ascending: false })
+        .limit(limit),
+      1000
+    );
 
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
@@ -597,19 +605,17 @@ export async function getDemoOffers(limit = 20): Promise<Offer[]> {
 export async function getOfferBySlug(slug: string): Promise<Offer | null> {
   try {
     const supabase = await createClient();
-    const { data } = await Promise.race([
+    const { data } = await fetchWithTimeout(
       supabase
         .from("offers")
         .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
         .eq("slug", slug)
         .maybeSingle(),
-      new Promise<{ data: null }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2500)
-      ),
-    ]);
+      1000
+    );
     if (data) return data as unknown as Offer;
   } catch (err) {
-    console.error("Error/Timeout fetching offer by slug:", err);
+    // Fall through to fallback
   }
 
   // Exact match fallback only. If slug does not exist, returns null (triggering 404)
@@ -619,10 +625,10 @@ export async function getOfferBySlug(slug: string): Promise<Offer | null> {
 export async function incrementOfferView(offerId: string): Promise<void> {
   try {
     const supabase = await createClient();
-    Promise.race([
+    fetchWithTimeout(
       supabase.rpc("increment_offer_view", { offer_id: offerId }),
-      new Promise((_, reject) => setTimeout(() => reject(new Error("RPC Timeout")), 1000)),
-    ]).catch(() => {});
+      1000
+    ).catch(() => {});
   } catch {
     // Non-blocking catch
   }
@@ -635,14 +641,17 @@ export async function searchOffers(query: string, limit = 10): Promise<Offer[]> 
     const supabase = await createClient();
     const now = new Date().toISOString();
 
-    const { data, error } = await supabase
-      .from("offers")
-      .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
-      .eq("status", "published")
-      .or(`end_date.is.null,end_date.gt.${now}`)
-      .or(`title_de.ilike.%${query}%,description_de.ilike.%${query}%`)
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      supabase
+        .from("offers")
+        .select(`*, brand:brands(*), category:categories(*), city:cities(*)`)
+        .eq("status", "published")
+        .or(`end_date.is.null,end_date.gt.${now}`)
+        .or(`title_de.ilike.%${query}%,description_de.ilike.%${query}%`)
+        .order("view_count", { ascending: false })
+        .limit(limit),
+      1000
+    );
 
     if (error || !data || data.length === 0) {
       return FALLBACK_OFFERS.filter(o => o.title_de.toLowerCase().includes(q) || (o.description_de && o.description_de.toLowerCase().includes(q))).slice(0, limit);
@@ -659,10 +668,10 @@ export const getTopOffers = getVerifiedTopOffers;
 export async function getSimilarOffers(offerId: string, limit = 4): Promise<Offer[]> {
   try {
     const supabase = await createClient();
-    const { data, error } = await buildVerifiedQuery(supabase)
-      .neq("id", offerId)
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      buildVerifiedQuery(supabase).neq("id", offerId).order("view_count", { ascending: false }).limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => o.id !== offerId).slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -674,14 +683,17 @@ export async function getOffersByCategory(categorySlug: string, limit = 12): Pro
   try {
     const supabase = await createClient();
     const now = new Date().toISOString();
-    const { data, error } = await supabase
-      .from("offers")
-      .select(`*, brand:brands(*), category:categories!inner(*), city:cities(*)`)
-      .eq("status", "published")
-      .or(`end_date.is.null,end_date.gt.${now}`)
-      .eq("category.slug", categorySlug)
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      supabase
+        .from("offers")
+        .select(`*, brand:brands!inner(*), category:categories!inner(*), city:cities(*)`)
+        .eq("status", "published")
+        .or(`end_date.is.null,end_date.gt.${now}`)
+        .eq("category.slug", categorySlug)
+        .order("view_count", { ascending: false })
+        .limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => o.category?.slug === categorySlug).slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {
@@ -694,11 +706,10 @@ export async function getOffersByCity(citySlug: string, limit = 12): Promise<Off
     const supabase = await createClient();
     const now = new Date().toISOString();
 
-    const { data: city } = await supabase
-      .from("cities")
-      .select("id")
-      .eq("slug", citySlug)
-      .single();
+    const { data: city } = await fetchWithTimeout(
+      supabase.from("cities").select("id").eq("slug", citySlug).single(),
+      1000
+    ).catch(() => ({ data: null }));
 
     let query = supabase
       .from("offers")
@@ -712,9 +723,10 @@ export async function getOffersByCity(citySlug: string, limit = 12): Promise<Off
       query = query.eq("is_nationwide", true);
     }
 
-    const { data, error } = await query
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      query.order("view_count", { ascending: false }).limit(limit),
+      1000
+    );
 
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
@@ -727,14 +739,17 @@ export async function getOffersByBrand(brandSlug: string, limit = 12): Promise<O
   try {
     const supabase = await createClient();
     const now = new Date().toISOString();
-    const { data, error } = await supabase
-      .from("offers")
-      .select(`*, brand:brands!inner(*), category:categories(*), city:cities(*)`)
-      .eq("status", "published")
-      .or(`end_date.is.null,end_date.gt.${now}`)
-      .eq("brand.slug", brandSlug)
-      .order("view_count", { ascending: false })
-      .limit(limit);
+    const { data, error } = await fetchWithTimeout(
+      supabase
+        .from("offers")
+        .select(`*, brand:brands!inner(*), category:categories(*), city:cities(*)`)
+        .eq("status", "published")
+        .or(`end_date.is.null,end_date.gt.${now}`)
+        .eq("brand.slug", brandSlug)
+        .order("view_count", { ascending: false })
+        .limit(limit),
+      1000
+    );
     if (error || !data || data.length === 0) return FALLBACK_OFFERS.filter(o => o.brand?.slug === brandSlug).slice(0, limit);
     return (data as unknown as Offer[]) ?? [];
   } catch {

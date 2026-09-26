@@ -254,7 +254,7 @@ export async function getArticles(limit = 6): Promise<Article[]> {
         .order("published_at", { ascending: false })
         .limit(limit),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2500)
+        setTimeout(() => reject(new Error("Timeout")), 1000)
       ),
     ]);
 
@@ -273,7 +273,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     const { data } = await Promise.race([
       supabase.from("articles").select("*").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2500)
+        setTimeout(() => reject(new Error("Timeout")), 1000)
       ),
     ]);
 

@@ -21,7 +21,7 @@ export async function getAllBrands(): Promise<Brand[]> {
     const { data } = await Promise.race([
       supabase.from("brands").select("*").order("name"),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2000)
+        setTimeout(() => reject(new Error("Timeout")), 1000)
       ),
     ]);
 
@@ -38,7 +38,7 @@ export async function getBrandBySlug(slug: string): Promise<Brand | null> {
     const { data } = await Promise.race([
       supabase.from("brands").select("*").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2000)
+        setTimeout(() => reject(new Error("Timeout")), 1000)
       ),
     ]);
 
@@ -56,7 +56,7 @@ export async function getTopBrands(limit = 12): Promise<Brand[]> {
     const { data } = await Promise.race([
       supabase.from("brands").select("*, offers(count)").order("name"),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2000)
+        setTimeout(() => reject(new Error("Timeout")), 1000)
       ),
     ]);
 

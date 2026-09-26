@@ -21,7 +21,7 @@ export async function getAllCities(): Promise<City[]> {
     const { data, error } = await Promise.race([
       supabase.from("cities").select("*, offers(count)"),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2000)
+        setTimeout(() => reject(new Error("Timeout")), 1000)
       ),
     ]);
 
@@ -48,7 +48,7 @@ export async function getCityBySlug(slug: string): Promise<City | null> {
     const { data } = await Promise.race([
       supabase.from("cities").select("*, offers(count)").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 2000)
+        setTimeout(() => reject(new Error("Timeout")), 1000)
       ),
     ]);
 
