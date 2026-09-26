@@ -2162,26 +2162,38 @@ export async function getTopOffers(limit = 6, page = 1): Promise<Offer[]> {
   return res.offers;
 }
 
-export async function getStudentOffers(limit = 6, page = 1): Promise<Offer[]> {
-  return FALLBACK_OFFERS.filter((o) => o.student_required).slice((page - 1) * limit, page * limit);
+export async function getVerifiedStudentOffers(limit = 24, page = 1): Promise<Offer[]> {
+  const all = await getOffers({ student: true, limit: 100 }).catch(() => ({ offers: [] }));
+  const pool = all.offers && all.offers.length > 0 ? all.offers : FALLBACK_OFFERS;
+  const filtered = pool.filter((o) => o.student_required || o.tags?.includes("STUDENTEN"));
+  const res = filtered.length > 0 ? filtered : pool;
+  return res.slice((page - 1) * limit, page * limit);
 }
 
-export async function getUnder25Offers(limit = 6, page = 1): Promise<Offer[]> {
-  return FALLBACK_OFFERS.filter((o) => o.age_max && o.age_max <= 25).slice((page - 1) * limit, page * limit);
+export async function getVerifiedUnderAgeOffers(maxAge = 30, limit = 24, page = 1): Promise<Offer[]> {
+  const all = await getOffers({ limit: 100 }).catch(() => ({ offers: [] }));
+  const pool = all.offers && all.offers.length > 0 ? all.offers : FALLBACK_OFFERS;
+  const filtered = pool.filter((o) => !o.age_max || o.age_max <= maxAge);
+  return filtered.slice((page - 1) * limit, page * limit);
 }
 
-export async function getFreeOffers(limit = 6, page = 1): Promise<Offer[]> {
-  return FALLBACK_OFFERS.filter((o) => o.advantage_type === "free" || o.young_price === 0).slice((page - 1) * limit, page * limit);
+export async function getVerifiedFreeOffers(limit = 24, page = 1): Promise<Offer[]> {
+  const all = await getOffers({ advantage_type: "free", limit: 100 }).catch(() => ({ offers: [] }));
+  const pool = all.offers && all.offers.length > 0 ? all.offers : FALLBACK_OFFERS;
+  const filtered = pool.filter((o) => o.advantage_type === "free" || o.young_price === 0 || o.tags?.includes("KOSTENLOS"));
+  const res = filtered.length > 0 ? filtered : pool;
+  return res.slice((page - 1) * limit, page * limit);
 }
+
+export const getStudentOffers = getVerifiedStudentOffers;
+export const getUnder25Offers = (limit = 24, page = 1) => getVerifiedUnderAgeOffers(25, limit, page);
+export const getFreeOffers = getVerifiedFreeOffers;
 
 export const getVerifiedOffers = getOffers;
 export const getPublishedOffers = getOffers;
 export const getVerifiedTopOffers = getTopOffers;
 export const getVerifiedNewOffers = getTopOffers;
 export const getVerifiedExpiringOffers = getTopOffers;
-export const getVerifiedStudentOffers = getStudentOffers;
-export const getVerifiedUnderAgeOffers = getUnder25Offers;
-export const getVerifiedFreeOffers = getFreeOffers;
 export const getVorteilDerWoche = async (...args: any[]) => FALLBACK_OFFERS[0];
 export const getDemoOffers = async (...args: any[]) => FALLBACK_OFFERS;
 export const incrementOfferView = async (...args: any[]) => {};
