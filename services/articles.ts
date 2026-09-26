@@ -1,5 +1,5 @@
 // services/articles.ts
-import { createPublicClient as createClient } from "@/lib/supabase/server";
+import { createPublicClient as createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { Article } from "@/types";
 
 export const FALLBACK_ARTICLES: Article[] = [
@@ -244,6 +244,8 @@ Finde auf JungVorteil die besten Rabatte passend zu deiner Lebenssituation!`,
 ];
 
 export async function getArticles(limit = 6): Promise<Article[]> {
+  if (!isSupabaseConfigured()) return FALLBACK_ARTICLES.slice(0, limit);
+
   try {
     const supabase = await createClient();
     const { data, error } = await Promise.race([
@@ -254,7 +256,7 @@ export async function getArticles(limit = 6): Promise<Article[]> {
         .order("published_at", { ascending: false })
         .limit(limit),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
@@ -268,22 +270,23 @@ export async function getArticles(limit = 6): Promise<Article[]> {
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
+  if (!isSupabaseConfigured()) {
+    return FALLBACK_ARTICLES.find((a) => a.slug === slug) || null;
+  }
+
   try {
     const supabase = await createClient();
     const { data } = await Promise.race([
       supabase.from("articles").select("*").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
     if (data) return data as Article;
-  } catch (err) {
-    console.error("Error/Timeout fetching article by slug:", err);
+  } catch {
+    // Fall through to fallback
   }
 
-  // Exact match fallback only. If slug does not exist, returns null (triggering 404)
   return FALLBACK_ARTICLES.find((a) => a.slug === slug) || null;
 }
-
-

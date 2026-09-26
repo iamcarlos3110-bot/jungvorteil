@@ -1,5 +1,5 @@
 // services/brands.ts
-import { createPublicClient as createClient } from "@/lib/supabase/server";
+import { createPublicClient as createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { Brand } from "@/types";
 import { FALLBACK_OFFERS } from "@/services/offers";
 
@@ -16,12 +16,14 @@ const STATIC_BRANDS: Brand[] = Array.from(
 );
 
 export async function getAllBrands(): Promise<Brand[]> {
+  if (!isSupabaseConfigured()) return STATIC_BRANDS;
+
   try {
     const supabase = await createClient();
     const { data } = await Promise.race([
       supabase.from("brands").select("*").order("name"),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
@@ -33,12 +35,16 @@ export async function getAllBrands(): Promise<Brand[]> {
 }
 
 export async function getBrandBySlug(slug: string): Promise<Brand | null> {
+  if (!isSupabaseConfigured()) {
+    return STATIC_BRANDS.find((b) => b.slug === slug) || null;
+  }
+
   try {
     const supabase = await createClient();
     const { data } = await Promise.race([
       supabase.from("brands").select("*").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
@@ -51,12 +57,14 @@ export async function getBrandBySlug(slug: string): Promise<Brand | null> {
 }
 
 export async function getTopBrands(limit = 12): Promise<Brand[]> {
+  if (!isSupabaseConfigured()) return STATIC_BRANDS.slice(0, limit);
+
   try {
     const supabase = await createClient();
     const { data } = await Promise.race([
       supabase.from("brands").select("*, offers(count)").order("name"),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
@@ -72,4 +80,3 @@ export async function getTopBrands(limit = 12): Promise<Brand[]> {
     return STATIC_BRANDS.slice(0, limit);
   }
 }
-

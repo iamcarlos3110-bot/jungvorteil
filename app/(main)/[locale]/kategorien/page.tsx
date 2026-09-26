@@ -4,8 +4,7 @@ import { Sparkles, ArrowRight, ShieldCheck, Zap, Percent, ChevronRight } from "l
 import { getCategoryIconStyle } from "@/lib/categoryIcons";
 import { cn } from "@/lib/utils";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 60;
 
 export const metadata = {
   title: "Alle Kategorien & Rabatte | JungVorteil",

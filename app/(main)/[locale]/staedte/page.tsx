@@ -4,8 +4,7 @@ import { MapPin, Sparkles } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
 import Newsletter from "@/components/Newsletter";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 60;
 
 export const metadata = {
   title: "Vorteile nach Städten in der Schweiz | JungVorteil",

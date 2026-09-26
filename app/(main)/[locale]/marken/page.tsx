@@ -2,8 +2,7 @@ import { getAllBrands } from "@/services/brands";
 import BrandCard from "@/components/brands/BrandCard";
 import { Building2 } from "lucide-react";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 60;
 
 export const metadata = {
   title: "Partner & Unternehmen | JungVorteil",

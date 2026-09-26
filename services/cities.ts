@@ -1,5 +1,5 @@
 // services/cities.ts
-import { createPublicClient as createClient } from "@/lib/supabase/server";
+import { createPublicClient as createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { City } from "@/types";
 import { CITIES } from "@/config/cities";
 
@@ -16,12 +16,14 @@ const STATIC_CITIES: City[] = CITIES.map((c, idx) => ({
 }));
 
 export async function getAllCities(): Promise<City[]> {
+  if (!isSupabaseConfigured()) return STATIC_CITIES;
+
   try {
     const supabase = await createClient();
     const { data, error } = await Promise.race([
       supabase.from("cities").select("*, offers(count)"),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
@@ -43,12 +45,16 @@ export async function getAllCities(): Promise<City[]> {
 }
 
 export async function getCityBySlug(slug: string): Promise<City | null> {
+  if (!isSupabaseConfigured()) {
+    return STATIC_CITIES.find((c) => c.slug === slug) || null;
+  }
+
   try {
     const supabase = await createClient();
     const { data } = await Promise.race([
       supabase.from("cities").select("*, offers(count)").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 

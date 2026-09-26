@@ -1,5 +1,5 @@
 // services/categories.ts
-import { createPublicClient as createClient } from "@/lib/supabase/server";
+import { createPublicClient as createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { Category } from "@/types";
 import { CATEGORIES } from "@/config/categories";
 import { FALLBACK_OFFERS } from "@/services/offers";
@@ -21,12 +21,14 @@ const STATIC_CATEGORIES: Category[] = CATEGORIES.map((c, index) => {
 });
 
 export async function getAllCategories(): Promise<Category[]> {
+  if (!isSupabaseConfigured()) return STATIC_CATEGORIES;
+
   try {
     const supabase = await createClient();
     const { data, error } = await Promise.race([
       supabase.from("categories").select("*, offers(count)").order("sort_order"),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
@@ -42,12 +44,16 @@ export async function getAllCategories(): Promise<Category[]> {
 }
 
 export async function getCategoryBySlug(slug: string): Promise<Category | null> {
+  if (!isSupabaseConfigured()) {
+    return STATIC_CATEGORIES.find((c) => c.slug === slug) || null;
+  }
+
   try {
     const supabase = await createClient();
     const { data } = await Promise.race([
       supabase.from("categories").select("*, offers(count)").eq("slug", slug).maybeSingle(),
       new Promise<{ data: null; error: Error }>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 1000)
+        setTimeout(() => reject(new Error("Timeout")), 500)
       ),
     ]);
 
