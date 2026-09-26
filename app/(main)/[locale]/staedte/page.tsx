@@ -2,12 +2,16 @@ import { getAllCities } from "@/services/cities";
 import CityCard from "@/components/cities/CityCard";
 import { MapPin } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata = {
   title: "Vorteile nach Städten in der Schweiz | JungVorteil",
   description: "Finde lokale Rabatte, Studentenangebote und Vorteile in Zürich, Bern, Basel, Luzern, St. Gallen und weiteren Schweizer Städten.",
 };
 
-export default async function StaedtePage() {
+export default async function StaedtePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const cities = await getAllCities();
 
   return (
@@ -24,7 +28,7 @@ export default async function StaedtePage() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
         {cities.map((city) => (
-          <CityCard key={city.id} city={city} />
+          <CityCard key={city.id} city={city} locale={locale} />
         ))}
       </div>
     </div>
