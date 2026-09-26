@@ -9,7 +9,7 @@ export default function ImpressumPage() {
       
       <h2>Kontaktadresse & Betreiber</h2>
       <p>
-        <strong>Carlos Piñeiro</strong> (Privatperson)<br />
+        <strong>JungVorteil Schweiz</strong><br />
         Plaza del Peñón 7, 7B izq.<br />
         28923 Alcorcón, Madrid<br />
         Spanien
@@ -17,7 +17,7 @@ export default function ImpressumPage() {
 
       <h2>Vertretungsberechtigte Person</h2>
       <p>
-        Carlos Piñeiro
+        Redaktion & Plattformleitung JungVorteil Schweiz
       </p>
 
       <h2>Haftungsausschluss</h2>
