@@ -18,7 +18,10 @@ export type OfferTag =
   | "GENF"
   | "BASEL"
   | "SCHWEIZWEIT"
-  | "GESPONSERT";
+  | "GESPONSERT"
+  | "RABATT"
+  | "KOSTENLOS"
+  | "VERIFIZIERT";
 
 export type AdvantageType =
   | "discount_percent"
@@ -135,6 +138,10 @@ export interface OfferFilters {
   category?: string;
   brand?: string;
   city?: string;
+  category_slug?: string;
+  brand_slug?: string;
+  city_slug?: string;
+  advantage_type?: string;
   age?: number;
   student?: boolean;
   online?: boolean;
@@ -151,6 +158,7 @@ export interface PaginatedOffers {
   page: number;
   limit: number;
   hasMore: boolean;
+  total_pages?: number;
 }
 
 export interface ClickEvent {

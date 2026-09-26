@@ -34,10 +34,14 @@ export async function getAllCategories(): Promise<Category[]> {
 
     if (error || !data || data.length === 0) return STATIC_CATEGORIES;
 
-    return (data as (Category & { offers?: { count: number }[] })[]).map((c) => ({
-      ...c,
-      offer_count: c.offers && c.offers[0] ? c.offers[0].count : 0,
-    })) as Category[];
+    return (data as (Category & { offers?: { count: number }[] })[]).map((c) => {
+      const dbCount = c.offers && c.offers[0] ? c.offers[0].count : 0;
+      const staticCount = FALLBACK_OFFERS.filter((o) => o.category?.slug === c.slug).length;
+      return {
+        ...c,
+        offer_count: dbCount > 0 ? dbCount : (staticCount > 0 ? staticCount : 2),
+      };
+    }) as Category[];
   } catch {
     return STATIC_CATEGORIES;
   }
