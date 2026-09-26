@@ -12,6 +12,7 @@ export default function SafeImage({
   alt,
   fallback,
   className,
+  unoptimized,
   ...props
 }: SafeImageProps) {
   const [error, setError] = useState(false);
@@ -20,16 +21,23 @@ export default function SafeImage({
     return fallback ? <>{fallback}</> : null;
   }
 
-  const isExternal = typeof src === "string" && src.startsWith("http");
+  // Optimize Unsplash images by attaching lightweight sizing if missing
+  let finalSrc = typeof src === "string" ? src : "";
+  if (typeof src === "string" && src.includes("images.unsplash.com") && !src.includes("w=")) {
+    finalSrc = `${src}${src.includes("?") ? "&" : "?"}w=600&auto=format&fit=crop&q=80`;
+  } else if (typeof src !== "string") {
+    finalSrc = src as unknown as string;
+  }
 
   return (
     <Image
-      src={src}
+      src={finalSrc || src}
       alt={alt}
       className={className}
-      unoptimized={isExternal}
+      unoptimized={unoptimized ?? false}
       onError={() => setError(true)}
       {...props}
     />
   );
 }
+

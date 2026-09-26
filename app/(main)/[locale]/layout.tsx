@@ -8,6 +8,19 @@ import Footer from '@/components/layout/Footer';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import CookieBanner from '@/components/ui/CookieBanner';
 import Script from 'next/script';
+import { Inter, Outfit } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-outfit',
+});
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -24,8 +37,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const messages = await getMessages();
   
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} className={`${inter.variable} ${outfit.variable}`}>
+      <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <GoogleAnalytics />
           {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
