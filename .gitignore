@@ -41,3 +41,9 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# temporary scratch scripts
+*.py
+scratch/
+parse_articles.js
+

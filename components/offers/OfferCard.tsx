@@ -2,10 +2,8 @@
 import Image from "next/image";
 import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay, getDeviceCategory } from "@/lib/utils";
 import { Offer } from "@/types";
-import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
 import { toggleFavorite } from "@/lib/favorites";
-import { Heart, Check, ExternalLink } from "lucide-react";
+import { Heart, ExternalLink, Check, Clock, Tag, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
 import { getBrandLogo, getOfferCover } from "@/lib/brandAssets";
 
@@ -23,6 +21,41 @@ function getExternalUrl(offer: Offer): string {
   )}`;
 }
 
+// Beautiful gradient fallbacks per brand initial
+const GRADIENT_MAP: Record<string, string> = {
+  A: "from-purple-500 to-indigo-600",
+  B: "from-blue-500 to-cyan-600",
+  C: "from-cyan-500 to-teal-600",
+  D: "from-teal-500 to-green-600",
+  E: "from-green-500 to-emerald-600",
+  F: "from-emerald-500 to-lime-600",
+  G: "from-lime-500 to-yellow-600",
+  H: "from-yellow-500 to-amber-600",
+  I: "from-amber-500 to-orange-600",
+  J: "from-orange-500 to-red-600",
+  K: "from-red-500 to-rose-600",
+  L: "from-rose-500 to-pink-600",
+  M: "from-pink-500 to-fuchsia-600",
+  N: "from-fuchsia-500 to-purple-600",
+  O: "from-violet-500 to-indigo-600",
+  P: "from-indigo-500 to-blue-600",
+  Q: "from-sky-500 to-cyan-600",
+  R: "from-cyan-600 to-teal-700",
+  S: "from-[#2E4D28] to-[#4a7a42]",
+  T: "from-teal-600 to-green-700",
+  U: "from-green-600 to-emerald-700",
+  V: "from-emerald-600 to-teal-700",
+  W: "from-blue-600 to-indigo-700",
+  X: "from-indigo-600 to-violet-700",
+  Y: "from-violet-600 to-purple-700",
+  Z: "from-purple-600 to-fuchsia-700",
+};
+
+function getBrandGradient(name: string): string {
+  const first = (name?.[0] || "A").toUpperCase();
+  return GRADIENT_MAP[first] || "from-[#2E4D28] to-[#4a7a42]";
+}
+
 export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
   const [favorite, setFavorite] = useState(() => {
     if (typeof window === "undefined") return false;
@@ -31,27 +64,21 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
   const [isClient, setIsClient] = useState(false);
   const [coverError, setCoverError] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  useEffect(() => { setIsClient(true); }, []);
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    const newState = toggleFavorite(offer.id);
-    setFavorite(newState);
+    setFavorite(toggleFavorite(offer.id));
   };
 
   const handleCardClick = () => {
-    // Track click analytics
     fetch("/api/click", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        offer_id: offer.id,
-        device_category: getDeviceCategory(),
-      }),
+      body: JSON.stringify({ offer_id: offer.id, device_category: getDeviceCategory() }),
       keepalive: true,
     }).catch(() => {});
   };
@@ -64,6 +91,7 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
   const brandLogo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
   const coverImage = getOfferCover(offer.slug, offer.image_url);
   const externalUrl = getExternalUrl(offer);
+  const gradient = getBrandGradient(brandName);
 
   return (
     <a
@@ -71,128 +99,198 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
       target="_blank"
       rel="noopener noreferrer nofollow"
       onClick={handleCardClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "floating-card group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-stone-200/90 hover:border-[#3F5E39]/40 h-full cursor-pointer",
-        expired && "opacity-75 grayscale-[0.3]",
-        expiringSoon && "border-amber-300 ring-2 ring-amber-100"
+        "group relative flex flex-col bg-white rounded-3xl overflow-hidden h-full cursor-pointer",
+        "border border-stone-200/80",
+        "shadow-[0_4px_20px_rgba(0,0,0,0.06)]",
+        "hover:shadow-[0_20px_60px_rgba(46,77,40,0.18),0_8px_24px_rgba(0,0,0,0.08)]",
+        "hover:-translate-y-2 hover:scale-[1.01]",
+        "transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        "hover:border-[#7CB87A]/60",
+        expired && "opacity-70 grayscale-[0.4]",
+        expiringSoon && "ring-2 ring-amber-400/60 ring-offset-1"
       )}
+      style={{ transitionDuration: "380ms" }}
     >
-      {/* Cover Image Banner */}
-      <div className="w-full h-36 bg-gradient-to-br from-[#EAF0E5] via-[#D6E2CE] to-[#3F5E39]/15 overflow-hidden shrink-0 relative z-0">
-        {coverImage && !coverError && (
+      {/* === COVER IMAGE === */}
+      <div className="relative w-full h-48 overflow-hidden shrink-0 bg-gradient-to-br from-stone-100 to-stone-200">
+        {coverImage && !coverError ? (
           <Image
             src={coverImage}
             alt={offer.title_de}
             fill
-            unoptimized={typeof coverImage === "string" && coverImage.startsWith("http")}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            unoptimized={coverImage.startsWith("http")}
+            sizes="(max-width: 768px) 100vw, 400px"
+            className={cn(
+              "object-cover transition-transform duration-700 ease-out",
+              isHovered ? "scale-110" : "scale-100"
+            )}
             onError={() => setCoverError(true)}
           />
+        ) : (
+          /* Gradient fallback - looks premium */
+          <div className={cn("w-full h-full bg-gradient-to-br", gradient, "flex items-center justify-center")}>
+            <span className="text-white/30 text-8xl font-black select-none">
+              {brandName.charAt(0)}
+            </span>
+          </div>
         )}
-        {/* External link indicator */}
-        <div className="absolute top-2 left-2 bg-black/30 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+
+        {/* Dark overlay on hover for text readability */}
+        <div className={cn(
+          "absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent",
+          "transition-opacity duration-300",
+          isHovered ? "opacity-100" : "opacity-0"
+        )} />
+
+        {/* Expiring ribbon */}
+        {expiringSoon && (
+          <div className="absolute top-3 left-3 flex items-center gap-1 bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-lg animate-pulse">
+            <Clock className="w-3 h-3" />
+            LÄUFT AB
+          </div>
+        )}
+
+        {/* Sponsored badge */}
+        {offer.is_sponsored && (
+          <div className="absolute top-3 left-3 bg-black/60 text-white/80 text-[9px] font-bold px-2 py-0.5 rounded-full backdrop-blur-sm">
+            GESPONSERT
+          </div>
+        )}
+
+        {/* External link indicator - appears on hover */}
+        <div className={cn(
+          "absolute bottom-3 right-3 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-stone-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg",
+          "transition-all duration-300",
+          isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+        )}>
           <ExternalLink className="w-3 h-3" />
+          Zum Angebot
         </div>
       </div>
 
-      <div className="p-5 flex flex-col flex-grow relative z-10 bg-white">
-        {/* Top Section */}
-        <div className="flex justify-between items-start mb-4 -mt-10">
-          <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center overflow-hidden border border-stone-200 shadow-md shrink-0 relative p-1 z-20">
+      {/* === CARD BODY === */}
+      <div className="flex flex-col flex-grow p-5 relative">
+
+        {/* Logo + Favorite row */}
+        <div className="flex justify-between items-start mb-3 -mt-9 relative z-10">
+          {/* Brand Logo */}
+          <div className={cn(
+            "w-14 h-14 rounded-2xl overflow-hidden border-2 border-white shadow-xl shrink-0 relative",
+            "bg-white flex items-center justify-center"
+          )}>
             {brandLogo && !logoError ? (
               <Image
                 src={brandLogo}
                 alt={brandName}
                 fill
-                unoptimized={typeof brandLogo === "string" && brandLogo.startsWith("http")}
-                sizes="48px"
-                className="w-full h-full object-contain p-1 bg-white rounded-lg"
+                unoptimized={brandLogo.startsWith("http")}
+                sizes="56px"
+                className="object-contain p-1.5"
                 onError={() => setLogoError(true)}
               />
             ) : (
-              <div className="w-full h-full bg-[#EAF0E5] text-[#3F5E39] rounded-lg flex items-center justify-center font-black text-lg uppercase">
-                {brandName.charAt(0)}
+              <div className={cn("w-full h-full bg-gradient-to-br", gradient, "flex items-center justify-center rounded-xl")}>
+                <span className="text-white font-black text-xl">
+                  {brandName.charAt(0)}
+                </span>
               </div>
             )}
           </div>
-          <div className="flex flex-col gap-1 items-end mr-8">
-            {offer.is_demo && <Badge tag="DEMO" className="bg-red-100 text-red-700 border border-red-200" />}
-            {offer.is_sponsored && <Badge tag="GESPONSERT" />}
-            {expiringSoon && <Badge tag="HEUTE" className="bg-amber-100 text-amber-700" />}
-          </div>
+
+          {/* Favorite button */}
+          {isClient && (
+            <button
+              onClick={handleFavoriteClick}
+              className={cn(
+                "p-2.5 rounded-2xl transition-all duration-200 shadow-md border",
+                favorite
+                  ? "bg-red-50 border-red-200 text-red-500 hover:bg-red-100"
+                  : "bg-white border-stone-200 text-stone-400 hover:text-red-400 hover:border-red-200"
+              )}
+              aria-label="Zu Favoriten hinzufügen"
+            >
+              <Heart className={cn("w-4 h-4 transition-all", favorite && "fill-red-500")} />
+            </button>
+          )}
         </div>
 
-        {/* Favorite Button */}
-        {isClient && (
-          <button
-            onClick={handleFavoriteClick}
-            className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 text-gray-400 hover:text-red-500 transition-colors z-20 bg-white/90 backdrop-blur-sm shadow-sm border border-gray-100 flex items-center justify-center"
-            aria-label="Zu Favoriten hinzufügen"
-          >
-            <Heart className={cn("w-4 h-4 transition-colors", favorite ? "text-red-500 fill-red-500" : "text-gray-400")} />
-          </button>
-        )}
-
-        {/* Main Content */}
-        <div className="flex-grow flex flex-col gap-2 relative z-10 mt-1">
-          {saving && (
-            <div className="text-2xl font-black text-green-600 tracking-tight">
+        {/* Saving badge */}
+        {saving && (
+          <div className="inline-flex items-center gap-1.5 mb-2 self-start">
+            <div className={cn(
+              "flex items-center gap-1 px-3 py-1 rounded-full text-sm font-black",
+              "bg-gradient-to-r from-green-500 to-emerald-600 text-white",
+              "shadow-[0_4px_12px_rgba(22,163,74,0.35)]"
+            )}>
+              <Zap className="w-3.5 h-3.5" />
               {saving}
             </div>
-          )}
-          <h3 className="text-lg font-bold text-gray-900 line-clamp-2 leading-tight group-hover:text-[#3F5E39] transition-colors">
-            {offer.title_de}
-          </h3>
-          <p className="text-sm font-medium text-gray-500">{brandName}</p>
+          </div>
+        )}
 
-          {offer.age_max && (
-            <p className="text-xs font-semibold text-[#3F5E39] mt-1">
-              Bis {offer.age_max} Jahre
-            </p>
-          )}
-        </div>
+        {/* Title */}
+        <h3 className={cn(
+          "font-bold text-stone-900 line-clamp-2 leading-snug mb-1 flex-grow",
+          "text-base group-hover:text-[#2E4D28] transition-colors duration-200"
+        )}>
+          {offer.title_de}
+        </h3>
+
+        {/* Brand name */}
+        <p className="text-sm text-stone-500 font-medium mb-3">{brandName}</p>
 
         {/* Tags row */}
-        <div className="flex flex-wrap gap-2 my-4 relative z-10">
+        <div className="flex flex-wrap gap-1.5 mb-4">
           {offer.is_nationwide && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-100">
-              <Check className="w-3 h-3 text-green-500" /> Schweizweit
+            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full">
+              <Check className="w-2.5 h-2.5" /> Schweizweit
             </span>
           )}
           {offer.is_online && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-100">
-              <Check className="w-3 h-3 text-green-500" /> Online
+            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-sky-700 bg-sky-50 border border-sky-200/80 px-2 py-0.5 rounded-full">
+              <Check className="w-2.5 h-2.5" /> Online
             </span>
           )}
           {offer.student_required && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-100">
-              <Check className="w-3 h-3 text-green-500" /> Studierende
+            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-violet-700 bg-violet-50 border border-violet-200/80 px-2 py-0.5 rounded-full">
+              🎓 Studierende
+            </span>
+          )}
+          {offer.age_max && (
+            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-2 py-0.5 rounded-full">
+              <Tag className="w-2.5 h-2.5" /> Bis {offer.age_max}J
             </span>
           )}
         </div>
 
-        {/* Expired Overlay */}
+        {/* Expired overlay */}
         {expired && (
-          <div className="absolute inset-0 z-0 bg-white/40 flex items-center justify-center rounded-2xl">
-            <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-bold text-red-600 shadow-sm border border-red-100 rotate-[-5deg]">
+          <div className="absolute inset-0 z-20 bg-white/50 backdrop-blur-[2px] flex items-center justify-center rounded-3xl">
+            <div className="bg-white px-5 py-2.5 rounded-xl text-sm font-black text-red-600 shadow-lg border border-red-100 -rotate-3">
               Möglicherweise abgelaufen
             </div>
           </div>
         )}
 
-        {/* Footer */}
-        <div className="mt-auto relative z-10 pt-2 border-t border-gray-50">
-          <Button
-            fullWidth
-            variant={expired ? "outline" : "primary"}
-            className="pointer-events-none mb-3 flex items-center justify-center gap-2"
-          >
-            Angebot ansehen <ExternalLink className="w-3.5 h-3.5" />
-          </Button>
+        {/* CTA Button */}
+        <div className="mt-auto pt-3 border-t border-stone-100">
+          <div className={cn(
+            "w-full flex items-center justify-center gap-2 px-4 py-3 rounded-2xl",
+            "font-bold text-sm transition-all duration-300",
+            expired
+              ? "bg-stone-100 text-stone-500"
+              : "bg-gradient-to-r from-[#2E4D28] to-[#3D6636] text-white shadow-[0_4px_14px_rgba(46,77,40,0.3)] group-hover:shadow-[0_8px_24px_rgba(46,77,40,0.45)]"
+          )}>
+            {expired ? "Abgelaufen" : "Angebot sichern"}
+            {!expired && <ExternalLink className="w-3.5 h-3.5" />}
+          </div>
           {offer.checked_at && (
-            <p className="text-[11px] text-gray-500 text-center font-medium flex items-center justify-center gap-1">
-              <Check className="w-3 h-3 text-green-500" /> Geprüft am {formatDate(offer.checked_at)}
+            <p className="text-[10px] text-stone-400 text-center font-medium mt-2 flex items-center justify-center gap-1">
+              <Check className="w-3 h-3 text-emerald-500" />
+              Geprüft {formatDate(offer.checked_at)}
             </p>
           )}
         </div>

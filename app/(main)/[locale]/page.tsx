@@ -20,27 +20,82 @@ import Newsletter from '@/components/Newsletter';
 import { getTranslations } from 'next-intl/server';
 import Script from 'next/script';
 import Link from 'next/link';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Clock, GraduationCap, Gift, ChevronRight, TrendingUp, Star, Zap, ExternalLink } from 'lucide-react';
 import { safeJsonLd } from '@/lib/utils';
 import SafeImage from '@/components/ui/SafeImage';
 import { getBrandLogo, getOfferCover } from '@/lib/brandAssets';
+import { Offer } from '@/types';
 
 export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.home' });
-  
-  return {
-    title: t('title'),
-    description: t('description'),
-  };
+  return { title: t('title'), description: t('description') };
+}
+
+function getOfferExternalUrl(offer: Offer): string {
+  const raw = offer.affiliate_url || offer.external_url;
+  if (raw && raw.startsWith("http")) return raw;
+  if (offer.brand?.website_url && offer.brand.website_url.startsWith("http")) return offer.brand.website_url;
+  return `https://www.google.com/search?q=${encodeURIComponent(
+    (offer.brand?.name ? offer.brand.name + " " : "") + offer.title_de + " Schweiz Angebot"
+  )}`;
+}
+
+// === HUB CARD - Premium visual card for offer hubs ===
+function HubOfferRow({ offer, accentColor }: { offer: Offer; accentColor: string }) {
+  const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
+  const url = getOfferExternalUrl(offer);
+  const discount = offer.discount_percent ? `−${offer.discount_percent}%` : offer.discount_amount ? `−CHF ${offer.discount_amount}` : null;
+
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      className="group flex items-center gap-3 bg-white/70 hover:bg-white rounded-2xl p-3 border border-white/80 hover:border-white hover:shadow-md transition-all duration-250 cursor-pointer"
+    >
+      <div className="w-11 h-11 rounded-xl bg-white border border-stone-100 shadow-sm flex items-center justify-center overflow-hidden shrink-0 relative p-1">
+        {logo ? (
+          <SafeImage
+            src={logo}
+            alt={offer.brand?.name ?? ""}
+            fill
+            sizes="44px"
+            className="object-contain p-1"
+            fallback={
+              <span className="font-black text-[#2E4D28] text-base">
+                {offer.brand?.name?.charAt(0)}
+              </span>
+            }
+          />
+        ) : (
+          <span className="font-black text-[#2E4D28] text-base">
+            {offer.brand?.name?.charAt(0)}
+          </span>
+        )}
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="font-bold text-sm text-stone-900 line-clamp-1 group-hover:text-[#2E4D28] transition-colors">
+          {offer.title_de}
+        </div>
+        <div className="text-xs text-stone-500 truncate">{offer.brand?.name}</div>
+      </div>
+      {discount ? (
+        <div className={`text-xs font-black px-2 py-1 rounded-lg shrink-0 ${accentColor}`}>
+          {discount}
+        </div>
+      ) : (
+        <ChevronRight className="w-4 h-4 text-stone-400 group-hover:text-[#2E4D28] group-hover:translate-x-0.5 transition-all shrink-0" />
+      )}
+    </a>
+  );
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   
-  // Fetch everything in parallel
   const [
     vorteilDerWoche,
     topOffers, 
@@ -71,7 +126,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     getArticles(3)
   ]);
 
-  // Deduplicate offers across sections so no offer appears twice on the homepage
   const seenIds = new Set<string>();
   if (vorteilDerWoche) seenIds.add(vorteilDerWoche.id);
 
@@ -91,7 +145,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   filteredFreeOffers.forEach(o => seenIds.add(o.id));
 
   const filteredExpiringOffers = expiringOffers.filter(o => !seenIds.has(o.id));
-  filteredExpiringOffers.forEach(o => seenIds.add(o.id));
 
   const schema = {
     "@context": "https://schema.org",
@@ -112,139 +165,269 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
       />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1C331B] via-[#2F5229] to-[#162916] text-white pt-24 lg:pt-28 pb-20 px-4 overflow-hidden">
-        {/* Abstract background shapes */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-400 rounded-full blur-[100px]"></div>
-          <div className="absolute top-40 -left-20 w-80 h-80 bg-lime-400 rounded-full blur-[100px]"></div>
-        </div>
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
-            <Sparkles className="w-4 h-4 text-emerald-200" />
-            <span className="text-sm font-medium text-emerald-50">Die Plattform für junge Schweizer</span>
+      {/* ================================================================
+          HERO SECTION — Cinematic Dark Green
+      ================================================================ */}
+      <section className="relative overflow-hidden text-white"
+        style={{
+          background: "linear-gradient(135deg, #0A1C09 0%, #152B13 30%, #1E3D1B 55%, #0D1F0C 100%)",
+          paddingTop: "7rem",
+          paddingBottom: "6rem",
+        }}
+      >
+        {/* Animated gradient orbs */}
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-25 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #4ade80 0%, transparent 70%)", filter: "blur(80px)" }}
+        />
+        <div className="absolute top-1/2 -left-40 w-[400px] h-[400px] rounded-full opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #86efac 0%, transparent 70%)", filter: "blur(100px)" }}
+        />
+        <div className="absolute bottom-0 right-1/3 w-[300px] h-[300px] rounded-full opacity-15 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #bbf7d0 0%, transparent 70%)", filter: "blur(80px)" }}
+        />
+
+        {/* Subtle dot grid pattern */}
+        <div className="absolute inset-0 pointer-events-none hero-dots opacity-40" />
+
+        <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
+          {/* Pill badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border"
+            style={{
+              background: "rgba(255,255,255,0.08)",
+              backdropFilter: "blur(12px)",
+              borderColor: "rgba(255,255,255,0.15)"
+            }}
+          >
+            <Sparkles className="w-4 h-4 text-emerald-300" />
+            <span className="text-sm font-semibold text-emerald-100 tracking-wide">Die Plattform für junge Schweizer</span>
+            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1" />
           </div>
-          
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
-            Entdecke alle deine <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-lime-200 to-green-100">
+
+          {/* Main headline */}
+          <h1 className="font-black mb-6 tracking-tight leading-[1.05]"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)", fontFamily: "'Outfit', sans-serif" }}>
+            Entdecke alle deine<br />
+            <span style={{
+              background: "linear-gradient(90deg, #86efac, #4ade80, #bbf7d0, #86efac)",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              animation: "gradient-shift 3s linear infinite"
+            }}>
               Vorteile in der Schweiz.
             </span>
           </h1>
-          
-          <p className="text-lg md:text-2xl mb-10 text-emerald-100 max-w-3xl mx-auto font-medium">
-            Finde hunderte geprüfte Rabatte, kostenlose Angebote und Studenten-Deals an einem Ort.
+
+          <p className="text-emerald-100/80 font-medium mb-10 max-w-2xl mx-auto"
+            style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", lineHeight: 1.6 }}>
+            Hunderte geprüfte Rabatte, kostenlose Angebote und Studenten-Deals — täglich aktualisiert.
           </p>
-          
+
+          {/* Search */}
           <div className="max-w-2xl mx-auto mb-10">
-            {/* Server component wrapping the client search bar */}
-            <div className="bg-white rounded-2xl p-2 shadow-2xl border border-white/20">
+            <div className="rounded-2xl p-2 shadow-2xl"
+              style={{ background: "rgba(255,255,255,0.98)", border: "1px solid rgba(255,255,255,0.3)" }}>
               <SearchBar placeholder="Nach Marken oder Kategorien suchen..." onNavigate={true} locale={locale} />
             </div>
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="text-sm font-medium text-emerald-200 py-1.5 mr-2">Oft gesucht:</span>
+
+          {/* Quick tags */}
+          <div className="flex flex-wrap justify-center items-center gap-2.5">
+            <span className="text-sm font-medium text-emerald-300/80">Oft gesucht:</span>
             {['SBB', 'Sunrise', 'Kino', 'Fitness', 'Apple', 'Spotify'].map(tag => (
-              <Link key={tag} href={`/${locale}/suche?q=${tag}`} className="px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full text-sm font-medium backdrop-blur-sm transition-all cursor-pointer text-white">
+              <Link key={tag} href={`/${locale}/suche?q=${tag}`}
+                className="px-4 py-1.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
+                style={{
+                  background: "rgba(255,255,255,0.1)",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  backdropFilter: "blur(8px)"
+                }}
+              >
                 {tag}
               </Link>
+            ))}
+          </div>
+
+          {/* Stats row */}
+          <div className="mt-14 grid grid-cols-3 gap-4 max-w-xl mx-auto">
+            {[
+              { value: "500+", label: "Angebote" },
+              { value: "100%", label: "Geprüft" },
+              { value: "Gratis", label: "Nutzung" },
+            ].map(stat => (
+              <div key={stat.label} className="text-center">
+                <div className="font-black text-2xl text-white" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  {stat.value}
+                </div>
+                <div className="text-xs text-emerald-300/70 font-medium mt-0.5">{stat.label}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Guarantee Banner */}
+      {/* Trust Banner */}
       <TrustBanner />
 
-      {/* Ad slot after hero */}
-      <div className="hidden md:block">
-        <AdSlot slot="AD_AFTER_HERO" />
-      </div>
-      <div className="block md:hidden">
-        <AdSlot slot="AD_MOBILE_AFTER_HERO" />
-      </div>
+      {/* Ad slot */}
+      <div className="hidden md:block"><AdSlot slot="AD_AFTER_HERO" /></div>
+      <div className="block md:hidden"><AdSlot slot="AD_MOBILE_AFTER_HERO" /></div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12 space-y-20">
-        
-        {/* Quick Filter Personalization */}
+      <div className="max-w-7xl mx-auto px-4 py-14 space-y-20">
+
+        {/* Personalization */}
         <section>
           <PersonalizationSelector />
         </section>
 
-        {/* Vorteil der Woche */}
-        {vorteilDerWoche && (
-          <section className="bg-gradient-to-r from-emerald-50 to-lime-50 rounded-3xl p-8 border border-emerald-100 flex flex-col md:flex-row items-center gap-8">
-             <div className="flex-1">
-                <div className="inline-flex items-center gap-1.5 text-emerald-800 font-bold bg-emerald-100 px-3 py-1 rounded-full text-sm mb-4">
-                   <Sparkles className="w-4 h-4" /> Vorteil der Woche
-                </div>
-                <h2 className="text-3xl font-black text-gray-900 mb-3">{vorteilDerWoche.title_de}</h2>
-                <p className="text-gray-600 mb-6 text-lg">{vorteilDerWoche.description_de || vorteilDerWoche.brand?.name}</p>
-                <Link href={`/${locale}/angebot/${vorteilDerWoche.slug}`} className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3F5E39] text-white font-semibold rounded-xl hover:bg-[#324B2D] transition-colors">
-                  Angebot sichern <ArrowRight className="w-4 h-4" />
-                </Link>
-             </div>
-             <div className="w-full md:w-1/3 flex-shrink-0">
-                {getOfferCover(vorteilDerWoche.slug, vorteilDerWoche.image_url) ? (
-                   <SafeImage src={getOfferCover(vorteilDerWoche.slug, vorteilDerWoche.image_url)!} alt={vorteilDerWoche.title_de || ""} width={600} height={400} className="w-full h-auto rounded-2xl shadow-lg border border-emerald-100/50 bg-white object-cover" />
-                ) : (
-                   <div className="w-full aspect-video bg-emerald-100 rounded-2xl shadow-inner flex items-center justify-center">
-                      <span className="text-emerald-700 font-bold text-xl">{vorteilDerWoche.brand?.name}</span>
-                   </div>
-                )}
-             </div>
-          </section>
-        )}
+        {/* ================================================================
+            VORTEIL DER WOCHE — Cinematic Feature Card
+        ================================================================ */}
+        {vorteilDerWoche && (() => {
+          const vdwUrl = getOfferExternalUrl(vorteilDerWoche);
+          const vdwCover = getOfferCover(vorteilDerWoche.slug, vorteilDerWoche.image_url);
+          return (
+            <section>
+              <a
+                href={vdwUrl}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="group block relative rounded-3xl overflow-hidden cursor-pointer"
+                style={{
+                  background: "linear-gradient(135deg, #0D1F0B 0%, #1A3C17 40%, #264F22 70%, #0D1F0B 100%)",
+                  boxShadow: "0 24px 80px rgba(46,77,40,0.35), 0 8px 32px rgba(0,0,0,0.15)"
+                }}
+              >
+                {/* Glow orb */}
+                <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full pointer-events-none opacity-30"
+                  style={{ background: "radial-gradient(circle, #4ade80, transparent 70%)", filter: "blur(60px)" }}
+                />
 
-        {/* Top Offers Section */}
+                <div className="flex flex-col md:flex-row items-stretch min-h-[300px]">
+                  {/* Content side */}
+                  <div className="flex-1 p-8 md:p-12 flex flex-col justify-center relative z-10">
+                    <div className="inline-flex items-center gap-2 bg-emerald-400/20 border border-emerald-400/30 text-emerald-300 text-xs font-black px-3 py-1.5 rounded-full mb-5 self-start tracking-widest uppercase">
+                      <Star className="w-3.5 h-3.5 fill-emerald-300" />
+                      Vorteil der Woche
+                    </div>
+                    <h2 className="font-black text-white mb-3 leading-tight"
+                      style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)", fontFamily: "'Outfit', sans-serif" }}>
+                      {vorteilDerWoche.title_de}
+                    </h2>
+                    {(vorteilDerWoche.description_de || vorteilDerWoche.brand?.name) && (
+                      <p className="text-emerald-100/70 text-base mb-6 max-w-md">
+                        {vorteilDerWoche.description_de || `Exklusives Angebot von ${vorteilDerWoche.brand?.name}`}
+                      </p>
+                    )}
+                    <div className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-bold text-sm self-start transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
+                      style={{ background: "linear-gradient(135deg, #4ade80, #16a34a)", color: "#0a1c09", boxShadow: "0 6px 20px rgba(74,222,128,0.4)" }}>
+                      Jetzt Angebot sichern
+                      <ExternalLink className="w-4 h-4" />
+                    </div>
+                  </div>
+
+                  {/* Image side */}
+                  <div className="w-full md:w-2/5 min-h-[220px] relative overflow-hidden">
+                    {vdwCover ? (
+                      <SafeImage
+                        src={vdwCover}
+                        alt={vorteilDerWoche.title_de || ""}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 40vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        fallback={
+                          <div className="w-full h-full flex items-center justify-center"
+                            style={{ background: "linear-gradient(135deg, #1a3c17, #264f22)" }}>
+                            <span className="text-white/20 text-9xl font-black">
+                              {vorteilDerWoche.brand?.name?.charAt(0)}
+                            </span>
+                          </div>
+                        }
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center"
+                        style={{ background: "linear-gradient(135deg, #1a3c17, #264f22)" }}>
+                        <span className="text-white/20 text-9xl font-black">
+                          {vorteilDerWoche.brand?.name?.charAt(0)}
+                        </span>
+                      </div>
+                    )}
+                    {/* Gradient overlay on image */}
+                    <div className="absolute inset-0 md:bg-gradient-to-r from-[#0D1F0B]/80 via-transparent to-transparent" />
+                  </div>
+                </div>
+              </a>
+            </section>
+          );
+        })()}
+
+        {/* ================================================================
+            BELIEBTESTE VORTEILE
+        ================================================================ */}
         {mainOffers.length > 0 && (
           <section>
             <div className="flex items-end justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Beliebteste Vorteile</h2>
-                <p className="text-gray-500">Die meistgenutzten Angebote der Woche</p>
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="w-5 h-5 text-[#2E4D28]" />
+                  <span className="text-xs font-black text-[#2E4D28] uppercase tracking-widest">Diese Woche</span>
+                </div>
+                <h2 className="text-3xl font-black text-stone-900" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
+                  Beliebteste Vorteile
+                </h2>
+                <p className="text-stone-500 mt-1">Die meistgenutzten Angebote — täglich geprüft</p>
               </div>
-              <Link href={`/${locale}/angebote`} className="hidden md:flex items-center gap-1 text-[#3F5E39] font-semibold hover:text-[#284024] transition-colors">
+              <Link href={`/${locale}/angebote`} className="hidden md:flex items-center gap-1.5 text-[#2E4D28] font-bold hover:gap-3 transition-all duration-200 text-sm">
                 Alle ansehen <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <OfferGrid offers={mainOffers} locale={locale} />
-            <div className="mt-8 text-center md:hidden">
-               <Link href={`/${locale}/angebote`} className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#EAF0E5] text-[#3F5E39] font-semibold rounded-xl hover:bg-[#D6E2CE] transition-colors w-full">
-                Alle ansehen
+            <div className="mt-6 text-center md:hidden">
+              <Link href={`/${locale}/angebote`} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2E4D28] text-white font-bold rounded-2xl w-full text-sm">
+                Alle Angebote ansehen <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </section>
         )}
 
-        {/* Categories Grid */}
-        <section className="bg-gray-50 -mx-4 px-4 py-16 md:rounded-3xl md:mx-0 md:px-12">
+        {/* ================================================================
+            CATEGORIES GRID — Visual pills
+        ================================================================ */}
+        <section className="rounded-3xl p-8 md:p-12" style={{ background: "linear-gradient(135deg, #f0f7ef 0%, #e4ede1 100%)", border: "1px solid #d8e3d5" }}>
           <div className="flex items-end justify-between mb-10">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Nach Kategorien stöbern</h2>
-              <p className="text-gray-500">Finde genau das, was du suchst</p>
+              <h2 className="text-3xl font-black text-stone-900 mb-1" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
+                Nach Kategorien stöbern
+              </h2>
+              <p className="text-stone-500">Finde genau das, was du suchst</p>
             </div>
-            <Link href={`/${locale}/kategorien`} className="hidden md:flex items-center gap-1 text-[#3F5E39] font-semibold hover:text-[#284024] transition-colors">
-              Alle Kategorien <ArrowRight className="w-4 h-4" />
+            <Link href={`/${locale}/kategorien`} className="hidden md:flex items-center gap-1.5 text-[#2E4D28] font-bold hover:gap-3 transition-all text-sm">
+              Alle <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {categories.slice(0, 15).map(cat => (
-              <Link key={cat.id} href={`/${locale}/angebote?category=${cat.slug}`} className="flex flex-col items-center p-6 bg-white border border-gray-100 rounded-2xl hover:shadow-md hover:border-[#3F5E39]/30 transition-all group">
-                <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {categories.slice(0, 15).map((cat, i) => (
+              <Link
+                key={cat.id}
+                href={`/${locale}/angebote?category=${cat.slug}`}
+                className="group flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-stone-200/80 hover:border-[#7CB87A]/60 hover:shadow-lg hover:-translate-y-1 transition-all duration-250"
+                style={{ animationDelay: `${i * 40}ms` }}
+              >
+                <div className="text-3xl transform group-hover:scale-125 transition-transform duration-300">
                   {cat.icon?.startsWith('fas ') || cat.icon?.startsWith('fab ') || cat.icon?.startsWith('far ') ? (
-                    <i className={cat.icon}></i>
+                    <i className={cat.icon} />
                   ) : (
-                    cat.icon
+                    cat.icon || '🎁'
                   )}
                 </div>
-                <div className="text-base font-bold text-gray-900 text-center">{cat.name_de}</div>
+                <div className="text-sm font-bold text-stone-800 text-center group-hover:text-[#2E4D28] transition-colors leading-tight">
+                  {cat.name_de}
+                </div>
                 {cat.offer_count !== undefined && cat.offer_count > 0 && (
-                  <div className="text-xs text-[#3F5E39] font-semibold mt-2 bg-[#EAF0E5] px-2 py-1 rounded-full">
-                    {cat.offer_count} Angebote
+                  <div className="text-[10px] text-[#2E4D28] font-black bg-[#e4ede1] px-2.5 py-0.5 rounded-full">
+                    {cat.offer_count}
                   </div>
                 )}
               </Link>
@@ -254,134 +437,143 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
         <AdSlot slot="AD_BETWEEN_OFFERS_1" />
 
-        {/* New Offers Section */}
+        {/* ================================================================
+            NEUE ANGEBOTE
+        ================================================================ */}
         {filteredNewOffers.length > 0 && (
           <section>
             <div className="flex items-end justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Neu auf JungVorteil</h2>
-                <p className="text-gray-500">Frisch hinzugefügt und geprüft</p>
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-5 h-5 text-amber-500" />
+                  <span className="text-xs font-black text-amber-600 uppercase tracking-widest">Frisch hinzugefügt</span>
+                </div>
+                <h2 className="text-3xl font-black text-stone-900" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
+                  Neu auf JungVorteil
+                </h2>
+                <p className="text-stone-500 mt-1">Täglich neue Angebote — frisch geprüft</p>
               </div>
             </div>
             <OfferGrid offers={filteredNewOffers} locale={locale} />
           </section>
         )}
 
-        {/* Specific Hubs: Student, Under 25, Free */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Student Hub */}
+        {/* ================================================================
+            DREI HUBS: Student | U25 | Free — Premium visual layout
+        ================================================================ */}
+        <div className="grid md:grid-cols-3 gap-6">
+          
+          {/* === STUDIERENDE HUB === */}
           {filteredStudentOffers.length > 0 && (
-            <div className="bg-blue-50 rounded-3xl p-6 md:p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-blue-600 text-white p-2 rounded-lg">
-                  🎓
+            <div className="rounded-3xl overflow-hidden border border-violet-200/60 flex flex-col"
+              style={{ background: "linear-gradient(145deg, #f5f3ff 0%, #ede9fe 50%, #f5f3ff 100%)" }}>
+              {/* Hub Header */}
+              <div className="p-6 pb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-xl shadow-lg"
+                    style={{ background: "linear-gradient(135deg, #7c3aed, #8b5cf6)", boxShadow: "0 6px 16px rgba(124,58,237,0.4)" }}>
+                    🎓
+                  </div>
+                  <div>
+                    <h3 className="font-black text-violet-900 text-lg" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Für Studierende
+                    </h3>
+                    <p className="text-xs text-violet-600 font-medium">{filteredStudentOffers.length} Angebote</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-blue-900">Für Studierende</h3>
               </div>
-              <div className="space-y-4 mb-6">
-                {filteredStudentOffers.map(offer => {
-                  const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
-                  return (
-                    <a key={offer.id} href={offer.affiliate_url || offer.external_url || offer.brand?.website_url || `https://www.google.com/search?q=${encodeURIComponent(offer.title_de)}`} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
-                       <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
-                          {logo ? (
-                             <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
-                          ) : (
-                             <span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>
-                          )}
-                       </div>
-                       <div>
-                         <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
-                         <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
-                       </div>
-                    </a>
-                  );
-                })}
+              {/* Offer list */}
+              <div className="px-4 pb-4 space-y-2 flex-1">
+                {filteredStudentOffers.slice(0, 6).map(offer => (
+                  <HubOfferRow key={offer.id} offer={offer} accentColor="bg-violet-100 text-violet-700" />
+                ))}
               </div>
-              <Link href={`/${locale}/studentenrabatte`} className="block text-center text-sm font-bold text-blue-700 hover:text-blue-800">
-                Alle Studentenrabatte &rarr;
-              </Link>
+              {/* Footer CTA */}
+              <div className="p-4 pt-2">
+                <Link href={`/${locale}/studentenrabatte`}
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl font-bold text-sm text-violet-700 bg-violet-100 hover:bg-violet-200 transition-colors">
+                  Alle Studentenrabatte <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           )}
 
-          {/* Under 25 Hub */}
+          {/* === UNTER 25 HUB === */}
           {filteredUnder25Offers.length > 0 && (
-            <div className="bg-teal-50 rounded-3xl p-6 md:p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-teal-600 text-white p-2 rounded-lg font-bold">
-                  &lt;25
+            <div className="rounded-3xl overflow-hidden border border-sky-200/60 flex flex-col"
+              style={{ background: "linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%)" }}>
+              <div className="p-6 pb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center font-black text-white text-sm shadow-lg"
+                    style={{ background: "linear-gradient(135deg, #0284c7, #0ea5e9)", boxShadow: "0 6px 16px rgba(2,132,199,0.4)" }}>
+                    &lt;25
+                  </div>
+                  <div>
+                    <h3 className="font-black text-sky-900 text-lg" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Unter 25 Jahre
+                    </h3>
+                    <p className="text-xs text-sky-600 font-medium">{filteredUnder25Offers.length} Angebote</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-teal-900">Unter 25 Jahre</h3>
               </div>
-              <div className="space-y-4 mb-6">
-                {filteredUnder25Offers.map(offer => {
-                  const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
-                  return (
-                    <a key={offer.id} href={offer.affiliate_url || offer.external_url || offer.brand?.website_url || `https://www.google.com/search?q=${encodeURIComponent(offer.title_de)}`} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
-                       <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
-                          {logo ? (
-                             <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
-                          ) : (
-                             <span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>
-                          )}
-                       </div>
-                       <div>
-                         <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
-                         <div className="text-xs text-green-600 font-bold">{offer.discount_percent ? `${offer.discount_percent}% Rabatt` : 'Angebot ansehen'}</div>
-                       </div>
-                    </a>
-                  );
-                })}
+              <div className="px-4 pb-4 space-y-2 flex-1">
+                {filteredUnder25Offers.slice(0, 6).map(offer => (
+                  <HubOfferRow key={offer.id} offer={offer} accentColor="bg-sky-100 text-sky-700" />
+                ))}
               </div>
-              <Link href={`/${locale}/unter-25`} className="block text-center text-sm font-bold text-teal-700 hover:text-teal-800">
-                Alle Unter 25 Angebote &rarr;
-              </Link>
+              <div className="p-4 pt-2">
+                <Link href={`/${locale}/unter-25`}
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl font-bold text-sm text-sky-700 bg-sky-100 hover:bg-sky-200 transition-colors">
+                  Alle U25 Angebote <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           )}
 
-          {/* Free Hub */}
+          {/* === GRATIS HUB === */}
           {filteredFreeOffers.length > 0 && (
-            <div className="bg-green-50 rounded-3xl p-6 md:p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-green-600 text-white p-2 rounded-lg">
-                  🎁
+            <div className="rounded-3xl overflow-hidden border border-emerald-200/60 flex flex-col"
+              style={{ background: "linear-gradient(145deg, #f0fdf4 0%, #dcfce7 50%, #f0fdf4 100%)" }}>
+              <div className="p-6 pb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-xl shadow-lg"
+                    style={{ background: "linear-gradient(135deg, #16a34a, #22c55e)", boxShadow: "0 6px 16px rgba(22,163,74,0.4)" }}>
+                    🎁
+                  </div>
+                  <div>
+                    <h3 className="font-black text-emerald-900 text-lg" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Kostenlos
+                    </h3>
+                    <p className="text-xs text-emerald-600 font-medium">{filteredFreeOffers.length} Angebote</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-green-900">Kostenlos</h3>
               </div>
-              <div className="space-y-4 mb-6">
-                {filteredFreeOffers.map(offer => {
-                  const logo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
-                  return (
-                    <a key={offer.id} href={offer.affiliate_url || offer.external_url || offer.brand?.website_url || `https://www.google.com/search?q=${encodeURIComponent(offer.title_de)}`} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-4 bg-white p-3 rounded-xl hover:shadow-sm transition-shadow">
-                       <div className="w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 flex items-center justify-center border border-gray-100 relative p-1">
-                          {logo ? (
-                             <SafeImage src={logo} alt={offer.brand?.name ?? ""} fill sizes="48px" className="w-full h-full object-contain p-1" fallback={<span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>} />
-                          ) : (
-                             <span className="font-bold text-[#3F5E39]">{offer.brand?.name?.charAt(0)}</span>
-                          )}
-                       </div>
-                       <div>
-                         <div className="font-bold text-sm text-gray-900 line-clamp-1">{offer.title_de}</div>
-                         <div className="text-xs text-green-600 font-bold">Gratis</div>
-                       </div>
-                    </a>
-                  );
-                })}
+              <div className="px-4 pb-4 space-y-2 flex-1">
+                {filteredFreeOffers.slice(0, 6).map(offer => (
+                  <HubOfferRow key={offer.id} offer={offer} accentColor="bg-emerald-100 text-emerald-700" />
+                ))}
               </div>
-              <Link href={`/${locale}/gratis`} className="block text-center text-sm font-bold text-green-700 hover:text-green-800">
-                Alle Gratis-Angebote &rarr;
-              </Link>
+              <div className="p-4 pt-2">
+                <Link href={`/${locale}/gratis`}
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl font-bold text-sm text-emerald-700 bg-emerald-100 hover:bg-emerald-200 transition-colors">
+                  Alle Gratis-Angebote <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           )}
         </div>
 
-        {/* Brands Section */}
+        {/* ================================================================
+            BRANDS
+        ================================================================ */}
         {brands.length > 0 && (
           <section>
             <div className="flex items-end justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Beliebte Unternehmen</h2>
-                <p className="text-gray-500">Wer bietet die besten Konditionen?</p>
+                <h2 className="text-3xl font-black text-stone-900 mb-1" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
+                  Beliebte Unternehmen
+                </h2>
+                <p className="text-stone-500">Wer bietet die besten Konditionen?</p>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -392,56 +584,78 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </section>
         )}
 
-        {/* Expiring Soon */}
+        {/* ================================================================
+            EXPIRING SOON — Urgency Banner
+        ================================================================ */}
         {filteredExpiringOffers.length > 0 && (
-          <section className="bg-amber-50 -mx-4 px-4 py-16 md:rounded-3xl md:mx-0 md:px-12 border border-amber-100">
-            <div className="flex items-end justify-between mb-10">
+          <section className="rounded-3xl p-8 md:p-12 relative overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, #431407 0%, #7c2d12 40%, #9a3412 70%, #431407 100%)",
+              boxShadow: "0 20px 60px rgba(124,45,18,0.3)"
+            }}
+          >
+            {/* Glow orb */}
+            <div className="absolute -top-20 right-10 w-64 h-64 rounded-full pointer-events-none opacity-20"
+              style={{ background: "radial-gradient(circle, #fb923c, transparent 70%)", filter: "blur(50px)" }}
+            />
+            <div className="flex items-end justify-between mb-10 relative z-10">
               <div>
-                <div className="inline-block bg-amber-200 text-amber-900 px-3 py-1 rounded-full text-xs font-bold mb-3 uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 bg-orange-400/20 border border-orange-400/30 text-orange-300 text-xs font-black px-3 py-1.5 rounded-full mb-4 tracking-widest uppercase">
+                  <Clock className="w-3.5 h-3.5" />
                   Letzte Chance
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Bald ablaufend</h2>
-                <p className="text-gray-600">Diese Angebote sind nur noch für kurze Zeit gültig.</p>
+                <h2 className="text-3xl font-black text-white mb-1" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
+                  Bald ablaufend
+                </h2>
+                <p className="text-orange-200/70">Diese Angebote sind nur noch für kurze Zeit gültig.</p>
               </div>
             </div>
             <OfferGrid offers={filteredExpiringOffers} locale={locale} />
           </section>
         )}
 
-        {/* Cities */}
+        {/* ================================================================
+            CITIES
+        ================================================================ */}
         <section>
           <div className="flex items-end justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Lokale Vorteile entdecken</h2>
-              <p className="text-gray-500">Angebote direkt in deiner Stadt</p>
+              <h2 className="text-3xl font-black text-stone-900 mb-1" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
+                Lokale Vorteile entdecken
+              </h2>
+              <p className="text-stone-500">Angebote direkt in deiner Stadt</p>
             </div>
-            <Link href={`/${locale}/staedte`} className="hidden md:flex items-center gap-1 text-[#3F5E39] font-semibold hover:text-[#284024] transition-colors">
+            <Link href={`/${locale}/staedte`} className="hidden md:flex items-center gap-1.5 text-[#2E4D28] font-bold hover:gap-3 transition-all text-sm">
               Alle Städte <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {cities.slice(0, 10).map(city => (
               <CityCard key={city.id} city={city} locale={locale} />
             ))}
           </div>
         </section>
-        
-        {/* Deal Alert Newsletter */}
+
+        {/* Newsletter */}
         <section>
           <Newsletter />
         </section>
 
         <AdSlot slot="AD_BEFORE_FOOTER" />
 
-        {/* Articles / Magazin */}
+        {/* ================================================================
+            MAGAZIN — Editorial cards
+        ================================================================ */}
         {articles.length > 0 && (
-          <section className="border-t border-gray-100 pt-16">
+          <section className="border-t border-stone-100 pt-16">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Magazin & Ratgeber</h2>
-                <p className="text-gray-500">Tipps, Tricks und Wissen rund ums Sparen und Erwachsenwerden.</p>
+                <h2 className="text-3xl font-black text-stone-900 mb-1" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
+                  Magazin &amp; Ratgeber
+                </h2>
+                <p className="text-stone-500">Tipps, Tricks und Wissen rund ums Sparen.</p>
               </div>
-              <Link href={`/${locale}/magazin`} className="hidden md:flex items-center gap-1 text-[#3F5E39] font-semibold hover:text-[#284024] transition-colors">
+              <Link href={`/${locale}/magazin`} className="hidden md:flex items-center gap-1.5 text-[#2E4D28] font-bold hover:gap-3 transition-all text-sm">
                 Alle Artikel <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -450,9 +664,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <ArticleCard key={article.id} article={article} locale={locale} />
               ))}
             </div>
-            <div className="mt-8 text-center md:hidden">
-               <Link href={`/${locale}/magazin`} className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#EAF0E5] text-[#3F5E39] font-semibold rounded-xl hover:bg-[#D6E2CE] transition-colors w-full">
-                Alle Artikel
+            <div className="mt-6 text-center md:hidden">
+              <Link href={`/${locale}/magazin`} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2E4D28] text-white font-bold rounded-2xl w-full text-sm">
+                Alle Artikel <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </section>
