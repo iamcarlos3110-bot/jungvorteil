@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { savePreferences, getPreferences, clearPreferences } from '@/lib/preferences';
 import { UserPreferences } from '@/types';
-import { Check, RotateCcw } from 'lucide-react';
+import { Check, RotateCcw, Filter } from 'lucide-react';
 
 const AGE_RANGES = [
   { label: '18–20', value: 19 },
@@ -54,16 +54,20 @@ export default function PersonalizationSelector() {
   const hasSelections = age !== undefined || situation !== undefined || (city !== '' && city !== 'Alle');
 
   return (
-    <div className="bg-white rounded-2xl shadow-md border border-stone-200/80 p-5 md:p-6 transition-all duration-200">
-      <h2 className="text-base md:text-lg font-bold text-stone-900 text-center mb-4 tracking-tight">
-        Finde Angebote, die zu dir passen
+    <div className="bg-white rounded-3xl shadow-xl shadow-stone-900/5 border border-stone-200/90 p-6 md:p-8 transition-all duration-300 hover:border-[#2E4D28]/30">
+      <h2 className="text-lg md:text-xl font-bold text-stone-900 text-center mb-6 tracking-tight flex items-center justify-center gap-2">
+        <Filter className="w-5 h-5 text-[#2E4D28]" />
+        <span>Finde Angebote, die zu dir passen</span>
       </h2>
 
-      <div className="space-y-4">
+      <div className="divide-y divide-stone-100 space-y-6">
         {/* Step 1: Age */}
-        <div>
-          <p className="text-xs font-semibold text-stone-500 mb-2">Wie alt bist du?</p>
-          <div className="flex flex-wrap gap-1.5 md:gap-2">
+        <div className="pt-2 first:pt-0">
+          <p className="text-xs md:text-sm font-bold text-stone-700 mb-3 flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#2E4D28]" />
+            <span>Wie alt bist du?</span>
+          </p>
+          <div className="flex flex-wrap gap-2">
             {AGE_RANGES.map(r => {
               const isSelected = age === r.value;
               return (
@@ -71,14 +75,14 @@ export default function PersonalizationSelector() {
                   key={r.label}
                   type="button"
                   onClick={() => setAge(isSelected ? undefined : r.value)}
-                  className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 cursor-pointer select-none active:scale-95 ${
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 shadow-xs ${
                     isSelected
-                      ? 'bg-[#2E4D28] text-white font-semibold shadow-xs'
-                      : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                      ? 'bg-[#2E4D28] text-white border border-[#2E4D28] shadow-md shadow-[#2E4D28]/20 font-bold scale-[1.02]'
+                      : 'bg-[#EAF0E5]/80 text-[#253E20] border border-[#C7D9C0] hover:bg-[#DCE7D6] hover:border-[#2E4D28]/50'
                   }`}
                 >
                   <span>{r.label}</span>
-                  {isSelected && <Check className="w-3 h-3 text-emerald-300 stroke-[3]" />}
+                  {isSelected && <Check className="w-3.5 h-3.5 text-emerald-300 stroke-[3]" />}
                 </button>
               );
             })}
@@ -86,9 +90,12 @@ export default function PersonalizationSelector() {
         </div>
 
         {/* Step 2: Situation */}
-        <div>
-          <p className="text-xs font-semibold text-stone-500 mb-2">Was ist deine aktuelle Situation?</p>
-          <div className="flex flex-wrap gap-1.5 md:gap-2">
+        <div className="pt-6">
+          <p className="text-xs md:text-sm font-bold text-stone-700 mb-3 flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#2E4D28]" />
+            <span>Was ist deine aktuelle Situation?</span>
+          </p>
+          <div className="flex flex-wrap gap-2">
             {SITUATIONS.map(s => {
               const isSelected = situation === s.value;
               return (
@@ -96,14 +103,14 @@ export default function PersonalizationSelector() {
                   key={s.label}
                   type="button"
                   onClick={() => setSituation(isSelected ? undefined : s.value)}
-                  className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 cursor-pointer select-none active:scale-95 ${
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 shadow-xs ${
                     isSelected
-                      ? 'bg-[#2E4D28] text-white font-semibold shadow-xs'
-                      : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                      ? 'bg-[#2E4D28] text-white border border-[#2E4D28] shadow-md shadow-[#2E4D28]/20 font-bold scale-[1.02]'
+                      : 'bg-[#EAF0E5]/80 text-[#253E20] border border-[#C7D9C0] hover:bg-[#DCE7D6] hover:border-[#2E4D28]/50'
                   }`}
                 >
                   <span>{s.label}</span>
-                  {isSelected && <Check className="w-3 h-3 text-emerald-300 stroke-[3]" />}
+                  {isSelected && <Check className="w-3.5 h-3.5 text-emerald-300 stroke-[3]" />}
                 </button>
               );
             })}
@@ -111,9 +118,12 @@ export default function PersonalizationSelector() {
         </div>
 
         {/* Step 3: City */}
-        <div>
-          <p className="text-xs font-semibold text-stone-500 mb-2">In welcher Stadt bist du meistens?</p>
-          <div className="flex flex-wrap gap-1.5 md:gap-2">
+        <div className="pt-6">
+          <p className="text-xs md:text-sm font-bold text-stone-700 mb-3 flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#2E4D28]" />
+            <span>In welcher Stadt bist du meistens?</span>
+          </p>
+          <div className="flex flex-wrap gap-2">
             {CITIES.map(c => {
               const isSelected = city === c;
               return (
@@ -121,14 +131,14 @@ export default function PersonalizationSelector() {
                   key={c}
                   type="button"
                   onClick={() => setCity(isSelected ? '' : c)}
-                  className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 cursor-pointer select-none active:scale-95 ${
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 shadow-xs ${
                     isSelected
-                      ? 'bg-[#2E4D28] text-white font-semibold shadow-xs'
-                      : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                      ? 'bg-[#2E4D28] text-white border border-[#2E4D28] shadow-md shadow-[#2E4D28]/20 font-bold scale-[1.02]'
+                      : 'bg-[#EAF0E5]/80 text-[#253E20] border border-[#C7D9C0] hover:bg-[#DCE7D6] hover:border-[#2E4D28]/50'
                   }`}
                 >
                   <span>{c}</span>
-                  {isSelected && <Check className="w-3 h-3 text-emerald-300 stroke-[3]" />}
+                  {isSelected && <Check className="w-3.5 h-3.5 text-emerald-300 stroke-[3]" />}
                 </button>
               );
             })}
@@ -138,20 +148,20 @@ export default function PersonalizationSelector() {
 
       {/* Footer CTA */}
       {hasSelections && (
-        <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-center gap-3">
+        <div className="mt-7 pt-5 border-t border-stone-200/80 flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             type="button"
             onClick={handleSave}
-            className="bg-[#2E4D28] hover:bg-[#233C1F] text-white text-xs font-bold px-5 py-2 rounded-full shadow-xs transition-all active:scale-95 cursor-pointer"
+            className="w-full sm:w-auto bg-[#2E4D28] hover:bg-[#233C1F] text-white text-sm font-bold px-7 py-2.5 rounded-full shadow-md shadow-[#2E4D28]/20 transition-all hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
           >
             Für mich anzeigen
           </button>
           <button
             type="button"
             onClick={handleClear}
-            className="inline-flex items-center gap-1 text-xs text-stone-400 hover:text-stone-600 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs text-stone-400 hover:text-stone-700 transition-colors cursor-pointer py-1 px-3"
           >
-            <RotateCcw className="w-3 h-3" />
+            <RotateCcw className="w-3.5 h-3.5" />
             <span>Zurücksetzen</span>
           </button>
         </div>
@@ -159,5 +169,6 @@ export default function PersonalizationSelector() {
     </div>
   );
 }
+
 
 
