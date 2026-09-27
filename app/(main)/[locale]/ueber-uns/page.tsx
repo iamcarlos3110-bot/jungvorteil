@@ -118,22 +118,56 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </div>
           </div>
 
-          {/* Editorial Standard */}
+          {/* Editorial Standard & Verification Process */}
           <div className="bg-gradient-to-r from-emerald-900 to-green-950 text-white rounded-3xl p-8 sm:p-12 shadow-md space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-emerald-300">
-              Verlässlichkeit & Redaktionsversprechen
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/80 text-emerald-300 text-xs font-bold uppercase tracking-wide">
+              <ShieldCheck className="w-4 h-4 text-lime-400" /> 3. Redaktionelle Verifikation
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Unsere 4 Prinzipien der Redaktionellen Verifikation
             </h2>
             <p className="text-emerald-100 text-base sm:text-lg leading-relaxed">
-              Jedes auf JungVorteil veröffentlichte Angebot basiert auf einer sorgfältigen Prüfung der Konditionen und Fristen der jeweiligen Schweizer Anbieter.
+              Transparenz und Verlässlichkeit stehen bei JungVorteil an erster Stelle. Jedes Vorteil-Angebot und jeder Magazin-Artikel durchläuft einen strikten Prüfungsprozess vor der Veröffentlichung:
             </p>
-            <div className="space-y-3 text-sm sm:text-base text-emerald-100 border-t border-emerald-800/80 pt-6">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-lime-400 shrink-0 mt-0.5" />
-                <span>Transparente Angabe von Mindestalter, Fristen und Voraussetzungen (z.B. Immatrikulationsbescheinigung oder Legi).</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm text-emerald-100">
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
+                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">1</span>
+                  Offizielle Primärquellen
+                </div>
+                <p className="text-emerald-200/90 text-xs leading-relaxed">
+                  Wir nutzen ausschliesslich offizielle Angaben der Schweizer Anbieter, Hochschulen und ÖV-Unternehmen. Redaktionelle Behauptungen ohne offizielle Quelle sind ausgeschlossen.
+                </p>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-lime-400 shrink-0 mt-0.5" />
-                <span>Keine Falschversprechen oder künstlich überhöhte Rabattprozente.</span>
+
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
+                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">2</span>
+                  Strikte Faktenprüfung
+                </div>
+                <p className="text-emerald-200/90 text-xs leading-relaxed">
+                  Preise in CHF, Mindest- und Höchstalter (16–30 J.), Legi-Erfordernis und Gültigkeitsfristen werden vor Veröffentlichung eins-zu-eins auf Richtigkeit geprüft.
+                </p>
+              </div>
+
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
+                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">3</span>
+                  Monatliches Re-Checking
+                </div>
+                <p className="text-emerald-200/90 text-xs leading-relaxed">
+                  Rabatte veralten mit der Zeit. Unsere Redaktion prüft verlinkte Angebote monatlich. Abgelaufene Aktionen werden unverzüglich gekennzeichnet oder entfernt.
+                </p>
+              </div>
+
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
+                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">4</span>
+                  Redaktionelle Unabhängigkeit
+                </div>
+                <p className="text-emerald-200/90 text-xs leading-relaxed">
+                  Affiliate-Partnerschaften beeinflussen niemals unsere Bewertung. Ein Angebot wird nur aufgenommen, wenn es echten Mehrwert für junge Menschen in der Schweiz bietet.
+                </p>
               </div>
             </div>
           </div>
