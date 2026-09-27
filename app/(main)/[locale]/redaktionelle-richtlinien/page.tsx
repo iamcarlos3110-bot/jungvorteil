@@ -368,10 +368,10 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
             </div>
             <div className="space-y-2 flex-1">
               <h3 className="text-xl font-bold text-stone-900 flex items-center gap-2">
-                <Eye className="w-5 h-5 text-[#3F5E39]" /> Quelle: Offizielle Website des Anbieters
+                <Eye className="w-5 h-5 text-[#3F5E39]" /> Transparente Quellennachweise &amp; Primärquellen
               </h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                Verlässlichkeit bedeutet Transparenz der Datenherkunft. Auf jeder Angebotsseite verlinken wir explizit mit dem Hinweis <strong className="text-stone-900 font-semibold">&quot;Quelle: Offizielle Website des Anbieters&quot;</strong> auf die primäre Urheberseite des jeweiligen Anbieters.
+                Verlässlichkeit bedeutet Transparenz der Datenherkunft. Auf jeder Angebotsseite und in jedem Ratgeber verlinken wir explizit mit dem Hinweis <strong className="text-stone-900 font-semibold">&quot;Quelle: Offizielle Website des Anbieters&quot;</strong> direkt auf die primäre Urheberseite (z.B. SBB, Neobanken, Kantonsstellen oder Hochschulportale). So kann jede Nutzerin und jeder Nutzer die Konditionen eigenständig bei der Originalquelle überprüfen.
               </p>
             </div>
           </div>
