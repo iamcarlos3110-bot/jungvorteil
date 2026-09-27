@@ -9,9 +9,10 @@ export default function ImpressumPage() {
       <h1 className="text-3xl font-extrabold text-stone-900 mb-8 border-b pb-4">Impressum</h1>
       
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">1. Kontaktadresse & Betreiber der Website</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">1. Kontaktadresse &amp; Betreiber der Website</h2>
         <p className="leading-relaxed">
           <strong>JungVorteil Schweiz</strong><br />
+          Carlos Piñeiro (Betreiber &amp; Inhaber)<br />
           Plaza del Peñón 7, 7B izq.<br />
           28923 Alcorcón, Madrid<br />
           Spanien
@@ -23,15 +24,25 @@ export default function ImpressumPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">2. Vertretungsberechtigte Person & Redaktionsleitung</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">2. Vertretungsberechtigte Person &amp; Redaktionsleitung</h2>
         <p className="leading-relaxed">
-          <strong>Gründer & Chefredaktor:</strong> Carlos Piñeiro<br />
-          Redaktionsleitung & Plattformentwicklung JungVorteil Schweiz.
+          <strong>Gründer &amp; Chefredaktor:</strong> Carlos Piñeiro<br />
+          Verantwortlich für Inhalt, Redaktionsleitung &amp; Entwicklung von JungVorteil Schweiz.
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">3. Haftungsausschluss für Inhalte</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">3. Unternehmensform &amp; Registerhinweis</h2>
+        <p className="leading-relaxed mb-2">
+          JungVorteil ist ein unabhängig betriebenes privates Vorteilsportal von Carlos Piñeiro.
+        </p>
+        <p className="leading-relaxed text-sm text-stone-600">
+          Es besteht kein Eintrag im Handelsregister und keine Mehrwertsteuernummer (keine MwSt-Pflicht). Es werden keine erfundenen Registernummern oder Rechtsformen geführt.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-bold text-stone-900 mb-3">4. Haftungsausschluss für Inhalte</h2>
         <p className="leading-relaxed mb-4">
           Die Inhalte unserer Seiten wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann JungVorteil jedoch keine Gewähr übernehmen.
         </p>
@@ -44,7 +55,7 @@ export default function ImpressumPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">4. Haftung für Links & Affiliate-Hinweis</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">5. Haftung für Links &amp; Affiliate-Hinweis</h2>
         <p className="leading-relaxed mb-4">
           Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.
         </p>
@@ -54,7 +65,7 @@ export default function ImpressumPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">5. Urheberrechte</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">6. Urheberrechte</h2>
         <p className="leading-relaxed">
           Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich JungVorteil oder den speziell genannten Rechteinhabern (z.B. Schweizer Partnerunternehmen). Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
         </p>
@@ -62,5 +73,6 @@ export default function ImpressumPage() {
     </div>
   );
 }
+
 
 
