@@ -103,9 +103,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     expiringOffers, 
     studentOffers, 
     under25Offers,
-    ,
     freeOffers,
-    , 
     categories, 
     cities, 
     brands, 
@@ -117,14 +115,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     getVerifiedExpiringOffers(8),
     getVerifiedStudentOffers(8),
     getVerifiedUnderAgeOffers(25, 8),
-    getVerifiedUnderAgeOffers(30, 8),
     getVerifiedFreeOffers(8),
-    getDemoOffers(20),
     getAllCategories(),
     getAllCities(),
     getTopBrands(12),
     getArticles(3)
   ]);
+
 
   const seenIds = new Set<string>();
   if (vorteilDerWoche) seenIds.add(vorteilDerWoche.id);
