@@ -40,9 +40,14 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
     "description": article.excerpt ?? "",
     "datePublished": article.published_at ?? article.created_at,
     "author": {
-      "@type": "Organization",
-      "name": "JungVorteil Redaktion",
-      "url": "https://jungvorteil.ch"
+      "@type": "Person",
+      "name": "Carlos Piñeiro",
+      "jobTitle": "Gründer & Chefredaktor",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "JungVorteil Redaktion",
+        "url": "https://jungvorteil.ch"
+      }
     },
     "publisher": {
       "@type": "Organization",
@@ -154,12 +159,12 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
             <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold text-sm">
-                  JV
+                  CP
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 text-sm">JungVorteil Redaktion</p>
+                  <p className="font-bold text-gray-900 text-sm">Carlos Piñeiro (JungVorteil Redaktion)</p>
                   <p className="text-xs text-gray-500">
-                    Zuletzt geprüft: {formatDate(article.updated_at || article.published_at || article.created_at)}
+                    Verantwortlich für Inhalt &amp; Faktenprüfung • Zuletzt geprüft: {formatDate(article.updated_at || article.published_at || article.created_at)}
                   </p>
                 </div>
               </div>
