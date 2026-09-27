@@ -499,7 +499,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                   {offer.conditions_de || "Gültig für Neukunden und bestehende Nutzer gemäss den Aktionsbestimmungen des Anbieters."}
                 </p>
                 <p className="text-xs text-gray-400 mt-4 pt-3 border-t border-gray-200/80">
-                  ℹ️ Transparency & Hinweis: Wir prüfen Angebote sorgfältig (Zuletzt geprüft: {offer.checked_at ? formatDate(offer.checked_at) : "Kürzlich"}). Preise und Bedingungen können sich beim Anbieter ändern. Alle Angaben ohne Gewähr.
+                  ℹ️ Transparency & Prüfzyklus: Alle Angebote auf JungVorteil.ch werden regelmässig (mindestens monatlich sowie bei bekannten Tarifanpassungen) von unserer Redaktion manuell verifiziert (Zuletzt geprüft: {offer.checked_at ? formatDate(offer.checked_at) : "Kürzlich"}). Preise und Bedingungen können sich beim Anbieter ändern. Alle Angaben ohne Gewähr.
                 </p>
               </div>
 
@@ -587,6 +587,16 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                     <span className={`font-medium ${expired ? "text-red-500" : "text-gray-900"}`}>{formatDate(offer.end_date)}</span>
                   </div>
                 )}
+                {offer.checked_at && (
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Zuletzt geprüft</span>
+                    <span className="font-medium text-emerald-700">{formatDate(offer.checked_at)}</span>
+                  </div>
+                )}
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Prüfintervall</span>
+                  <span className="font-medium text-gray-900">Monatlich manuell</span>
+                </div>
                 <div className="pt-3 mt-3 border-t border-gray-100">
                   <a
                     href={externalUrl}
