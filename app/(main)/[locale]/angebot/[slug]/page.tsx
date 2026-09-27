@@ -8,7 +8,7 @@ import Script from "next/script";
 import { incrementOfferView } from "@/lib/actions/offers";
 import { formatDate, isExpired, getSavingDisplay, formatCHF, safeJsonLd } from "@/lib/utils";
 import Link from "next/link";
-import { ExternalLink, MapPin, GraduationCap, Globe, CheckCircle, Clock } from "lucide-react";
+import { ExternalLink, MapPin, GraduationCap, Globe, CheckCircle, Clock, Tag, HelpCircle, ShieldCheck, UserCheck, DollarSign } from "lucide-react";
 import { getBrandLogo, getOfferCover } from "@/lib/brandAssets";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
@@ -40,7 +40,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-
 export default async function OfferPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
   const offer = await getOfferBySlug(slug);
@@ -62,6 +61,47 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     : `https://www.google.com/search?q=${encodeURIComponent(
         (offer.brand?.name ? offer.brand.name + " " : "") + offer.title_de + " Schweiz Angebot"
       )}`;
+
+  // Target audience text
+  const targetAudienceText = offer.student_required
+    ? `Dieses Angebot richtet sich speziell an Studierende und Auszubildende in der Schweiz${offer.age_max ? ` bis ${offer.age_max} Jahre` : ""}.`
+    : offer.age_max
+    ? `Dieses Angebot steht allen Jugendlichen und jungen Erwachsenen bis maximal ${offer.age_max} Jahre zur Verfügung.`
+    : offer.age_min
+    ? `Dieses Angebot ist für Jugendliche und junge Erwachsene ab ${offer.age_min} Jahren verfügbar.`
+    : "Dieses Vorteil steht allen Jugendlichen, Studierenden und jungen Erwachsenen in der Schweiz offen.";
+
+  // Dynamic FAQs for schema and display
+  const faqs = [
+    {
+      question: `Wer kann das Angebot "${offer.title_de}" nutzen?`,
+      answer: targetAudienceText,
+    },
+    {
+      question: `Wie viel spare ich bei diesem Angebot?`,
+      answer: saving
+        ? `Mit diesem Vorteil sparst du ${saving}.${
+            offer.normal_price && offer.young_price
+              ? ` Der Normalpreis liegt bei ${formatCHF(offer.normal_price)}, während der reduzierte Jugendpreis nur ${formatCHF(offer.young_price)} beträgt.`
+              : ""
+          }`
+        : `Der Vorteil bietet exklusive Konditionen bei ${offer.brand?.name ?? "dem Anbieter"}.`,
+    },
+    {
+      question: `Wie erhalte ich den Rabatt bei ${offer.brand?.name ?? "dem Anbieter"}?`,
+      answer: offer.how_to_get_de
+        ? offer.how_to_get_de
+        : `Klicke einfach auf den Button "Angebot ansehen", um direkt zur offiziellen Aktionsseite weitergeleitet zu werden${
+            offer.discount_code ? ` und nutze den Gutscheincode "${offer.discount_code}"` : ""
+          }.`,
+    },
+    {
+      question: `Welche Bedingungen gelten für diesen Vorteil?`,
+      answer: offer.conditions_de
+        ? offer.conditions_de
+        : `Gültig solange der Vorrat reicht. Es gelten die Allgemeinen Geschäftsbedingungen des Anbieters.`,
+    },
+  ];
 
   const offerSchema = {
     "@context": "https://schema.org",
@@ -88,10 +128,24 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <Script id="schema-offer" type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(offerSchema) }} />
       <Script id="schema-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }} />
+      <Script id="schema-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqSchema) }} />
 
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100 pt-20 lg:pt-24">
@@ -131,7 +185,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
 
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Header */}
+            {/* Header Card */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
               {getOfferCover(offer.slug, offer.image_url) && (
                 <div className="w-full h-56 bg-gray-100 relative overflow-hidden">
@@ -146,138 +200,224 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
               )}
               <div className="p-6">
                 <div className="flex items-start gap-4 mb-5">
-                <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200/80 p-1 flex items-center justify-center overflow-hidden shrink-0 shadow-sm relative">
-                  {getBrandLogo(offer.brand?.slug, offer.logo_url || offer.brand?.logo_url) ? (
-                    <SafeImage
-                      src={getBrandLogo(offer.brand?.slug, offer.logo_url || offer.brand?.logo_url)!}
-                      alt={offer.brand?.name ?? ""}
-                      fill
-                      sizes="64px"
-                      className="w-full h-full object-contain p-1"
-                      fallback={
-                        <span className="font-black text-2xl text-[#3F5E39] uppercase">
-                          {(offer.brand?.name ?? offer.title_de).charAt(0)}
-                        </span>
-                      }
-                    />
-                  ) : (
-                    <span className="font-black text-2xl text-[#3F5E39] uppercase">
-                      {(offer.brand?.name ?? offer.title_de).charAt(0)}
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200/80 p-1 flex items-center justify-center overflow-hidden shrink-0 shadow-sm relative">
+                    {getBrandLogo(offer.brand?.slug, offer.logo_url || offer.brand?.logo_url) ? (
+                      <SafeImage
+                        src={getBrandLogo(offer.brand?.slug, offer.logo_url || offer.brand?.logo_url)!}
+                        alt={offer.brand?.name ?? ""}
+                        fill
+                        sizes="64px"
+                        className="w-full h-full object-contain p-1"
+                        fallback={
+                          <span className="font-black text-2xl text-[#3F5E39] uppercase">
+                            {(offer.brand?.name ?? offer.title_de).charAt(0)}
+                          </span>
+                        }
+                      />
+                    ) : (
+                      <span className="font-black text-2xl text-[#3F5E39] uppercase">
+                        {(offer.brand?.name ?? offer.title_de).charAt(0)}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    {offer.brand?.name && <p className="text-sm text-gray-500 font-medium mb-1">{offer.brand.name}</p>}
+                    <h1 className="text-2xl font-bold text-gray-900 leading-tight">{offer.title_de}</h1>
+                  </div>
+                </div>
+
+                {/* Saving & Prices Box */}
+                <div className="bg-[#F8FAF7] border border-[#E2EBDD] rounded-xl p-4 mb-6 flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    {saving && (
+                      <div className="text-2xl font-black text-green-700">{saving}</div>
+                    )}
+                    {(offer.normal_price || offer.young_price) && (
+                      <div className="flex items-center gap-3 mt-1 text-sm">
+                        {offer.normal_price && (
+                          <span className="text-gray-500 line-through">Normalpreis: {formatCHF(offer.normal_price)}</span>
+                        )}
+                        {offer.young_price && (
+                          <span className="font-bold text-gray-900">Jugendpreis: {formatCHF(offer.young_price)}</span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  {offer.discount_code && (
+                    <div className="bg-white border border-[#D6E2CE] rounded-lg px-4 py-2 text-center">
+                      <span className="text-[10px] uppercase font-bold text-[#3F5E39] block">Code</span>
+                      <span className="font-mono text-base font-bold text-[#253D22]">{offer.discount_code}</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Tag Pills */}
+                <div className="flex flex-wrap gap-3 mb-6 text-sm">
+                  {offer.is_nationwide && (
+                    <span className="flex items-center gap-1.5 text-green-700 bg-green-50 px-2.5 py-1 rounded-md">
+                      <Globe className="w-4 h-4" /> Schweizweit
+                    </span>
+                  )}
+                  {offer.city && (
+                    <span className="flex items-center gap-1.5 text-gray-700 bg-gray-100 px-2.5 py-1 rounded-md">
+                      <MapPin className="w-4 h-4" /> {offer.city.name_de}
+                    </span>
+                  )}
+                  {offer.student_required && (
+                    <span className="flex items-center gap-1.5 text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md">
+                      <GraduationCap className="w-4 h-4" /> Studentennachweis erforderlich
+                    </span>
+                  )}
+                  {(offer.age_min || offer.age_max) && (
+                    <span className="flex items-center gap-1.5 text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md">
+                      <Clock className="w-4 h-4" />
+                      {offer.age_min && offer.age_max ? `${offer.age_min}–${offer.age_max} Jahre` :
+                       offer.age_max ? `Bis ${offer.age_max} Jahre` :
+                       `Ab ${offer.age_min} Jahren`}
+                    </span>
+                  )}
+                  {offer.checked_at && (
+                    <span className="flex items-center gap-1.5 text-gray-600 bg-gray-50 px-2.5 py-1 rounded-md">
+                      <CheckCircle className="w-4 h-4 text-green-600" /> Geprüft am {formatDate(offer.checked_at)}
                     </span>
                   )}
                 </div>
-                <div className="flex-1 min-w-0">
-                  {offer.brand?.name && <p className="text-sm text-gray-500 font-medium mb-1">{offer.brand.name}</p>}
-                  <h1 className="text-2xl font-bold text-gray-900 leading-tight">{offer.title_de}</h1>
-                </div>
-              </div>
 
-              {/* Saving */}
-              {saving && (
-                <div className="mb-5">
-                  <span className="text-3xl font-bold text-green-600">{saving}</span>
-                </div>
-              )}
+                {/* Primary CTA */}
+                <OfferCtaLink
+                  offerId={offer.id}
+                  url={externalUrl}
+                  className="flex items-center justify-center gap-2 w-full bg-[#3F5E39] hover:bg-[#324B2D] text-white font-bold py-4 rounded-2xl text-lg transition-colors shadow-sm"
+                  id={`offer-cta-${offer.id}`}
+                >
+                  Angebot ansehen <ExternalLink className="w-5 h-5" />
+                </OfferCtaLink>
 
-              {/* Prices */}
-              {(offer.normal_price || offer.young_price) && (
-                <div className="flex items-center gap-4 mb-5">
-                  {offer.normal_price && (
-                    <span className="text-gray-400 line-through text-lg">{formatCHF(offer.normal_price)}</span>
-                  )}
-                  {offer.young_price && (
-                    <span className="text-2xl font-bold text-gray-900">{formatCHF(offer.young_price)}</span>
-                  )}
-                </div>
-              )}
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-3 mb-6 text-sm">
-                {offer.is_nationwide && (
-                  <span className="flex items-center gap-1.5 text-green-700">
-                    <Globe className="w-4 h-4" /> Schweizweit
-                  </span>
+                {offer.end_date && !expired && (
+                  <p className="text-center text-xs text-gray-400 mt-3">
+                    Gültig bis {formatDate(offer.end_date)}
+                  </p>
                 )}
-                {offer.city && (
-                  <span className="flex items-center gap-1.5 text-gray-600">
-                    <MapPin className="w-4 h-4" /> {offer.city.name_de}
-                  </span>
+                {offer.is_sponsored && (
+                  <p className="text-center text-xs text-gray-400 mt-2">Gesponsert</p>
                 )}
-                {offer.student_required && (
-                  <span className="flex items-center gap-1.5 text-blue-700">
-                    <GraduationCap className="w-4 h-4" /> Für Studierende
-                  </span>
-                )}
-                {(offer.age_min || offer.age_max) && (
-                  <span className="flex items-center gap-1.5 text-gray-600">
-                    <Clock className="w-4 h-4" />
-                    {offer.age_min && offer.age_max ? `${offer.age_min}–${offer.age_max} Jahre` :
-                     offer.age_max ? `Bis ${offer.age_max} Jahre` :
-                     `Ab ${offer.age_min} Jahren`}
-                  </span>
-                )}
-                {offer.checked_at && (
-                  <span className="flex items-center gap-1.5 text-gray-500">
-                    <CheckCircle className="w-4 h-4 text-green-500" /> Geprüft am {formatDate(offer.checked_at)}
-                  </span>
-                )}
-              </div>
-
-              {/* Discount code */}
-              {offer.discount_code && (
-                <div className="bg-[#EAF0E5] border border-[#D6E2CE] rounded-xl p-4 mb-6">
-                  <p className="text-xs text-[#3F5E39] font-semibold mb-1">RABATTCODE</p>
-                  <p className="font-mono text-lg font-bold text-[#253D22]">{offer.discount_code}</p>
-                </div>
-              )}
-
-              {/* CTA */}
-              <OfferCtaLink
-                offerId={offer.id}
-                url={externalUrl}
-                className="flex items-center justify-center gap-2 w-full bg-[#3F5E39] hover:bg-[#324B2D] text-white font-bold py-4 rounded-2xl text-lg transition-colors shadow-sm"
-                id={`offer-cta-${offer.id}`}
-              >
-                Angebot ansehen <ExternalLink className="w-5 h-5" />
-              </OfferCtaLink>
-
-              {offer.end_date && !expired && (
-                <p className="text-center text-xs text-gray-400 mt-3">
-                  Gültig bis {formatDate(offer.end_date)}
-                </p>
-              )}
-              {offer.is_sponsored && (
-                <p className="text-center text-xs text-gray-400 mt-2">Gesponsert</p>
-              )}
               </div>
             </div>
 
-            {/* Description */}
-            {offer.description_de && (
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                <h2 className="text-lg font-bold mb-3">Beschreibung</h2>
-                <p className="text-gray-700 leading-relaxed whitespace-pre-line">{offer.description_de}</p>
-              </div>
-            )}
+            {/* Structured Details Grid */}
+            <div className="space-y-6">
 
-            {/* How to get */}
-            {offer.how_to_get_de && (
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                <h2 className="text-lg font-bold mb-3">So bekommst du diesen Vorteil</h2>
-                <p className="text-gray-700 leading-relaxed whitespace-pre-line">{offer.how_to_get_de}</p>
-              </div>
-            )}
+              {/* 1. Was ist die Angebot (Description) */}
+              {offer.description_de && (
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                  <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
+                    <Tag className="w-5 h-5" />
+                    <h2 className="text-lg font-bold text-gray-900">Was ist das Angebot?</h2>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">{offer.description_de}</p>
+                </div>
+              )}
 
-            {/* Conditions */}
-            {offer.conditions_de && (
+              {/* 2. Wer kann es nutzen & Requisite (Target Audience) */}
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
+                  <UserCheck className="w-5 h-5" />
+                  <h2 className="text-lg font-bold text-gray-900">Wer kann diese Aktion nutzen?</h2>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4">{targetAudienceText}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm bg-gray-50 p-4 rounded-xl">
+                  <div>
+                    <span className="text-gray-500 block text-xs font-semibold uppercase">Altersgrenze</span>
+                    <span className="font-semibold text-gray-900">
+                      {offer.age_max ? `Bis max. ${offer.age_max} Jahre` : offer.age_min ? `Ab ${offer.age_min} Jahren` : "Keine spezifische Altersgrenze"}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 block text-xs font-semibold uppercase">Status-Nachweis</span>
+                    <span className="font-semibold text-gray-900">
+                      {offer.student_required ? "Gültiger Studenten-/Schülerausweis nötig" : "Kein Studentenausweis erforderlich"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3. Normalpreis vs. Jugendpreis (Price Comparison) */}
+              {(offer.normal_price || offer.young_price || saving) && (
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                  <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
+                    <DollarSign className="w-5 h-5" />
+                    <h2 className="text-lg font-bold text-gray-900">Preisvergleich & Preisvorteil</h2>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    <div className="bg-gray-50 p-4 rounded-xl">
+                      <span className="text-xs text-gray-500 uppercase font-semibold block">Normalpreis</span>
+                      <span className="text-lg font-bold text-gray-500 line-through">
+                        {offer.normal_price ? formatCHF(offer.normal_price) : "Standardtarif"}
+                      </span>
+                    </div>
+                    <div className="bg-[#EAF0E5] p-4 rounded-xl border border-[#D6E2CE]">
+                      <span className="text-xs text-[#3F5E39] uppercase font-semibold block">Jugendpreis</span>
+                      <span className="text-xl font-black text-[#253D22]">
+                        {offer.young_price ? formatCHF(offer.young_price) : saving ?? "Sondertarif"}
+                      </span>
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                      <span className="text-xs text-green-700 uppercase font-semibold block">Deine Ersparnis</span>
+                      <span className="text-xl font-black text-green-700">
+                        {saving ?? "Exklusiver Rabatt"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 4. So bekommst du den Vorteil */}
+              {offer.how_to_get_de && (
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                  <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
+                    <ShieldCheck className="w-5 h-5" />
+                    <h2 className="text-lg font-bold text-gray-900">So sicherst du dir den Vorteil</h2>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">{offer.how_to_get_de}</p>
+                </div>
+              )}
+
+              {/* 5. Condiciones importantes */}
               <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-                <h2 className="text-lg font-bold mb-3">Das solltest du wissen</h2>
-                <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{offer.conditions_de}</p>
+                <div className="flex items-center gap-2 mb-3 text-gray-800">
+                  <ShieldCheck className="w-5 h-5 text-[#3F5E39]" />
+                  <h2 className="text-lg font-bold text-gray-900">Wichtige Bedingungen & Hinweise</h2>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                  {offer.conditions_de || "Gültig für Neukunden und bestehende Nutzer gemäss den Aktionsbestimmungen des Anbieters."}
+                </p>
                 <p className="text-xs text-gray-400 mt-4 pt-3 border-t border-gray-200/80">
-                  ℹ️ Alle Angaben ohne Gewähr. Bitte überprüfe die genauen Bedingungen und aktuellen Preise direkt auf der offiziellen Website des Anbieters.
+                  ℹ️ Transparency & Hinweis: Wir prüfen Angebote sorgfältig (Zuletzt geprüft: {offer.checked_at ? formatDate(offer.checked_at) : "Kürzlich"}). Preise und Bedingungen können sich beim Anbieter ändern. Alle Angaben ohne Gewähr.
                 </p>
               </div>
-            )}
+
+              {/* 6. FAQ Section */}
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                <div className="flex items-center gap-2 mb-6 text-[#3F5E39]">
+                  <HelpCircle className="w-5 h-5" />
+                  <h2 className="text-lg font-bold text-gray-900">Häufig gestellte Fragen (FAQ)</h2>
+                </div>
+                <div className="space-y-4">
+                  {faqs.map((faq, idx) => (
+                    <div key={idx} className="border-b border-gray-100 last:border-0 pb-4 last:pb-0">
+                      <h3 className="font-semibold text-gray-900 text-sm mb-1.5 flex items-start gap-2">
+                        <span className="text-[#3F5E39] font-bold">Q:</span>
+                        {faq.question}
+                      </h3>
+                      <p className="text-gray-600 text-sm pl-6 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
 
             <AdSlot slot="AD_BETWEEN_OFFERS_1" />
 
@@ -294,12 +434,24 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           <aside className="space-y-6">
             {/* Summary card */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 sticky top-24">
-              <h3 className="font-bold text-gray-900 mb-4">Zusammenfassung</h3>
+              <h3 className="font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">Zusammenfassung</h3>
               <div className="space-y-3 text-sm">
                 {offer.brand?.name && (
                   <div className="flex justify-between">
                     <span className="text-gray-500">Anbieter</span>
-                    <span className="font-medium">{offer.brand.name}</span>
+                    <span className="font-medium text-gray-900">{offer.brand.name}</span>
+                  </div>
+                )}
+                {offer.normal_price && (
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Normalpreis</span>
+                    <span className="font-medium text-gray-500 line-through">{formatCHF(offer.normal_price)}</span>
+                  </div>
+                )}
+                {offer.young_price && (
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Jugendpreis</span>
+                    <span className="font-bold text-gray-900">{formatCHF(offer.young_price)}</span>
                   </div>
                 )}
                 {saving && (
@@ -308,24 +460,24 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                     <span className="font-bold text-green-600">{saving}</span>
                   </div>
                 )}
-                {offer.age_max && (
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Alter</span>
-                    <span className="font-medium">Bis {offer.age_max} Jahre</span>
-                  </div>
-                )}
                 <div className="flex justify-between">
-                  <span className="text-gray-500">Studierende</span>
-                  <span className="font-medium">{offer.student_required ? "Ja" : "Nein"}</span>
+                  <span className="text-gray-500">Altersgrenze</span>
+                  <span className="font-medium text-gray-900">
+                    {offer.age_max ? `Bis ${offer.age_max} Jahre` : offer.age_min ? `Ab ${offer.age_min} Jahre` : "Alle Altersgruppen"}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-500">Verfügbar</span>
-                  <span className="font-medium">{offer.is_nationwide ? "Schweizweit" : offer.city?.name_de ?? "Lokal"}</span>
+                  <span className="text-gray-500">Studierende</span>
+                  <span className="font-medium text-gray-900">{offer.student_required ? "Ja (Ausweis nötig)" : "Nein"}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Verfügbarkeit</span>
+                  <span className="font-medium text-gray-900">{offer.is_nationwide ? "Schweizweit" : offer.city?.name_de ?? "Lokal"}</span>
                 </div>
                 {offer.end_date && (
                   <div className="flex justify-between">
                     <span className="text-gray-500">Gültig bis</span>
-                    <span className={`font-medium ${expired ? "text-red-500" : ""}`}>{formatDate(offer.end_date)}</span>
+                    <span className={`font-medium ${expired ? "text-red-500" : "text-gray-900"}`}>{formatDate(offer.end_date)}</span>
                   </div>
                 )}
               </div>
