@@ -51,6 +51,7 @@ export default function Footer({ locale }: FooterProps) {
           <div className="flex flex-col gap-3">
             <h4 className="font-semibold text-gray-200 mb-2">{t("columns.ueber")}</h4>
             <Link href={`/${locale}/ueber-uns`} className="text-gray-400 hover:text-white text-sm transition-colors font-medium text-emerald-400">Über uns</Link>
+            <Link href={`/${locale}/redaktionelle-richtlinien`} className="text-gray-400 hover:text-white text-sm transition-colors">Redaktionelle Richtlinien</Link>
             <Link href={`/${locale}/magazin`} className="text-gray-400 hover:text-white text-sm transition-colors">Magazin</Link>
             <Link href={`/${locale}/kontakt`} className="text-gray-400 hover:text-white text-sm transition-colors">Kontakt</Link>
             <Link href={`/${locale}/datenschutz`} className="text-gray-400 hover:text-white text-sm transition-colors">Datenschutz</Link>
