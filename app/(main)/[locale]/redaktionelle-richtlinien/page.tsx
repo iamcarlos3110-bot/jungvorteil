@@ -331,16 +331,17 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
             </div>
             <div className="space-y-2 flex-1">
               <h3 className="text-xl font-bold text-stone-900 flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-[#3F5E39]" /> Strikte Faktenprüfung & CHF-Preise
+                <CheckCircle2 className="w-5 h-5 text-[#3F5E39]" /> Konkrete Daten &amp; Faktenprüfung in CHF
               </h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                Jeder verlinkte Vorteil wird vor der Freischaltung auf folgende Punkte geprüft:
+                Wir verzichten konsequent auf vage Aussagen wie &quot;viel sparen&quot; oder &quot;super günstig&quot;. Jeder verlinkte Vorteil nennt <strong>konkrete Daten</strong>:
               </p>
               <ul className="list-disc list-inside text-xs text-stone-600 space-y-1.5 pt-1 font-medium">
                 <li>Exakter Normalpreis vs. Jugendpreis in Schweizer Franken (CHF)</li>
-                <li>Genaue Altersgrenzen (z.B. bis 25 oder bis 30 Jahre)</li>
+                <li>Konkrete Ersparnis als Betrag (CHF) und Prozentwert (%)</li>
+                <li>Genaue Altersgrenzen (z.B. 16 bis 25 Jahre / unter 30 J.)</li>
                 <li>Erforderliche Nachweise (Studentenausweis, Legi, Swisspass oder ID)</li>
-                <li>Verfügbarkeit in der Schweiz (schweizweit, online oder lokal)</li>
+                <li>Exaktes Datum der letzten manuellen Überprüfung (Zuletzt geprüft: [Datum])</li>
               </ul>
             </div>
           </div>
