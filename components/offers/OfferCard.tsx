@@ -285,7 +285,7 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           {offer.checked_at && (
             <p className="text-[10px] text-stone-400 text-center font-medium mt-1 flex items-center justify-center gap-1">
               <Check className="w-3 h-3 text-emerald-500" />
-              Geprüft {formatDate(offer.checked_at)}
+              Zuletzt geprüft: {formatDate(offer.checked_at)}
             </p>
           )}
         </div>
