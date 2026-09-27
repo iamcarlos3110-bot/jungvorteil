@@ -4,509 +4,120 @@ import { Article } from "@/types";
 
 export const ARTICLES_DATA: Article[] = [
   {
-    id: "a0000000-0000-4000-8000-03e900000000",
-    slug: "neon-free-vs-yuh-banken-schweiz",
-    title: "Neon vs. Yuh vs. Zak vs. ZKB: Die 4 besten Schweizer Neobanken für unter 30 im Härtetest",
-    excerpt: "Schluss mit teuren Kontoführungsgebühren! Wir vergleichen die führenden Schweizer Neobanken für Auszubildende, Studierende und junge Berufseinsteiger.",
-    category: "Finanzen",
-    image_url: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-26T02:15:42.621Z",
-    created_at: "2026-09-26T02:15:42.621Z",
-    updated_at: "2026-09-26T02:15:42.621Z",
-    content: `# Neon vs. Yuh vs. Zak vs. ZKB: Die 4 besten Schweizer Neobanken für unter 30 im Härtetest
-
-Zahlst du immer noch monatliche Kontoführungsgebühren bei deiner traditionellen Hausbank? Für junge Erwachsene in der Schweiz gibt es 2026 längst keinen Grund mehr, für ein einfaches Alltagskonto zu bezahlen. Schweizer Neobanken bieten gebührenfreie Konten, transparente Wechselkurse bei Auslandsreisen und die volle Verknüpfung mit **TWINT**.
-
-In diesem Vergleich analysieren wir die vier beliebtesten Optionen für Jugendliche, Lernende und Studierende an ETH, UZH, EPFL, UniBE, HSG und Fachhochschulen.
-
----
-
-## 1. Die Anbieter im direkten Vergleich
-
-| Kriterium | Neon Free | Yuh | Zak (Bank Cler) | ZKB young |
-| :--- | :--- | :--- | :--- | :--- |
-| **Kontoführung** | CHF 0.– | CHF 0.– | CHF 0.– | CHF 0.– (bis 30 J.) |
-| **Karte** | Mastercard | Mastercard | Visa Debit | Visa Debit / ZüriCard |
-| **Auslandseinsatz** | 0% Aufschlag | 0.95% Aufschlag | 2% Aufschlag | Standard Kantonalbank |
-| **TWINT App** | Eigene Neon TWINT | Eigene Yuh TWINT | Eigene Zak TWINT | ZKB TWINT |
-| **Investieren / Zinsen** | Zinsen auf Guthaben | Zinsen + Bruchteil-Aktien | Spar-Töpfe | Klassisches Sparen |
-
----
-
-## 2. Detaillierter Testbericht der Anbieter
-
-### Neon Free (Das Schweizer Urgestein für Sparfüchse)
-* **Kontoführung**: CHF 0.–
-* **Debitkarte**: Kostenlose Mastercard.
-* **Auslandseinsatz**: Keine Wechselkursaufschläge bei Kartenzahlungen im Ausland (Mastercard-Referenzkurs).
-* **TWINT-Anbindung**: Eigene, direkte **Neon TWINT App**.
-* **Fazit**: Perfekt für Reiselustige und alle, die im Alltag und Urlaub den besten Wechselkurs suchen.
-
-### Yuh (Das Kombi-Konto von Swissquote & PostFinance)
-* **Kontoführung**: CHF 0.–
-* **Zinsen**: Verzinsung auf Guthaben (CHF, EUR, USD).
-* **Investieren**: Aktien-Bruchteile und ETFs direkt ab CHF 10.– handeln.
-* **TWINT-Anbindung**: Direkt via Yuh TWINT App.
-* **Fazit**: Ideal für alle, die neben dem Bezahlen auch unkompliziert erste Erfahrungen beim Investieren sammeln möchten.
-
-### Zak (Das digitale Konto der Bank Cler)
-* **Kontoführung**: CHF 0.–
-* **Besonderheit**: Einzigartiges "Töpfe-System" für die Budgetplanung (z.B. Töpfe für Ferien, Geschenke, Steuern).
-* **TWINT-Anbindung**: Via Zak TWINT App.
-* **Fazit**: Optimal für alle, die ihr Monatsbudget im Griff behalten wollen.
-
-### ZKB young (Die klassische Kantonalbank-Lösung für Zürcher)
-* **Kontoführung**: CHF 0.– bis zum 26. bzw. 30. Geburtstag (bei Studium).
-* **Extras**: Inklusive ZKB ZüriCard und Vergünstigungen im ZVV-Nachtnetz.
-* **Fazit**: Die stärkste regionale Lösung für Jugendliche im Kanton Zürich.
-
----
-
-## 2. Welche Karte passt zu deinem Alltag?
-
-* **Für den Urlaub in Italien, Frankreich, Spanien oder Asien**: Nimm **Neon**. Die gebührenfreie Auslandswährung ohne Aufschlag spart dir pro Reise schnell CHF 50.– bis CHF 150.–.
-* **Für die Verknüpfung mit TWINT**: Alle vier Anbieter bieten direkte TWINT-Integrationen, sodass du beim Essen mit Freunden oder auf dem Campus sofort Geld aufteilen kannst.
-* **Für das erste Gehalt aus der Lehre oder dem Nebenjob**: Nutze ein gebührenfreies Schweizer Konto als Gehaltskonto und teile dein Geld automatisiert in Rücklagen auf.
-
-Entdecke die aktuellen Neobank-Willkommensboni und Promo-Codes direkt auf **JungVorteil.ch**!`
+    "id": "a0000000-0000-4000-8000-03e900000000",
+    "slug": "neon-free-vs-yuh-banken-schweiz",
+    "title": "Neon vs. Yuh vs. Zak vs. ZKB: Die 4 besten Schweizer Neobanken für unter 30 im Härtetest",
+    "excerpt": "Schluss mit teuren Kontoführungsgebühren! Wir vergleichen die führenden Schweizer Neobanken für Auszubildende, Studierende und junge Berufseinsteiger.",
+    "category": "Finanzen",
+    "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-26T02:15:42.621Z",
+    "created_at": "2026-09-26T02:15:42.621Z",
+    "updated_at": "2026-09-26T02:15:42.621Z",
+    "content": "# Neon vs. Yuh vs. Zak vs. ZKB: Die 4 besten Schweizer Neobanken für unter 30 im Härtetest\n\nZahlst du immer noch monatliche Kontoführungsgebühren bei deiner traditionellen Hausbank? Für junge Erwachsene in der Schweiz gibt es 2026 längst keinen Grund mehr, für ein einfaches Alltagskonto zu bezahlen. Schweizer Neobanken bieten gebührenfreie Konten, transparente Wechselkurse bei Auslandsreisen und die volle Verknüpfung mit **TWINT**.\n\nIn diesem Vergleich analysieren wir die vier beliebtesten Optionen für Jugendliche, Lernende und Studierende an ETH, UZH, EPFL, UniBE, HSG und Fachhochschulen.\n\n---\n\n## 1. Die Anbieter im direkten Vergleich\n\n| Kriterium | Neon Free | Yuh | Zak (Bank Cler) | ZKB young |\n| :--- | :--- | :--- | :--- | :--- |\n| **Kontoführung** | CHF 0.– | CHF 0.– | CHF 0.– | CHF 0.– (bis 30 J.) |\n| **Karte** | Mastercard | Mastercard | Visa Debit | Visa Debit / ZüriCard |\n| **Auslandseinsatz** | 0% Aufschlag | 0.95% Aufschlag | 2% Aufschlag | Standard Kantonalbank |\n| **TWINT App** | Eigene Neon TWINT | Eigene Yuh TWINT | Eigene Zak TWINT | ZKB TWINT |\n| **Investieren / Zinsen** | Zinsen auf Guthaben | Zinsen + Bruchteil-Aktien | Spar-Töpfe | Klassisches Sparen |\n\n---\n\n## 2. Für wen ist welches Konto geeignet?\n\n* **Für Weltenbummler & Urlaub (Neon)**: Ideal für Auslandssemester, Urlaube und Online-Shopping in Fremdwährung ohne Aufpreis.\n* **Für Einsteiger im Investieren (Yuh)**: Perfekt für alle, die neben dem Bezahlen ab CHF 10.– in Aktien oder ETFs investieren wollen.\n* **Für Budget-Organisatoren (Zak)**: Optimal für alle, die Geld in virtuelle Töpfe (z.B. Steuern, Urlaub, WG-Kasse) aufteilen möchten.\n* **Für Zürcher Lokalpatrioten (ZKB young)**: Die beste Lösung für Jugendliche im Kanton Zürich mit gratis ZVV-Nachtnetz.\n\n---\n\n## 3. Schritt-für-Schritt: So eröffnest du dein Neobank-Konto in 5 Minuten\n\n1. **App herunterladen**: Lade die App des gewünschten Anbieters aus dem App Store oder Google Play Store herunter.\n2. **Personalien eingeben**: Gib deine Adresse in der Schweiz und deine Handynummer an.\n3. **Ausweis scannen**: Scanne deine Schweizer ID, deinen Pass oder deinen Ausländerausweis (B/C).\n4. **Video-Identifikation / Foto-Ident**: Verifiziere deine Identität in wenigen Minuten per Smartphone-Kamera.\n5. **Promo-Code eingeben**: Gib den Willkommenscode von JungVorteil.ch ein, um dir ein Startguthaben in CHF zu sichern.\n\n---\n\n## 4. Offizielle Quellen & Anbieter\n\n* **Neon Free**: Offizielle Website [neon-free.ch](https://www.neon-free.ch)\n* **Yuh**: Offizielle Website [yuh.com](https://www.yuh.com)\n* **Zak (Bank Cler)**: Offizielle Website [bankcler.ch/zak](https://www.bankcler.ch/zak)\n* **ZKB young**: Offizielle Website [zkb.ch/young](https://www.zkb.ch)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Sind Schweizer Neobanken durch die Einlagensicherung geschützt?\nJa. Alle vier Neobanken arbeiten mit lizenzierten Schweizer Banken zusammen (z.B. Hypothekarbank Lenzburg bei Neon, PostFinance/Swissquote bei Yuh, Bank Cler bei Zak). Dein Guthaben ist bis zu CHF 100'000.– durch die Schweizer Einlagensicherung (esisuisse) gesetzlich geschützt.\n\n### Kann ich mein Neobank-Konto mit TWINT nutzen?\nJa. Alle vier Anbieter bieten direkte TWINT-Apps an, sodass du wie gewohnt beim Einkaufen oder Aufteilen von Rechnungen bargeldlos bezahlen kannst."
   },
   {
-    id: "a0000000-0000-4000-8000-03ea00000000",
-    slug: "saeule-3a-fuer-junge-erwachsene-guide",
-    title: "Säule 3a ab 18 Jahren: Warum sich die private Vorsorge bereits in der Lehre & im Studium lohnt",
-    excerpt: "Schon ab dem ersten Einkommen massiv Steuern sparen und Vermögen aufbauen: Warum digitale 3a-Apps wie Viac, Finpension oder Frankly für Schweizer unter 30 ein Gamechanger sind.",
-    category: "Finanzen",
-    image_url: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-26T01:15:42.624Z",
-    created_at: "2026-09-26T01:15:42.624Z",
-    updated_at: "2026-09-26T01:15:42.624Z",
-    content: `# Säule 3a ab 18 Jahren: Warum sich die private Vorsorge bereits in der Lehre & im Studium lohnt
-
-Hast du mit dem Ausfüllen deiner ersten eigenen Steuererklärung im Kanton realisiert, wie viel Geld an den Fiskus geht? Die **Säule 3a** (gebundene Vorsorge) ist das effektivste legale Werkzeug in der Schweiz, um deine Einkommenssteuern zu senken und gleichzeitig Vermögen für die Zukunft aufzubauen.
-
-Viele junge Schweizer glauben, die Säule 3a sei erst ab 40 ein Thema. Das ist ein teurer Irrtum! Dank dem Zinseszins-Effekt zahlt sich ein früher Start mit 18, 20 oder 22 Jahren doppelt aus.
-
----
-
-## 1. Wie funktioniert der Steuereffekt?
-
-Jeder Franken, den du in die Säule 3a einzahlst, zieht das Steueramt direkt von deinem steuerbaren Einkommen ab.
-* **Maximalbetrag mit Pensionskasse (z.B. Berufsstarter, KV-Abgänger)**: CHF 7'056.– pro Jahr (gesetzlicher Höchstbetrag).
-* **Maximalbetrag ohne Pensionskasse (z.B. Selbstständige, Nebenjobs)**: Bis zu 20% des Nettoerwerbseinkommens.
-
-### Rechenbeispiel: Steuerersparnis im Kanton Zürich oder Bern
-Wenn du im Jahr CHF 2'000.– in deine Säule 3a einzahlst, sparst du je nach Kanton und Einkommen sofort zwischen **CHF 350.– und CHF 600.– an reinen Steuern**.
-
----
-
-## 2. Bankkonto vs. Aktien-3a (Viac, Finpension, Frankly)
-
-Alte Bankprodukte bieten auf 3a-Konten kaum Zinsen. Da dein 3a-Guthaben aber oft 30 bis 40 Jahre angelegt bleibt, solltest du bei langem Anlagehorizont auf eine **hohe Aktienquote (bis zu 99%)** setzen.
-
-### Die beliebtesten digitalen 3a-Apps im Vergleich:
-
-| Anbieter | Gebühren p.a. | Aktienquote | Besonderheit |
-| :--- | :--- | :--- | :--- |
-| **Viac** | ca. 0.36% bis 0.44% | bis 99% | Nachhaltige Strategien, sehr geringe Gebühren |
-| **Finpension** | ca. 0.39% pauschal | bis 99% | Erstklassige Performance & individuelle ETF-Wahl |
-| **Frankly (ZKB)** | ca. 0.44% pauschal | bis 95% | ZKB Kantonalbank im Hintergrund, einfachste Bedienung |
-1. **Viac**: Sehr niedrige Verwaltungsgebühren, hochflexibel bei der Auswahl von nachhaltigen ETFs.
-2. **Finpension**: Ausgezeichnete Performance, extrem transparente Gebührenstruktur (ca. 0.39%).
-3. **Frankly (ZKB)**: Einfach zu bedienen, ideal für alle, die eine bewährte Schweizer Kantonalbank im Rücken haben wollen.
-
----
-
-## 3. Tipps für den Start im jungen Alter
-
-* **Klein anfangen**: Du musst nicht den Höchstbetrag einzahlen. Schon CHF 50.– oder CHF 100.– monatlich per Dauerauftrag machen über die Jahre einen riesigen Unterschied.
-* **Mehrere 3a-Konten eröffnen**: Eröffne ab CHF 10'000.– Guthaben ein zweites 3a-Konto. Das ermöglicht dir später ein gestaffeltes Beziehen über mehrere Jahre, was wiederum Steuern beim Auszahlen spart.
-
-Nutze die Gutscheincodes auf **JungVorteil.ch**, um dir gebührenfreie Startguthaben bei Viac, Finpension oder Frankly zu sichern!`
+    "id": "a0000000-0000-4000-8000-03ea00000000",
+    "slug": "saeule-3a-fuer-junge-erwachsene-guide",
+    "title": "Säule 3a ab 18 Jahren: Warum sich die private Vorsorge bereits in der Lehre & im Studium lohnt",
+    "excerpt": "Schon ab dem ersten Einkommen massiv Steuern sparen und Vermögen aufbauen: Warum digitale 3a-Apps wie Viac, Finpension oder Frankly für Schweizer unter 30 ein Gamechanger sind.",
+    "category": "Finanzen",
+    "image_url": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-26T01:15:42.624Z",
+    "created_at": "2026-09-26T01:15:42.624Z",
+    "updated_at": "2026-09-26T01:15:42.624Z",
+    "content": "# Säule 3a ab 18 Jahren: Warum sich die private Vorsorge bereits in der Lehre & im Studium lohnt\n\nHast du mit dem Ausfüllen deiner ersten eigenen Steuererklärung im Kanton realisiert, wie viel Geld an den Fiskus geht? Die **Säule 3a** (gebundene Vorsorge) ist das effektivste legale Werkzeug in der Schweiz, um deine Einkommenssteuern zu senken und gleichzeitig Vermögen für die Zukunft aufzubauen.\n\nViele junge Schweizer glauben, die Säule 3a sei erst ab 40 ein Thema. Das ist ein teurer Irrtum! Dank dem Zinseszins-Effekt zahlt sich ein früher Start mit 18, 20 oder 22 Jahren doppelt aus.\n\n---\n\n## 1. Wie funktioniert der Steuereffekt?\n\nJeder Franken, den du in die Säule 3a einzahlst, zieht das Steueramt direkt von deinem steuerbaren Einkommen ab.\n* **Maximalbetrag mit Pensionskasse (z.B. Berufsstarter, KV-Abgänger)**: CHF 7'056.– pro Jahr (gesetzlicher Höchstbetrag).\n* **Maximalbetrag ohne Pensionskasse (z.B. Selbstständige, Nebenjobs)**: Bis zu 20% des Nettoerwerbseinkommens.\n\n---\n\n## 2. Die beliebtesten digitalen 3a-Apps im Vergleich\n\n| Anbieter | Gebühren p.a. | Aktienquote | Besonderheit |\n| :--- | :--- | :--- | :--- |\n| **Viac** | ca. 0.36% bis 0.44% | bis 99% | Nachhaltige Strategien, sehr geringe Gebühren |\n| **Finpension** | ca. 0.39% pauschal | bis 99% | Erstklassige Performance & individuelle ETF-Wahl |\n| **Frankly (ZKB)** | ca. 0.44% pauschal | bis 95% | ZKB Kantonalbank im Hintergrund, einfachste Bedienung |\n\n---\n\n## 3. Für wen ist die Säule 3a geeignet?\n\n* **Erwerbstätige Jugendliche & Berufsstarter**: Alle ab 18 Jahren mit AHV-pflichtigem Einkommen.\n* **Studierende mit Nebenjob**: Wenn du im Nebenjob AHV-Beiträge bezahlst, lohnt sich das Einzahlen ab dem ersten Franken.\n* **Auszubildende (Lernende)**: Schon kleine Beträge von CHF 50.–/Monat senken deine Steuerlast spürbar.\n\n---\n\n## 4. Schritt-für-Schritt: So richtest du deine digitale Säule 3a ein\n\n1. **App wählen & installieren**: Wähle Viac, Finpension oder Frankly aus.\n2. **Anlageprofil wählen**: Bestimme als junger Mensch mit langem Anlagehorizont eine hohe Aktienquote (z.B. 80%–99%).\n3. **Identifikation abschliessen**: Verifiziere deine Identität mit ID oder Pass.\n4. **Dauerauftrag einrichten**: Richte bei deiner Bank einen monatlichen Dauerauftrag (z.B. CHF 100.–) ein.\n5. **Steuererklärung ausfüllen**: Trage deine 3a-Bescheinigung im Frühjahr in der Steuererklärung unter Abzüge ein.\n\n---\n\n## 5. Offizielle Quellen & Links\n\n* **Viac**: Offizielle Website [viac.ch](https://viac.ch)\n* **Finpension**: Offizielle Website [finpension.ch](https://finpension.ch)\n* **Frankly (ZKB)**: Offizielle Website [frankly.ch](https://frankly.ch)\n* **ESTV (Eidg. Steuerverwaltung)**: Informationen zur gebundenen Vorsorge 3a.\n\n---\n\n## 6. Häufig gestellte Fragen (FAQ)\n\n### Wann kann ich das Geld aus der Säule 3a wieder beziehen?\nDas Geld ist grundsätzlich bis 5 Jahre vor dem ordentlichen Pensionierungsalter gebunden. Vorbezüge sind gesetzlich erlaubt für: Erwerb von selbstbewohntem Wohneigentum, Aufnahme einer selbstständigen Erwerbstätigkeit oder endgültiges Auswandern aus der Schweiz.\n\n### Kann ich die Einzahlungen jederzeit stoppen?\nJa. Die Säule 3a ist völlig flexibel. Es gibt keine Einzahlungspflicht."
   },
   {
-    id: "a0000000-0000-4000-8000-03eb00000000",
-    slug: "sbb-ov-guide-jugendliche",
-    title: "SBB-Abos für Junge im Check: Halbtax Jugend vs. GA Night vs. Sparbillette-Tricks",
-    excerpt: "Wie fährst du in der Schweiz am günstigsten Zug? Wir vergleichen Halbtax Jugend, GA Night und zeigen, wie du mit Sparbilletten bis zu 70% sparst.",
-    category: "Reisen",
-    image_url: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-26T00:15:42.624Z",
-    created_at: "2026-09-26T00:15:42.624Z",
-    updated_at: "2026-09-26T00:15:42.624Z",
-    content: `# SBB-Abos für Junge im Check: Halbtax Jugend vs. GA Night vs. Sparbillette-Tricks
-
-Ob tägliches Pendeln an die Uni/FH oder der spontane Ausflug ins Wankdorf, an die Limmat oder ins Tessin: Der öffentliche Verkehr in der Schweiz ist Weltklasse, kann aber das Budget belasten. Wir zeigen dir, wie du die besten SBB-Jugendtarife optimal kombinierst.
-
----
-
-## 1. SBB Jugend-Angebote in der Übersicht
-
-| SBB Abo / Billett | Zielgruppe | Preis in CHF | Hauptvorteil |
-| :--- | :--- | :--- | :--- |
-| **Halbtax Jugend** | Unter 25 Jahre | CHF 120.– (1. Jahr) | 50% Rabatt auf fast alle ÖV-Strecken |
-| **GA Night** | Unter 25 Jahre | CHF 99.– / Jahr | Freie Fahrt ab 19:00 Uhr im gesamten ÖV-Netz |
-| **GA Jugend (2. Kl.)** | 16 – 25 Jahre | CHF 2'700.– / Jahr | Unbegrenzte Fahrt 24/7 in der ganzen Schweiz |
-| **Sparbillette** | Alle ÖV-Nutzer | bis zu -70% Rabatt | Vorausbuchung via SBB Mobile App |
-
----
-
-## 2. Halbtax Jugend (bis 25 Jahre)
-Das Halbtax gehört zur Grundausstattung für jeden Schweizer Jugendlichen.
-* **Preis**: CHF 120.– im 1. Jahr für Jugendliche unter 25 Jahren (Erwachsene bezahlen CHF 190.–).
-* **Lohnt sich bereits ab**: Ca. 3 Streckenfahrten zwischen Zürcher, Berner oder Basler Bahnhöfen pro Jahr.
-* **Zusatznutzen**: Halbiert auch den Preis für viele Bergbahnen, PostAutos und städtische Verkehrsbetriebe (ZVV, Libero, TNW, Mobilis).
-
----
-
-## 2. GA Night (Freie Fahrt ab 19:00 Uhr)
-Das ideale Abo für die Nachtschwärmer und Spätschichtler unter 25 Jahren.
-* **Preis**: CHF 99.– pro Jahr.
-* **Gültigkeit**: Täglich ab 19:00 Uhr bis 05:00 Uhr morgens (am Wochenende bis 07:00 Uhr) unbeschränkt in der 2. Klasse.
-* **Pro-Tipp**: Perfekt kombinierbar mit dem Halbtax Jugend! Wer abends zum Konzert, ins Gym oder zu Freunden in eine andere Stadt fährt, zahlt für die Rückfahrt 0.– Franken.
-
----
-
-## 3. Die 3 besten SBB Spar-Tricks
-
-1. **Sparbillette in der SBB Mobile App**: Wenn du deine Reise 3 bis 14 Tage im Voraus planst, erhältst du Sparbillette mit bis zu **70% Rabatt**.
-2. **Spartageskarte Gemeinde**: Erkundige dich bei deiner Wohngemeinde oder Stadtverwaltung – Gemeindetageskarten bieten oft uneingeschränkte Tagesfahrt im gesamten ÖV-Netz zum Vorzugspreis.
-3. **SBB Mitfahr-Gutscheine & Aktionen**: Halte auf **JungVorteil.ch** Ausschau nach saisonalen SBB Promo-Codes für Kombi-Billette (Zug + Skipass / Konzert).`
+    "id": "a0000000-0000-4000-8000-03eb00000000",
+    "slug": "sbb-ov-guide-jugendliche",
+    "title": "SBB-Abos für Junge im Check: Halbtax Jugend vs. GA Night vs. Sparbillette-Tricks",
+    "excerpt": "Wie fährst du in der Schweiz am günstigsten Zug? Wir vergleichen Halbtax Jugend, GA Night und zeigen, wie du mit Sparbilletten bis zu 70% sparst.",
+    "category": "Reisen",
+    "image_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-26T00:15:42.624Z",
+    "created_at": "2026-09-26T00:15:42.624Z",
+    "updated_at": "2026-09-26T00:15:42.624Z",
+    "content": "# SBB-Abos für Junge im Check: Halbtax Jugend vs. GA Night vs. Sparbillette-Tricks\n\nOb tägliches Pendeln an die Uni/FH oder der spontane Ausflug ins Wankdorf, an die Limmat oder ins Tessin: Der öffentliche Verkehr in der Schweiz ist Weltklasse, kann aber das Budget belasten. Wir zeigen dir, wie du die besten SBB-Jugendtarife optimal kombinierst.\n\n---\n\n## 1. SBB Jugend-Angebote in der Übersicht\n\n| SBB Abo / Billett | Zielgruppe | Preis in CHF | Hauptvorteil |\n| :--- | :--- | :--- | :--- |\n| **Halbtax Jugend** | Unter 25 Jahre | CHF 120.– (1. Jahr) | 50% Rabatt auf fast alle ÖV-Strecken |\n| **GA Night** | Unter 25 Jahre | CHF 99.– / Jahr | Freie Fahrt ab 19:00 Uhr im gesamten ÖV-Netz |\n| **GA Jugend (2. Kl.)** | 16 – 25 Jahre | CHF 2'700.– / Jahr | Unbegrenzte Fahrt 24/7 in der ganzen Schweiz |\n| **Sparbillette** | Alle ÖV-Nutzer | bis zu -70% Rabatt | Vorausbuchung via SBB Mobile App |\n\n---\n\n## 2. Für wen eignet sich welches ÖV-Abo?\n\n* **Für Gelegenheitssportler & Pendler (Halbtax Jugend)**: Pflicht für fast alle Schweizer Jugendlichen ab 16 Jahren.\n* **Für Ausgeher & Nachtschwärmer (GA Night)**: Die perfekte Ergänzung ab 19:00 Uhr für CHF 99.– pro Jahr.\n* **Für tägliche Weitpendler (GA Jugend)**: Lohnt sich, wenn du täglich Strecken wie Bern–Zürich oder Lausanne–Genf fährst.\n\n---\n\n## 3. Schritt-für-Schritt: So kaufst du dein Halbtax Jugend online\n\n1. **Swisspass-Konto erstellen**: Registriere dich auf [swisspass.ch](https://www.swisspass.ch).\n2. **Identität verifizieren**: Lade ein Ausweisdokument (ID/Pass) und ein aktuelles Passfoto hoch.\n3. **Abo auswählen**: Wähle das \"Halbtax Jugend\" auf SBB.ch oder in der SBB Mobile App aus.\n4. **Zahlung durchführen**: Bezahle bequem per Kreditkarte, Twint oder Rechnung.\n5. **Sofort losfahren**: Dein Digitaler Swisspass ist sofort in der SBB Mobile App aktiviert.\n\n---\n\n## 4. Offizielle Quellen & Links\n\n* **SBB Offizielle Website**: [sbb.ch](https://www.sbb.ch)\n* **Swisspass Portal**: [swisspass.ch](https://www.swisspass.ch)\n* **SBB Sparbillette Info**: [sbb.ch/sparbillette](https://www.sbb.ch/de/abos-billette/billette/sparbillette.html)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Gilt das Halbtax Jugend auch für Bergbahnen und Schiffe?\nJa. Auf den meisten Schweizer Bergbahnen, PostAutos, Kursschiffen und städtischen Tram- und Busnetzen (ZVV, Libero, TNW, Mobilis) erhältst du mit dem Halbtax 50% Ermässigung.\n\n### Kann ich das GA Night mit dem Halbtax kombinieren?\nJa! Wenn du vor 19:00 Uhr abfährst, löst du mit dem Halbtax ein Billett bis zum ersten Halt nach 19:00 Uhr. Ab 19:00 Uhr fährst du kostenlos mit dem GA Night weiter."
   },
   {
-    id: "a0000000-0000-4000-8000-03ec00000000",
-    slug: "krankenkasse-praemienverbilligung-schweiz",
-    title: "Krankenkasse 2026: So holst du dir deine Prämienverbilligung (IPV) im Kanton",
-    excerpt: "Geld vom Kanton für deine Krankenkassenprämie? Wer Anspruch auf die individuelle Prämienverbilligung hat und wie Studierende und Lernende den Antrag einreichen.",
-    category: "Finanzen",
-    image_url: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-25T23:15:42.624Z",
-    created_at: "2026-09-25T23:15:42.624Z",
-    updated_at: "2026-09-25T23:15:42.624Z",
-    content: `# Krankenkasse 2026: So holst du dir deine Prämienverbilligung (IPV) im Kanton
-
-Die Prämien der obligatorischen Krankenpflegeversicherung (OKP) steigen in der Schweiz von Jahr zu Jahr. Für Jugendliche in Ausbildung, Auszubildende und Studierende ist die monatliche Prämienrechnung oft der grösste Ausgabenposten.
-
-Gott sei Dank gibt es die **Individuelle Prämienverbilligung (IPV)**: Die Schweizer Kantone unterstützen Bürgerinnen und Bürger mit geringem Einkommen mit direkten Zuschüssen.
-
----
-
-## 1. Wer hat Anspruch auf IPV?
-
-Der Anspruch basiert auf deinem steuerbaren Einkommen und Vermögen gemäss der letzten Steuererklärung.
-* **Unter 25 Jahren in Ausbildung**: In Kantonen wie Zürich oder Bern wird bei Studierenden ohne eigenes hohes Einkommen oft das Elterneinkommen mitberücksichtigt. Dennoch gibt es für junge Erwachsene in Erstausbildung spezielle Erleichterungen.
-* **Lernende & Berufsstarter mit eigenem Haushalt**: Wenn du eine eigene WG bewohnst oder in der Lehre ein bescheidenes Lehrlingseinkommen beziehest, steht dir fast immer eine namhafte Verbilligung zu.
-
----
-
-## 2. Übersicht der Kantonsstellen für die Prämienverbilligung (IPV)
-
-| Kanton | Zuständige Stelle | Online-Portal / Antrag | Ersparnis / Besonderheit |
-| :--- | :--- | :--- | :--- |
-| **Zürich** | SVA Zürich | sva-zh.ch/ipv | Bis zu 80% Verbilligung bei Ausbildung unter 25 |
-| **Bern** | ASV Bern | asv.sta.be.ch | Erfassung direkt via TaxMe Steuererklärung |
-| **Luzern** | WAS Luzern | was-luzern.ch | Online-Antrag via e-Passuel Portal |
-| **Genf** | SAM Genève | ge.ch/sam | Automatische Prüfung / Antrag im Portal |
-
----
-
-## 3. So beantragst du die Verbilligung in deinem Kanton
-
-### Kanton Zürich (SVA Zürich)
-* Anträge werden online über das Portal der SVA Zürich eingereicht.
-* **Ersparnis**: Junge Erwachsene in Ausbildung erhalten oft bis zu 80% Verbilligung der Grundversicherungsprämie.
-
-### Kanton Bern (ASV Bern)
-* Die Berechnung erfolgt im Kanton Bern häufig in Kombination mit der Online-Steuererklärung TaxMe.
-
-### Kanton Waadt & Genf
-* In den romantischen Kantonen erfolgt die Gutschrift teilweise automatisch anhand der veranlagten Steuerdaten.
-
----
-
-## 3. Zwei zusätzliche Spartipps bei der Krankenkasse
-
-1. **Wähle die richtige Franchise**: Wenn du gesund bist und selten zum Arzt musst, wähle die Höchstfranchise von **CHF 2'500.–**. Das spart dir jährlich über CHF 1'000.– an Prämien gegenüber der Mindestfranchise (CHF 300.–).
-2. **Telmed- oder Hausarzt-Modell**: Rufe vor dem Arztbesuch zuerst eine medizinische Hotline an (Telmed) oder konsultiere deinen festen Hausarzt. Das belohnen Krankenkassen mit weiteren 10% bis 20% Prämienrabatt.`
+    "id": "a0000000-0000-4000-8000-03ec00000000",
+    "slug": "krankenkasse-praemienverbilligung-schweiz",
+    "title": "Krankenkasse 2026: So holst du dir deine Prämienverbilligung (IPV) im Kanton",
+    "excerpt": "Geld vom Kanton für deine Krankenkassenprämie? Wer Anspruch auf die individuelle Prämienverbilligung hat und wie Studierende und Lernende den Antrag einreichen.",
+    "category": "Finanzen",
+    "image_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-25T23:15:42.624Z",
+    "created_at": "2026-09-25T23:15:42.624Z",
+    "updated_at": "2026-09-25T23:15:42.624Z",
+    "content": "# Krankenkasse 2026: So holst du dir deine Prämienverbilligung (IPV) im Kanton\n\nDie Prämien der obligatorischen Krankenpflegeversicherung (OKP) steigen in der Schweiz von Jahr zu Jahr. Für Jugendliche in Ausbildung, Auszubildende und Studierende ist die monatliche Prämienrechnung oft der grösste Ausgabenposten.\n\nGott sei Dank gibt es die **Individuelle Prämienverbilligung (IPV)**: Die Schweizer Kantone unterstützen Bürgerinnen und Bürger mit geringem Einkommen mit direkten Zuschüssen.\n\n---\n\n## 1. Übersicht der Kantonsstellen für die Prämienverbilligung (IPV)\n\n| Kanton | Zuständige Stelle | Online-Portal / Antrag | Ersparnis / Besonderheit |\n| :--- | :--- | :--- | :--- |\n| **Zürich** | SVA Zürich | sva-zh.ch/ipv | Bis zu 80% Verbilligung bei Ausbildung unter 25 |\n| **Bern** | ASV Bern | asv.sta.be.ch | Erfassung direkt via TaxMe Steuererklärung |\n| **Luzern** | WAS Luzern | was-luzern.ch | Online-Antrag via e-Passuel Portal |\n| **Genf** | SAM Genève | ge.ch/sam | Automatische Prüfung / Antrag im Portal |\n\n---\n\n## 2. Für wen ist die Prämienverbilligung geeignet?\n\n* **Studierende & Lernende unter 25 Jahre**: Ausbildungskategorien mit bescheidenem eigenen Einkommen.\n* **Junge Erwachsene mit eigenem Haushalt**: Personen mit steuerbarem Einkommen unter den kantonalen Richtgrenzen.\n* **Personen im Zwischenjahr / Praktikum**: Auch während Praktika mit niedrigem Lohn besteht fast immer Anspruch.\n\n---\n\n## 3. Schritt-für-Schritt: So reichst du deinen IPV-Antrag ein\n\n1. **Kantonales Portal aufrufen**: Besuche das zuständige Portal deiner Wohnsitz-SVA (z.B. sva-zh.ch/ipv).\n2. **Steuerdaten / Ausbildungsbestätigung bereithalten**: Halte deine AHV-Nummer, die letzte Steuererklärung und deine Legi/Ausbildungsbestätigung bereit.\n3. **Formular online ausfüllen**: Trage deine Angaben ein und lade Nachweise hoch.\n4. **Fristen beachten**: Reiche den Antrag fristgerecht ein (im Kanton Zürich oft bis zum 31. März bzw. 31. Oktober).\n5. **Gutschrift prüfen**: Bei Genehmigung wird der Verbilligungsbetrag direkt an deine Krankenkasse überwiesen und zieht sich von der monatlichen Prämie ab.\n\n---\n\n## 4. Offizielle Quellen & Behörden-Links\n\n* **Kanton Zürich SVA**: [sva-zh.ch/ipv](https://www.sva-zh.ch/ipv)\n* **Kanton Bern ASV**: [asv.sta.be.ch](https://www.asv.sta.be.ch)\n* **Kanton Luzern WAS**: [was-luzern.ch](https://www.was-luzern.ch)\n* **Kanton Genf SAM**: [ge.ch/sam](https://www.ge.ch/sam)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Muss ich das Verbilligungsgeld versteuern?\nNein. Die individuelle Prämienverbilligung ist eine zweckgebundene Sozialleistung und stellt kein steuerbares Einkommen dar.\n\n### Wird das Geld auf mein Bankkonto ausbezahlt?\nIn den meisten Kantonen wird die Verbilligung direkt an deine Krankenkasse überwiesen. Deine monatliche Krankenkassenrechnung reduziert sich entsprechend."
   },
   {
-    id: "a0000000-0000-4000-8000-03ed00000000",
-    slug: "studenten-leben-zuerich-budget-guide",
-    title: "Zürich Studi-Insider: WG-Suche via WOKO/JUWO, ASVZ-Perks & Mensa-Hacks",
-    excerpt: "Günstig leben an der Limmat? Das Überlebenspaket für UZH, ETH und ZHAW Studierende mit Insider-Tipps für Wohnen, Sport und Verpflegung.",
-    category: "Studium",
-    image_url: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-25T22:15:42.624Z",
-    created_at: "2026-09-25T22:15:42.624Z",
-    updated_at: "2026-09-25T22:15:42.624Z",
-    content: `# Zürich Studi-Insider: WG-Suche via WOKO/JUWO, ASVZ-Perks & Mensa-Hacks
-
-Zürich belegt regelmässig vordere Plätze in internationalen Rankings der teuersten Städte. Wer hier an der UZH, ETH oder ZHAW studiert, merkt schnell: Ohne Insider-Wissen geht das Geld rasant zur Neige. Wir zeigen dir die besten Hacks für deinen Studienalltag in Zürich.
-
----
-
-## 1. Übersicht Zürcher Studi-Vorteile
-
-| Angebot | Anbieter / Ort | Preis / Kosten | Tipp für Studierende |
-| :--- | :--- | :--- | :--- |
-| **WG-Zimmer** | WOKO / JUWO | CHF 500.– bis 750.– | Frühzeitig bei WOKO immatrikulieren |
-| **Sport & Gym** | ASVZ (5 Zentren) | Im Semesterbeitrag | Polyterrasse, Irchel, Hönggerberg |
-| **Mensa Essen** | ETH Polyterrasse / UZH Irchel | ab CHF 6.90 | Tagesteller gegen Vorweis der Legi |
-
----
-
-## 2. Bezahlbares Wohnen: WOKO & JUWO
-Der freie Zürcher Mietmarkt ist hart umkämpft. Nutze die spezialisierten studentischen Wohngenossenschaften:
-* **WOKO (Studentische Wohngenossenschaft Zürich)**: Bietet WG-Zimmer speziell für immatrikulierte Studierende ab ca. CHF 500.– bis CHF 750.– inklusive Nebenkosten (z.B. in Zürich-Nord, Irchel oder Bümpliz).
-* **JUWO (Jugendwohnnetz)**: Vermittelt günstige Zwischennutzungen und Wohnungen für Jugendliche und Lernende unter 28 Jahren.
-
----
-
-## 2. Der beste Sportdeal der Schweiz: ASVZ
-Als Student an UZH, ETH oder ZHAW ist der Beitritt zum **Akademischen Sportverband Zürich (ASVZ)** unschlagbar.
-* **Angebot**: 5 moderne Sportzentren (Polyterrasse, Irchel, Hönggerberg, Fluntern, Winterthur).
-* **Ausstattung**: Krafträume, Saunen, Kletterwände und über 120 Sportarten von Yoga bis Kickboxen – alles im Semesterbeitrag enthalten!
-
----
-
-## 3. Verpflegung auf dem Campus
-* **ETH Mensa Polyterrasse**: Das legendäre Ausblick-Restaurant bietet ausgewogene Menüs für Studierende ab ca. CHF 6.90.
-* **Irchel-Park Picknick**: Im Sommer der Treffpunkt Nr. 1 – bring dein eigenes Essen mit und nutze die Grillstellen rund um den See.
-
-Finde weitere exklusive Rabattcodes für Zürcher Kinos, Restaurants und Fitnessstudios auf **JungVorteil.ch**!`
+    "id": "a0000000-0000-4000-8000-03ed00000000",
+    "slug": "studenten-leben-zuerich-budget-guide",
+    "title": "Zürich Studi-Insider: WG-Suche via WOKO/JUWO, ASVZ-Perks & Mensa-Hacks",
+    "excerpt": "Günstig leben an der Limmat? Das Überlebenspaket für UZH, ETH und ZHAW Studierende mit Insider-Tipps für Wohnen, Sport und Verpflegung.",
+    "category": "Studium",
+    "image_url": "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-25T22:15:42.624Z",
+    "created_at": "2026-09-25T22:15:42.624Z",
+    "updated_at": "2026-09-25T22:15:42.624Z",
+    "content": "# Zürich Studi-Insider: WG-Suche via WOKO/JUWO, ASVZ-Perks & Mensa-Hacks\n\nZürich belegt regelmässig vordere Plätze in internationalen Rankings der teuersten Städte. Wer hier an der UZH, ETH oder ZHAW studiert, merkt schnell: Ohne Insider-Wissen geht das Geld rasant zur Neige. Wir zeigen dir die besten Hacks für deinen Studienalltag in Zürich.\n\n---\n\n## 1. Übersicht Zürcher Studi-Vorteile\n\n| Angebot | Anbieter / Ort | Preis / Kosten | Tipp für Studierende |\n| :--- | :--- | :--- | :--- |\n| **WG-Zimmer** | WOKO / JUWO | CHF 500.– bis 750.– | Frühzeitig bei WOKO immatrikulieren |\n| **Sport & Gym** | ASVZ (5 Zentren) | Im Semesterbeitrag | Polyterrasse, Irchel, Hönggerberg |\n| **Mensa Essen** | ETH Polyterrasse / UZH Irchel | ab CHF 6.90 | Tagesteller gegen Vorweis der Legi |\n\n---\n\n## 2. Für wen ist dieser Guide geeignet?\n\n* **Immatrikulierte Studierende an UZH, ETH & ZHAW**: Voller Zugriff auf WOKO, ASVZ und Mensa-Vergünstigungen.\n* **Lernende & Jugendliche in Zürich (unter 28 J.)**: Wohnungsangebote beim Jugendwohnnetz JUWO.\n* **Neu-Zürcher & Austauschstudierende**: Schnelle Orientierung für befristete Zimmer und ÖV.\n\n---\n\n## 3. Schritt-für-Schritt: So sicherst du dir dein WOKO WG-Zimmer in Zürich\n\n1. **Zulassungsbestätigung bereithalten**: Du benötigst deine Immatrikulationsbestätigung von UZH, ETH oder ZHAW.\n2. **WOKO Inserate prüfen**: Besuche täglich [woko.ch](https://www.woko.ch) für neu freigewordene Zimmer.\n3. **Bewerbung & WG-Besichtigung**: Schreibe persönliche Bewerbungen an die bestehenden WG-Bewohner.\n4. **Mietvertrag unterzeichnen**: Nach Zusage schliesst du den Mietvertrag direkt mit der WOKO ab.\n\n---\n\n## 4. Offizielle Quellen & Partner-Links\n\n* **WOKO Zürich**: [woko.ch](https://www.woko.ch)\n* **JUWO Jugendwohnnetz**: [juwo.ch](https://www.juwo.ch)\n* **ASVZ Sportverband**: [asvz.ch](https://asvz.ch)\n* **ETH Gastronomie**: [ethz.ch/gastronomie](https://ethz.ch)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Ist der ASVZ Sportverband wirklich kostenlos?\nJa. Der ASVZ-Beitrag ist im obligatorischen Semesterbeitrag aller UZH-, ETH- und ZHAW-Studierenden automatisch enthalten. Du kannst alle 5 Sportzentren ohne Zusatzkosten nutzen.\n\n### Wie viel kostet ein WG-Zimmer in Zürich im Durchschnitt?\nAuf dem freien Markt kosten WG-Zimmer in Zürich oft zwischen CHF 800.– und CHF 1'300.–. Über WOKO liegen die Mieten bei CHF 500.– bis CHF 750.– inklusive Nebenkosten."
   },
   {
-    id: "a0000000-0000-4000-8000-03ee00000000",
-    slug: "studenten-leben-bern-budget-guide",
-    title: "Bern für Junge: Aareschwimmen, de Roll Mensa & Kultur-Deals für den Bärenkanton",
-    excerpt: "Entspannt studieren in der Bundeshauptstadt: Der Insider-Guide für Studierende der Uni Bern und BFH mit Spartipps für Freizeit und ÖV.",
-    category: "Studium",
-    image_url: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-25T21:15:42.624Z",
-    created_at: "2026-09-25T21:15:42.624Z",
-    updated_at: "2026-09-25T21:15:42.624Z",
-    content: `# Bern für Junge: Aareschwimmen, de Roll Mensa & Kultur-Deals für den Bärenkanton
-
-Bern überzeugt durch gemütliche Lebensart, kurze Wege und den schönsten Sommersport der Schweiz: das Aareschwimmen. Wer an der Universität Bern oder der Berner Fachhochschule (BFH) studiert, genießt hohe Lebensqualität zum überschaubaren Preis.
-
----
-
-## 1. Bern Studi-Übersicht
-
-| Ort / Aktivität | Standort | Preis in CHF | Insider-Tipp |
-| :--- | :--- | :--- | :--- |
-| **Mensa Von Roll** | Fabrikstrasse 8 | ab CHF 7.00 | Günstiges Tagessuppen- & Mensa-Angebot |
-| **Aareschwimmen** | Eichholz bis Marzili | CHF 0.– | Nur für geübte Schwimmer, Flussregeln beachten |
-| **Kino Lichtspiel** | Sandrainstrasse 3 | Ab-Rabatt mit Legi | Kultkino mit Vintage-Atmosphäre |
-
----
-
-## 2. Günstig Essen rund um die Uni Bern
-* **Mensa Von Roll**: Das Zentrum für Geistes- und Humanwissenschaften bietet moderne Menüs für Studierende ab ca. CHF 7.00.
-* **Mensa Hauptgebäude (Grosse Schanze)**: Geniesse dein Mittagessen mit Blick über die Altstadt und die Berner Alpen.
-
----
-
-## 2. Die besten Freizeit-Aktivitäten ohne Kosten
-* **Aareschwimmen von Eichholz bis Marzili**: Im Sommer absolut kostenlos und das beste Feierabend-Erlebnis überhaupt.
-* **Botanischer Garten & Rosengarten**: Perfekte Orte zum Lernen im Grünen ohne Konsumzwang.
-
----
-
-## 3. ÖV & Ausgang in Bern
-* **Moonliner Nachtbusse**: Mit dem GA Night oder Spar-Tickets kommst du nach dem Ausgang sicher durch die Region Bern.
-* **Kino & Theater**: Das Lichtspiel Bern und Berner Kinos bieten mit der Legi vergünstigte Eintritte.
-
-Entdecke alle aktuellen Berner Deals auf **JungVorteil.ch**!`
+    "id": "a0000000-0000-4000-8000-03ee00000000",
+    "slug": "studenten-leben-bern-budget-guide",
+    "title": "Bern für Junge: Aareschwimmen, de Roll Mensa & Kultur-Deals für den Bärenkanton",
+    "excerpt": "Entspannt studieren in der Bundeshauptstadt: Der Insider-Guide für Studierende der Uni Bern und BFH mit Spartipps für Freizeit und ÖV.",
+    "category": "Studium",
+    "image_url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-25T21:15:42.624Z",
+    "created_at": "2026-09-25T21:15:42.624Z",
+    "updated_at": "2026-09-25T21:15:42.624Z",
+    "content": "# Bern für Junge: Aareschwimmen, de Roll Mensa & Kultur-Deals für den Bärenkanton\n\nBern überzeugt durch gemütliche Lebensart, kurze Wege und den schönsten Sommersport der Schweiz: das Aareschwimmen. Wer an der Universität Bern oder der Berner Fachhochschule (BFH) studiert, genießt hohe Lebensqualität zum überschaubaren Preis.\n\n---\n\n## 1. Bern Studi-Übersicht\n\n| Ort / Aktivität | Standort | Preis in CHF | Insider-Tipp |\n| :--- | :--- | :--- | :--- |\n| **Mensa Von Roll** | Fabrikstrasse 8 | ab CHF 7.00 | Günstiges Tagessuppen- & Mensa-Angebot |\n| **Aareschwimmen** | Eichholz bis Marzili | CHF 0.– | Nur für geübte Schwimmer, Flussregeln beachten |\n| **Kino Lichtspiel** | Sandrainstrasse 3 | Ab-Rabatt mit Legi | Kultkino mit Vintage-Atmosphäre |\n\n---\n\n## 2. Für wen ist dieser Guide geeignet?\n\n* **Studierende an Uni Bern & BFH**: Maximale Nutzung von Mensen, Uni-Sport Bern und Bibliotheken.\n* **Lernende & Berufsstarter im Kanton Bern**: Spartipps für ÖV (Libero) und Kultur.\n\n---\n\n## 3. Schritt-für-Schritt: Günstig studieren in Bern\n\n1. **Uni-Sport Bern Karte aktivieren**: Nutze die kostenlosen Sportangebote der Uni Bern.\n2. **Libero-Zonen-Abo optimieren**: Kaufe nur die benötigten Libero-Zonen rund um Bern.\n3. **Mensa-Karte aufladen**: Lade deine Legi auf, um rabattierte Preise in den Mensen zu erhalten.\n\n---\n\n## 4. Offizielle Quellen & Links\n\n* **Universität Bern**: [unibe.ch](https://www.unibe.ch)\n* **Berner Fachhochschule**: [bfh.ch](https://www.bfh.ch)\n* **Uni-Sport Bern**: [unibe.ch/unisport](https://www.unibe.ch)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Wo kann man in Bern ruhig und kostenlos lernen?\nDie **Fachbereichsbibliothek Bühlplatz (FBB)** und die **Bibliothek Von Roll** bieten hunderte ruhige Arbeitsplätze mit schnellem WLAN.\n\n### Ist das Aareschwimmen in Bern sicher?\nDas Aareschwimmen erfordert Schwimmsicherheit. Beachte stets die offiziellen Verkehrsregeln der Stadt Bern für Aareschwimmer."
   },
   {
-    id: "a0000000-0000-4000-8000-03ef00000000",
-    slug: "handy-internet-abos-jugendliche-vergleich",
-    title: "Handy- & Internet-Abos unter 30: Swisscom, Sunrise & Salt im ehrlichen Vergleich",
-    excerpt: "5G Datenvolumen, EU-Roaming und beste Sprachqualität: Welche Jugendtarife der Schweizer Mobilfunkanbieter bieten 2026 das beste Preis-Leistungs-Verhältnis?",
-    category: "Technik",
-    image_url: "https://images.unsplash.com/photo-1534951009808-7d6105b11a5f?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-25T20:15:42.624Z",
-    created_at: "2026-09-25T20:15:42.624Z",
-    updated_at: "2026-09-25T20:15:42.624Z",
-    content: `# Handy- & Internet-Abos unter 30: Swisscom, Sunrise & Salt im ehrlichen Vergleich
-
-Schnelles mobiles Internet ist der Treibstoff des täglichen Lebens. Egal ob Vorlesungsunterlagen unterwegs herunterladen, Musik streamen im ÖV oder Navigieren beim Städtetrip: Ein unlimitiertes Abo ohne Drosselung ist Pflicht.
-
-Gute Nachricht: In der Schweiz bieten Telekom-Anbieter für Personen unter 30 Jahren starke Rabatte an.
-
----
-
-## 1. Die Angebote im Vergleich
-
-| Anbieter | Tarifname | Preis p.M. | Netz | Roaming (EU) |
-| :--- | :--- | :--- | :--- | :--- |
-| **Swisscom** | blue Mobile Youth | ab CHF 24.90 | Swisscom 5G | Inklusive Daten/Anrufe je nach Tarif |
-| **Sunrise** | Up Mobile Youth | ab CHF 24.50 | Sunrise 5G | Flexibel zubuchbare EU-Datenpakete |
-| **Salt** | Salt Youth | ab CHF 24.95 | Salt 5G | Unlimitiert CH + Roaming-Optionen |
-
----
-
-## 2. Detaillierter Tarif-Vergleich
-
-### Swisscom blue Mobile Youth
-* **Netz**: CH-Testsieger Netzqualität.
-* **Preis**: ab CHF 24.90 bis CHF 59.90 pro Monat je nach Jugendtarif.
-* **Vorteil**: Maximale 5G-Geschwindigkeit auch in überfüllten Zügen und Stadien.
-
-### Sunrise Up Mobile Youth
-* **Besonderheit**: Bis zu 50% Rabatt auf viele Jugendabos.
-* **Preis**: ab ca. CHF 24.50 pro Monat.
-* **Vorteil**: Sehr flexibles Roaming-Paket für Europa.
-
-### Salt Youth
-* **Preis**: ab ca. CHF 24.95 pro Monat.
-* **Vorteil**: Erstklassiges Preis-Leistungs-Verhältnis für Vielsurfer.
-
----
-
-## 2. Worauf du beim Vertrag achten musst
-
-1. **Ablaufdatum der Promotion**: Viele Aktionspreise gelten lebenslang, andere nur für 12 bis 24 Monate. Achte im Vertrag auf den Zusatz "Lebenslanger Rabatt".
-2. **Kündigungsfrist**: Bevorzuge Abos mit 1 bis 3 Monaten Kündigungsfrist, um jederzeit flexibel zu bleiben.
-
-Finde die exklusiven Gutscheincodes für Telekommunikation auf **JungVorteil.ch**!`
+    "id": "a0000000-0000-4000-8000-03ef00000000",
+    "slug": "handy-internet-abos-jugendliche-vergleich",
+    "title": "Handy- & Internet-Abos unter 30: Swisscom, Sunrise & Salt im ehrlichen Vergleich",
+    "excerpt": "5G Datenvolumen, EU-Roaming und beste Sprachqualität: Welche Jugendtarife der Schweizer Mobilfunkanbieter bieten 2026 das beste Preis-Leistungs-Verhältnis?",
+    "category": "Technik",
+    "image_url": "https://images.unsplash.com/photo-1534951009808-7d6105b11a5f?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-25T20:15:42.624Z",
+    "created_at": "2026-09-25T20:15:42.624Z",
+    "updated_at": "2026-09-25T20:15:42.624Z",
+    "content": "# Handy- & Internet-Abos unter 30: Swisscom, Sunrise & Salt im ehrlichen Vergleich\n\nSchnelles mobiles Internet ist der Treibstoff des täglichen Lebens. Egal ob Vorlesungsunterlagen unterwegs herunterladen, Musik streamen im ÖV oder Navigieren beim Städtetrip: Ein unlimitiertes Abo ohne Drosselung ist Pflicht.\n\n---\n\n## 1. Die Angebote im Vergleich\n\n| Anbieter | Tarifname | Preis p.M. | Netz | Roaming (EU) |\n| :--- | :--- | :--- | :--- | :--- |\n| **Swisscom** | blue Mobile Youth | ab CHF 24.90 | Swisscom 5G | Inklusive Daten/Anrufe je nach Tarif |\n| **Sunrise** | Up Mobile Youth | ab CHF 24.50 | Sunrise 5G | Flexibel zubuchbare EU-Datenpakete |\n| **Salt** | Salt Youth | ab CHF 24.95 | Salt 5G | Unlimitiert CH + Roaming-Optionen |\n\n---\n\n## 2. Für wen ist welcher Jugendtarif geeignet?\n\n* **Swisscom blue Youth**: Für alle, die höchste Netzabdeckung auf dem Land, in den Bergen und im Zug verlangen.\n* **Sunrise Up Youth**: Für Vielreisende mit Bedarf an EU-Datenpaketen.\n* **Salt Youth**: Für preisbewusste Vielsurfer in städtischen Regionen.\n\n---\n\n## 3. Schritt-für-Schritt: So wechselst du dein Handy-Abo ohne Unterbrechung\n\n1. **Rufnummernportierung beantragen**: Gib beim neuen Anbieter an, dass du deine bisherige Nummer behalten willst.\n2. **Kündigung via SMS / Formular**: Kündige fristgerecht beim alten Anbieter (oft per SMS mit \"PORT\" an die Kurznummer).\n3. **eSIM / SIM-Karte aktivieren**: Installiere das eSIM-Profil auf deinem Smartphone am Umschalt-Tag.\n\n---\n\n## 4. Offizielle Quellen & Anbieter\n\n* **Swisscom**: [swisscom.ch/youth](https://www.swisscom.ch)\n* **Sunrise**: [sunrise.ch/youth](https://www.sunrise.ch)\n* **Salt Mobile**: [salt.ch/youth](https://www.salt.ch)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Behalte ich meinen Jugendtarif, wenn ich 30 Jahre alt werde?\nBei den meisten Anbietern erlischt der Jugendrabatt am 30. Geburtstag. Der Vertrag stellt sich dann automatisch auf den regulären Standardtarif um, sofern du nicht vorher kündigst oder wechselst."
   },
   {
-    id: "a0000000-0000-4000-8000-03f000000000",
-    slug: "back-to-school-uni-laptops-vergleich",
-    title: "Projekt Neptun vs. Apple Education: Wann du Laptops fürs Studium kaufen musst",
-    excerpt: "MacBook Air, iPad Pro oder Lenovo ThinkPad? Wie du zum Semesterstart von echten Hochschul-Rabatten profitierst und Fehlkäufe vermeidest.",
-    category: "Technik",
-    image_url: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-25T19:15:42.624Z",
-    created_at: "2026-09-25T19:15:42.624Z",
-    updated_at: "2026-09-25T19:15:42.624Z",
-    content: `# Projekt Neptun vs. Apple Education: Wann du Laptops fürs Studium kaufen musst
-
-Ein leistungsfähiger und leicht zu transportierender Laptop ist das wichtigste Werkzeug für deine Ausbildung an Hochschule, Uni oder Fachhochschule. Kaufe dein Gerät niemals zum regulären Ladenpreis!
-
----
-
-## 1. Laptop-Rabatt-Plattformen im Vergleich
-
-| Plattform | Rabatt-Höhe | Zeitfenster | Hauptzielgruppe |
-| :--- | :--- | :--- | :--- |
-| **Projekt Neptun** | Bis zu 40% | Feb–März & Sept–Okt | ETH, EPFL, FH, Uni (Laptop & Mac) |
-| **Apple Education** | ca. 10% + Gift Card | Ganzjährig (Sommer-Promo) | MacBooks & iPads für alle Studis |
-
----
-
-## 2. Projekt Neptun (Die Schweizer Spezial-Aktion)
-Dreimal im Jahr (Verkaufsfenster im Frühjahr und Herbst) öffnet **Projekt Neptun** seine Pforten für Schweizer Studierende und Mitarbeitende.
-* **Angebote**: Ausgewählte Business-Laptops von Apple (MacBook Air / Pro), Lenovo ThinkPad und HP.
-* **Rabatte**: Bis zu 40% unter dem regulären Verkaufspreis.
-* **Garantie**: Inklusive 3 Jahre weltweiter Bring-In oder Vor-Ort-Garantie.
-
----
-
-## 2. Apple Education Store (Dauerhafter Rabatt)
-* **Angebot**: Ca. 10% Rabatt auf alle Mac-Modelle und iPads.
-* **Sommer-Aktion**: Während der "Back to School" Promo erhalten Studierende zusätzlich eine **Apple Gift Card** beim Kauf eines qualifizierten Macs dazu.
-
----
-
-## 3. Welches Gerät für welchen Studiengang?
-
-* **Geisteswissenschaften, Jus, BWL**: Das **MacBook Air (M2/M3)** ist leicht, hält problemlos 15+ Stunden ohne Steckdose durch und arbeitet komplett lautlos.
-* **Informatik & Ingenieurwissenschaften (ETH/EPFL/FH)**: Achte auf mindestens **16 GB RAM** oder **32 GB RAM** und gute Linux/Windows-Kompatibilität (z.B. Lenovo ThinkPad T-Serie).
-
-Vergleiche alle Tech-Rabatte auf **JungVorteil.ch** vor deinem Kauf!`
+    "id": "a0000000-0000-4000-8000-03f000000000",
+    "slug": "back-to-school-uni-laptops-vergleich",
+    "title": "Projekt Neptun vs. Apple Education: Wann du Laptops fürs Studium kaufen musst",
+    "excerpt": "MacBook Air, iPad Pro oder Lenovo ThinkPad? Wie du zum Semesterstart von echten Hochschul-Rabatten profitierst und Fehlkäufe vermeidest.",
+    "category": "Technik",
+    "image_url": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-25T19:15:42.624Z",
+    "created_at": "2026-09-25T19:15:42.624Z",
+    "updated_at": "2026-09-25T19:15:42.624Z",
+    "content": "# Projekt Neptun vs. Apple Education: Wann du Laptops fürs Studium kaufen musst\n\nEin leistungsfähiger und leicht zu transportierender Laptop ist das wichtigste Werkzeug für deine Ausbildung an Hochschule, Uni oder Fachhochschule. Kaufe dein Gerät niemals zum regulären Ladenpreis!\n\n---\n\n## 1. Laptop-Rabatt-Plattformen im Vergleich\n\n| Plattform | Rabatt-Höhe | Zeitfenster | Hauptzielgruppe |\n| :--- | :--- | :--- | :--- |\n| **Projekt Neptun** | Bis zu 40% | Feb–März & Sept–Okt | ETH, EPFL, FH, Uni (Laptop & Mac) |\n| **Apple Education** | ca. 10% + Gift Card | Ganzjährig (Sommer-Promo) | MacBooks & iPads für alle Studis |\n\n---\n\n## 2. Für wen eignet sich welches Gerät?\n\n* **Geisteswissenschaften & Wirtschaft**: MacBook Air (M2/M3) mit 16 GB RAM.\n* **Informatik & Architektur (ETH/EPFL/FH)**: Lenovo ThinkPad oder MacBook Pro mit 32 GB RAM und starker Grafikkarte.\n* **Vorlesungs-Notizen & Skripte**: iPad Air mit Apple Pencil.\n\n---\n\n## 3. Schritt-für-Schritt: So bestellst du deinen Studi-Laptop mit Rabatt\n\n1. **Verkaufsfenster prüfen**: Neptun-Wellen öffnen jeweils im Frühjahr (Februar/März) und Herbst (September/Oktober).\n2. **Switch edu-ID / Legi bereithalten**: Logge dich mit deiner universitären Switch edu-ID ein.\n3. **Konfiguration wählen**: Wähle dein Wunschexemplar inklusive Neptun 3-Jahre-Garantie aus.\n4. **Lieferung empfangen**: Der Versand erfolgt direkt an deine Schweizer Adresse.\n\n---\n\n## 4. Offizielle Quellen & Links\n\n* **Projekt Neptun**: [projektneptun.ch](https://projektneptun.ch)\n* **Apple Education Store Schweiz**: [apple.com/ch-edu/shop](https://www.apple.com/ch-edu/shop)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Wer ist bei Projekt Neptun kaufberechtigt?\nAlle immatrikulierten Studierenden, Lernenden sowie Lehrpersonen an Schweizer Primar- und Sekundarschulen, Fachhochschulen, Universitäten und ETH/EPFL."
   },
   {
-    id: "a0000000-0000-4000-8000-03e900000008",
-    slug: "studenten-leben-genf-budget-guide",
-    title: "Studentenleben in Genf: Der ultimative Budget-Guide für UniGE Studierende (2026)",
-    excerpt: "Genf ist weltbekannt für UNO und CERN. Entdecke, wie Studierende an der UniGE bei Miete, Mensa, TPG-ÖV und Freizeit tausende Franken sparen.",
-    category: "Studium",
-    image_url: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80",
-    sources: null,
-    published_at: "2026-09-27T01:16:00.000Z",
-    created_at: "2026-09-27T01:16:00.000Z",
-    updated_at: "2026-09-27T01:16:00.000Z",
-    content: `# Studentenleben in Genf: Der ultimative Budget-Guide für UniGE Studierende (2026)
-
-Genf ist weltweit bekannt als globales Zentrum für Diplomatie, die Vereinten Nationen (UNO), das Rote Kreuz (IKRK) und Spitzenforschung am CERN. Doch für Studierende an der Université de Genève (UniGE) und der HES-SO Genève hat die Calvinstadt auch den Ruf, einer der teuersten Studienorte Europas zu sein. Zwischen hohen Mieten, teuren Lebensmitteln und den täglichen Ausgaben kann das Budget schnell knapp werden.
-
-Mit den richtigen Insider-Strategien lässt sich das Leben in Genf jedoch überraschend preiswert gestalten. In diesem umfassenden Ratgeber zeigen wir dir, wie du als Student in Genf bei Miete, Verpflegung, öffentlichen Verkehrsmitteln und Freizeit tausende Franken pro Jahr sparst.
-
----
-
-## 1. Genf Studi-Übersicht
-
-| Angebot | Ort / Organisation | Preis in CHF | Vorteile für Studierende |
-| :--- | :--- | :--- | :--- |
-| **Wohnheim** | Cité Universitaire Champel | CHF 500.– bis 750.– | Möblierte Zimmer mit WLAN & ÖV-Anbindung |
-| **ÖV-Abo** | TPG Unipass Junior | CHF 400.– / Jahr | Unbeschränkt Zone 10 unter 25 Jahren |
-| **Kultur** | Chèque-Culture Genève | Bis 50% Rabatt | Vergünstigungen für Kino & Theater |
-
----
-
-## 2. Günstig Wohnen in Genf: WIZO, Cité Universitaire & WG-Tipps
-Der Wohnungsmarkt in Genf gehört zu den angespanntesten der Schweiz. Reguläre Studio-Mieten beginnen selten unter CHF 1'200.– pro Monat. Für Studierende gibt es jedoch spezialisierte Organisationen:
-
-* **Cité Universitaire de Genève (Champel)**: Das grösste studentische Wohnheim der Stadt bietet möblierte Zimmer ab ca. CHF 500.– bis CHF 750.– pro Monat. Der Komplex verfügt über eigene Lernräume, ein Café und eine direkte Busanbindung.
-* **Bureau des Logements UniGE**: Die universitäre Zimmervermittlung vermietet günstige Zimmer in WGs und Wohnheimen exklusiv an immatrikulierte UniGE-Studierende.
-* **Wohnen im Grenzgebiet (Frankreich)**: Viele Genfer Studierende wohnen in französischen Nachbarorten wie Annemasse, Gaillard oder Saint-Genis-Pouilly. Dank des Tramnetzes (Tram 17 & Léman Express) bist du in 20 bis 30 Minuten an den Uni-Standorten, zahlst aber oft nur die Hälfte an Miete.
-
----
-
-## 2. Mensa UniGE & Günstig Essen im Petit-Saconnex
-Auswärts essen in Genfer Restaurants kostet im Schnitt CHF 25.– bis CHF 35.– pro Hauptgang. Studierende nutzen stattdessen universitäre Einrichtungen und Food-Saving:
-
-* **UniGE Mensen (Uni Dufour, Uni Mail & Bastions)**: Die UniGE-Mensen servieren ausgewogene Tagesgerichte (*Menu du Jour*) für Studierende gegen Vorweis der Legi für ca. CHF 7.00 bis CHF 9.50.
-* **Bains des Pâquis**: Direkt am Genfersee gelegen, bietet dieses ikonische Seebad im Winter das günstigste und beliebteste Fondue der Stadt (ca. CHF 25.– für eine grosse Portion) sowie preiswerte Tagessuppen im Sommer.
-* **Too Good To Go & Migros Discount**: Kurz vor Ladenschluss bieten Genfer Bäckereien und Supermärkte (Migros, Coop, Manor) Lebensmittel-Tüten mit bis zu 70% Rabatt an.
-
----
-
-## 3. Mobilität in Genf: TPG Unipass & Léman Express Hacks
-Das öffentliche Verkehrsnetz TPG (Transports Publics Genevois) verbindet alle Stadtteile und das Umland im Minutentakt.
-
-* **TPG Unipass Junior (unter 25 Jahre)**: Das Jahresabo für die Zone 10 (ganzer Kanton Genf) kostet für Jugendliche unter 25 Jahren nur CHF 400.– pro Jahr (statt CHF 500.– für Erwachsene).
-* **Léman Express**: Die grenzüberschreitende S-Bahn verbindet Genf mit Vaud und Frankreich. Wer ein SBB Halbtax Jugend besitzt, spart bei Fahrten in der gesamten Region 50%.
-* **Velospot & Donkey Republic**: Genf ist flach und perfekt für das Velo. Über *Genève Roule* kannst du in den Sommermonaten an ausgewählten Stationen Fahrräder kostenlos leihen (gegen Depot).
-
----
-
-## 4. Krankenkasse & Prämienverbilligung (IPV) im Kanton Genf
-Die obligatorische Krankenversicherung ist die grösste monatliche Fixkostennote für junge Erwachsene in Genf.
-
-* **SAM (Service de l'assurance-maladie)**: Der Kanton Genf gewährt Studierenden und jungen Erwachsenen mit kleinem Einkommen erhebliche Prämienverbilligungen. Bei Studierenden ohne eigenes Hoheinkommen übernimmt der Kanton oft bis zu 80% der monatlichen Grundversicherungsprämie.
-* **Franchise-Wahl**: Wer jung und gesund ist, wählt stets die maximale Franchise von CHF 2'500.–, um die monatlichen Prämien auf das gesetzliche Minimum zu senken.
-
----
-
-## 5. Kultur, Sport & Freizeit gratis oder vergünstigt
-Das Kulturangebot in Genf ist erstklassig und bietet extrem viele Vorteile für Studierende:
-
-* **Chèque-Culture Genève**: Die Stadt Genf stellt Kultur-Gutscheine für Jugendliche und Studierende aus, mit denen Kinotickets, Theaterkarten und Konzerte um bis zu 50% vergünstigt werden.
-* **Gratis Museen am 1. Sonntag im Monat**: Alle städtischen Museen (Musée d'art et d'histoire, Muséum d'histoire naturelle, Maison Tavel) bieten jeden ersten Sonntag im Monat kostenlosen Eintritt.
-* **UniGE Sport**: Der Hochschulsport der Universität Genf bietet über 80 Sportarten (Fitness, Yoga, Rudern auf dem Genfersee, Skiausflüge in die Alpen) kostenlos oder zu symbolischen Preisen von CHF 20.– bis CHF 50.– pro Semester an.
-
----
-
-## 6. Häufig gestellte Fragen (FAQ) zum Studium in Genf
-
-### Was kostet das Leben als Student in Genf durchschnittlich pro Monat?
-Ein realistisches Monatsbudget für Studierende in Genf liegt zwischen CHF 1'500.– und CHF 1'900.– inklusive Miete (in einem Wohnheim oder Zimmer), TPG-Abo, Mensa-Verpflegung und Krankenversicherung (nach Abzug der Prämienverbilligung).
-
-### Wo kann man in Genf kostenlos und ruhig lernen?
-Die Bibliothek **Uni Mail** und die historische **Bibliothèque de Genève (Bastions)** bieten hunderte moderne Arbeitsplätze mit schnellem Eduroam-WLAN und Steckdosen.
-
-### Lohnt sich der Einkauf in Frankreich für Genfer Studierende?
-Ja. Supermärkte in Annemasse oder Ferney-Voltaire (Frankreich) liegen direkt an der Grenze und bieten Fleisch, Drogerieartikel und Grundnahrungsmittel zu deutlich niedrigeren Preisen als in der Schweiz. Beachte dabei die Zollfreigrenzen (z.B. max. 1 kg Fleisch pro Person).`
+    "id": "a0000000-0000-4000-8000-03e900000008",
+    "slug": "studenten-leben-genf-budget-guide",
+    "title": "Studentenleben in Genf: Der ultimative Budget-Guide für UniGE Studierende (2026)",
+    "excerpt": "Genf ist weltbekannt für UNO und CERN. Entdecke, wie Studierende an der UniGE bei Miete, Mensa, TPG-ÖV und Freizeit tausende Franken sparen.",
+    "category": "Studium",
+    "image_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80",
+    "sources": null,
+    "published_at": "2026-09-27T01:16:00.000Z",
+    "created_at": "2026-09-27T01:16:00.000Z",
+    "updated_at": "2026-09-27T01:16:00.000Z",
+    "content": "# Studentenleben in Genf: Der ultimative Budget-Guide für UniGE Studierende (2026)\n\nGenf ist weltweit bekannt als globales Zentrum für Diplomatie, die Vereinten Nationen (UNO), das Rote Kreuz (IKRK) und Spitzenforschung am CERN. Doch für Studierende an der Université de Genève (UniGE) und der HES-SO Genève hat die Calvinstadt auch den Ruf, einer der teuersten Studienorte Europas zu sein.\n\n---\n\n## 1. Genf Studi-Übersicht\n\n| Angebot | Ort / Organisation | Preis in CHF | Vorteile für Studierende |\n| :--- | :--- | :--- | :--- |\n| **Wohnheim** | Cité Universitaire Champel | CHF 500.– bis 750.– | Möblierte Zimmer mit WLAN & ÖV-Anbindung |\n| **ÖV-Abo** | TPG Unipass Junior | CHF 400.– / Jahr | Unbeschränkt Zone 10 unter 25 Jahren |\n| **Kultur** | Chèque-Culture Genève | Bis 50% Rabatt | Vergünstigungen für Kino & Theater |\n\n---\n\n## 2. Für wen ist dieser Guide geeignet?\n\n* **UniGE & HES-SO Studierende**: Zugänge zu Wohnheimen, Mensen und TPG-Rabatten.\n* **Internationale Austauschstudierende**: Schnelle Orientierung in der Genfer Region.\n\n---\n\n## 3. Schritt-für-Schritt: Günstig studieren in Genf\n\n1. **Wohnheim-Antrag stellen**: Reiche deinen Antrag bei der Cité Universitaire Champel frühzeitig vor Semesterbeginn ein.\n2. **TPG Junior Abo kaufen**: Kaufe das TPG Jahresabo für die Zone 10 gegen Vorweis deines Ausweises.\n3. **IPV Prämienverbilligung beantragen**: Stelle beim SAM Genève deinen Antrag auf Krankenkassen-Verbilligung.\n\n---\n\n## 4. Offizielle Quellen & Links\n\n* **Université de Genève**: [unige.ch](https://www.unige.ch)\n* **TPG Genfer ÖV**: [tpg.ch](https://www.tpg.ch)\n* **Cité Universitaire Champel**: [cite-uni.ch](https://www.cite-uni.ch)\n\n---\n\n## 5. Häufig gestellte Fragen (FAQ)\n\n### Was kostet das Leben als Student in Genf durchschnittlich pro Monat?\nEin realistisches Monatsbudget für Studierende in Genf liegt zwischen CHF 1'500.– und CHF 1'900.– inklusive Miete, TPG-Abo, Mensa-Verpflegung und Krankenversicherung (nach Abzug der Prämienverbilligung)."
   }
 ];
