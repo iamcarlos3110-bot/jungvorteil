@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay, getDeviceCategory } from "@/lib/utils";
 import { Offer } from "@/types";
 import { toggleFavorite } from "@/lib/favorites";
@@ -74,7 +75,8 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
     setFavorite(toggleFavorite(offer.id));
   };
 
-  const handleCardClick = () => {
+  const handleCtaClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     fetch("/api/click", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -91,18 +93,15 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
   const brandLogo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);
   const coverImage = getOfferCover(offer.slug, offer.image_url);
   const externalUrl = getExternalUrl(offer);
+  const internalUrl = `/${locale}/angebot/${offer.slug}`;
   const gradient = getBrandGradient(brandName);
 
   return (
-    <a
-      href={externalUrl}
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-      onClick={handleCardClick}
+    <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "group relative flex flex-col bg-white rounded-3xl overflow-hidden h-full cursor-pointer",
+        "group relative flex flex-col bg-white rounded-3xl overflow-hidden h-full",
         "border border-stone-200/80",
         "shadow-[0_4px_20px_rgba(0,0,0,0.06)]",
         "hover:shadow-[0_20px_60px_rgba(46,77,40,0.18),0_8px_24px_rgba(0,0,0,0.08)]",
@@ -115,7 +114,7 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
       style={{ transitionDuration: "380ms" }}
     >
       {/* === COVER IMAGE === */}
-      <div className="relative w-full h-48 overflow-hidden shrink-0 bg-gradient-to-br from-stone-100 to-stone-200">
+      <Link href={internalUrl} className="relative w-full h-48 overflow-hidden shrink-0 bg-gradient-to-br from-stone-100 to-stone-200 block">
         {coverImage && !coverError ? (
           <Image
             src={coverImage}
@@ -130,7 +129,6 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
             onError={() => setCoverError(true)}
           />
         ) : (
-          /* Gradient fallback - looks premium */
           <div className={cn("w-full h-full bg-gradient-to-br", gradient, "flex items-center justify-center")}>
             <span className="text-white/30 text-8xl font-black select-none">
               {brandName.charAt(0)}
@@ -138,14 +136,12 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           </div>
         )}
 
-        {/* Dark overlay on hover for text readability */}
         <div className={cn(
           "absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent",
           "transition-opacity duration-300",
           isHovered ? "opacity-100" : "opacity-0"
         )} />
 
-        {/* Expiring ribbon */}
         {expiringSoon && (
           <div className="absolute top-3 left-3 flex items-center gap-1 bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-lg animate-pulse">
             <Clock className="w-3 h-3" />
@@ -153,32 +149,19 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           </div>
         )}
 
-        {/* Sponsored badge */}
         {offer.is_sponsored && (
           <div className="absolute top-3 left-3 bg-black/60 text-white/80 text-[9px] font-bold px-2 py-0.5 rounded-full backdrop-blur-sm">
             GESPONSERT
           </div>
         )}
-
-        {/* External link indicator - appears on hover */}
-        <div className={cn(
-          "absolute bottom-3 right-3 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-stone-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg",
-          "transition-all duration-300",
-          isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-        )}>
-          <ExternalLink className="w-3 h-3" />
-          Zum Angebot
-        </div>
-      </div>
+      </Link>
 
       {/* === CARD BODY === */}
       <div className="flex flex-col flex-grow p-5 relative">
-
         {/* Logo + Favorite row */}
         <div className="flex justify-between items-start mb-3 -mt-9 relative z-10">
-          {/* Brand Logo */}
-          <div className={cn(
-            "w-14 h-14 rounded-2xl overflow-hidden border-2 border-white shadow-xl shrink-0 relative",
+          <Link href={internalUrl} className={cn(
+            "w-14 h-14 rounded-2xl overflow-hidden border-2 border-white shadow-xl shrink-0 relative block",
             "bg-white flex items-center justify-center"
           )}>
             {brandLogo && !logoError ? (
@@ -198,14 +181,13 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
                 </span>
               </div>
             )}
-          </div>
+          </Link>
 
-          {/* Favorite button */}
           {isClient && (
             <button
               onClick={handleFavoriteClick}
               className={cn(
-                "p-2.5 rounded-2xl transition-all duration-200 shadow-md border",
+                "p-2.5 rounded-2xl transition-all duration-200 shadow-md border cursor-pointer",
                 favorite
                   ? "bg-red-50 border-red-200 text-red-500 hover:bg-red-100"
                   : "bg-white border-stone-200 text-stone-400 hover:text-red-400 hover:border-red-200"
@@ -217,7 +199,6 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           )}
         </div>
 
-        {/* Saving badge */}
         {saving && (
           <div className="inline-flex items-center gap-1.5 mb-2 self-start">
             <div className={cn(
@@ -231,18 +212,12 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           </div>
         )}
 
-        {/* Title */}
-        <h3 className={cn(
-          "font-bold text-stone-900 line-clamp-2 leading-snug mb-1 flex-grow",
-          "text-base group-hover:text-[#2E4D28] transition-colors duration-200"
-        )}>
-          {offer.title_de}
+        <h3 className="font-bold text-stone-900 line-clamp-2 leading-snug mb-1 flex-grow text-base group-hover:text-[#2E4D28] transition-colors duration-200">
+          <Link href={internalUrl}>{offer.title_de}</Link>
         </h3>
 
-        {/* Brand name */}
         <p className="text-sm text-stone-500 font-medium mb-3">{brandName}</p>
 
-        {/* Tags row */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {offer.is_nationwide && (
             <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full">
@@ -266,7 +241,6 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           )}
         </div>
 
-        {/* Expired overlay */}
         {expired && (
           <div className="absolute inset-0 z-20 bg-white/50 backdrop-blur-[2px] flex items-center justify-center rounded-3xl">
             <div className="bg-white px-5 py-2.5 rounded-xl text-sm font-black text-red-600 shadow-lg border border-red-100 -rotate-3">
@@ -275,26 +249,33 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
           </div>
         )}
 
-        {/* CTA Button */}
-        <div className="mt-auto pt-3 border-t border-stone-100">
-          <div className={cn(
-            "w-full flex items-center justify-center gap-2 px-4 py-3 rounded-2xl",
-            "font-bold text-sm transition-all duration-300",
-            expired
-              ? "bg-stone-100 text-stone-500"
-              : "bg-gradient-to-r from-[#2E4D28] to-[#3D6636] text-white shadow-[0_4px_14px_rgba(46,77,40,0.3)] group-hover:shadow-[0_8px_24px_rgba(46,77,40,0.45)]"
-          )}>
+        <div className="mt-auto pt-3 border-t border-stone-100 flex flex-col gap-2">
+          <a
+            href={externalUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            onClick={handleCtaClick}
+            className={cn(
+              "w-full flex items-center justify-center gap-2 px-4 py-3 rounded-2xl",
+              "font-bold text-sm transition-all duration-300 cursor-pointer",
+              expired
+                ? "bg-stone-100 text-stone-500 pointer-events-none"
+                : "bg-gradient-to-r from-[#2E4D28] to-[#3D6636] text-white shadow-[0_4px_14px_rgba(46,77,40,0.3)] hover:shadow-[0_8px_24px_rgba(46,77,40,0.45)] hover:scale-[1.01] active:scale-95"
+            )}
+          >
             {expired ? "Abgelaufen" : "Angebot sichern"}
             {!expired && <ExternalLink className="w-3.5 h-3.5" />}
-          </div>
+          </a>
+
           {offer.checked_at && (
-            <p className="text-[10px] text-stone-400 text-center font-medium mt-2 flex items-center justify-center gap-1">
+            <p className="text-[10px] text-stone-400 text-center font-medium mt-1 flex items-center justify-center gap-1">
               <Check className="w-3 h-3 text-emerald-500" />
               Geprüft {formatDate(offer.checked_at)}
             </p>
           )}
         </div>
       </div>
-    </a>
+    </div>
   );
 }
+
