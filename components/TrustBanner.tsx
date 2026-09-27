@@ -10,7 +10,7 @@ export default function TrustBanner() {
           </div>
           <div>
             <h3 className="font-bold text-gray-900 text-base">Redaktionell geprüft</h3>
-            <p className="text-xs text-gray-500 mt-0.5">Manuelle Qualitäts- und Faktenprüfung aller gelisteten Angebote.</p>
+            <p className="text-xs text-gray-500 mt-0.5">Angebote werden vor der Veröffentlichung anhand offizieller Anbieterinformationen geprüft.</p>
           </div>
         </div>
 

@@ -118,7 +118,7 @@ export default async function CategoriesPage({ params }: { params: Promise<{ loc
               </div>
               <h3 className="font-bold text-gray-900 text-lg mb-2">Redaktionell verifiziert</h3>
               <p className="text-sm text-gray-600">
-                Jedes Angebot wird manuell von unserem Team auf Gültigkeit und faire Konditionen geprüft.
+                Angebote werden vor der Veröffentlichung anhand offizieller Anbieterinformationen geprüft.
               </p>
             </div>
 

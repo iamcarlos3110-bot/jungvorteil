@@ -48,7 +48,7 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
         <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-10 shadow-sm space-y-4">
           <h2 className="text-2xl font-bold text-stone-900">Unser Versprechen an Nutzerinnen & Nutzer</h2>
           <p className="text-stone-700 leading-relaxed text-base">
-            JungVorteil ist ein unabhängiges Schweizer Vorteilsportal, gegründet und betrieben von <strong>Carlos Piñeiro</strong>. Unser Anspruch ist es, jungen Menschen in der Schweiz (Auszubildende, Studierende und junge Erwachsene von 16 bis 30 Jahren) verlässliche, echte und überprüfbare Preisvorteile zugänglich zu machen.
+            JungVorteil ist ein unabhängiges Schweizer Vorteilsportal, gegründet und betrieben von <strong>Carlos Piñeiro</strong>. Angebote werden vor der Veröffentlichung anhand offizieller Anbieterinformationen geprüft. Unser Anspruch ist es, jungen Menschen in der Schweiz (Auszubildende, Studierende und junge Erwachsene von 16 bis 30 Jahren) verlässliche, echte und überprüfbare Preisvorteile zugänglich zu machen.
           </p>
           <p className="text-stone-700 leading-relaxed text-base">
             Wir veröffentlichen keine erfundenen Rabattprozente, keine irreleitenden Lockangebote und keine Inhalte ohne offizielle Bestätigung des jeweiligen Anbieters.
