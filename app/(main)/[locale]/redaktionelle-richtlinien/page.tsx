@@ -78,7 +78,7 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </div>
           <h2 className="text-2xl font-bold text-stone-900">Wie Angebote recherchiert & entdeckt werden</h2>
           <p className="text-stone-700 leading-relaxed text-sm">
-            Um die besten und aktuellsten Rabatte für junge Menschen in der Schweiz bereitzustellen, kombiniert unsere Redaktion vier strukturierte Recherche-Wege:
+            Um verlässliche und geprüfte Vorteile für junge Menschen in der Schweiz bereitzustellen, kombiniert unsere Redaktion vier strukturierte Recherche-Wege:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-2">
             <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl space-y-2">

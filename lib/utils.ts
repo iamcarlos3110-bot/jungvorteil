@@ -80,13 +80,17 @@ export function getSavingDisplay(
   discountPercent: number | null,
   discountAmount: number | null,
   normalPrice: number | null,
-  youngPrice: number | null
+  youngPrice: number | null,
+  advantageType?: string | null
 ): string {
-  if (discountPercent) return `${discountPercent}% Rabatt`;
-  if (discountAmount) return `CHF ${discountAmount} günstiger`;
+  if (advantageType === "free") return "Kostenlos";
+  if (advantageType === "special_rate") return "Staatliche Unterstützung";
+  if (advantageType === "cashback" && discountAmount) return `Bis zu CHF ${discountAmount} Cashback`;
+  if (discountPercent && discountPercent < 100) return `${discountPercent}% Rabatt`;
+  if (discountAmount) return `CHF ${discountAmount} Rabatt`;
   if (normalPrice && youngPrice) {
     const diff = normalPrice - youngPrice;
-    if (diff > 0) return `${formatCHF(diff)} günstiger`;
+    if (diff > 0) return `${formatCHF(diff)} Ersparnis`;
   }
   return "";
 }

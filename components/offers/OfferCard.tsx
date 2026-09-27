@@ -87,7 +87,7 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
 
   const expired = isExpired(offer.end_date);
   const expiringSoon = !expired && isExpiringSoon(offer.end_date);
-  const saving = getSavingDisplay(offer.discount_percent, offer.discount_amount, offer.normal_price, offer.young_price);
+  const saving = getSavingDisplay(offer.discount_percent, offer.discount_amount, offer.normal_price, offer.young_price, offer.advantage_type);
 
   const brandName = offer.brand?.name ?? "JungVorteil";
   const brandLogo = getBrandLogo(offer.brand?.slug, offer.brand?.logo_url);

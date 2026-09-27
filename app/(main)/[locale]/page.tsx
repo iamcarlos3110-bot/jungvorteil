@@ -250,7 +250,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {/* Stats row */}
           <div className="mt-14 grid grid-cols-3 gap-4 max-w-xl mx-auto">
             {[
-              { value: "500+", label: "Angebote" },
+              { value: "28", label: "Geprüfte Angebote" },
               { value: "Manuell", label: "Geprüft" },
               { value: "Gratis", label: "Nutzung" },
             ].map(stat => (
@@ -570,7 +570,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h2 className="text-3xl font-black text-stone-900 mb-1" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
                   Beliebte Unternehmen
                 </h2>
-                <p className="text-stone-500">Wer bietet die besten Konditionen?</p>
+                <p className="text-stone-500">Ausgewählte Vorteile im Vergleich</p>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">

@@ -32,7 +32,7 @@ export default async function Under25Page({ params }: { params: Promise<{ locale
             Vorteile &amp; Rabatte Unter 25
           </h1>
           <p className="text-base sm:text-xl text-gray-200 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
-            Die besten Jugendtarife wie SBB GA Night, Halbtax Jugend und Gratis-Konten in der Schweiz.
+            Beliebte Jugendtarife wie SBB GA Night, Halbtax Jugend und Gratis-Konten in der Schweiz.
           </p>
 
           <div className="inline-flex flex-wrap justify-center gap-3 bg-white/10 p-2 rounded-full backdrop-blur-md border border-white/15">

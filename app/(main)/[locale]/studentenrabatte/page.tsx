@@ -8,8 +8,8 @@ import Newsletter from "@/components/Newsletter";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Studentenrabatte Schweiz – Die besten Deals | JungVorteil",
-  description: "Finde die besten Studentenrabatte in der Schweiz. Apple, Spotify, SBB und mehr mit Studirabatt.",
+  title: "Studentenrabatte Schweiz – Geprüfte Vorteile | JungVorteil",
+  description: "Finde geprüfte Studentenrabatte in der Schweiz. Apple, Spotify, SBB und mehr mit Studirabatt.",
 };
 
 export default async function StudentsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -60,7 +60,7 @@ export default async function StudentsPage({ params }: { params: Promise<{ local
               Studentenrabatte Schweiz
             </h1>
             <p className="text-base sm:text-xl text-gray-200 max-w-2xl mx-auto font-normal leading-relaxed">
-              Spare Geld mit deiner Legi. Wir sammeln die besten geprüften Vergünstigungen für Studierende in der Schweiz.
+              Spare Geld mit deiner Legi. Wir sammeln verifizierte Vergünstigungen für Studierende in der Schweiz.
             </p>
           </div>
         </section>

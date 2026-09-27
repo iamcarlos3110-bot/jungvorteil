@@ -52,7 +52,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
 
   const expired = isExpired(offer.end_date);
   const similarOffers = await getSimilarOffers(offer.id, 4);
-  const saving = getSavingDisplay(offer.discount_percent, offer.discount_amount, offer.normal_price, offer.young_price);
+  const saving = getSavingDisplay(offer.discount_percent, offer.discount_amount, offer.normal_price, offer.young_price, offer.advantage_type);
   const rawUrl = offer.affiliate_url || offer.external_url;
   const isValidUrl = rawUrl && rawUrl.startsWith("http");
   const externalUrl = isValidUrl

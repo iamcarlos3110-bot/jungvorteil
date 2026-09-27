@@ -6,7 +6,7 @@ import Newsletter from '@/components/Newsletter';
 
 export const metadata = {
   title: 'Alle Rabatte & Angebote Schweiz | JungVorteil',
-  description: 'Entdecke hunderte geprüfte Rabatte, Studentenangebote und Gratis-Deals in der Schweiz.',
+  description: 'Entdecke geprüfte Rabatte, Studentenangebote und Vorteile in der Schweiz.',
 };
 
 export default async function AngebotePage({

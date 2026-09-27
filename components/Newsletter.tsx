@@ -48,7 +48,7 @@ export default function Newsletter() {
         </div>
         <h2 className="text-3xl md:text-4xl font-black tracking-tight">Verpasse keine neuen Rabatte</h2>
         <p className="text-emerald-100 text-base md:text-lg">
-          Abonniere unseren kostenlosen Newsletter und erhalte die besten Angebote für Jugendliche und Studenten direkt per Mail.
+          Abonniere unseren kostenlosen Newsletter und erhalte aktuelle Angebote für Jugendliche und Studenten direkt per Mail.
         </p>
 
         {submitted ? (
