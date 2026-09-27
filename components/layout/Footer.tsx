@@ -56,6 +56,17 @@ export default function Footer({ locale }: FooterProps) {
           </div>
         </div>
 
+        {/* Explicit Transparency & Independence Block */}
+        <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-5 my-6 text-xs text-gray-400 space-y-2">
+          <div className="flex items-center gap-2 font-bold text-gray-200">
+            <Sparkles className="w-4 h-4 text-[#537A4B]" />
+            <span>Transparenz &amp; Unabhängigkeit</span>
+          </div>
+          <p className="leading-relaxed">
+            JungVorteil ist ein von Carlos Piñeiro betriebenes, unabhängiges Schweizer Vorteilsportal. Alle Angebote werden manuell geprüft. Einige Verweise sind sogenannte Affiliate-Links: Bei einer erfolgreichen Vermittlung erhalten wir unter Umständen eine kleine Provision – für dich als Nutzer entstehen dabei <strong>zu keinem Zeitpunkt Zusatzkosten</strong>.
+          </p>
+        </div>
+
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} JungVorteil. {t("copyright")}
@@ -68,7 +79,7 @@ export default function Footer({ locale }: FooterProps) {
           </div>
         </div>
         
-        <div className="mt-8 text-xs text-gray-600 text-center md:text-left max-w-4xl">
+        <div className="mt-6 text-xs text-gray-600 text-center md:text-left max-w-4xl">
           <p>{t("disclaimer")}</p>
         </div>
       </div>
