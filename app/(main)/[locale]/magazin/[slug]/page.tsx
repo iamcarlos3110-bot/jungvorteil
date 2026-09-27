@@ -1,7 +1,7 @@
 import { getArticleBySlug, getArticles } from "@/services/articles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Clock, Calendar, ArrowLeft, BookOpen } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, BookOpen, ShieldCheck } from "lucide-react";
 import { safeJsonLd, formatDate } from "@/lib/utils";
 import AdSlot from "@/components/ads/AdSlot";
 import ArticleCard from "@/components/magazin/ArticleCard";
@@ -129,6 +129,17 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
               ) : (
                 <p>Dieser Artikel hat noch keinen Inhalt.</p>
               )}
+            </div>
+
+            {/* Editorial Transparency Notice Card */}
+            <div className="my-8 bg-[#EAF0E5]/60 border border-[#C7D9C0] rounded-2xl p-5 text-xs text-stone-700 space-y-1.5">
+              <div className="flex items-center gap-2 font-bold text-stone-900">
+                <ShieldCheck className="w-4 h-4 text-[#2E4D28]" />
+                <span>Redaktioneller Transparenzhinweis</span>
+              </div>
+              <p className="leading-relaxed">
+                Alle in diesem Ratgeber genannten Tarife, Ersparnisse und Konditionen wurden anhand der offiziellen Angaben der Schweizer Anbieter recherchiert und am <strong>{formatDate(article.updated_at || article.published_at || article.created_at)}</strong> manuell überprüft. Angebote können sich ändern. Ergänzende Informationen findest du in unseren <Link href={`/${locale}/redaktionelle-richtlinien`} className="text-[#2E4D28] underline font-semibold">Redaktionellen Richtlinien</Link>.
+              </p>
             </div>
 
             <AdSlot slot="AD_BETWEEN_OFFERS_1" className="my-10" />
