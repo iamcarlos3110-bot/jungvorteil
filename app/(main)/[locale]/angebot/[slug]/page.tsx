@@ -12,22 +12,34 @@ import { ExternalLink, MapPin, GraduationCap, Globe, CheckCircle, Clock } from "
 import { getBrandLogo, getOfferCover } from "@/lib/brandAssets";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const offer = await getOfferBySlug(slug);
 
   if (!offer) return { title: "Angebot nicht gefunden | JungVorteil" };
 
   const brandName = offer.brand?.name ?? "JungVorteil";
+  const title = `${brandName} – ${offer.title_de} | JungVorteil`;
+  const description = offer.description_de?.substring(0, 160) ?? `${brandName} Rabatt und Vorteile auf JungVorteil`;
+  const url = `https://jungvorteil.ch/${locale}/angebot/${offer.slug}`;
+
   return {
-    title: `${brandName} – ${offer.title_de} | JungVorteil`,
-    description: offer.description_de?.substring(0, 160) ?? `${brandName} Rabatt und Vorteile auf JungVorteil`,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
-      title: `${brandName} – ${offer.title_de}`,
-      description: offer.description_de?.substring(0, 160) ?? "",
-      images: offer.image_url ? [offer.image_url] : [],
+      title,
+      description,
+      url,
+      siteName: "JungVorteil",
+      locale,
+      type: "article",
+      images: offer.image_url ? [{ url: offer.image_url }] : [],
     },
   };
 }
+
 
 export default async function OfferPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
