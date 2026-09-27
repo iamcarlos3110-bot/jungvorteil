@@ -27,6 +27,14 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
       "@type": "Organization",
       "name": "JungVorteil",
       "url": "https://jungvorteil.ch",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plaza del Peñón 7, 7B izq.",
+        "postalCode": "28923",
+        "addressLocality": "Alcorcón",
+        "addressRegion": "Madrid",
+        "addressCountry": "ES"
+      },
       "founder": {
         "@type": "Person",
         "name": "Carlos Piñeiro",

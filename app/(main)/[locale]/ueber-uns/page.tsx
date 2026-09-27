@@ -27,7 +27,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     "description": "Unabhängiges Schweizer Vorteilsportal für Studierende, Lernende und junge Erwachsene unter 30.",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "CH"
+      "streetAddress": "Plaza del Peñón 7, 7B izq.",
+      "postalCode": "28923",
+      "addressLocality": "Alcorcón",
+      "addressRegion": "Madrid",
+      "addressCountry": "ES"
     }
   };
 
