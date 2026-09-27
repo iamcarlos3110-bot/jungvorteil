@@ -37,13 +37,60 @@ export default function PrivacyPage() {
       <section className="mb-8">
         <h2 className="text-xl font-bold text-stone-900 mb-3">3. Speichertechnologien (Cookies, LocalStorage &amp; SessionStorage)</h2>
         <p className="leading-relaxed mb-4">
-          Neben funktionellen Cookies nutzt unsere Website moderne Web-Storage-Technologien Ihres Browsers:
+          Unsere Website nutzt funktionelle Cookies sowie moderne Web-Storage-Technologien Ihres Browsers. In der folgenden Übersicht informieren wir Sie transparent über die verwendeten Speicherpunkte:
         </p>
-        <ul className="list-disc ml-5 space-y-2 mb-4">
-          <li><strong>Cookies:</strong> Speicherung Ihrer gewählten Datenschutz- und Cookie-Einwilligungen (z.B. <code className="bg-stone-100 px-1 py-0.5 rounded text-sm text-stone-800">cookie_consent</code>).</li>
-          <li><strong>LocalStorage:</strong> Speicherung Ihrer persönlichen Merkliste und Favoriten-Angebote (<code className="bg-stone-100 px-1 py-0.5 rounded text-sm text-stone-800">jungvorteil_favorites</code>) ausschließlich und direkt auf Ihrem eigenen Endgerät (ohne Serverübertragung).</li>
-          <li><strong>SessionStorage:</strong> Vorübergehende Begrenzung von Formular-Absendungen (<code className="bg-stone-100 px-1 py-0.5 rounded text-sm text-stone-800">contact_form_submitted</code>) zum Schutz vor Mehrfachabsendungen und Spam.</li>
-        </ul>
+
+        <div className="overflow-x-auto not-prose my-6 border border-stone-200 rounded-2xl shadow-sm">
+          <table className="w-full text-left text-sm text-stone-700">
+            <thead className="bg-stone-100 text-stone-900 font-bold border-b border-stone-200">
+              <tr>
+                <th className="p-3">Name / Schlüssel</th>
+                <th className="p-3">Typ</th>
+                <th className="p-3">Kategorie</th>
+                <th className="p-3">Dauer</th>
+                <th className="p-3">Zweck</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-stone-200 bg-white">
+              <tr>
+                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">jv_cookie_consent</td>
+                <td className="p-3">LocalStorage</td>
+                <td className="p-3"><span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-xs font-semibold">Notwendig</span></td>
+                <td className="p-3">Dauerhaft</td>
+                <td className="p-3">Speicherung Ihres Zustimmungsstatus für das Cookie-Banner.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">jungvorteil_favorites</td>
+                <td className="p-3">LocalStorage</td>
+                <td className="p-3"><span className="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-xs font-semibold">Funktional</span></td>
+                <td className="p-3">Dauerhaft (lokal)</td>
+                <td className="p-3">Speicherung Ihrer gemerkten Angebote/Favoriten direkt auf Ihrem Gerät ohne Server-Transfer.</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">contact_form_submitted</td>
+                <td className="p-3">SessionStorage</td>
+                <td className="p-3"><span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-xs font-semibold">Notwendig</span></td>
+                <td className="p-3">Sitzung Ende</td>
+                <td className="p-3">Schutz vor Mehrfachabsendungen des Kontaktformulars (Spam-Schutz).</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">_ga, _ga_*</td>
+                <td className="p-3">Cookie</td>
+                <td className="p-3"><span className="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-xs font-semibold">Analytisch</span></td>
+                <td className="p-3">2 Jahre / 24 Std.</td>
+                <td className="p-3">Google Analytics Nutzungsstatistik (nur nach Ihrer expliziten Zustimmung).</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">__gads, __gpi</td>
+                <td className="p-3">Cookie</td>
+                <td className="p-3"><span className="px-2 py-0.5 rounded bg-purple-100 text-purple-800 text-xs font-semibold">Werbung</span></td>
+                <td className="p-3">13 Monate</td>
+                <td className="p-3">Google AdSense Werbeeinbindung und Anzeigensteuerung (nur nach Ihrer expliziten Zustimmung).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <div className="bg-stone-50 border border-stone-200/90 p-5 rounded-2xl not-prose my-4">
           <p className="text-sm text-stone-700 font-medium mb-3">
             Sie können Ihre gewählten Cookie-Einwilligungen jederzeit mit einem Klick einsehen, anpassen oder widerrufen:
@@ -51,6 +98,7 @@ export default function PrivacyPage() {
           <ResetCookieConsentButton />
         </div>
       </section>
+
 
       <section className="mb-8">
         <h2 className="text-xl font-bold text-stone-900 mb-3">4. Kontaktformular &amp; E-Mail-Übermittlung (Resend)</h2>
