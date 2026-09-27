@@ -588,14 +588,14 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                   </div>
                 )}
                 <div className="pt-3 mt-3 border-t border-gray-100">
-                  <span className="text-xs text-gray-500 block mb-1">Offizielle Quelle</span>
                   <a
                     href={externalUrl}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
-                    className="text-xs text-[#3F5E39] font-medium hover:underline flex items-center gap-1 truncate"
+                    className="text-xs text-[#3F5E39] font-semibold hover:underline flex items-center gap-1.5 truncate"
                   >
-                    {offer.brand?.website_url ? offer.brand.website_url.replace(/^https?:\/\//, "") : "Offizielle Anbieter-Website"} <ExternalLink className="w-3 h-3 shrink-0" />
+                    <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                    Quelle: Offizielle Website des Anbieters ({offer.brand?.website_url ? offer.brand.website_url.replace(/^https?:\/\//, "").replace(/\/.*$/, "") : offer.brand?.name ?? "Anbieter"})
                   </a>
                 </div>
               </div>
