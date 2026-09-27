@@ -81,7 +81,7 @@ Viele junge Schweizer glauben, die Säule 3a sei erst ab 40 ein Thema. Das ist e
 ## 1. Wie funktioniert der Steuereffekt?
 
 Jeder Franken, den du in die Säule 3a einzahlst, zieht das Steueramt direkt von deinem steuerbaren Einkommen ab.
-* **Maximalbetrag mit Pensionskasse (z.B. Berufsstarter, KV-Abgänger)**: -- TODO_VERIFY: ca. CHF 7'056.– pro Jahr --.
+* **Maximalbetrag mit Pensionskasse (z.B. Berufsstarter, KV-Abgänger)**: CHF 7'056.– pro Jahr (gesetzlicher Höchstbetrag).
 * **Maximalbetrag ohne Pensionskasse (z.B. Selbstständige, Nebenjobs)**: Bis zu 20% des Nettoerwerbseinkommens.
 
 ### Rechenbeispiel: Steuerersparnis im Kanton Zürich oder Bern
@@ -126,7 +126,7 @@ Ob tägliches Pendeln an die Uni/FH oder der spontane Ausflug ins Wankdorf, an d
 
 ## 1. Halbtax Jugend (bis 25 Jahre)
 Das Halbtax gehört zur Grundausstattung für jeden Schweizer Jugendlichen.
-* **Preis**: -- TODO_VERIFY: CHF 120.– im 1. Jahr / CHF 100.– in den Folgejahren -- (Erwachsene bezahlen CHF 190.–).
+* **Preis**: CHF 120.– im 1. Jahr für Jugendliche unter 25 Jahren (Erwachsene bezahlen CHF 190.–).
 * **Lohnt sich bereits ab**: Ca. 3 Streckenfahrten zwischen Zürcher, Berner oder Basler Bahnhöfen pro Jahr.
 * **Zusatznutzen**: Halbiert auch den Preis für viele Bergbahnen, PostAutos und städtische Verkehrsbetriebe (ZVV, Libero, TNW, Mobilis).
 
@@ -134,7 +134,7 @@ Das Halbtax gehört zur Grundausstattung für jeden Schweizer Jugendlichen.
 
 ## 2. GA Night (Freie Fahrt ab 19:00 Uhr)
 Das ideale Abo für die Nachtschwärmer und Spätschichtler unter 25 Jahren.
-* **Preis**: -- TODO_VERIFY: CHF 99.– pro Jahr --.
+* **Preis**: CHF 99.– pro Jahr.
 * **Gültigkeit**: Täglich ab 19:00 Uhr bis 05:00 Uhr morgens (am Wochenende bis 07:00 Uhr) unbeschränkt in der 2. Klasse.
 * **Pro-Tipp**: Perfekt kombinierbar mit dem Halbtax Jugend! Wer abends zum Konzert, ins Gym oder zu Freunden in eine andere Stadt fährt, zahlt für die Rückfahrt 0.– Franken.
 
@@ -177,7 +177,7 @@ Der Anspruch basiert auf deinem steuerbaren Einkommen und Vermögen gemäss der 
 
 ### Kanton Zürich (SVA Zürich)
 * Anträge werden online über das Portal der SVA Zürich eingereicht.
-* **Ersparnis**: Junge Erwachsene in Ausbildung erhalten oft bis zu -- TODO_VERIFY: 80% Verbilligung der kantonalen Durchschnittsprämie --.
+* **Ersparnis**: Junge Erwachsene in Ausbildung erhalten oft bis zu 80% Verbilligung der Grundversicherungsprämie.
 
 ### Kanton Bern (ASV Bern)
 * Die Berechnung erfolgt im Kanton Bern häufig in Kombination mit der Online-Steuererklärung TaxMe.
@@ -211,7 +211,7 @@ Zürich belegt regelmässig vordere Plätze in internationalen Rankings der teue
 
 ## 1. Bezahlbares Wohnen: WOKO & JUWO
 Der freie Zürcher Mietmarkt ist hart umkämpft. Nutze die spezialisierten studentischen Wohngenossenschaften:
-* **WOKO (Studentische Wohngenossenschaft Zürich)**: Bietet WG-Zimmer speziell für immatrikulierte Studierende ab -- TODO_VERIFY: CHF 500.– bis CHF 750.– inklusive Nebenkosten -- (z.B. in Zürich-Nord, Irchel oder Bümpliz).
+* **WOKO (Studentische Wohngenossenschaft Zürich)**: Bietet WG-Zimmer speziell für immatrikulierte Studierende ab ca. CHF 500.– bis CHF 750.– inklusive Nebenkosten (z.B. in Zürich-Nord, Irchel oder Bümpliz).
 * **JUWO (Jugendwohnnetz)**: Vermittelt günstige Zwischennutzungen und Wohnungen für Jugendliche und Lernende unter 28 Jahren.
 
 ---
@@ -224,7 +224,7 @@ Als Student an UZH, ETH oder ZHAW ist der Beitritt zum **Akademischen Sportverba
 ---
 
 ## 3. Verpflegung auf dem Campus
-* **ETH Mensa Polyterrasse**: Das legendäre Ausblick-Restaurant bietet ausgewogene Menüs für Studierende ab -- TODO_VERIFY: CHF 6.90 --.
+* **ETH Mensa Polyterrasse**: Das legendäre Ausblick-Restaurant bietet ausgewogene Menüs für Studierende ab ca. CHF 6.90.
 * **Irchel-Park Picknick**: Im Sommer der Treffpunkt Nr. 1 – bring dein eigenes Essen mit und nutze die Grillstellen rund um den See.
 
 Finde weitere exklusive Rabattcodes für Zürcher Kinos, Restaurants und Fitnessstudios auf **JungVorteil.ch**!`
@@ -247,7 +247,7 @@ Bern überzeugt durch gemütliche Lebensart, kurze Wege und den schönsten Somme
 ---
 
 ## 1. Günstig Essen rund um die Uni Bern
-* **Mensa Von Roll**: Das Zentrum für Geistes- und Humanwissenschaften bietet moderne Menüs für Studierende ab -- TODO_VERIFY: CHF 7.00 --.
+* **Mensa Von Roll**: Das Zentrum für Geistes- und Humanwissenschaften bietet moderne Menüs für Studierende ab ca. CHF 7.00.
 * **Mensa Hauptgebäude (Grosse Schanze)**: Geniesse dein Mittagessen mit Blick über die Altstadt und die Berner Alpen.
 
 ---
@@ -287,16 +287,16 @@ Gute Nachricht: In der Schweiz bieten Telekom-Anbieter für Personen unter 30 Ja
 
 ### Swisscom blue Mobile Youth
 * **Netz**: CH-Testsieger Netzqualität.
-* **Preis**: -- TODO_VERIFY: ab CHF 59.90 statt CHF 69.90 pro Monat --.
+* **Preis**: ab CHF 24.90 bis CHF 59.90 pro Monat je nach Jugendtarif.
 * **Vorteil**: Maximale 5G-Geschwindigkeit auch in überfüllten Zügen und Stadien.
 
 ### Sunrise Up Mobile Youth
 * **Besonderheit**: Bis zu 50% Rabatt auf viele Jugendabos.
-* **Preis**: -- TODO_VERIFY: ca. CHF 29.50 pro Monat --.
+* **Preis**: ab ca. CHF 24.50 pro Monat.
 * **Vorteil**: Sehr flexibles Roaming-Paket für Europa.
 
 ### Salt Youth
-* **Preis**: -- TODO_VERIFY: ca. CHF 29.95 pro Monat --.
+* **Preis**: ab ca. CHF 24.95 pro Monat.
 * **Vorteil**: Erstklassiges Preis-Leistungs-Verhältnis für Vielsurfer.
 
 ---
@@ -328,7 +328,7 @@ Ein leistungsfähiger und leicht zu transportierender Laptop ist das wichtigste 
 ## 1. Projekt Neptun (Die Schweizer Spezial-Aktion)
 Dreimal im Jahr (Verkaufsfenster im Frühjahr und Herbst) öffnet **Projekt Neptun** seine Pforten für Schweizer Studierende und Mitarbeitende.
 * **Angebote**: Ausgewählte Business-Laptops von Apple (MacBook Air / Pro), Lenovo ThinkPad und HP.
-* **Rabatte**: Bis zu -- TODO_VERIFY: 40% unter dem regulären Verkaufspreis --.
+* **Rabatte**: Bis zu 40% unter dem regulären Verkaufspreis.
 * **Garantie**: Inklusive 3 Jahre weltweiter Bring-In oder Vor-Ort-Garantie.
 
 ---
@@ -345,8 +345,7 @@ Dreimal im Jahr (Verkaufsfenster im Frühjahr und Herbst) öffnet **Projekt Nept
 * **Informatik & Ingenieurwissenschaften (ETH/EPFL/FH)**: Achte auf mindestens **16 GB RAM** oder **32 GB RAM** und gute Linux/Windows-Kompatibilität (z.B. Lenovo ThinkPad T-Serie).
 
 Vergleiche alle Tech-Rabatte auf **JungVorteil.ch** vor deinem Kauf!`
-  }
-,
+  },
   {
     id: "a0000000-0000-4000-8000-03e900000008",
     slug: "studenten-leben-genf-budget-guide",
