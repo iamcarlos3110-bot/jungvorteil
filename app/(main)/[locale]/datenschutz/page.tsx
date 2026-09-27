@@ -2,7 +2,7 @@ import ResetCookieConsentButton from '@/components/ui/ResetCookieConsentButton';
 
 export const metadata = {
   title: 'Datenschutzerklärung | JungVorteil Schweiz',
-  description: 'Datenschutzerklärung von JungVorteil gemäss dem Schweizer Datenschutzgesetz (nDSG) und der DSGVO. Erfahren Sie mehr über Cookies, Google AdSense und Ihre Rechte.'
+  description: 'Datenschutzerklärung von JungVorteil gemäss dem Schweizer Datenschutzgesetz (nDSG) und der DSGVO. Erfahren Sie mehr über Next.js, Vercel, Supabase, LocalStorage, Cookies, Google AdSense und Ihre Rechte.'
 };
 
 export default function PrivacyPage() {
@@ -26,23 +26,23 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-bold text-stone-900 mb-3">2. Technische Infrastruktur &amp; Datenverarbeitung</h2>
         <h3 className="text-lg font-semibold text-stone-800 mb-2">Hosting &amp; Content Delivery (Next.js &amp; Vercel)</h3>
         <p className="leading-relaxed mb-4">
-          Unsere Website basiert auf dem Framework Next.js und wird auf der Serverless-Infrastruktur von Vercel Inc. (USA/EU) gehostet. Beim Aufruf unserer Seiten werden automatisch technische Daten (IP-Adresse, Browsertyp, Betriebssystem, Referrer URL, Zeitstempel) in verschlüsselten Server-Log-Dateien (SSL/TLS) zur Gewährleistung von Stabilität, Performance und DDoS-Schutz verarbeitet.
+          Unsere Website basiert auf dem modernen Web-Framework <strong>Next.js (React)</strong> und wird auf der Serverless-Cloud-Infrastruktur von <strong>Vercel Inc. (USA/EU)</strong> gehostet. Beim Aufruf unserer Seiten werden automatisch technische Daten (IP-Adresse, Browsertyp, Betriebssystem, Referrer URL, Zeitstempel) in verschlüsselten Server-Log-Dateien (SSL/TLS) zur Gewährleistung von Stabilität, Performance, Serverless Routing und DDoS-Schutz verarbeitet.
         </p>
         <h3 className="text-lg font-semibold text-stone-800 mb-2">Datenbank &amp; Backend (Supabase)</h3>
         <p className="leading-relaxed">
-          Zur Bereitstellung unseres Vorteilskatalogs und Magazins nutzen wir Datenbankdienste von Supabase Inc. (PostgreSQL). Hierbei werden ausschließlich strukturierte Angebotsdaten und anonyme Seitenaufrufe verarbeitet.
+          Zur Bereitstellung unseres Vorteilskatalogs, der Filterfunktionen, der Magazinbeiträge und des Anfragen-Handlings nutzen wir PostgreSQL-Datenbankdienste von <strong>Supabase Inc.</strong>. Hierbei werden strukturierte Angebotsdaten, anonyme Klick-Zähler sowie technische Ratenbegrenzungseinträge (Rate Limiting zum Schutz vor automatisierter Überlastung) verarbeitet.
         </p>
       </section>
 
       <section className="mb-8">
         <h2 className="text-xl font-bold text-stone-900 mb-3">3. Speichertechnologien (Cookies, LocalStorage &amp; SessionStorage)</h2>
         <p className="leading-relaxed mb-4">
-          Neben Standard-Cookies nutzt unsere Website moderne Web-Storage-Technologien Ihres Browsers:
+          Neben funktionellen Cookies nutzt unsere Website moderne Web-Storage-Technologien Ihres Browsers:
         </p>
         <ul className="list-disc ml-5 space-y-2 mb-4">
-          <li><strong>Cookies:</strong> Speicherung Ihrer gewählten Cookie-Einstellungen und Session-Status.</li>
-          <li><strong>LocalStorage:</strong> Speicherung Ihrer gemerkten Favoriten-Angebote direkt auf Ihrem Endgerät (ohne Übertragung an Server).</li>
-          <li><strong>SessionStorage:</strong> Vorübergehende Begrenzung von Formular-Absendungen (Spam-Schutz im Kontaktformular).</li>
+          <li><strong>Cookies:</strong> Speicherung Ihrer gewählten Datenschutz- und Cookie-Einwilligungen (z.B. <code className="bg-stone-100 px-1 py-0.5 rounded text-sm text-stone-800">cookie_consent</code>).</li>
+          <li><strong>LocalStorage:</strong> Speicherung Ihrer persönlichen Merkliste und Favoriten-Angebote (<code className="bg-stone-100 px-1 py-0.5 rounded text-sm text-stone-800">jungvorteil_favorites</code>) ausschließlich und direkt auf Ihrem eigenen Endgerät (ohne Serverübertragung).</li>
+          <li><strong>SessionStorage:</strong> Vorübergehende Begrenzung von Formular-Absendungen (<code className="bg-stone-100 px-1 py-0.5 rounded text-sm text-stone-800">contact_form_submitted</code>) zum Schutz vor Mehrfachabsendungen und Spam.</li>
         </ul>
         <div className="bg-stone-50 border border-stone-200/90 p-5 rounded-2xl not-prose my-4">
           <p className="text-sm text-stone-700 font-medium mb-3">
@@ -53,19 +53,26 @@ export default function PrivacyPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">4. Anonymes Klick-Tracking &amp; Analyse-Services</h2>
-        <h3 className="text-lg font-semibold text-stone-800 mb-2">Internes Klick-Tracking (/api/click)</h3>
-        <p className="leading-relaxed mb-4">
-          Wenn Sie auf ein Angebot klicken, um zum jeweiligen Schweizer Anbieter zu gelangen, wird ein anonymer Klick-Zähler zur aggregierten statistischen Auswertung der Angebots-Beliebtheit aufgerufen. Hierbei werden lediglich die Angebots-ID, die Gerätekategorie (Mobil/Desktop) und allfällige UTM-Parameter ausgewertet. Es werden keine personenbezogenen Nutzerprofile erstellt.
-        </p>
-        <h3 className="text-lg font-semibold text-stone-800 mb-2">Google Analytics</h3>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">4. Kontaktformular &amp; E-Mail-Übermittlung (Resend)</h2>
         <p className="leading-relaxed">
-          Sofern Sie über unser Cookie-Banner zugestimmt haben, nutzen wir Google Analytics, einen Webanalysedienst der Google Ireland Limited (&quot;Google&quot;). Die Datenverarbeitung erfolgt anonymisiert zur Optimierung unseres Webangebots. Sie können diese Zustimmung jederzeit in den Cookie-Einstellungen widerrufen.
+          Wenn Sie uns über unser Kontaktformular oder per E-Mail anschreiben, werden Ihre Angaben (Name, E-Mail-Adresse, Nachrichtentext sowie Ihre IP-Adresse zur Missbrauchs- und Spamprävention) zur Bearbeitung der Anfrage verarbeitet. Zur sicheren und zuverlässigen Auslieferung transaktionaler E-Mails nutzen wir den Dienst <strong>Resend Inc.</strong>. Die Daten werden vertraulich behandelt und nicht an unbefugte Dritte weitergegeben.
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">5. Google AdSense &amp; Werbung von Drittanbietern</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">5. Anonymes Klick-Tracking &amp; Analyse-Services</h2>
+        <h3 className="text-lg font-semibold text-stone-800 mb-2">Internes Klick-Tracking (<code className="bg-stone-100 px-1.5 py-0.5 rounded text-sm text-stone-800 font-mono">/api/click</code>)</h3>
+        <p className="leading-relaxed mb-4">
+          Wenn Sie auf ein Angebot klicken, um zum jeweiligen Schweizer Partner/Anbieter zu gelangen, wird über unsere Schnittstelle <code className="bg-stone-100 px-1.5 py-0.5 rounded text-sm text-stone-800 font-mono">/api/click</code> ein anonymer Klick-Zähler zur aggregierten statistischen Auswertung der Angebots-Beliebtheit aufgerufen. Hierbei werden lediglich die Angebots-ID, die Gerätekategorie (z.B. Desktop/Mobil) und allfällige Kampagnen-Parameter (UTM) erfasst. Es werden keine personenbezogenen Nutzerprofile erstellt.
+        </p>
+        <h3 className="text-lg font-semibold text-stone-800 mb-2">Google Analytics</h3>
+        <p className="leading-relaxed">
+          Sofern Sie über unser Cookie-Banner zugestimmt haben, nutzen wir Google Analytics, einen Webanalysedienst der Google Ireland Limited (&quot;Google&quot;). Die Datenverarbeitung erfolgt anonymisiert (mit aktivierter IP-Anonymisierung) zur Optimierung unseres Webangebots. Sie können diese Zustimmung jederzeit in den Cookie-Einstellungen widerrufen.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-bold text-stone-900 mb-3">6. Google AdSense &amp; Werbung von Drittanbietern</h2>
         <p className="leading-relaxed mb-4">
           Nach Ihrer expliziten Zustimmung für die Cookie-Kategorie &quot;Werbung&quot; setzt diese Website Google AdSense ein, einen Dienst zur Einbindung von Werbeanzeigen der Google Ireland Limited (&quot;Google&quot;).
         </p>
@@ -82,7 +89,7 @@ export default function PrivacyPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">6. Ihre Rechte als betroffene Person</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">7. Ihre Rechte als betroffene Person</h2>
         <p className="leading-relaxed">
           Sie haben nach Schweizer Datenschutzrecht (nDSG) sowie der DSGVO das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Wenden Sie sich hierzu jederzeit an <a href="mailto:kontakt@jungvorteil.ch" className="text-[#2E4D28] underline font-semibold">kontakt@jungvorteil.ch</a>.
         </p>
@@ -90,6 +97,7 @@ export default function PrivacyPage() {
     </div>
   );
 }
+
 
 
 
