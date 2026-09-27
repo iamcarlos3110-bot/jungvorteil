@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay, getDeviceCategory } from "@/lib/utils";
+import { cn, formatDate, isExpired, isExpiringSoon, getSavingDisplay, getDeviceCategory, formatCHF } from "@/lib/utils";
 import { Offer } from "@/types";
 import { toggleFavorite } from "@/lib/favorites";
 import { Heart, ExternalLink, Check, Clock, Tag, Zap } from "lucide-react";
@@ -200,7 +200,7 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
         </div>
 
         {saving && (
-          <div className="inline-flex items-center gap-1.5 mb-2 self-start">
+          <div className="inline-flex items-center gap-1.5 mb-2 self-start flex-wrap">
             <div className={cn(
               "flex items-center gap-1 px-3 py-1 rounded-full text-sm font-black",
               "bg-gradient-to-r from-green-500 to-emerald-600 text-white",
@@ -209,6 +209,21 @@ export default function OfferCard({ offer, locale = "de" }: OfferCardProps) {
               <Zap className="w-3.5 h-3.5" />
               {saving}
             </div>
+          </div>
+        )}
+
+        {(offer.young_price || offer.normal_price) && (
+          <div className="flex items-center gap-2 mb-2 text-xs">
+            {offer.normal_price && (
+              <span className="text-stone-400 line-through font-medium">
+                {formatCHF(offer.normal_price)}
+              </span>
+            )}
+            {offer.young_price && (
+              <span className="font-extrabold text-stone-900 bg-stone-100 border border-stone-200/80 px-2 py-0.5 rounded-md">
+                Jugendpreis: {formatCHF(offer.young_price)}
+              </span>
+            )}
           </div>
         )}
 
