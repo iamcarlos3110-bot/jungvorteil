@@ -24,6 +24,7 @@ export default function CookieBanner() {
     localStorage.setItem('jv_analytics_consent', 'true');
     localStorage.setItem('jv_advertising_consent', 'true');
     window.dispatchEvent(new Event('storage'));
+    window.dispatchEvent(new Event('jv_consent_updated'));
     setShowBanner(false);
   };
 
@@ -32,6 +33,7 @@ export default function CookieBanner() {
     localStorage.setItem('jv_analytics_consent', 'false');
     localStorage.setItem('jv_advertising_consent', 'false');
     window.dispatchEvent(new Event('storage'));
+    window.dispatchEvent(new Event('jv_consent_updated'));
     setShowBanner(false);
   };
 
@@ -40,9 +42,11 @@ export default function CookieBanner() {
     localStorage.setItem('jv_analytics_consent', settings.analytics.toString());
     localStorage.setItem('jv_advertising_consent', settings.advertising.toString());
     window.dispatchEvent(new Event('storage'));
+    window.dispatchEvent(new Event('jv_consent_updated'));
     setShowBanner(false);
     setShowSettings(false);
   };
+
 
   if (!showBanner) return null;
 
