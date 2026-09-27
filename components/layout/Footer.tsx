@@ -45,6 +45,7 @@ export default function Footer({ locale }: FooterProps) {
             <Link href={`/${locale}/staedte`} className="text-gray-400 hover:text-white text-sm transition-colors">Städte</Link>
             <Link href={`/${locale}/kategorien`} className="text-gray-400 hover:text-white text-sm transition-colors">Kategorien</Link>
             <Link href={`/${locale}/marken`} className="text-gray-400 hover:text-white text-sm transition-colors">Unternehmen</Link>
+            <Link href={`/${locale}/unternehmen`} className="text-gray-400 hover:text-white text-sm transition-colors">Für Unternehmen</Link>
           </div>
 
           <div className="flex flex-col gap-3">

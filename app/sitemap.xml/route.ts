@@ -34,6 +34,7 @@ export async function GET() {
     { path: "/staedte", priority: 0.8, changeFreq: "weekly" },
     { path: "/magazin", priority: 0.85, changeFreq: "daily" },
     { path: "/ueber-uns", priority: 0.7, changeFreq: "weekly" },
+    { path: "/unternehmen", priority: 0.7, changeFreq: "weekly" },
     { path: "/kontakt", priority: 0.3, changeFreq: "monthly" },
     { path: "/datenschutz", priority: 0.2, changeFreq: "monthly" },
     { path: "/impressum", priority: 0.2, changeFreq: "monthly" },
