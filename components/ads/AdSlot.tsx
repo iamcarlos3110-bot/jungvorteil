@@ -15,7 +15,7 @@ interface AdSlotProps {
 
 export default function AdSlot({
   slot,
-  network = "adsterra",
+  network = "adsense",
   adsenseSlotId,
   className,
   label = true,
