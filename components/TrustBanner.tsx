@@ -19,8 +19,8 @@ export default function TrustBanner() {
             <MapPin className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-bold text-gray-900 text-base">Schweizweite Rabatte</h3>
-            <p className="text-xs text-gray-500 mt-0.5">Nationale Partner und regionale Angebote in allen Kantonen.</p>
+            <h3 className="font-bold text-gray-900 text-base">Schweizweit verfügbar</h3>
+            <p className="text-xs text-gray-500 mt-0.5">Nationale Partner und regionale Angebote in der Schweiz.</p>
           </div>
         </div>
 

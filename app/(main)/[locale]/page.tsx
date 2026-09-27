@@ -374,7 +374,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h2 className="text-3xl font-black text-stone-900" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
                   Beliebteste Vorteile
                 </h2>
-                <p className="text-stone-500 mt-1">Die meistgenutzten Angebote — regelmässig verifiziert</p>
+                <p className="text-stone-500 mt-1">Ausgewählte Vorteile — regelmässig verifiziert</p>
               </div>
               <Link href={`/${locale}/angebote`} className="hidden md:flex items-center gap-1.5 text-[#2E4D28] font-bold hover:gap-3 transition-all duration-200 text-sm">
                 Alle ansehen <ArrowRight className="w-4 h-4" />
