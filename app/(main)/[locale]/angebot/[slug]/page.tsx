@@ -499,8 +499,30 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                   {offer.conditions_de || "Gültig für Neukunden und bestehende Nutzer gemäss den Aktionsbestimmungen des Anbieters."}
                 </p>
                 <p className="text-xs text-gray-400 mt-4 pt-3 border-t border-gray-200/80">
-                  ℹ️ Transparency & Prüfzyklus: Alle Angebote auf JungVorteil.ch werden regelmässig (mindestens monatlich sowie bei bekannten Tarifanpassungen) von unserer Redaktion manuell verifiziert (Zuletzt geprüft: {offer.checked_at ? formatDate(offer.checked_at) : "Kürzlich"}). Preise und Bedingungen können sich beim Anbieter ändern. Alle Angaben ohne Gewähr.
+                  ℹ️ Transparency & Prüfzyklus: Alle Angebote auf JungVorteil.ch werden regelmässig (mindestens monatlich sowie bei bekannten Tarifanpassungen) von unserer Redaktion manuell verifiziert. Preise und Bedingungen können sich beim Anbieter ändern. Alle Angaben ohne Gewähr.
                 </p>
+              </div>
+
+              {/* Clearly visible section: Verifizierung & Prüfungsdatum (Fecha de verificación) */}
+              <div className="bg-white rounded-2xl border border-emerald-200/90 shadow-sm p-6 relative overflow-hidden">
+                <div className="flex items-center gap-2 mb-3 text-[#3F5E39]">
+                  <CheckCircle className="w-5 h-5" />
+                  <h2 className="text-lg font-bold text-gray-900">Redaktionelles Verifizierungsdatum</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mt-2">
+                  <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-xl">
+                    <span className="text-xs text-[#3F5E39] uppercase font-bold block mb-1">Status & Datum</span>
+                    <span className="text-base font-bold text-emerald-800 block">
+                      Zuletzt geprüft: {offer.checked_at ? formatDate(offer.checked_at) : "Kürzlich verifiziert"}
+                    </span>
+                  </div>
+                  <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-xl">
+                    <span className="text-xs text-[#3F5E39] uppercase font-bold block mb-1">Prüfmethode</span>
+                    <span className="text-base font-bold text-gray-900 block">
+                      Manuelle Überprüfung durch JungVorteil Redaktion
+                    </span>
+                  </div>
+                </div>
               </div>
 
               {/* 6. FAQ Section */}
