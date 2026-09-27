@@ -275,10 +275,10 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
             </div>
             <div className="space-y-2 flex-1">
               <h3 className="text-xl font-bold text-stone-900 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-[#3F5E39]" /> Relevanz & Selektion
+                <FileText className="w-5 h-5 text-[#3F5E39]" /> Relevanz &amp; Echter Mehrwert (Keine reinen Traffic-Texte)
               </h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                Nicht jede Promotion ist ein echter Vorteil. Wir selektieren Angebote streng nach Relevanz für den Schweizer Alltag (ÖV-Abos, Mobilfunk, Neobanken, Wohnen, Hardware, Kultur und Bildung). Angebote ohne spürbare Ersparnis werden nicht gelistet.
+                Unsere Magazinartikel und Ratgeber existieren nicht für die reine Suchmaschinen-Optimierung oder Klick-Generierung. Jeder Beitrag bietet praxiserprobte Insider-Informationen, verifizierte CHF-Preise, behördliche Anleitungen (z.B. IPV Prämienverbilligung) und echten, spürbaren Mehrwert für den Schweizer Alltag von Jugendlichen und Studierenden.
               </p>
             </div>
           </div>
