@@ -453,6 +453,42 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                 </div>
               </div>
 
+              {/* Wie du das Angebot nutzt & einlöst (Cómo utilizarla) */}
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
+                  <ExternalLink className="w-5 h-5" />
+                  <h2 className="text-lg font-bold text-gray-900">Einlösung & Nutzung des Vorteils</h2>
+                </div>
+                <div className="space-y-3 text-sm text-gray-700">
+                  <div className="flex items-start gap-3 bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <span className="font-bold text-[#3F5E39] shrink-0 min-w-[110px]">Einlöse-Weg:</span>
+                    <span>
+                      {offer.is_online
+                        ? "Online über die offizielle Website oder App des Anbieters."
+                        : offer.city
+                        ? `Vor Ort in den Filialen / Standorten in ${offer.city.name_de}.`
+                        : "Online oder vor Ort am Schalter / an der Kasse."}
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-3 bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <span className="font-bold text-[#3F5E39] shrink-0 min-w-[110px]">Verifizierung:</span>
+                    <span>
+                      {offer.student_required
+                        ? "Gültigen Studenten-/Schülerausweis (Legi, ISIC, Switch edu-ID) vorweisen oder im Checkout hochladen."
+                        : offer.age_max
+                        ? `Offiziellen Ausweis (ID, Pass, Swisspass) bereit halten, um das Alter unter ${offer.age_max} Jahren nachzuweisen.`
+                        : "Kein separater Ausweis erforderlich – der Rabatt ist direkt für die Zielgruppe anwendbar."}
+                    </span>
+                  </div>
+                  {offer.discount_code && (
+                    <div className="flex items-start gap-3 bg-[#EAF0E5] p-3.5 rounded-xl border border-[#D6E2CE]">
+                      <span className="font-bold text-[#253D22] shrink-0 min-w-[110px]">Gutscheincode:</span>
+                      <span className="font-mono font-bold text-[#253D22]">{offer.discount_code}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
               {/* 5. Condiciones importantes */}
               <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
                 <div className="flex items-center gap-2 mb-3 text-gray-800">
