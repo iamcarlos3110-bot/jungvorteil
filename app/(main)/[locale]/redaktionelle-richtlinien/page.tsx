@@ -221,6 +221,49 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </div>
         </div>
 
+        {/* Dedicated Section: Umgang mit abgelaufenen Angeboten (Qué ocurre cuando una oferta deja de estar disponible) */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-red-700 text-xs font-bold uppercase tracking-wide border border-red-200">
+            Lifecycle & Transparenz
+          </div>
+          <h2 className="text-2xl font-bold text-stone-900">Was passiert, wenn ein Angebot nicht mehr verfügbar ist?</h2>
+          <p className="text-stone-700 leading-relaxed text-sm">
+            Sobald eine Aktion ihr Ablaufdatum erreicht oder ein Anbieter ein Jugendangebot vorzeitig beendet, greift bei JungVorteil ein dreistufiger Prozess:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm pt-2">
+            <div className="bg-gray-50 border border-gray-200 p-5 rounded-2xl space-y-2">
+              <h3 className="font-bold text-gray-900 text-sm flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs">1</span>
+                Sofortige Kennzeichnung & Deaktivierung
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Der Einlöse-Button wird deaktiviert (&quot;Abgelaufen&quot;) und die Seite erhält den Hinweis &quot;Angebot möglicherweise abgelaufen&quot;. Im Schema.org-Markup wird der Status auf <code className="bg-gray-200 px-1 py-0.5 rounded text-[10px]">Discontinued</code> gesetzt.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 border border-gray-200 p-5 rounded-2xl space-y-2">
+              <h3 className="font-bold text-gray-900 text-sm flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs">2</span>
+                Entfernung aus Übersichten & Sitemap
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Abgelaufene Angebote werden automatisch aus den Hauptlisten (Homepage, Kategorien, Städte) ausgeblendet, damit Nutzer nur aktive Vorteile finden.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 border border-gray-200 p-5 rounded-2xl space-y-2">
+              <h3 className="font-bold text-gray-900 text-sm flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs">3</span>
+                Anzeige aktiver Alternativen
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Besucht ein Nutzer eine alte Angebots-URL, werden ihm direkt darunter gleichwertige, aktive Alternativen desselben Anbieters oder derselben Kategorie vorgeschlagen.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* 5 Core Pillars */}
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-stone-900 px-2">Die 5 Säulen unserer Methodik</h2>

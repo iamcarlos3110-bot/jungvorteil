@@ -116,9 +116,9 @@ export default async function CategoriesPage({ params }: { params: Promise<{ loc
               <div className="w-12 h-12 mx-auto rounded-full bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center mb-4 font-bold">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">100% Verifizierte Deals</h3>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Redaktionell verifiziert</h3>
               <p className="text-sm text-gray-600">
-                Jedes Angebot wird von unserem Team geprüft, damit Rabattcodes garantiert funktionieren.
+                Jedes Angebot wird manuell von unserem Team auf Gültigkeit und faire Konditionen geprüft.
               </p>
             </div>
 

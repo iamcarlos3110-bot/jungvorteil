@@ -9,8 +9,8 @@ export default function TrustBanner() {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-bold text-gray-900 text-base">100% Geprüft</h3>
-            <p className="text-xs text-gray-500 mt-0.5">Alle Angebote sind manuell auf Verifizierbarkeit geprüft.</p>
+            <h3 className="font-bold text-gray-900 text-base">Redaktionell geprüft</h3>
+            <p className="text-xs text-gray-500 mt-0.5">Manuelle Qualitäts- und Faktenprüfung aller gelisteten Angebote.</p>
           </div>
         </div>
 

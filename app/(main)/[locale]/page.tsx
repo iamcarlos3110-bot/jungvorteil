@@ -251,7 +251,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="mt-14 grid grid-cols-3 gap-4 max-w-xl mx-auto">
             {[
               { value: "500+", label: "Angebote" },
-              { value: "100%", label: "Geprüft" },
+              { value: "Manuell", label: "Geprüft" },
               { value: "Gratis", label: "Nutzung" },
             ].map(stat => (
               <div key={stat.label} className="text-center">
