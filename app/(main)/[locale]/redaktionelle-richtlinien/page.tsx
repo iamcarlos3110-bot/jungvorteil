@@ -55,6 +55,22 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </p>
         </div>
 
+        {/* Original Content Standard Box */}
+        <div className="bg-[#F8FAF7] rounded-3xl border border-[#E2EBDD] p-8 sm:p-10 shadow-sm space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#3F5E39] text-xs font-bold uppercase tracking-wide">
+            Originalität &amp; Eigenrecherche
+          </div>
+          <h2 className="text-2xl font-bold text-stone-900">Informationen aus erster Hand &amp; 100% Original-Inhalte</h2>
+          <p className="text-stone-700 leading-relaxed text-sm">
+            Alle Ratgeber, Vergleiche und Spartipps auf JungVorteil basieren auf <strong>eigenständiger Redaktionsarbeit und primärer Quellenevaluierung</strong>. Wir übernehmen keine vorgefertigten Pressetexte, nutzen keine automatisiert generierten Inhalte und kopieren keine fremden Artikel.
+          </p>
+          <ul className="list-disc list-inside text-xs text-stone-600 space-y-1.5 font-medium pt-1">
+            <li>Manuelle Auswertung der offiziellen Tarifblätter und AGB der Schweizer Anbieter.</li>
+            <li>Eigene Test-Käufe und Simulationen der Einlöseprozesse (z.B. bei Neobanken, ÖV-Abos und 3a-Apps).</li>
+            <li>Direkter Abgleich mit kantonalen Behördenstellen (z.B. SVA Zürich, ASV Bern) für Prämienverbilligungen.</li>
+          </ul>
+        </div>
+
         {/* Dedicated Section: Wie Angebote recherchiert & entdeckt werden (Cómo se encuentran las ofertas) */}
         <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-10 shadow-sm space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#3F5E39] text-xs font-bold uppercase tracking-wide">
