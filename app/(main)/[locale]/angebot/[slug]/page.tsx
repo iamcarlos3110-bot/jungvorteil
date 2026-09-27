@@ -551,13 +551,24 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                     <span className={`font-medium ${expired ? "text-red-500" : "text-gray-900"}`}>{formatDate(offer.end_date)}</span>
                   </div>
                 )}
+                <div className="pt-3 mt-3 border-t border-gray-100">
+                  <span className="text-xs text-gray-500 block mb-1">Offizielle Quelle</span>
+                  <a
+                    href={externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-xs text-[#3F5E39] font-medium hover:underline flex items-center gap-1 truncate"
+                  >
+                    {offer.brand?.website_url ? offer.brand.website_url.replace(/^https?:\/\//, "") : "Offizielle Anbieter-Website"} <ExternalLink className="w-3 h-3 shrink-0" />
+                  </a>
+                </div>
               </div>
               <OfferCtaLink
                 offerId={offer.id}
                 url={externalUrl}
                 className="mt-5 flex items-center justify-center gap-2 w-full bg-[#3F5E39] hover:bg-[#324B2D] text-white font-semibold py-3 rounded-xl text-sm transition-colors shadow-sm"
               >
-                Angebot ansehen <ExternalLink className="w-4 h-4" />
+                Angebot aufrufen <ExternalLink className="w-4 h-4" />
               </OfferCtaLink>
             </div>
 
