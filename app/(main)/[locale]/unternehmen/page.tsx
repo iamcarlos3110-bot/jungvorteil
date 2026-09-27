@@ -85,7 +85,7 @@ export default async function UnternehmenPage({ params }: { params: Promise<{ lo
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Schweizer Qualität & Transparenz</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Alle eingereichten Angebote werden redaktionell verifiziert. Wir garantieren transparente Bedingungen ohne irreführende Angaben.
+              Alle eingereichten Angebote werden redaktionell verifiziert. Wir achten auf transparente Bedingungen ohne irreführende Angaben.
             </p>
           </div>
         </div>

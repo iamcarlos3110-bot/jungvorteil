@@ -6,7 +6,7 @@ import Newsletter from "@/components/Newsletter";
 
 export const metadata = {
   title: "Kostenlose Angebote & Gratis-Deals Schweiz | JungVorteil",
-  description: "Finde alle 100% kostenlosen Angebote, Gratisproben und gebührenfreien Konten für junge Leute in der Schweiz.",
+  description: "Finde kostenlose Angebote, Gratisproben und gebührenfreie Konten für junge Leute in der Schweiz.",
 };
 
 export default async function GratisPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -24,7 +24,7 @@ export default async function GratisPage({ params }: { params: Promise<{ locale:
 
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#EAF0E5] text-xs sm:text-sm font-semibold mb-6 shadow-sm">
-            <Gift className="w-4 h-4 text-[#A3E635]" /> 100% Kostenlos
+            <Gift className="w-4 h-4 text-[#A3E635]" /> Kostenlose Vorteile
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
             Gratis-Angebote Schweiz

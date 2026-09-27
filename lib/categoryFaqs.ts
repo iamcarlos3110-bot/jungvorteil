@@ -186,7 +186,7 @@ export const CATEGORY_FAQS: Record<string, FAQItem[]> = {
   ],
   gratis: [
     {
-      question: "Sind die Gratis-Angebote auf JungVorteil wirklich 100% kostenlos?",
+      question: "Sind die Gratis-Angebote auf JungVorteil wirklich kostenlos?",
       answer: "Ja, alle in der Kategorie 'Gratis' gelisteten Deals verlangen keinen Kauf und keine versteckten Gebühren."
     },
     {

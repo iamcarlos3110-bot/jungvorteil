@@ -114,7 +114,7 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </div>
           <h2 className="text-2xl font-bold text-[#253D22]">Was bedeutet der Status &quot;Zuletzt geprüft&quot;?</h2>
           <p className="text-[#253D22] text-sm leading-relaxed">
-            Wenn ein Angebot auf JungVorteil.ch mit der Kennzeichnung <strong className="font-bold underline">Zuletzt geprüft: [Datum]</strong> versehen ist, garantiert dies, dass die Redaktion am angegebenen Tag folgende 4 Kontrollen manuell durchgeführt hat:
+            Wenn ein Angebot auf JungVorteil.ch mit der Kennzeichnung <strong className="font-bold underline">Zuletzt geprüft: [Datum]</strong> versehen ist, bestätigt dies, dass die Redaktion am angegebenen Tag folgende 4 Kontrollen manuell durchgeführt hat:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm pt-2">

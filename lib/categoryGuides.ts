@@ -53,7 +53,7 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     sections: [
       {
         heading: "1. Neobanken: Neon, Yuh & Zak im Vergleich",
-        body: "Schweizer Neobanken bieten 100% kostenlose Girokonten inklusive Gratis-Debitcard, TWINT-Anbindung und fairen Wechselkursen beim Bezahlen im Ausland. Neon Free und Yuh gehören zu den beliebtesten Angeboten."
+        body: "Schweizer Neobanken bieten gebührenfreie Girokonten inklusive Gratis-Debitcard, TWINT-Anbindung und fairen Wechselkursen beim Bezahlen im Ausland. Neon Free und Yuh gehören zu den beliebtesten Angeboten."
       },
       {
         heading: "2. Krankenkassen-Prämienverbilligung (IPV)",
@@ -276,7 +276,7 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     ]
   },
   gratis: {
-    title: "Ratgeber: 100% Kostenlose Angebote in der Schweiz",
+    title: "Ratgeber: Kostenlose Angebote in der Schweiz",
     intro: "Es gibt Dinge im Leben, die tatsächlich keinen Rappen kosten. Wir listen alle echten Gratisproben, gebührenfreien Services und Geschenke.",
     sections: [
       {

@@ -91,7 +91,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <Eye className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">100% Kostenfrei für Nutzer</h3>
+              <h3 className="font-bold text-xl text-gray-900">Kostenfrei für Nutzerinnen &amp; Nutzer</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Die Nutzung von JungVorteil erfordert weder eine Registrierung noch den Kauf von Mitgliedschaften. Alle Vorteile sind sofort zugänglich.
               </p>
