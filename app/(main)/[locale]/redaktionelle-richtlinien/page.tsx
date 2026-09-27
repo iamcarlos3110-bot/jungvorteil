@@ -55,6 +55,58 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </p>
         </div>
 
+        {/* Dedicated Section: Wie Angebote recherchiert & entdeckt werden (Cómo se encuentran las ofertas) */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#3F5E39] text-xs font-bold uppercase tracking-wide">
+            Recherche & Quellenauswahl
+          </div>
+          <h2 className="text-2xl font-bold text-stone-900">Wie Angebote recherchiert & entdeckt werden</h2>
+          <p className="text-stone-700 leading-relaxed text-sm">
+            Um die besten und aktuellsten Rabatte für junge Menschen in der Schweiz bereitzustellen, kombiniert unsere Redaktion vier strukturierte Recherche-Wege:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-2">
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl space-y-2">
+              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[#3F5E39] text-white flex items-center justify-center font-bold text-xs">1</span>
+                Direkte Anbieter-Recherche
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Manuelles Monitoring der offiziellen Aktionsseiten führender Schweizer Unternehmen (z.B. SBB, Apple, Sunrise, Salt, Neon, ZKB).
+              </p>
+            </div>
+
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl space-y-2">
+              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[#3F5E39] text-white flex items-center justify-center font-bold text-xs">2</span>
+                Hochschul- & Bildungsinfos
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Auswertung offizieller Informationen von Schweizer Universitäten, FHs und Studierendenorganisationen (z.B. UZH, ETH, UNIL, EPFL, ZHAW).
+              </p>
+            </div>
+
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl space-y-2">
+              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[#3F5E39] text-white flex items-center justify-center font-bold text-xs">3</span>
+                Community & Nutzer-Tipps
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Überprüfung von Hinweisen, die uns von Studierenden und Lernenden über das Kontaktformular oder per E-Mail gemeldet werden.
+              </p>
+            </div>
+
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl space-y-2">
+              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[#3F5E39] text-white flex items-center justify-center font-bold text-xs">4</span>
+                Redaktionelle Qualitätsprüfung
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Bevor ein Vorteil online geht, prüfen wir, ob es sich um eine echte Vergünstigung mit klaren Konditionen ohne Abo-Fallen handelt.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* 5 Core Pillars */}
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-stone-900 px-2">Die 5 Säulen unserer Methodik</h2>
