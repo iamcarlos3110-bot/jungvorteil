@@ -318,6 +318,48 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                 </div>
               )}
 
+              {/* 2. Was ist im Vorteil enthalten? (Qué incluye) */}
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
+                  <CheckCircle className="w-5 h-5" />
+                  <h2 className="text-lg font-bold text-gray-900">Was ist im Vorteil enthalten?</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div className="flex items-center gap-2.5 bg-emerald-50/70 border border-emerald-100 p-3 rounded-xl">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span className="font-medium text-emerald-950">Exklusiver Jugend- Sonderpreis</span>
+                  </div>
+                  {saving && (
+                    <div className="flex items-center gap-2.5 bg-emerald-50/70 border border-emerald-100 p-3 rounded-xl">
+                      <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span className="font-medium text-emerald-950">Ersparnis: {saving}</span>
+                    </div>
+                  )}
+                  {offer.is_nationwide && (
+                    <div className="flex items-center gap-2.5 bg-emerald-50/70 border border-emerald-100 p-3 rounded-xl">
+                      <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span className="font-medium text-emerald-950">Gültig in der gesamten Schweiz</span>
+                    </div>
+                  )}
+                  {offer.is_online && (
+                    <div className="flex items-center gap-2.5 bg-emerald-50/70 border border-emerald-100 p-3 rounded-xl">
+                      <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span className="font-medium text-emerald-950">Bequem online einlösbar</span>
+                    </div>
+                  )}
+                  {offer.discount_code && (
+                    <div className="flex items-center gap-2.5 bg-emerald-50/70 border border-emerald-100 p-3 rounded-xl">
+                      <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span className="font-medium text-emerald-950">Gutscheincode direkt verfügbar</span>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2.5 bg-emerald-50/70 border border-emerald-100 p-3 rounded-xl">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span className="font-medium text-emerald-950">Manuell geprüfte Aktion von {offer.brand?.name ?? "JungVorteil"}</span>
+                  </div>
+                </div>
+              </div>
+
               {/* 2. Wer kann es nutzen & Requisite (Target Audience) */}
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                 <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
