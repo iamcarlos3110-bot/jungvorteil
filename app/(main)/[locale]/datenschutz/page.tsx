@@ -18,6 +18,9 @@ export default function PrivacyPage() {
         <p className="leading-relaxed">
           <strong>Verantwortlicher für die Datenverarbeitung:</strong><br />
           JungVorteil Schweiz<br />
+          Carlos Piñeiro (Betreiber &amp; Inhaber)<br />
+          Plaza del Peñón 7, 7B izq.<br />
+          28923 Alcorcón, Madrid, Spanien<br />
           E-Mail: <a href="mailto:kontakt@jungvorteil.ch" className="text-[#2E4D28] underline font-semibold">kontakt@jungvorteil.ch</a><br />
         </p>
       </section>
