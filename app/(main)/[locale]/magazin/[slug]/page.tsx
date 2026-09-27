@@ -1,3 +1,4 @@
+import React from "react";
 import { getArticleBySlug, getArticles } from "@/services/articles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -11,6 +12,221 @@ import Script from "next/script";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 export const fetchCache = "force-no-store";
+
+function renderInlineMarkdown(text: string, locale: string): React.ReactNode {
+  if (!text) return null;
+
+  const tokens: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      tokens.push(text.substring(lastIndex, match.index));
+    }
+
+    if (match[1] !== undefined && match[2] !== undefined) {
+      const linkText = match[1];
+      const url = match[2];
+      const isExternal = url.startsWith("http://") || url.startsWith("https://");
+
+      if (isExternal) {
+        tokens.push(
+          <a
+            key={`link-${match.index}`}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="text-[#3F5E39] underline font-semibold hover:text-[#253D22] transition-colors"
+          >
+            {linkText}
+          </a>
+        );
+      } else {
+        tokens.push(
+          <Link
+            key={`link-${match.index}`}
+            href={url}
+            className="text-[#3F5E39] underline font-semibold hover:text-[#253D22] transition-colors"
+          >
+            {linkText}
+          </Link>
+        );
+      }
+    } else if (match[3] !== undefined) {
+      tokens.push(
+        <strong key={`bold-${match.index}`} className="font-semibold text-gray-900">
+          {match[3]}
+        </strong>
+      );
+    }
+
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    tokens.push(text.substring(lastIndex));
+  }
+
+  return tokens.length > 0 ? tokens : text;
+}
+
+function renderArticleContent(content: string | null, locale: string) {
+  if (!content) return <p>Dieser Artikel hat noch keinen Inhalt.</p>;
+
+  const lines = content.split("\n");
+  const blocks: React.ReactNode[] = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const trimmed = lines[i].trim();
+    if (!trimmed) {
+      i++;
+      continue;
+    }
+
+    if (trimmed.startsWith("# ")) {
+      i++;
+      continue; // Heading 1 is in header
+    }
+
+    if (trimmed.startsWith("## ")) {
+      blocks.push(
+        <h2 key={i} className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+          {renderInlineMarkdown(trimmed.replace("## ", ""), locale)}
+        </h2>
+      );
+      i++;
+      continue;
+    }
+
+    if (trimmed.startsWith("### ")) {
+      blocks.push(
+        <h3 key={i} className="text-xl font-bold text-gray-900 mt-6 mb-3">
+          {renderInlineMarkdown(trimmed.replace("### ", ""), locale)}
+        </h3>
+      );
+      i++;
+      continue;
+    }
+
+    if (trimmed.startsWith("> ")) {
+      blocks.push(
+        <blockquote key={i} className="bg-[#F4F8F3] border-l-4 border-[#3F5E39] p-4 rounded-r-2xl text-sm text-stone-800 my-4 shadow-sm font-medium leading-relaxed">
+          {renderInlineMarkdown(trimmed.replace(/^>\s*/, ""), locale)}
+        </blockquote>
+      );
+      i++;
+      continue;
+    }
+
+    if (trimmed.startsWith("---")) {
+      blocks.push(<hr key={i} className="my-8 border-gray-200" />);
+      i++;
+      continue;
+    }
+
+    // Table rendering
+    if (trimmed.startsWith("|")) {
+      const tableRows: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        tableRows.push(lines[i].trim());
+        i++;
+      }
+
+      if (tableRows.length > 0) {
+        const parsedRows = tableRows
+          .filter((r) => !r.includes(":---") && !r.includes("---:"))
+          .map((r) => r.split("|").map((c) => c.trim()).filter((_, idx, arr) => idx > 0 && idx < arr.length - 1));
+
+        if (parsedRows.length > 0) {
+          const header = parsedRows[0];
+          const body = parsedRows.slice(1);
+
+          blocks.push(
+            <div key={`table-${i}`} className="my-6 overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+              <table className="w-full text-left text-sm text-gray-800">
+                <thead className="bg-[#EAF0E5] text-stone-900 font-bold text-xs uppercase tracking-wider">
+                  <tr>
+                    {header.map((col, hIdx) => (
+                      <th key={hIdx} className="px-4 py-3 border-b border-gray-200">
+                        {renderInlineMarkdown(col, locale)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 bg-white">
+                  {body.map((row, rIdx) => (
+                    <tr key={rIdx} className="hover:bg-stone-50/80 transition-colors">
+                      {row.map((cell, cIdx) => (
+                        <td key={cIdx} className="px-4 py-3 font-medium text-gray-700">
+                          {renderInlineMarkdown(cell, locale)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+      continue;
+    }
+
+    if (trimmed.startsWith("* ") || trimmed.startsWith("- ") || /^\d+\.\s/.test(trimmed)) {
+      const listItems: { text: string; num?: string }[] = [];
+      while (i < lines.length) {
+        const lTrim = lines[i].trim();
+        if (lTrim.startsWith("* ") || lTrim.startsWith("- ")) {
+          listItems.push({ text: lTrim.replace(/^[*|-]\s*/, "") });
+          i++;
+        } else if (/^\d+\.\s/.test(lTrim)) {
+          const m = lTrim.match(/^(\d+)\.\s*(.*)/);
+          listItems.push({ text: m ? m[2] : lTrim, num: m ? m[1] : undefined });
+          i++;
+        } else {
+          break;
+        }
+      }
+
+      const isOrdered = listItems.length > 0 && listItems[0].num !== undefined;
+      if (isOrdered) {
+        blocks.push(
+          <ol key={`ol-${i}`} className="my-4 space-y-2 list-decimal list-inside text-gray-700 font-medium">
+            {listItems.map((item, lIdx) => (
+              <li key={lIdx} className="leading-relaxed">
+                {renderInlineMarkdown(item.text, locale)}
+              </li>
+            ))}
+          </ol>
+        );
+      } else {
+        blocks.push(
+          <ul key={`ul-${i}`} className="my-4 space-y-1.5 list-disc list-inside text-gray-700 font-medium">
+            {listItems.map((item, lIdx) => (
+              <li key={lIdx} className="leading-relaxed">
+                {renderInlineMarkdown(item.text, locale)}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+      continue;
+    }
+
+    // Default paragraph
+    blocks.push(
+      <p key={i} className="mb-4 text-gray-700 leading-relaxed">
+        {renderInlineMarkdown(trimmed, locale)}
+      </p>
+    );
+    i++;
+  }
+
+  return blocks;
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug } = await params;
@@ -112,34 +328,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
             
             {/* Article Content Render */}
             <div className="prose prose-emerald lg:prose-lg max-w-none text-gray-800 leading-relaxed">
-              {article.content ? (
-                article.content.split('\n').map((paragraph, idx) => {
-                  const trimmed = paragraph.trim();
-                  if (!trimmed) return null;
-
-                  if (trimmed.startsWith('# ')) {
-                    return null; // Heading 1 is already in header
-                  } else if (trimmed.startsWith('## ')) {
-                    return <h2 key={idx} className="text-2xl font-bold text-gray-900 mt-8 mb-4">{trimmed.replace('## ', '')}</h2>;
-                  } else if (trimmed.startsWith('### ')) {
-                    return <h3 key={idx} className="text-xl font-bold text-gray-900 mt-6 mb-3">{trimmed.replace('### ', '')}</h3>;
-                  } else if (trimmed.startsWith('> ')) {
-                    return (
-                      <blockquote key={idx} className="bg-[#F4F8F3] border-l-4 border-[#3F5E39] p-4 rounded-r-2xl text-sm text-stone-800 my-4 shadow-sm font-medium leading-relaxed">
-                        {trimmed.replace(/^>\s*/, '')}
-                      </blockquote>
-                    );
-                  } else if (trimmed.startsWith('* ') || trimmed.startsWith('- ')) {
-                    return <li key={idx} className="ml-4 list-disc my-1 text-gray-700">{trimmed.replace(/^[*|-]\s*/, '')}</li>;
-                  } else if (trimmed.startsWith('---')) {
-                    return <hr key={idx} className="my-8 border-gray-200" />;
-                  }
-
-                  return <p key={idx} className="mb-4 text-gray-700">{trimmed}</p>;
-                })
-              ) : (
-                <p>Dieser Artikel hat noch keinen Inhalt.</p>
-              )}
+              {renderArticleContent(article.content, locale)}
             </div>
 
             {/* Editorial Transparency Notice Card */}
