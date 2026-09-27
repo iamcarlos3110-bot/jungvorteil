@@ -24,6 +24,18 @@ In diesem Vergleich analysieren wir die vier beliebtesten Optionen für Jugendli
 
 ## 1. Die Anbieter im direkten Vergleich
 
+| Kriterium | Neon Free | Yuh | Zak (Bank Cler) | ZKB young |
+| :--- | :--- | :--- | :--- | :--- |
+| **Kontoführung** | CHF 0.– | CHF 0.– | CHF 0.– | CHF 0.– (bis 30 J.) |
+| **Karte** | Mastercard | Mastercard | Visa Debit | Visa Debit / ZüriCard |
+| **Auslandseinsatz** | 0% Aufschlag | 0.95% Aufschlag | 2% Aufschlag | Standard Kantonalbank |
+| **TWINT App** | Eigene Neon TWINT | Eigene Yuh TWINT | Eigene Zak TWINT | ZKB TWINT |
+| **Investieren / Zinsen** | Zinsen auf Guthaben | Zinsen + Bruchteil-Aktien | Spar-Töpfe | Klassisches Sparen |
+
+---
+
+## 2. Detaillierter Testbericht der Anbieter
+
 ### Neon Free (Das Schweizer Urgestein für Sparfüchse)
 * **Kontoführung**: CHF 0.–
 * **Debitkarte**: Kostenlose Mastercard.
@@ -94,6 +106,12 @@ Wenn du im Jahr CHF 2'000.– in deine Säule 3a einzahlst, sparst du je nach Ka
 Alte Bankprodukte bieten auf 3a-Konten kaum Zinsen. Da dein 3a-Guthaben aber oft 30 bis 40 Jahre angelegt bleibt, solltest du bei langem Anlagehorizont auf eine **hohe Aktienquote (bis zu 99%)** setzen.
 
 ### Die beliebtesten digitalen 3a-Apps im Vergleich:
+
+| Anbieter | Gebühren p.a. | Aktienquote | Besonderheit |
+| :--- | :--- | :--- | :--- |
+| **Viac** | ca. 0.36% bis 0.44% | bis 99% | Nachhaltige Strategien, sehr geringe Gebühren |
+| **Finpension** | ca. 0.39% pauschal | bis 99% | Erstklassige Performance & individuelle ETF-Wahl |
+| **Frankly (ZKB)** | ca. 0.44% pauschal | bis 95% | ZKB Kantonalbank im Hintergrund, einfachste Bedienung |
 1. **Viac**: Sehr niedrige Verwaltungsgebühren, hochflexibel bei der Auswahl von nachhaltigen ETFs.
 2. **Finpension**: Ausgezeichnete Performance, extrem transparente Gebührenstruktur (ca. 0.39%).
 3. **Frankly (ZKB)**: Einfach zu bedienen, ideal für alle, die eine bewährte Schweizer Kantonalbank im Rücken haben wollen.
@@ -124,7 +142,18 @@ Ob tägliches Pendeln an die Uni/FH oder der spontane Ausflug ins Wankdorf, an d
 
 ---
 
-## 1. Halbtax Jugend (bis 25 Jahre)
+## 1. SBB Jugend-Angebote in der Übersicht
+
+| SBB Abo / Billett | Zielgruppe | Preis in CHF | Hauptvorteil |
+| :--- | :--- | :--- | :--- |
+| **Halbtax Jugend** | Unter 25 Jahre | CHF 120.– (1. Jahr) | 50% Rabatt auf fast alle ÖV-Strecken |
+| **GA Night** | Unter 25 Jahre | CHF 99.– / Jahr | Freie Fahrt ab 19:00 Uhr im gesamten ÖV-Netz |
+| **GA Jugend (2. Kl.)** | 16 – 25 Jahre | CHF 2'700.– / Jahr | Unbegrenzte Fahrt 24/7 in der ganzen Schweiz |
+| **Sparbillette** | Alle ÖV-Nutzer | bis zu -70% Rabatt | Vorausbuchung via SBB Mobile App |
+
+---
+
+## 2. Halbtax Jugend (bis 25 Jahre)
 Das Halbtax gehört zur Grundausstattung für jeden Schweizer Jugendlichen.
 * **Preis**: CHF 120.– im 1. Jahr für Jugendliche unter 25 Jahren (Erwachsene bezahlen CHF 190.–).
 * **Lohnt sich bereits ab**: Ca. 3 Streckenfahrten zwischen Zürcher, Berner oder Basler Bahnhöfen pro Jahr.
@@ -173,7 +202,18 @@ Der Anspruch basiert auf deinem steuerbaren Einkommen und Vermögen gemäss der 
 
 ---
 
-## 2. So beantragst du die Verbilligung in deinem Kanton
+## 2. Übersicht der Kantonsstellen für die Prämienverbilligung (IPV)
+
+| Kanton | Zuständige Stelle | Online-Portal / Antrag | Ersparnis / Besonderheit |
+| :--- | :--- | :--- | :--- |
+| **Zürich** | SVA Zürich | sva-zh.ch/ipv | Bis zu 80% Verbilligung bei Ausbildung unter 25 |
+| **Bern** | ASV Bern | asv.sta.be.ch | Erfassung direkt via TaxMe Steuererklärung |
+| **Luzern** | WAS Luzern | was-luzern.ch | Online-Antrag via e-Passuel Portal |
+| **Genf** | SAM Genève | ge.ch/sam | Automatische Prüfung / Antrag im Portal |
+
+---
+
+## 3. So beantragst du die Verbilligung in deinem Kanton
 
 ### Kanton Zürich (SVA Zürich)
 * Anträge werden online über das Portal der SVA Zürich eingereicht.
@@ -209,7 +249,17 @@ Zürich belegt regelmässig vordere Plätze in internationalen Rankings der teue
 
 ---
 
-## 1. Bezahlbares Wohnen: WOKO & JUWO
+## 1. Übersicht Zürcher Studi-Vorteile
+
+| Angebot | Anbieter / Ort | Preis / Kosten | Tipp für Studierende |
+| :--- | :--- | :--- | :--- |
+| **WG-Zimmer** | WOKO / JUWO | CHF 500.– bis 750.– | Frühzeitig bei WOKO immatrikulieren |
+| **Sport & Gym** | ASVZ (5 Zentren) | Im Semesterbeitrag | Polyterrasse, Irchel, Hönggerberg |
+| **Mensa Essen** | ETH Polyterrasse / UZH Irchel | ab CHF 6.90 | Tagesteller gegen Vorweis der Legi |
+
+---
+
+## 2. Bezahlbares Wohnen: WOKO & JUWO
 Der freie Zürcher Mietmarkt ist hart umkämpft. Nutze die spezialisierten studentischen Wohngenossenschaften:
 * **WOKO (Studentische Wohngenossenschaft Zürich)**: Bietet WG-Zimmer speziell für immatrikulierte Studierende ab ca. CHF 500.– bis CHF 750.– inklusive Nebenkosten (z.B. in Zürich-Nord, Irchel oder Bümpliz).
 * **JUWO (Jugendwohnnetz)**: Vermittelt günstige Zwischennutzungen und Wohnungen für Jugendliche und Lernende unter 28 Jahren.
@@ -246,7 +296,17 @@ Bern überzeugt durch gemütliche Lebensart, kurze Wege und den schönsten Somme
 
 ---
 
-## 1. Günstig Essen rund um die Uni Bern
+## 1. Bern Studi-Übersicht
+
+| Ort / Aktivität | Standort | Preis in CHF | Insider-Tipp |
+| :--- | :--- | :--- | :--- |
+| **Mensa Von Roll** | Fabrikstrasse 8 | ab CHF 7.00 | Günstiges Tagessuppen- & Mensa-Angebot |
+| **Aareschwimmen** | Eichholz bis Marzili | CHF 0.– | Nur für geübte Schwimmer, Flussregeln beachten |
+| **Kino Lichtspiel** | Sandrainstrasse 3 | Ab-Rabatt mit Legi | Kultkino mit Vintage-Atmosphäre |
+
+---
+
+## 2. Günstig Essen rund um die Uni Bern
 * **Mensa Von Roll**: Das Zentrum für Geistes- und Humanwissenschaften bietet moderne Menüs für Studierende ab ca. CHF 7.00.
 * **Mensa Hauptgebäude (Grosse Schanze)**: Geniesse dein Mittagessen mit Blick über die Altstadt und die Berner Alpen.
 
@@ -284,6 +344,16 @@ Gute Nachricht: In der Schweiz bieten Telekom-Anbieter für Personen unter 30 Ja
 ---
 
 ## 1. Die Angebote im Vergleich
+
+| Anbieter | Tarifname | Preis p.M. | Netz | Roaming (EU) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Swisscom** | blue Mobile Youth | ab CHF 24.90 | Swisscom 5G | Inklusive Daten/Anrufe je nach Tarif |
+| **Sunrise** | Up Mobile Youth | ab CHF 24.50 | Sunrise 5G | Flexibel zubuchbare EU-Datenpakete |
+| **Salt** | Salt Youth | ab CHF 24.95 | Salt 5G | Unlimitiert CH + Roaming-Optionen |
+
+---
+
+## 2. Detaillierter Tarif-Vergleich
 
 ### Swisscom blue Mobile Youth
 * **Netz**: CH-Testsieger Netzqualität.
@@ -325,7 +395,16 @@ Ein leistungsfähiger und leicht zu transportierender Laptop ist das wichtigste 
 
 ---
 
-## 1. Projekt Neptun (Die Schweizer Spezial-Aktion)
+## 1. Laptop-Rabatt-Plattformen im Vergleich
+
+| Plattform | Rabatt-Höhe | Zeitfenster | Hauptzielgruppe |
+| :--- | :--- | :--- | :--- |
+| **Projekt Neptun** | Bis zu 40% | Feb–März & Sept–Okt | ETH, EPFL, FH, Uni (Laptop & Mac) |
+| **Apple Education** | ca. 10% + Gift Card | Ganzjährig (Sommer-Promo) | MacBooks & iPads für alle Studis |
+
+---
+
+## 2. Projekt Neptun (Die Schweizer Spezial-Aktion)
 Dreimal im Jahr (Verkaufsfenster im Frühjahr und Herbst) öffnet **Projekt Neptun** seine Pforten für Schweizer Studierende und Mitarbeitende.
 * **Angebote**: Ausgewählte Business-Laptops von Apple (MacBook Air / Pro), Lenovo ThinkPad und HP.
 * **Rabatte**: Bis zu 40% unter dem regulären Verkaufspreis.
@@ -365,7 +444,17 @@ Mit den richtigen Insider-Strategien lässt sich das Leben in Genf jedoch überr
 
 ---
 
-## 1. Günstig Wohnen in Genf: WIZO, Cité Universitaire & WG-Tipps
+## 1. Genf Studi-Übersicht
+
+| Angebot | Ort / Organisation | Preis in CHF | Vorteile für Studierende |
+| :--- | :--- | :--- | :--- |
+| **Wohnheim** | Cité Universitaire Champel | CHF 500.– bis 750.– | Möblierte Zimmer mit WLAN & ÖV-Anbindung |
+| **ÖV-Abo** | TPG Unipass Junior | CHF 400.– / Jahr | Unbeschränkt Zone 10 unter 25 Jahren |
+| **Kultur** | Chèque-Culture Genève | Bis 50% Rabatt | Vergünstigungen für Kino & Theater |
+
+---
+
+## 2. Günstig Wohnen in Genf: WIZO, Cité Universitaire & WG-Tipps
 Der Wohnungsmarkt in Genf gehört zu den angespanntesten der Schweiz. Reguläre Studio-Mieten beginnen selten unter CHF 1'200.– pro Monat. Für Studierende gibt es jedoch spezialisierte Organisationen:
 
 * **Cité Universitaire de Genève (Champel)**: Das grösste studentische Wohnheim der Stadt bietet möblierte Zimmer ab ca. CHF 500.– bis CHF 750.– pro Monat. Der Komplex verfügt über eigene Lernräume, ein Café und eine direkte Busanbindung.
