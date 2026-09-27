@@ -160,6 +160,67 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </div>
         </div>
 
+        {/* Dedicated Section: Wie Angebote verifiziert werden (Cómo se verifican paso a paso) */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#3F5E39] text-xs font-bold uppercase tracking-wide">
+            Audit-Protokoll
+          </div>
+          <h2 className="text-2xl font-bold text-stone-900">Der Verifizierungsprozess: Schritt für Schritt</h2>
+          <p className="text-stone-700 leading-relaxed text-sm">
+            Um höchste Datenqualität zu gewährleisten, durchläuft jedes Angebot einen vierstufigen Verifizierungs-Workflow:
+          </p>
+
+          <div className="space-y-4 pt-2">
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl flex flex-col sm:flex-row items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#3F5E39] text-white flex items-center justify-center font-bold shrink-0">
+                Stufe 1
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-gray-900 text-sm">Primärquellen-Abgleich</h3>
+                <p className="text-stone-600 text-xs leading-relaxed">
+                  Die Redaktion vergleicht Titel, Beschreibung und Rabatthöhe direkt mit den offiziellen Angaben auf der Website oder den AGB des Anbieters.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl flex flex-col sm:flex-row items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#3F5E39] text-white flex items-center justify-center font-bold shrink-0">
+                Stufe 2
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-gray-900 text-sm">Test-Durchlauf & Checkout-Simulation</h3>
+                <p className="text-stone-600 text-xs leading-relaxed">
+                  Wir simulieren den Einlöseprozess (z.B. Eingabe von Gutscheincodes, Weiterleitung zum Shop oder Nachweis per Switch edu-ID), um Funktionsfähigkeit ohne versteckte Zusatzkosten sicherzustellen.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl flex flex-col sm:flex-row items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#3F5E39] text-white flex items-center justify-center font-bold shrink-0">
+                Stufe 3
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-gray-900 text-sm">Alters- & Kriterien-Audit</h3>
+                <p className="text-stone-600 text-xs leading-relaxed">
+                  Audit der Zielgruppe: Liegen klare Altersgrenzen (z.B. bis 25 Jahre) oder spezifische Studentennachweise vor?
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-5 rounded-2xl flex flex-col sm:flex-row items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#3F5E39] text-white flex items-center justify-center font-bold shrink-0">
+                Stufe 4
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-gray-900 text-sm">Zeitstempel-Freigabe (checked_at)</h3>
+                <p className="text-stone-600 text-xs leading-relaxed">
+                  Nach erfolgreicher Prüfung wird das Angebot im System mit dem aktuellen Zeitstempel versehen und für Nutzerinnen und Nutzer freigeschaltet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 5 Core Pillars */}
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-stone-900 px-2">Die 5 Säulen unserer Methodik</h2>
