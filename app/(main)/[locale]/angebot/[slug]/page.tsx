@@ -371,16 +371,45 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                 </div>
               )}
 
-              {/* 4. So bekommst du den Vorteil */}
-              {offer.how_to_get_de && (
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                  <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
-                    <ShieldCheck className="w-5 h-5" />
-                    <h2 className="text-lg font-bold text-gray-900">So sicherst du dir den Vorteil</h2>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">{offer.how_to_get_de}</p>
+              {/* 4. So bekommst du den Vorteil (How to get it - Schritt-für-Schritt) */}
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                <div className="flex items-center gap-2 mb-4 text-[#3F5E39]">
+                  <ShieldCheck className="w-5 h-5" />
+                  <h2 className="text-lg font-bold text-gray-900">So sicherst du dir den Vorteil (Schritt-für-Schritt)</h2>
                 </div>
-              )}
+                {offer.how_to_get_de && (
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-4">{offer.how_to_get_de}</p>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                  <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-xl flex flex-col justify-between">
+                    <div>
+                      <span className="w-7 h-7 rounded-full bg-[#3F5E39] text-white flex items-center justify-center font-bold text-xs mb-2">1</span>
+                      <h3 className="font-bold text-gray-900 mb-1">Angebot aufrufen</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">Klicke auf &quot;Angebot ansehen&quot;, um direkt zur offiziellen Aktionsseite weitergeleitet zu werden.</p>
+                    </div>
+                  </div>
+                  <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-xl flex flex-col justify-between">
+                    <div>
+                      <span className="w-7 h-7 rounded-full bg-[#3F5E39] text-white flex items-center justify-center font-bold text-xs mb-2">2</span>
+                      <h3 className="font-bold text-gray-900 mb-1">Nachweis & Rabatt</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        {offer.discount_code
+                          ? `Gib beim Checkout den Gutscheincode "${offer.discount_code}" ein.`
+                          : offer.student_required
+                          ? "Halte deinen gültigen Studenten-/Schülerausweis beim Anbieter bereit."
+                          : "Der Rabatt wird direkt im Bestellprozess beim Anbieter angewendet."}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-xl flex flex-col justify-between">
+                    <div>
+                      <span className="w-7 h-7 rounded-full bg-[#3F5E39] text-white flex items-center justify-center font-bold text-xs mb-2">3</span>
+                      <h3 className="font-bold text-gray-900 mb-1">Sparen & Geniessen</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">Schliesse die Registrierung oder Bestellung zum reduzierten Jugendpreis ab.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* 5. Condiciones importantes */}
               <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
