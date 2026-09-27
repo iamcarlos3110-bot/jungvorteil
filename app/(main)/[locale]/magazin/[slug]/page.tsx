@@ -141,11 +141,19 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
                 </div>
                 <div>
                   <p className="font-bold text-gray-900 text-sm">JungVorteil Redaktion</p>
-                  <p className="text-xs text-gray-500">Geprüfte Spartipps & Ratgeber für die Schweiz</p>
+                  <p className="text-xs text-gray-500">
+                    Zuletzt geprüft: {formatDate(article.updated_at || article.published_at || article.created_at)}
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
+                <Link
+                  href={`/${locale}/redaktionelle-richtlinien`}
+                  className="text-xs text-[#3F5E39] font-semibold underline hover:text-[#253D22]"
+                >
+                  Redaktionelle Richtlinien
+                </Link>
                 <ShareButton title={article.title} />
               </div>
             </div>

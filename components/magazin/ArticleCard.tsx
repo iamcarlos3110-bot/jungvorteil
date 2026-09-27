@@ -142,7 +142,7 @@ export default function ArticleCard({ article, locale = "de" }: ArticleCardProps
             <div>
               <div className="text-xs font-bold text-stone-800">JungVorteil</div>
               {article.published_at && (
-                <div className="text-[10px] text-stone-400">{formatDate(article.published_at)}</div>
+                <div className="text-[10px] text-stone-400">Geprüft: {formatDate(article.published_at)}</div>
               )}
             </div>
           </div>

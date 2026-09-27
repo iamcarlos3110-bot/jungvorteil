@@ -404,7 +404,7 @@ Die obligatorische Krankenversicherung ist die grösste monatliche Fixkostennote
 Das Kulturangebot in Genf ist erstklassig und bietet extrem viele Vorteile für Studierende:
 
 * **Chèque-Culture Genève**: Die Stadt Genf stellt Kultur-Gutscheine für Jugendliche und Studierende aus, mit denen Kinotickets, Theaterkarten und Konzerte um bis zu 50% vergünstigt werden.
-* **Gratis Museen am 1. Sonntag im Monat**: Alle städtischen Museen (Musée d'art et d'histoire, Muséum d'histoire naturelle, Maison Tavel) bieten jeden ersten Sonntag im Monat 100% freien Eintritt.
+* **Gratis Museen am 1. Sonntag im Monat**: Alle städtischen Museen (Musée d'art et d'histoire, Muséum d'histoire naturelle, Maison Tavel) bieten jeden ersten Sonntag im Monat kostenlosen Eintritt.
 * **UniGE Sport**: Der Hochschulsport der Universität Genf bietet über 80 Sportarten (Fitness, Yoga, Rudern auf dem Genfersee, Skiausflüge in die Alpen) kostenlos oder zu symbolischen Preisen von CHF 20.– bis CHF 50.– pro Semester an.
 
 ---
