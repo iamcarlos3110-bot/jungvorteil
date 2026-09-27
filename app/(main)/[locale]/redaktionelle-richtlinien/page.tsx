@@ -107,6 +107,59 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </div>
         </div>
 
+        {/* Dedicated Section: Was bedeutet "geprüft"? (Qué significa 'geprüft') */}
+        <div className="bg-[#EAF0E5] border border-[#D6E2CE] rounded-3xl p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#253D22] text-xs font-bold uppercase tracking-wide border border-[#D6E2CE]">
+            <CheckCircle2 className="w-4 h-4 text-[#3F5E39]" /> Definition & Standard
+          </div>
+          <h2 className="text-2xl font-bold text-[#253D22]">Was bedeutet der Status &quot;Zuletzt geprüft&quot;?</h2>
+          <p className="text-[#253D22] text-sm leading-relaxed">
+            Wenn ein Angebot auf JungVorteil.ch mit der Kennzeichnung <strong className="font-bold underline">Zuletzt geprüft: [Datum]</strong> versehen ist, garantiert dies, dass die Redaktion am angegebenen Tag folgende 4 Kontrollen manuell durchgeführt hat:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm pt-2">
+            <div className="bg-white p-5 rounded-2xl border border-[#D6E2CE] space-y-1.5">
+              <h3 className="font-bold text-gray-900 text-sm flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                1. Preis- & Tariffaktencheck
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Der angezeigte Jugendpreis und der Normalpreis in CHF stimmen exakt mit dem aktuellen Tarif des Anbieters überein.
+              </p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border border-[#D6E2CE] space-y-1.5">
+              <h3 className="font-bold text-gray-900 text-sm flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                2. Link- & Funktionsprüfung
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Der Verweis führt direkt zur funktionierenden, offiziellen Aktionsseite. Es liegen keine 404-Fehler oder kaputten Links vor.
+              </p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border border-[#D6E2CE] space-y-1.5">
+              <h3 className="font-bold text-gray-900 text-sm flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                3. Alters- & Statuskriterien
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Die Voraussetzungen (Altersgrenzen 16–25 / 16–30 J. sowie Studentenausweis-Pflicht) entsprechen den offiziellen Regularien.
+              </p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border border-[#D6E2CE] space-y-1.5">
+              <h3 className="font-bold text-gray-900 text-sm flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                4. Gültigkeit & Fristen
+              </h3>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Das Angebot ist weiterhin aktiv und nicht abgelaufen. Ablaufende Aktionen werden mit Vorwarnung gekennzeichnet.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* 5 Core Pillars */}
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-stone-900 px-2">Die 5 Säulen unserer Methodik</h2>
