@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import { ShieldCheck, HeartHandshake, Eye, Award, CheckCircle2, Mail, User } from "lucide-react";
+import { ShieldCheck, HeartHandshake, Eye, Award, CheckCircle2, Mail, User, Compass, HelpCircle, Lock, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 import { safeJsonLd } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Über uns – Das Schweizer Vorteilsportal | JungVorteil",
-  description: "Erfahre mehr über JungVorteil: Das transparente Schweizer Sparportal gegründet von Carlos Piñeiro für Studierende, Lernende und junge Erwachsene unter 30.",
+  title: "Über uns – Das unabhängige Schweizer Vorteilsportal | JungVorteil",
+  description: "Erfahre alles über JungVorteil: Gegründet von Carlos Piñeiro (Gründer & Chefredaktor). Transparente Recherche, unabhängige Tests und echte Rabatte für Schweizer unter 30.",
 };
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -21,7 +21,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     "foundingDate": "2026",
     "founder": {
       "@type": "Person",
-      "name": "Carlos Piñeiro"
+      "name": "Carlos Piñeiro",
+      "jobTitle": "Gründer & Chefredaktor"
     },
     "description": "Unabhängiges Schweizer Vorteilsportal für Studierende, Lernende und junge Erwachsene unter 30.",
     "address": {
@@ -44,151 +45,162 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
           <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#EAF0E5] text-xs sm:text-sm font-semibold mb-6 shadow-sm">
-              <User className="w-4 h-4 text-[#A3E635]" /> Unabhängiges Eigenprojekt
+              <User className="w-4 h-4 text-[#A3E635]" /> Unabhängiges Schweizer Portal
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
               Über JungVorteil
             </h1>
             <p className="text-base sm:text-xl text-gray-200 font-normal leading-relaxed max-w-2xl mx-auto">
-              Ein transparentes Projekt mit dem Ziel, das Leben und Studieren in der Schweiz bezahlbarer zu machen.
+              Wer wir sind, was uns antreibt und wie wir Schweizer Jugendvorteile transparent und unabhängig recherchieren.
             </p>
           </div>
         </section>
 
         {/* Content Section */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {/* Story & Background */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+          {/* 1. Mission & Founder Card */}
           <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-12 shadow-sm space-y-6">
             <div className="inline-flex items-center gap-2 text-[#3F5E39] font-bold text-sm bg-[#EAF0E5] px-3 py-1 rounded-full">
-              <Award className="w-4 h-4" /> Wer steckt dahinter?
+              <Award className="w-4 h-4" /> Wer steckt hinter JungVorteil?
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
-              Gegründet von Carlos Piñeiro als unabhängiges Vorteilsportal
+              Gegründet von Carlos Piñeiro (Gründer &amp; Chefredaktor)
             </h2>
             <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-              Hallo! Ich bin <strong>Carlos Piñeiro</strong>, der Gründer und Entwickler von JungVorteil. 
-              JungVorteil ist kein riesiges Konzernunternehmen und keine unpersönliche Werbeagentur mit dutzenden Mitarbeitern. 
-              Es ist ein von mir als Privatperson betriebenes, unabhängiges Portal, das aus einer einfachen Beobachtung heraus entstanden ist: Die Schweiz bietet zwar fantastische Vergünstigungen für junge Leute (wie das SBB GA Night, Halbtax Jugend, Konten ohne Gebühren oder Projekt Neptun), aber diese Informationen sind oft über etliche Websites verstreut oder gut versteckt.
+              Hallo! Ich bin <strong>Carlos Piñeiro</strong>, der Gründer und Chefredaktor von <strong>JungVorteil.ch</strong>. 
+              JungVorteil ist kein anonymer Großkonzern und keine Werbeagentur mit versteckten Interessen. Es ist ein unabhängiges Schweizer Portal, das aus einer konkreten Notwendigkeit heraus entstanden ist: Die Lebenshaltungskosten in der Schweiz gehören zu den höchsten weltweit, doch viele exklusive Angebote für Auszubildende, Studierende und junge Erwachsene unter 30 (wie Halbtax Jugend, GA Night, Neobanken ohne Gebühren, Neptun-Laptops oder kantonale Prämienverbilligungen) sind unübersichtlich oder im Netz verstreut.
             </p>
             <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-              Mein Ziel ist es, Licht in diesen Dschungel zu bringen. Ich sammle, teste und strukturiere Angebote aus allen Schweizer Kantonen, damit Studierende, Lernende und junge Erwachsene unter 30 Jahren Zeit und Geld sparen können.
+              Mein Ziel ist es, absolute Transparenz in den Schweizer Rabatt-Dschungel zu bringen. Angebote werden vor der Veröffentlichung anhand offizieller Anbieterinformationen geprüft.
             </p>
           </div>
 
-          {/* Core Values */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
+          {/* 2. Key Pillars Overview */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">Manuell Geprüfte Links</h3>
+              <h3 className="font-bold text-xl text-gray-900">1. Manuelle Faktenprüfung</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Ich verlinke ausschließlich auf offizielle Seiten und geprüfte Rabattaktionen (z.B. SBB, Apple, Neon, Sunrise). Abgelaufene Angebote werden bereinigt.
+                Jedes Angebot auf JungVorteil wird anhand der offiziellen Tarifblätter und AGB der Schweizer Anbieter (z.B. SBB, Swisscom, Neon, ZKB, Apple) manuell verifiziert.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <Eye className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">Kostenfrei für Nutzerinnen &amp; Nutzer</h3>
+              <h3 className="font-bold text-xl text-gray-900">2. 100% Kostenfrei für Nutzer</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Die Nutzung von JungVorteil erfordert weder eine Registrierung noch den Kauf von Mitgliedschaften. Alle Vorteile sind sofort zugänglich.
+                Die Nutzung von JungVorteil erfordert weder eine kostenpflichtige Mitgliedschaft noch eine Registrierung. Alle Rabatte, Links und Guides stehen jedem frei zur Verfügung.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <HeartHandshake className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">Ehrliche Finanzierung</h3>
+              <h3 className="font-bold text-xl text-gray-900">3. Transparente Finanzierung</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Falls bei einzelnen Links eine Vermittlungsprovision anfällt, verändert das den Endpreis für Nutzer in keiner Weise. Qualität geht vor Provision.
+                Falls wir für die Vermittlung einzelner Angebote eine kleine Provision erhalten, beeinflusst dies niemals unsere Bewertung. Ein Angebot wird nur gelistet, wenn es echten Mehrwert bietet.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/90 shadow-sm space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-[#EAF0E5] text-[#3F5E39] flex items-center justify-center font-bold">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-xl text-gray-900">Fokus auf die Schweiz</h3>
+              <h3 className="font-bold text-xl text-gray-900">4. Schweizer Fokus &amp; Städte</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Speziell zugeschnitten auf Schweizer Städte (Zürich, Bern, Basel, Genf, Lausanne etc.), Schweizer ÖV-Abos und universitäre Besonderheiten.
+                Speziell zugeschnitten auf Schweizer Gegebenheiten (Zürich, Bern, Basel, Genf, Lausanne etc.), Schweizer ÖV-Netze, Universitäten (ETH, UZH, EPFL, BFH, UniGE) und Kantone.
               </p>
             </div>
           </div>
 
-          {/* Editorial Standard & Verification Process */}
+          {/* 3. Detailed Verification Standards */}
           <div className="bg-gradient-to-r from-emerald-900 to-green-950 text-white rounded-3xl p-8 sm:p-12 shadow-md space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/80 text-emerald-300 text-xs font-bold uppercase tracking-wide">
-              <ShieldCheck className="w-4 h-4 text-lime-400" /> 3. Redaktionelle Verifikation
+              <ShieldCheck className="w-4 h-4 text-lime-400" /> Qualitätsstandard & Redaktionsrichtlinien
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Unsere 4 Prinzipien der Redaktionellen Verifikation
+              Wie wir Angebote prüfen und verifizieren
             </h2>
             <p className="text-emerald-100 text-base sm:text-lg leading-relaxed">
-              Transparenz und Verlässlichkeit stehen bei JungVorteil an erster Stelle. Jedes Vorteil-Angebot und jeder Magazin-Artikel durchläuft einen strikten Prüfungsprozess vor der Veröffentlichung:
+              Verlässlichkeit steht bei uns an oberster Stelle. Bevor ein Angebot auf JungVorteil gelistet wird, durchläuft es vier Prüfschritte:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm text-emerald-100">
-              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
-                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60 space-y-2">
+                <div className="font-bold text-white text-base flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">1</span>
                   Offizielle Primärquellen
                 </div>
                 <p className="text-emerald-200/90 text-xs leading-relaxed">
-                  Wir nutzen ausschliesslich offizielle Angaben der Schweizer Anbieter, Hochschulen und ÖV-Unternehmen. Redaktionelle Behauptungen ohne offizielle Quelle sind ausgeschlossen.
+                  Wir beziehen Informationen direkt von den offiziellen Websites der Schweizer Anbieter, Hochschulen und cantonalen Ämtern.
                 </p>
               </div>
 
-              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
-                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60 space-y-2">
+                <div className="font-bold text-white text-base flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">2</span>
-                  Strikte Faktenprüfung
+                  Exakte CHF-Angaben
                 </div>
                 <p className="text-emerald-200/90 text-xs leading-relaxed">
-                  Preise in CHF, Mindest- und Höchstalter (16–30 J.), Legi-Erfordernis und Gültigkeitsfristen werden vor Veröffentlichung eins-zu-eins auf Richtigkeit geprüft.
+                  Preise in CHF, Ersparnisse, Gültigkeiten und Altersgrenzen (16–30 J.) werden detailliert und ohne Schönfärberei aufgeführt.
                 </p>
               </div>
 
-              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
-                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60 space-y-2">
+                <div className="font-bold text-white text-base flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">3</span>
-                  Monatliches Re-Checking
+                  Aktualitäts-Rechecks
                 </div>
                 <p className="text-emerald-200/90 text-xs leading-relaxed">
-                  Rabatte veralten mit der Zeit. Unsere Redaktion prüft verlinkte Angebote monatlich. Abgelaufene Aktionen werden unverzüglich gekennzeichnet oder entfernt.
+                  Bedingungen von Tarifen ändern sich. Wir überprüfen gelistete Angebote in regelmässigen Abständen. Abgelaufene Deals werden umgehend gekennzeichnet.
                 </p>
               </div>
 
-              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60">
-                <div className="font-bold text-white text-base mb-1.5 flex items-center gap-2">
+              <div className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-800/60 space-y-2">
+                <div className="font-bold text-white text-base flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-lime-400 text-emerald-950 flex items-center justify-center font-black text-xs">4</span>
-                  Redaktionelle Unabhängigkeit
+                  Reaktives Fehler-Management
                 </div>
                 <p className="text-emerald-200/90 text-xs leading-relaxed">
-                  Affiliate-Partnerschaften beeinflussen niemals unsere Bewertung. Ein Angebot wird nur aufgenommen, wenn es echten Mehrwert für junge Menschen in der Schweiz bietet.
+                  Über unseren Feedback-Kanal bearbeiten wir Hinweise von Nutzerinnen und Nutzern zu abgelaufenen Angeboten innerhalb von 24–48 Stunden.
                 </p>
               </div>
             </div>
+
+            <div className="pt-4">
+              <Link
+                href={`/${locale}/redaktionelle-richtlinien`}
+                className="inline-flex items-center gap-2 text-lime-300 font-bold underline hover:text-white transition-colors text-sm"
+              >
+                Mehr zu unseren Redaktionellen Richtlinien lesen &rarr;
+              </Link>
+            </div>
           </div>
 
-          {/* Contact Box */}
-          <div className="bg-white rounded-3xl border border-stone-200/90 p-8 text-center space-y-4">
-            <h3 className="text-xl font-bold text-gray-900">Möchtest du Feedback geben oder eine Aktion melden?</h3>
+          {/* 4. Contact & Interaction Card */}
+          <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-10 text-center space-y-4">
+            <h3 className="text-xl font-bold text-gray-900">Fragen, Feedback oder ein Angebot melden?</h3>
             <p className="text-stone-600 text-sm max-w-lg mx-auto">
-              Hast du einen nützlichen Studentendeal entdeckt, der auf der Seite fehlt? Schreib mir gerne eine Nachricht.
+              Du hast einen unschlagbaren Spartipp für junge Menschen in der Schweiz entdeckt oder möchtest Feedback geben? Ich freue mich über deine Nachricht.
             </p>
             <div>
               <Link
                 href={`/${locale}/kontakt`}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#3F5E39] text-white font-bold text-sm hover:bg-[#324B2D] transition-colors shadow-sm"
               >
-                <Mail className="w-4 h-4" /> Nachricht an Carlos senden
+                <Mail className="w-4 h-4" /> Nachricht an Carlos Piñeiro senden
               </Link>
             </div>
           </div>
+
         </div>
       </div>
     </>
   );
 }
+
