@@ -10,6 +10,7 @@ import { formatDate, isExpired, getSavingDisplay, formatCHF, safeJsonLd } from "
 import Link from "next/link";
 import { ExternalLink, MapPin, GraduationCap, Globe, CheckCircle, Clock, Tag, HelpCircle, ShieldCheck, UserCheck, DollarSign } from "lucide-react";
 import { getBrandLogo, getOfferCover } from "@/lib/brandAssets";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
@@ -149,16 +150,14 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
 
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100 pt-20 lg:pt-24">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link href={`/${locale}`} className="hover:text-[#3F5E39]">JungVorteil</Link>
-          <span>/</span>
-          {offer.category && (
-            <>
-              <Link href={`/${locale}/rabatte/${offer.category.slug}`} className="hover:text-[#3F5E39]">{offer.category.name_de}</Link>
-              <span>/</span>
-            </>
-          )}
-          <span className="text-gray-900 truncate max-w-xs">{offer.title_de}</span>
+        <div className="max-w-7xl mx-auto px-4">
+          <Breadcrumbs
+            items={[
+              ...(offer.category ? [{ label: offer.category.name_de, href: `/${locale}/rabatte/${offer.category.slug}` }] : []),
+              { label: offer.title_de },
+            ]}
+            locale={locale}
+          />
         </div>
       </div>
 

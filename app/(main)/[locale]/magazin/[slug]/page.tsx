@@ -8,6 +8,7 @@ import AdSlot from "@/components/ads/AdSlot";
 import ArticleCard from "@/components/magazin/ArticleCard";
 import ShareButton from "@/components/magazin/ShareButton";
 import Script from "next/script";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -294,9 +295,14 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
         {/* Top Header & Breadcrumb */}
         <div className="bg-white border-b border-gray-100 pt-20 lg:pt-24 pb-8">
           <div className="max-w-4xl mx-auto px-4">
-            <Link href={`/${locale}/magazin`} className="inline-flex items-center gap-2 text-sm text-[#3F5E39] font-medium hover:underline mb-6">
-              <ArrowLeft className="w-4 h-4" /> Zurück zum Magazin
-            </Link>
+            <Breadcrumbs
+              items={[
+                { label: "Magazin", href: `/${locale}/magazin` },
+                { label: article.title },
+              ]}
+              locale={locale}
+              className="mb-6"
+            />
 
             <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-[#EAF0E5] text-[#3F5E39] rounded-full text-xs font-bold uppercase tracking-wider">
