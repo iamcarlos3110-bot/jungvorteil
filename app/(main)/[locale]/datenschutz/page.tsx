@@ -145,7 +145,40 @@ export default function PrivacyPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">7. Ihre Rechte als betroffene Person</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">7. Datenschutzerklärungen externer Dienstleister (Drittanbieter)</h2>
+        <p className="leading-relaxed mb-4">
+          Detaillierte Informationen zur Datenverarbeitung durch die von uns genutzten externen Dienstleister finden Sie in den jeweiligen Datenschutzerklärungen der Anbieter:
+        </p>
+        <ul className="list-disc ml-5 space-y-2 mb-4 text-sm">
+          <li>
+            <strong>Google Ireland Limited (Google Analytics &amp; AdSense):</strong>{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#2E4D28] underline font-semibold">
+              https://policies.google.com/privacy
+            </a>
+          </li>
+          <li>
+            <strong>Vercel Inc. (Cloud Hosting &amp; CDN):</strong>{' '}
+            <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#2E4D28] underline font-semibold">
+              https://vercel.com/legal/privacy-policy
+            </a>
+          </li>
+          <li>
+            <strong>Supabase Inc. (Database &amp; Backend):</strong>{' '}
+            <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#2E4D28] underline font-semibold">
+              https://supabase.com/privacy
+            </a>
+          </li>
+          <li>
+            <strong>Resend Inc. (E-Mail Delivery Service):</strong>{' '}
+            <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#2E4D28] underline font-semibold">
+              https://resend.com/legal/privacy-policy
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-bold text-stone-900 mb-3">8. Ihre Rechte als betroffene Person</h2>
         <p className="leading-relaxed">
           Sie haben nach Schweizer Datenschutzrecht (nDSG) sowie der DSGVO das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Wenden Sie sich hierzu jederzeit an <a href="mailto:kontakt@jungvorteil.ch" className="text-[#2E4D28] underline font-semibold">kontakt@jungvorteil.ch</a>.
         </p>
@@ -153,6 +186,7 @@ export default function PrivacyPage() {
     </div>
   );
 }
+
 
 
 
