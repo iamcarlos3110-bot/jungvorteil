@@ -219,7 +219,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
           <p className="text-emerald-100/80 font-medium mb-10 max-w-2xl mx-auto"
             style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", lineHeight: 1.6 }}>
-            Hunderte geprüfte Rabatte, kostenlose Angebote und Studenten-Deals — täglich aktualisiert.
+            Geprüfte Rabatte, kostenlose Angebote und Studenten-Deals für junge Menschen in der Schweiz.
           </p>
 
           {/* Search */}
@@ -374,7 +374,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h2 className="text-3xl font-black text-stone-900" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
                   Beliebteste Vorteile
                 </h2>
-                <p className="text-stone-500 mt-1">Die meistgenutzten Angebote — täglich geprüft</p>
+                <p className="text-stone-500 mt-1">Die meistgenutzten Angebote — regelmässig verifiziert</p>
               </div>
               <Link href={`/${locale}/angebote`} className="hidden md:flex items-center gap-1.5 text-[#2E4D28] font-bold hover:gap-3 transition-all duration-200 text-sm">
                 Alle ansehen <ArrowRight className="w-4 h-4" />
@@ -448,7 +448,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h2 className="text-3xl font-black text-stone-900" style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.03em" }}>
                   Neu auf JungVorteil
                 </h2>
-                <p className="text-stone-500 mt-1">Täglich neue Angebote — frisch geprüft</p>
+                <p className="text-stone-500 mt-1">Neu aufgenommene Angebote — redaktionell geprüft</p>
               </div>
             </div>
             <OfferGrid offers={filteredNewOffers} locale={locale} />

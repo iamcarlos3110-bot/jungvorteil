@@ -13,7 +13,7 @@ export const CITY_GUIDES: Record<string, CityGuide> = {
     title: "Studentenleben & Rabatte in Zürich (UZH & ETH)",
     intro: "Zürich bietet hervorragende Bildungschancen an UZH, ETH und ZHAW, zählt aber auch zu den teuersten Städten weltweit. Wer vor Ort die richtigen Adressen kennt, spart beim Wohnen, Mensa-Essen und im Ausgang.",
     highlights: [
-      { title: "ASVZ Sportnetzwerk", desc: "Mit der UZH/ETH Legi nutzt du alle ASVZ Fitnesszentren (Irchel, Polyterrasse, Fluntern, Hönggerberg) und hunderte Gratis-Kurse." },
+      { title: "ASVZ Sportnetzwerk", desc: "Mit der UZH/ETH Legi nutzt du alle ASVZ Fitnesszentren (Irchel, Polyterrasse, Fluntern, Hönggerberg) und zahlreiche Gruppenkurse." },
       { title: "Günstige Mensen & Züri-Picknick", desc: "Verpflege dich in den ETH Mensen ab CHF 6.90 oder genieße mitgebrachtes Essen im Irchelpark und am Limmatufer." },
       { title: "ZVV ÖV & Nachtnetz", desc: "Kombiniere dein ZVV Abo mit dem SBB GA Night für kostenlose Abendfahrten auf dem gesamten Zürcher Streckennetz." }
     ],

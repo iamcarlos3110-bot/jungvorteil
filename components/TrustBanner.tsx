@@ -30,7 +30,7 @@ export default function TrustBanner() {
           </div>
           <div>
             <h3 className="font-bold text-gray-900 text-base">Für Junge & Studis</h3>
-            <p className="text-xs text-gray-500 mt-0.5">Exklusiv zugeschnitten auf Jugendliche und Studierende.</p>
+            <p className="text-xs text-gray-500 mt-0.5">Speziell zugeschnitten auf Jugendliche und Studierende.</p>
           </div>
         </div>
       </div>

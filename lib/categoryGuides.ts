@@ -11,7 +11,7 @@ export interface CategoryGuide {
 export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
   reisen: {
     title: "Ratgeber: Maximal sparen bei ÖV & Reisen in der Schweiz",
-    intro: "Der öffentliche Verkehr in der Schweiz gehört zu den besten der Welt, kann aber für Jugendliche und Studierende ohne die richtigen Abos teuer werden. Mit gezielten Angeboten wie dem Halbtax Jugend und dem GA Night sparst du hunderte Franken pro Jahr.",
+    intro: "Der öffentliche Verkehr in der Schweiz gehört zu den besten der Welt, kann aber für Jugendliche und Studierende ohne die richtigen Abos teuer werden. Mit gezielten Angeboten wie dem Halbtax Jugend und dem GA Night sparst du spürbare Beträge pro Jahr.",
     sections: [
       {
         heading: "1. Halbtax Jugend & GA Night optimal kombinieren",
@@ -29,7 +29,7 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
     ]
   },
   handy: {
-    title: "Ratgeber: Die besten Handy- & Internet-Abos für unter 30",
+    title: "Ratgeber: Beliebte Handy- & Internet-Abos für unter 30",
     intro: "Mobilfunkanbieter in der Schweiz konkurrieren stark um junge Kundinnen und Kunden. Mit speziellen Jugendtarifen (Young Abos) erhältst du unlimitiertes 5G-Datenvolumen und EU-Roaming zum halben Preis.",
     sections: [
       {

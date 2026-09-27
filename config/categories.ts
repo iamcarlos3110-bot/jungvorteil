@@ -134,7 +134,7 @@ export const CATEGORIES: Omit<Category, "id" | "created_at" | "offer_count">[] =
     name_fr: "Gratuit & Freebies",
     name_it: "Gratuito & Freebies",
     icon: "🆓",
-    description_de: "100% kostenlose Angebote, Testabos und Gratis-Artikel",
+    description_de: "Kostenlose Angebote, Testabos und Gratis-Artikel",
     sort_order: 15,
   },
 ];

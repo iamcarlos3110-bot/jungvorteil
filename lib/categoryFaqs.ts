@@ -127,7 +127,7 @@ export const CATEGORY_FAQS: Record<string, FAQItem[]> = {
     },
     {
       question: "Gibt es Studentenrabatte in Fast-Food-Ketten?",
-      answer: "Ja, Ketten wie McDonald's, Burger King oder Subway bieten exklusive App-Coupons und Tagesdeals für junge Leute an."
+      answer: "Ja, Ketten wie McDonald's, Burger King oder Subway bieten spezielle App-Coupons und Tagesdeals für junge Leute an."
     }
   ],
   mode: [
