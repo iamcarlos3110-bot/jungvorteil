@@ -261,6 +261,9 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
               <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
                 <h2 className="text-lg font-bold mb-3">Das solltest du wissen</h2>
                 <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{offer.conditions_de}</p>
+                <p className="text-xs text-gray-400 mt-4 pt-3 border-t border-gray-200/80">
+                  ℹ️ Alle Angaben ohne Gewähr. Bitte überprüfe die genauen Bedingungen und aktuellen Preise direkt auf der offiziellen Website des Anbieters.
+                </p>
               </div>
             )}
 
