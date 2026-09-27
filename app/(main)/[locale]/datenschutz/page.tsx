@@ -19,23 +19,31 @@ export default function PrivacyPage() {
           <strong>Verantwortlicher für die Datenverarbeitung:</strong><br />
           JungVorteil Schweiz<br />
           E-Mail: <a href="mailto:kontakt@jungvorteil.ch" className="text-[#2E4D28] underline font-semibold">kontakt@jungvorteil.ch</a><br />
-          Website: <a href="https://jungvorteil.ch" className="text-[#2E4D28] underline font-semibold">https://jungvorteil.ch</a>
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">2. Datenerhebung auf unserer Website</h2>
-        <h3 className="text-lg font-semibold text-stone-800 mb-2">Server-Log-Dateien</h3>
-        <p className="leading-relaxed">
-          Der Provider unserer Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies umfasst: Browsertyp und -version, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse. Diese Daten dienen der technischen Gewährleistung und Systemsicherheit.
-        </p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">3. Cookies &amp; Einstellungen zur Privatsphäre</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">2. Technische Infrastruktur &amp; Datenverarbeitung</h2>
+        <h3 className="text-lg font-semibold text-stone-800 mb-2">Hosting &amp; Content Delivery (Next.js &amp; Vercel)</h3>
         <p className="leading-relaxed mb-4">
-          Unsere Internetseiten verwenden Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Sie dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen.
+          Unsere Website basiert auf dem Framework Next.js und wird auf der Serverless-Infrastruktur von Vercel Inc. (USA/EU) gehostet. Beim Aufruf unserer Seiten werden automatisch technische Daten (IP-Adresse, Browsertyp, Betriebssystem, Referrer URL, Zeitstempel) in verschlüsselten Server-Log-Dateien (SSL/TLS) zur Gewährleistung von Stabilität, Performance und DDoS-Schutz verarbeitet.
         </p>
+        <h3 className="text-lg font-semibold text-stone-800 mb-2">Datenbank &amp; Backend (Supabase)</h3>
+        <p className="leading-relaxed">
+          Zur Bereitstellung unseres Vorteilskatalogs und Magazins nutzen wir Datenbankdienste von Supabase Inc. (PostgreSQL). Hierbei werden ausschließlich strukturierte Angebotsdaten und anonyme Seitenaufrufe verarbeitet.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-bold text-stone-900 mb-3">3. Speichertechnologien (Cookies, LocalStorage &amp; SessionStorage)</h2>
+        <p className="leading-relaxed mb-4">
+          Neben Standard-Cookies nutzt unsere Website moderne Web-Storage-Technologien Ihres Browsers:
+        </p>
+        <ul className="list-disc ml-5 space-y-2 mb-4">
+          <li><strong>Cookies:</strong> Speicherung Ihrer gewählten Cookie-Einstellungen und Session-Status.</li>
+          <li><strong>LocalStorage:</strong> Speicherung Ihrer gemerkten Favoriten-Angebote direkt auf Ihrem Endgerät (ohne Übertragung an Server).</li>
+          <li><strong>SessionStorage:</strong> Vorübergehende Begrenzung von Formular-Absendungen (Spam-Schutz im Kontaktformular).</li>
+        </ul>
         <div className="bg-stone-50 border border-stone-200/90 p-5 rounded-2xl not-prose my-4">
           <p className="text-sm text-stone-700 font-medium mb-3">
             Sie können Ihre gewählten Cookie-Einwilligungen jederzeit mit einem Klick einsehen, anpassen oder widerrufen:
@@ -45,9 +53,14 @@ export default function PrivacyPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-stone-900 mb-3">4. Analyse-Services (Google Analytics)</h2>
+        <h2 className="text-xl font-bold text-stone-900 mb-3">4. Anonymes Klick-Tracking &amp; Analyse-Services</h2>
+        <h3 className="text-lg font-semibold text-stone-800 mb-2">Internes Klick-Tracking (/api/click)</h3>
+        <p className="leading-relaxed mb-4">
+          Wenn Sie auf ein Angebot klicken, um zum jeweiligen Schweizer Anbieter zu gelangen, wird ein anonymer Klick-Zähler zur aggregierten statistischen Auswertung der Angebots-Beliebtheit aufgerufen. Hierbei werden lediglich die Angebots-ID, die Gerätekategorie (Mobil/Desktop) und allfällige UTM-Parameter ausgewertet. Es werden keine personenbezogenen Nutzerprofile erstellt.
+        </p>
+        <h3 className="text-lg font-semibold text-stone-800 mb-2">Google Analytics</h3>
         <p className="leading-relaxed">
-          Sofern Sie über unser Cookie-Banner zugestimmt haben, nutzen wir Google Analytics, einen Webanalysedienst der Google Ireland Limited (&quot;Google&quot;). Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google übertragen und dort gespeichert. Sie können diese Zustimmung jederzeit in den Cookie-Einstellungen widerrufen.
+          Sofern Sie über unser Cookie-Banner zugestimmt haben, nutzen wir Google Analytics, einen Webanalysedienst der Google Ireland Limited (&quot;Google&quot;). Die Datenverarbeitung erfolgt anonymisiert zur Optimierung unseres Webangebots. Sie können diese Zustimmung jederzeit in den Cookie-Einstellungen widerrufen.
         </p>
       </section>
 
