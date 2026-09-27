@@ -299,5 +299,5 @@ export const CATEGORY_GUIDES: Record<string, CategoryGuide> = {
 export function getCategoryGuide(slug: string): CategoryGuide | null {
   if (!slug) return null;
   const key = slug.toLowerCase();
-  return CATEGORY_GUIDES[key] || CATEGORY_GUIDES.gratis;
+  return CATEGORY_GUIDES[key] || null;
 }
