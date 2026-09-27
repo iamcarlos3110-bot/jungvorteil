@@ -280,6 +280,31 @@ export default async function RedaktionelleRichtlinienPage({ params }: { params:
           </div>
         </div>
 
+        {/* Dedicated Section: Objektive Produktvergleiche */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#3F5E39] text-xs font-bold uppercase tracking-wide">
+            Vergleichs-Standard
+          </div>
+          <h2 className="text-2xl font-bold text-stone-900">Objektive &amp; Transparente Produktvergleiche</h2>
+          <p className="text-stone-700 leading-relaxed text-sm">
+            Bei allen Produkt- und Tarifvergleichen (z.B. Neobanken, Mobilfunkabos, SBB-Billette oder Säule 3a Anbietern) wendet JungVorteil einen <strong>einheitlichen, unabhängigen Bewertungs-Standard</strong> an:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs pt-2">
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-2xl space-y-1.5">
+              <h3 className="font-bold text-stone-900 text-sm">1. Preistransparenz in CHF</h3>
+              <p className="text-stone-600 leading-relaxed">Gegenüberstellung von Normalpreis, Jugendtarif und realen Nebenkosten ohne versteckte Gebühren.</p>
+            </div>
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-2xl space-y-1.5">
+              <h3 className="font-bold text-stone-900 text-sm">2. Vor- &amp; Nachteile</h3>
+              <p className="text-stone-600 leading-relaxed">Jedes Produkt wird mit Stärken und Schwächen (z.B. Wechselkursaufschläge oder Mindestlaufzeiten) bewertet.</p>
+            </div>
+            <div className="bg-[#F8FAF7] border border-[#E2EBDD] p-4 rounded-2xl space-y-1.5">
+              <h3 className="font-bold text-stone-900 text-sm">3. Nutzungsszenarien</h3>
+              <p className="text-stone-600 leading-relaxed">Klares Aufzeigen, für welches Nutzerprofil (z.B. Studierende vs. Berufseinsteiger) sich welches Angebot eignet.</p>
+            </div>
+          </div>
+        </div>
+
         {/* 5 Core Pillars */}
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-stone-900 px-2">Die 5 Säulen unserer Methodik</h2>
