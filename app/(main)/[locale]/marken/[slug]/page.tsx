@@ -84,10 +84,10 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
                   <a
                     href={brand.website_url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center gap-1.5 text-xs text-emerald-300 font-bold hover:underline pt-1"
                   >
-                    Offizielle Website besuchen <ExternalLink className="w-3 h-3" />
+                    Quelle: Offizielle Website des Anbieters <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
               </div>
