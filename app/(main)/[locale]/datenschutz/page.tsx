@@ -60,12 +60,20 @@ export default function PrivacyPage() {
                 <td className="p-3">Speicherung Ihres Zustimmungsstatus für das Cookie-Banner.</td>
               </tr>
               <tr>
-                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">jungvorteil_favorites</td>
+                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">jv_favorites</td>
                 <td className="p-3">LocalStorage</td>
                 <td className="p-3"><span className="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-xs font-semibold">Funktional</span></td>
                 <td className="p-3">Dauerhaft (lokal)</td>
                 <td className="p-3">Speicherung Ihrer gemerkten Angebote/Favoriten direkt auf Ihrem Gerät ohne Server-Transfer.</td>
               </tr>
+              <tr>
+                <td className="p-3 font-mono text-xs text-stone-900 font-semibold">jv_preferences</td>
+                <td className="p-3">LocalStorage</td>
+                <td className="p-3"><span className="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-xs font-semibold">Funktional</span></td>
+                <td className="p-3">Dauerhaft (lokal)</td>
+                <td className="p-3">Speicherung Ihrer Filter- und Personalisierungseinstellungen (z.B. Stadt, Kategorie).</td>
+              </tr>
+
               <tr>
                 <td className="p-3 font-mono text-xs text-stone-900 font-semibold">contact_form_submitted</td>
                 <td className="p-3">SessionStorage</td>
