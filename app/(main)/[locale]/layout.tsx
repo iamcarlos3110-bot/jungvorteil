@@ -22,10 +22,34 @@ const outfit = Outfit({
   variable: '--font-outfit',
 });
 
+export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://jungvorteil.ch"),
+  alternates: {
+    canonical: "./",
+    languages: {
+      "de-CH": "/de",
+      "fr-CH": "/fr",
+      "it-CH": "/it",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }
+
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;

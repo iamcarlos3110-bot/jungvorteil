@@ -25,8 +25,9 @@ export async function GET() {
     // Static Pages
     { path: "", priority: 1.0, changeFreq: "daily" },
     { path: "/studentenrabatte", priority: 0.9, changeFreq: "daily" },
-    { path: "/angebote-unter-30", priority: 0.9, changeFreq: "daily" },
-    { path: "/angebote-unter-25", priority: 0.9, changeFreq: "daily" },
+    { path: "/unter-30", priority: 0.9, changeFreq: "daily" },
+    { path: "/unter-25", priority: 0.9, changeFreq: "daily" },
+
     { path: "/gratis", priority: 0.9, changeFreq: "daily" },
     { path: "/kategorien", priority: 0.8, changeFreq: "weekly" },
     { path: "/marken", priority: 0.8, changeFreq: "weekly" },
