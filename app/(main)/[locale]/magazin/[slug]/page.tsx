@@ -118,6 +118,12 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
                     return <h2 key={idx} className="text-2xl font-bold text-gray-900 mt-8 mb-4">{trimmed.replace('## ', '')}</h2>;
                   } else if (trimmed.startsWith('### ')) {
                     return <h3 key={idx} className="text-xl font-bold text-gray-900 mt-6 mb-3">{trimmed.replace('### ', '')}</h3>;
+                  } else if (trimmed.startsWith('> ')) {
+                    return (
+                      <blockquote key={idx} className="bg-[#F4F8F3] border-l-4 border-[#3F5E39] p-4 rounded-r-2xl text-sm text-stone-800 my-4 shadow-sm font-medium leading-relaxed">
+                        {trimmed.replace(/^>\s*/, '')}
+                      </blockquote>
+                    );
                   } else if (trimmed.startsWith('* ') || trimmed.startsWith('- ')) {
                     return <li key={idx} className="ml-4 list-disc my-1 text-gray-700">{trimmed.replace(/^[*|-]\s*/, '')}</li>;
                   } else if (trimmed.startsWith('---')) {
