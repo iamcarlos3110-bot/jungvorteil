@@ -277,8 +277,13 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                     </span>
                   )}
                   <span className="flex items-center gap-1.5 text-gray-600 bg-gray-100 px-2.5 py-1 rounded-md font-medium">
-                    Veröffentlicht am: {formatDate(offer.created_at)}
+                    Veröffentlicht: {formatDate(offer.created_at)}
                   </span>
+                  {offer.updated_at && (
+                    <span className="flex items-center gap-1.5 text-gray-600 bg-gray-100 px-2.5 py-1 rounded-md font-medium">
+                      Aktualisiert am: {formatDate(offer.updated_at)}
+                    </span>
+                  )}
                   {offer.checked_at && (
                     <span className="flex items-center gap-1.5 text-emerald-900 bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 rounded-md font-medium">
                       <CheckCircle className="w-4 h-4 text-emerald-600" /> Zuletzt geprüft: {formatDate(offer.checked_at)}
