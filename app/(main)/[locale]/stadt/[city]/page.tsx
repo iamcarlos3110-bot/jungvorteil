@@ -10,16 +10,20 @@ import Link from 'next/link';
 
 export const revalidate = 60;
 
-export async function generateMetadata({ params }: { params: Promise<{ city: string }> }) {
-  const { city } = await params;
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
+export async function generateMetadata({ params }: { params: Promise<{ city: string; locale?: string }> }) {
+  const { city, locale = "de" } = await params;
   const cityData = await getCityBySlug(city);
   
-  if (!cityData) return { title: 'Stadt nicht gefunden | JungVorteil' };
+  if (!cityData) return { title: "Stadt nicht gefunden | JungVorteil" };
   
-  return {
-    title: `Rabatte & Angebote in ${cityData.name_de} (2026) – Guide & Deals | JungVorteil`,
-    description: `Lokale Rabatte, Studentenangebote, ÖV-Tipps und Vergünstigungen für junge Leute in ${cityData.name_de}.`
-  };
+  return generateSwissMetadata({
+    title: `Rabatte & Angebote in ${cityData.name_de} (${cityData.canton})`,
+    description: `Verifizierte Rabatte, ÖV-Tipps und Vorteile für Jugendliche, Lernende und Studierende in ${cityData.name_de} (${cityData.canton}).`,
+    path: `/stadt/${cityData.slug}`,
+    locale,
+  });
 }
 
 export default async function CityPage({ params }: { params: Promise<{ city: string, locale?: string }> }) {

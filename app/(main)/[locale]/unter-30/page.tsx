@@ -6,11 +6,18 @@ import AdSlot from "@/components/ads/AdSlot";
 import Newsletter from "@/components/Newsletter";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Angebote unter 30 Schweiz – Rabatte für junge Leute | JungVorteil",
-  description:
-    "Alle Angebote und Rabatte für Personen unter 30 Jahren in der Schweiz. Spezielle Tarife, Vergünstigungen und Angebote.",
-};
+import { generateSwissMetadata } from "@/lib/swissSeo";
+import JsonLd, { breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Angebote für junge Erwachsene unter 30 Jahren in der Schweiz",
+    description: "Verifizierte Vergünstigungen, Banking-Vorteile und Sonderangebote für junge Erwachsene bis 30 Jahre in der Schweiz.",
+    path: "/unter-30",
+    locale,
+  });
+}
 
 export default async function Under30Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale = "de" } = (await params) || {};

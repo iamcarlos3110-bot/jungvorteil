@@ -7,16 +7,20 @@ import Link from 'next/link';
 import { ExternalLink, ChevronRight, Building2, CheckCircle2 } from 'lucide-react';
 import Script from 'next/script';
 
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale?: string }> }) {
-  const { slug } = await params;
+  const { slug, locale = "de" } = await params;
   const brand = await getBrandBySlug(slug);
   
-  if (!brand) return { title: 'Marke nicht gefunden | JungVorteil' };
+  if (!brand) return { title: "Marke nicht gefunden | JungVorteil" };
   
-  return {
-    title: `${brand.name} Rabatt & Angebote Schweiz (2026) | JungVorteil`,
-    description: brand.description_de || `Finde alle aktuellen Rabatte, Gutscheine und Sonderkonditionen von ${brand.name} für Jugendliche und Studierende in der Schweiz.`
-  };
+  return generateSwissMetadata({
+    title: `${brand.name} Rabatte & Angebote in der Schweiz`,
+    description: brand.description_de || `Finde alle verifizierten Rabatte und Angebote von ${brand.name} für Jugendliche und Studierende in der Schweiz.`,
+    path: `/marken/${brand.slug}`,
+    locale,
+  });
 }
 
 export default async function BrandPage({ params }: { params: Promise<{ slug: string; locale?: string }> }) {

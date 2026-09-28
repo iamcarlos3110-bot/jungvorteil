@@ -7,10 +7,18 @@ import AdSlot from "@/components/ads/AdSlot";
 import Newsletter from "@/components/Newsletter";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Studentenrabatte Schweiz – Geprüfte Vorteile | JungVorteil",
-  description: "Finde geprüfte Studentenrabatte in der Schweiz. Apple, Spotify, SBB und mehr mit Studirabatt.",
-};
+import { generateSwissMetadata } from "@/lib/swissSeo";
+import JsonLd, { breadcrumbSchema, itemListSchema } from "@/components/seo/JsonLd";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Studentenrabatte Schweiz — Vergünstigungen für Studierende",
+    description: "Alle verifizierten Studentenrabatte, ÖV-Angebote und Hochschul-Vorteile in der Schweiz auf einen Blick. Geprüft von der JungVorteil Redaktion.",
+    path: "/studentenrabatte",
+    locale,
+  });
+}
 
 export default async function StudentsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale = "de" } = (await params) || {};

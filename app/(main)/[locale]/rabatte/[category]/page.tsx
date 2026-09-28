@@ -8,16 +8,20 @@ import { HelpCircle, Sparkles, BookOpen, Lightbulb, CheckCircle2, ChevronRight }
 import Script from 'next/script';
 import Link from 'next/link';
 
-export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
-  const { category } = await params;
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
+export async function generateMetadata({ params }: { params: Promise<{ category: string; locale: string }> }) {
+  const { category, locale = "de" } = await params;
   const catData = await getCategoryBySlug(category);
   
-  if (!catData) return { title: 'Kategorie nicht gefunden | JungVorteil' };
+  if (!catData) return { title: "Kategorie nicht gefunden | JungVorteil" };
   
-  return {
-    title: `${catData.name_de} Rabatte Schweiz (2026) – Ratgeber & Deals | JungVorteil`,
-    description: catData.description_de || `Entdecke verifizierte Rabatte, Gutscheine und Ratgeber in der Kategorie ${catData.name_de} für junge Leute und Studierende in der Schweiz.`
-  };
+  return generateSwissMetadata({
+    title: `${catData.name_de} Rabatte & Angebote in der Schweiz`,
+    description: catData.description_de || `Entdecke verifizierte Rabatte und Angebote in der Kategorie ${catData.name_de} für Jugendliche und Studierende in der Schweiz.`,
+    path: `/rabatte/${catData.slug}`,
+    locale,
+  });
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string, locale: string }> }) {

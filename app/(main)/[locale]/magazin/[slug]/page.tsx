@@ -229,16 +229,20 @@ function renderArticleContent(content: string | null, locale: string) {
   return blocks;
 }
 
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
-  const { slug } = await params;
+  const { slug, locale = "de" } = await params;
   const article = await getArticleBySlug(slug);
 
   if (!article) return { title: "Artikel nicht gefunden | JungVorteil Magazin" };
 
-  return {
-    title: `${article.title} | JungVorteil Magazin`,
-    description: article.excerpt ?? "Lies nützliche Spartipps, Ratgeber und Finanz-Guides für junge Leute in der Schweiz.",
-  };
+  return generateSwissMetadata({
+    title: article.title,
+    description: article.excerpt ?? "Nützliche Spartipps, Ratgeber und Finanz-Guides für Jugendliche und Studierende in der Schweiz.",
+    path: `/magazin/${article.slug}`,
+    locale,
+  });
 }
 
 export default async function ArticleDetailPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
