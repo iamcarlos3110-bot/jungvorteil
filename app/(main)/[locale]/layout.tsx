@@ -72,6 +72,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`}>
+      <head>
+        <link rel="icon" href="/icon.svg?v=2" type="image/svg+xml" />
+        <link rel="icon" href="/icon.png?v=2" type="image/png" sizes="512x512" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+      </head>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <GoogleAnalytics />
