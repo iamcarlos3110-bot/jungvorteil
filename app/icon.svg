@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#3F5E39"/>
+  <!-- Main Sparkle -->
+  <path d="M230 100 Q230 200 130 200 Q230 200 230 300 Q230 200 330 200 Q230 200 230 100 Z" fill="#FFFFFF"/>
+  <!-- Secondary Sparkle -->
+  <path d="M370 120 Q370 170 320 170 Q370 170 370 220 Q370 170 420 170 Q370 170 370 120 Z" fill="#FFFFFF" opacity="0.9"/>
+  <!-- Third Sparkle -->
+  <path d="M350 310 Q350 370 290 370 Q350 370 350 430 Q350 370 410 370 Q350 370 350 310 Z" fill="#FFFFFF" opacity="0.85"/>
+</svg>
