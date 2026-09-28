@@ -34,14 +34,16 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
       { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
+  manifest: '/manifest.json',
   robots: {
     index: true,
     follow: true,
@@ -73,10 +75,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`}>
       <head>
-        <link rel="icon" href="/icon.svg?v=2" type="image/svg+xml" />
-        <link rel="icon" href="/icon.png?v=2" type="image/png" sizes="512x512" />
-        <link rel="shortcut icon" href="/favicon.ico?v=2" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+        <link rel="icon" href="/favicon-48x48.png" sizes="48x48" type="image/png" />
+        <link rel="icon" href="/favicon-192x192.png" sizes="192x192" type="image/png" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
