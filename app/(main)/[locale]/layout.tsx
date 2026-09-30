@@ -85,14 +85,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <GoogleAnalytics />
-          {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
-            <Script
-              async
-              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-              crossOrigin="anonymous"
-              strategy="afterInteractive"
-            />
-          )}
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "ca-pub-5821896155002887"}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
           <Header locale={locale} />
           <main id="main-content">{children}</main>
           <Footer locale={locale} />
