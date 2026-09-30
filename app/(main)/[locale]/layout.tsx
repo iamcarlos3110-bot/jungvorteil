@@ -44,6 +44,9 @@ export const metadata = {
     ],
   },
   manifest: '/manifest.json?v=3',
+  other: {
+    "google-adsense-account": "ca-pub-5821896155002887",
+  },
   robots: {
     index: true,
     follow: true,
@@ -75,6 +78,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`}>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-5821896155002887" />
         <link rel="icon" href="/favicon-48x48.png?v=3" sizes="48x48" type="image/png" />
         <link rel="icon" href="/favicon-192x192.png?v=3" sizes="192x192" type="image/png" />
         <link rel="icon" href="/icon.svg?v=3" type="image/svg+xml" />
