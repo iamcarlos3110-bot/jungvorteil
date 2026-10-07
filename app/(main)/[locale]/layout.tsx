@@ -24,14 +24,6 @@ const outfit = Outfit({
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://jungvorteil.ch"),
-  alternates: {
-    canonical: "./",
-    languages: {
-      "de-CH": "/de",
-      "fr-CH": "/fr",
-      "it-CH": "/it",
-    },
-  },
   icons: {
     icon: [
       { url: '/favicon.ico?v=3', sizes: '48x48' },

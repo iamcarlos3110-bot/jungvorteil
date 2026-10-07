@@ -1,9 +1,15 @@
 import ResetCookieConsentButton from '@/components/ui/ResetCookieConsentButton';
+import { generateSwissMetadata } from '@/lib/swissSeo';
 
-export const metadata = {
-  title: 'Datenschutzerklärung | JungVorteil Schweiz',
-  description: 'Datenschutzerklärung von JungVorteil gemäss dem Schweizer Datenschutzgesetz (nDSG) und der DSGVO. Erfahren Sie mehr über Next.js, Vercel, Supabase, LocalStorage, Cookies, Google AdSense und Ihre Rechte.'
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: 'Datenschutzerklärung',
+    description: 'Datenschutzerklärung von JungVorteil gemäss dem Schweizer Datenschutzgesetz (nDSG) und der DSGVO. Erfahren Sie mehr über Cookies, Google AdSense und Ihre Rechte.',
+    path: '/datenschutz',
+    locale,
+  });
+}
 
 export default function PrivacyPage() {
   return (

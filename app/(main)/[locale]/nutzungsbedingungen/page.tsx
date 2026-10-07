@@ -1,6 +1,14 @@
-export const metadata = {
-  title: 'Nutzungsbedingungen | JungVorteil'
-};
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Nutzungsbedingungen",
+    description: "Nutzungsbedingungen und rechtliche Hinweise von JungVorteil.ch für die Nutzung unseres Schweizer Vorteilsportals.",
+    path: "/nutzungsbedingungen",
+    locale,
+  });
+}
 
 export default function TermsPage() {
   return (

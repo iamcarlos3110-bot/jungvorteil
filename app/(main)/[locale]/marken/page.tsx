@@ -2,12 +2,19 @@ import { getAllBrands } from "@/services/brands";
 import BrandCard from "@/components/brands/BrandCard";
 import { Building2 } from "lucide-react";
 
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
 export const revalidate = 60;
 
-export const metadata = {
-  title: "Partner & Unternehmen | JungVorteil",
-  description: "Entdecke alle Partnermarken und Unternehmen, die exklusive Rabatte und Angebote auf JungVorteil bieten.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Alle Marken & Anbieter in der Schweiz",
+    description: "Entdecke Schweizer und internationale Marken mit Vorteilen für Jugendliche und Studierende.",
+    path: "/marken",
+    locale,
+  });
+}
 
 export default async function MarkenPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

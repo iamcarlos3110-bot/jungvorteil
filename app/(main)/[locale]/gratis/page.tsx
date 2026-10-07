@@ -4,10 +4,17 @@ import { Gift, Sparkles } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
 import Newsletter from "@/components/Newsletter";
 
-export const metadata = {
-  title: "Kostenlose Angebote & Gratis-Deals Schweiz | JungVorteil",
-  description: "Finde kostenlose Angebote, Gratisproben und gebührenfreie Konten für junge Leute in der Schweiz.",
-};
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Kostenlose Angebote & Gratis-Deals in der Schweiz",
+    description: "Finde kostenlose Angebote, Freikarten und gebührenfreie Services für Jugendliche und Studierende in der Schweiz.",
+    path: "/gratis",
+    locale,
+  });
+}
 
 export default async function GratisPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale = "de" } = (await params) || {};

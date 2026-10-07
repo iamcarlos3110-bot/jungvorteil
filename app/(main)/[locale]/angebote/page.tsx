@@ -4,10 +4,17 @@ import { Tag, Sparkles } from 'lucide-react';
 import AdSlot from '@/components/ads/AdSlot';
 import Newsletter from '@/components/Newsletter';
 
-export const metadata = {
-  title: 'Alle Rabatte & Angebote Schweiz | JungVorteil',
-  description: 'Entdecke geprüfte Rabatte, Studentenangebote und Vorteile in der Schweiz.',
-};
+import { generateSwissMetadata } from '@/lib/swissSeo';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: 'Alle Rabatte & Angebote in der Schweiz',
+    description: 'Entdecke geprüfte Rabatte, Studentenangebote und Vorteile in der Schweiz.',
+    path: '/angebote',
+    locale,
+  });
+}
 
 export default async function AngebotePage({
   params,

@@ -4,12 +4,19 @@ import { MapPin, Sparkles } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
 import Newsletter from "@/components/Newsletter";
 
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
 export const revalidate = 60;
 
-export const metadata = {
-  title: "Vorteile nach Städten in der Schweiz | JungVorteil",
-  description: "Finde lokale Rabatte, Studentenangebote und Vorteile in Zürich, Bern, Basel, Luzern, St. Gallen und weiteren Schweizer Städten.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Vorteile & Rabatte nach Schweizer Städten",
+    description: "Finde lokale Rabatte, Studentenangebote und Vorteile in Zürich, Bern, Basel, Luzern, St. Gallen und weiteren Schweizer Städten.",
+    path: "/staedte",
+    locale,
+  });
+}
 
 export default async function StaedtePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

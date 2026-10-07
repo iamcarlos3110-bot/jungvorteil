@@ -4,10 +4,17 @@ import Link from "next/link";
 import Script from "next/script";
 import { safeJsonLd } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: "Über uns – Das unabhängige Schweizer Vorteilsportal | JungVorteil",
-  description: "Erfahre alles über JungVorteil: Gegründet von Carlos Piñeiro (Gründer & Chefredaktor). Transparente Recherche, unabhängige Tests und echte Rabatte für Schweizer unter 30.",
-};
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Über uns – Das unabhängige Schweizer Vorteilsportal",
+    description: "Erfahre mehr über JungVorteil: Gegründet von Carlos Piñeiro. Transparente Recherche, redaktionelle Prüfung und echte Rabatte für Jugendliche und Studierende in der Schweiz.",
+    path: "/ueber-uns",
+    locale,
+  });
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale = "de" } = (await params) || {};

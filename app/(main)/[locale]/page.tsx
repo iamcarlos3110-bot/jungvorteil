@@ -26,12 +26,19 @@ import SafeImage from '@/components/ui/SafeImage';
 import { getBrandLogo, getOfferCover } from '@/lib/brandAssets';
 import { Offer } from '@/types';
 
+import { generateSwissMetadata } from '@/lib/swissSeo';
+
 export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.home' });
-  return { title: t('title'), description: t('description') };
+  return generateSwissMetadata({
+    title: t('title'),
+    description: t('description'),
+    path: '',
+    locale,
+  });
 }
 
 function getOfferExternalUrl(offer: Offer): string {

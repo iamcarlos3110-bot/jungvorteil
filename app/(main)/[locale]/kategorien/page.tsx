@@ -4,13 +4,20 @@ import { Sparkles, ArrowRight, ShieldCheck, Zap, Percent, ChevronRight } from "l
 import { getCategoryIconStyle } from "@/lib/categoryIcons";
 import { cn } from "@/lib/utils";
 
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export const metadata = {
-  title: "Alle Kategorien & Rabatte | JungVorteil",
-  description: "Entdecke Rabatte und Angebote in allen Kategorien: Essen, Reisen, Technik, Mobilität und mehr in der Schweiz.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Alle Kategorien & Rabatte in der Schweiz",
+    description: "Entdecke Rabatte und Angebote in allen Kategorien: Essen, Reisen, Technik, Mobilität und mehr in der Schweiz.",
+    path: "/kategorien",
+    locale,
+  });
+}
 
 export default async function CategoriesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

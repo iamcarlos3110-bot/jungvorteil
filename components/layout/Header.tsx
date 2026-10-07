@@ -39,7 +39,7 @@ export default function Header({ locale }: HeaderProps) {
     { href: `/${locale}/angebote`, label: t("angebote") },
     { href: `/${locale}/rabatte`, label: t("rabatte") },
     { href: `/${locale}/studentenrabatte`, label: t("studierende") },
-    { href: `/${locale}/angebote-unter-30`, label: t("unter30") },
+    { href: `/${locale}/unter-30`, label: t("unter30") },
     { href: `/${locale}/staedte`, label: t("staedte") },
     { href: `/${locale}/kategorien`, label: t("kategorien") },
   ];

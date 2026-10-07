@@ -4,13 +4,20 @@ import AdSlot from "@/components/ads/AdSlot";
 import { BookOpen, Newspaper } from "lucide-react";
 import Newsletter from "@/components/Newsletter";
 
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export const metadata = {
-  title: "Magazin & Ratgeber | JungVorteil Schweiz",
-  description: "Tipps, Tricks und Ratgeber rund ums Sparen, Studieren, Wohnen und Finanzen für junge Leute in der Schweiz.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Magazin & Ratgeber für junge Leute in der Schweiz",
+    description: "Tipps, Ratgeber und Vergleiche rund ums Sparen, Studieren, Wohnen und Finanzen in der Schweiz.",
+    path: "/magazin",
+    locale,
+  });
+}
 
 export default async function MagazinPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -4,15 +4,16 @@ import Script from "next/script";
 import { ShieldCheck, Mail, MapPin, User, FileText } from "lucide-react";
 import { safeJsonLd } from "@/lib/utils";
 
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  return {
-    title: "Impressum & Rechtliche Hinweise | JungVorteil",
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Impressum & Rechtliche Hinweise",
     description: "Rechtliche Informationen, Anbieterkennzeichnung, Impressum und Kontaktadresse des unabhängigen Schweizer Vorteilsportals JungVorteil.",
-    alternates: {
-      canonical: `https://jungvorteil.ch/${locale}/impressum`,
-    },
-  };
+    path: "/impressum",
+    locale,
+  });
 }
 
 export default async function ImpressumPage({ params }: { params: Promise<{ locale: string }> }) {

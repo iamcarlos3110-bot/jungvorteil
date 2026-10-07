@@ -1,24 +1,15 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import { Building2, CheckCircle2, Users, Target, ShieldCheck, Mail, ArrowRight } from "lucide-react";
+import { generateSwissMetadata } from "@/lib/swissSeo";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  return {
-    title: "Für Unternehmen & Partner – Angebote auf JungVorteil veröffentlichen | JungVorteil",
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Für Unternehmen & Partner – Angebote auf JungVorteil veröffentlichen",
     description: "Erreichen Sie die junge Zielgruppe in der Schweiz (16–30 Jahre). Präsentieren Sie Ihre Jugendrabatte, Studentenangebote und Vorteile auf JungVorteil.ch.",
-    alternates: {
-      canonical: `https://jungvorteil.ch/${locale}/unternehmen`,
-    },
-    openGraph: {
-      title: "Für Unternehmen – Partner werden auf JungVorteil.ch",
-      description: "Erreichen Sie Auszubildende, Studierende und junge Erwachsene in der Schweiz mit exklusiven Vorteilen.",
-      url: `https://jungvorteil.ch/${locale}/unternehmen`,
-      siteName: "JungVorteil",
-      locale,
-      type: "website",
-    },
-  };
+    path: "/unternehmen",
+    locale,
+  });
 }
 
 export default async function UnternehmenPage({ params }: { params: Promise<{ locale: string }> }) {

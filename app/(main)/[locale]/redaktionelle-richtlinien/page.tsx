@@ -1,24 +1,15 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck, FileText, CheckCircle2, RefreshCw, Eye, HeartHandshake, Mail, ArrowRight, UserCheck } from "lucide-react";
+import { generateSwissMetadata } from "@/lib/swissSeo";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  return {
-    title: "Redaktionelle Richtlinien & Prüfmethodik | JungVorteil",
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Redaktionelle Richtlinien & Prüfmethodik",
     description: "Unsere transparente redaktionelle Methodik: Wie JungVorteil Schweizer Angebote recherchiert, verifiziert, unabhängig bewertet und monatlich auf Richtigkeit prüft.",
-    alternates: {
-      canonical: `https://jungvorteil.ch/${locale}/redaktionelle-richtlinien`,
-    },
-    openGraph: {
-      title: "Redaktionelle Richtlinien & Prüfmethodik – JungVorteil",
-      description: "Transparenz, Unabhängigkeit und Faktenprüfung bei JungVorteil. Erfahren Sie, wie wir Schweizer Jugendvorteile verifizieren.",
-      url: `https://jungvorteil.ch/${locale}/redaktionelle-richtlinien`,
-      siteName: "JungVorteil",
-      locale,
-      type: "website",
-    },
-  };
+    path: "/redaktionelle-richtlinien",
+    locale,
+  });
 }
 
 export default async function RedaktionelleRichtlinienPage({ params }: { params: Promise<{ locale: string }> }) {

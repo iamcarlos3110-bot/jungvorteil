@@ -3,13 +3,18 @@ import OfferGrid from '@/components/offers/OfferGrid';
 import SearchBar from '@/components/search/SearchBar';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Suche | JungVorteil',
-  robots: {
-    index: false,
-    follow: true
-  }
-};
+import { generateSwissMetadata } from "@/lib/swissSeo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale = "de" } = (await params) || {};
+  return generateSwissMetadata({
+    title: "Suche",
+    description: "Suche nach Rabatten, Deals und Vorteilen in der Schweiz.",
+    path: "/suche",
+    locale,
+    noIndex: true,
+  });
+}
 
 export default async function SearchPage({ params, searchParams }: { params: Promise<{ locale: string }>, searchParams: Promise<{ q?: string }> }) {
   const { locale } = await params;
