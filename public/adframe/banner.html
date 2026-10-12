@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+    body { display: flex; justify-content: center; align-items: center; }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+    (function () {
+      var p = new URLSearchParams(window.location.search);
+      var key = (p.get("key") || "").replace(/[^a-f0-9]/gi, "");
+      var w = parseInt(p.get("w") || "0", 10) || 0;
+      var h = parseInt(p.get("h") || "0", 10) || 0;
+      if (!key || !w || !h) return;
+      window.atOptions = { key: key, format: "iframe", height: h, width: w, params: {} };
+      document.write('<scr' + 'ipt type="text/javascript" src="https://www.highrevenueformat.com/' + key + '/invoke.js"></scr' + 'ipt>');
+    })();
+  </script>
+</body>
+</html>

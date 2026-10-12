@@ -3,39 +3,23 @@
 import { cn } from "@/lib/utils";
 
 interface AdsterraNativeProps {
-  nativeKey?: string;
-  containerId?: string;
-  scriptUrl?: string;
   className?: string;
+  height?: number;
 }
 
-export default function AdsterraNative({
-  nativeKey = "73033babfb4767c65846699bd2a8866b",
-  className,
-}: AdsterraNativeProps) {
-  const iframeSrc = `https://pl31783577.profitableratecpmnetwork.com/watchnew?key=${nativeKey}`;
-
+/**
+ * Renders the Adsterra native banner inside a same-origin iframe (/adframe/native.html).
+ * Adsterra's native code requires a unique container id per document, so isolating
+ * it in an iframe allows several native slots on the same page.
+ */
+export default function AdsterraNative({ className, height = 300 }: AdsterraNativeProps) {
   return (
-    <div
-      className={cn(
-        "my-6 w-full flex flex-col items-center justify-center overflow-hidden",
-        className
-      )}
-    >
+    <div className={cn("my-6 w-full flex justify-center overflow-hidden", className)}>
       <iframe
-        src={iframeSrc}
-        width="100%"
-        height="180"
-        style={{
-          width: "100%",
-          maxWidth: "800px",
-          height: "180px",
-          border: "none",
-          overflow: "hidden",
-        }}
+        src="/adframe/native.html"
+        style={{ width: "100%", maxWidth: "900px", height: `${height}px`, border: "none", overflow: "hidden" }}
         title="Werbung"
         scrolling="no"
-        frameBorder="0"
         loading="lazy"
       />
     </div>

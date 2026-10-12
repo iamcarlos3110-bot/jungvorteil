@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { AdSlotId, AD_SLOTS, ADSTERRA_CONFIG, isAdsterraEnabled } from "@/config/adSlots";
 import AdSenseUnit from "./AdSenseUnit";
-import AdsterraBanner from "./AdsterraBanner";
+import AdsterraBanner, { ResponsiveAdsterraBanner } from "./AdsterraBanner";
 import AdsterraNative from "./AdsterraNative";
 
 interface AdSlotProps {
@@ -54,10 +54,7 @@ export default function AdSlot({
         {label && <span className="text-[10px] text-gray-400 font-semibold tracking-wider">WERBUNG</span>}
         
         {slotDef?.type === "native" ? (
-          <AdsterraNative
-            containerId={ADSTERRA_CONFIG.nativeContainerId}
-            scriptUrl={ADSTERRA_CONFIG.nativeScriptUrl}
-          />
+          <AdsterraNative />
         ) : slotDef?.mobile && !slotDef?.desktop ? (
           <AdsterraBanner
             bannerKey={ADSTERRA_CONFIG.banner320x50Key}
@@ -71,22 +68,10 @@ export default function AdSlot({
             height={90}
           />
         ) : (
-          <>
-            <div className="hidden md:block">
-              <AdsterraBanner
-                bannerKey={ADSTERRA_CONFIG.banner728x90Key}
-                width={728}
-                height={90}
-              />
-            </div>
-            <div className="block md:hidden">
-              <AdsterraBanner
-                bannerKey={ADSTERRA_CONFIG.banner320x50Key}
-                width={320}
-                height={50}
-              />
-            </div>
-          </>
+          <ResponsiveAdsterraBanner
+            desktopKey={ADSTERRA_CONFIG.banner728x90Key}
+            mobileKey={ADSTERRA_CONFIG.banner320x50Key}
+          />
         )}
       </div>
     );

@@ -69,6 +69,6 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip internals and static public files
-    "/((?!_next|api|ads.txt|favicon.*|icon.*|apple-icon.*|apple-touch-icon.*|robots.txt|sitemap.xml|manifest.*|images).*)",
+    "/((?!_next|api|adframe|ads.txt|favicon.*|icon.*|apple-icon.*|apple-touch-icon.*|robots.txt|sitemap.xml|manifest.*|images).*)",
   ],
 };
