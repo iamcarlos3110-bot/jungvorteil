@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface AdsterraBannerProps {
@@ -16,46 +15,31 @@ export default function AdsterraBanner({
   height,
   className,
 }: AdsterraBannerProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    // Check opt-out
-    const isOptedOut =
-      typeof window !== "undefined" &&
-      localStorage.getItem("jv_advertising_consent") === "false";
-    if (isOptedOut) return;
-
-    // Reset container
-    container.innerHTML = "";
-
-    const confScript = document.createElement("script");
-    confScript.type = "text/javascript";
-    confScript.text = `
-      atOptions = {
-        'key' : '${bannerKey}',
-        'format' : 'iframe',
-        'height' : ${height},
-        'width' : ${width},
-        'params' : {}
-      };
-    `;
-
-    const invokeScript = document.createElement("script");
-    invokeScript.type = "text/javascript";
-    invokeScript.src = `https://www.highrevenueformat.com/${bannerKey}/invoke.js`;
-
-    container.appendChild(confScript);
-    container.appendChild(invokeScript);
-  }, [bannerKey, width, height]);
+  const iframeSrc = `https://www.highrevenueformat.com/watchnew?key=${bannerKey}`;
 
   return (
     <div
-      ref={containerRef}
-      className={cn("flex justify-center items-center my-3 overflow-hidden", className)}
-      style={{ minHeight: `${height}px` }}
-    />
+      className={cn(
+        "flex justify-center items-center my-3 overflow-hidden",
+        className
+      )}
+      style={{ minHeight: `${height}px`, minWidth: `${width}px` }}
+    >
+      <iframe
+        src={iframeSrc}
+        width={width}
+        height={height}
+        style={{
+          width: `${width}px`,
+          height: `${height}px`,
+          border: "none",
+          overflow: "hidden",
+        }}
+        title="Werbung"
+        scrolling="no"
+        frameBorder="0"
+        loading="lazy"
+      />
+    </div>
   );
 }
