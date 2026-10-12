@@ -7,6 +7,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import CookieBanner from '@/components/ui/CookieBanner';
+import AdsterraSocialBar from '@/components/ads/AdsterraSocialBar';
 import Script from 'next/script';
 import { Inter, Outfit } from 'next/font/google';
 
@@ -91,6 +92,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           <main id="main-content">{children}</main>
           <Footer locale={locale} />
           <CookieBanner />
+          <AdsterraSocialBar />
         </NextIntlClientProvider>
       </body>
     </html>
