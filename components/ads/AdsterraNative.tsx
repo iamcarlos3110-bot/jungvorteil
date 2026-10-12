@@ -15,26 +15,25 @@ export default function AdsterraNative({
   className,
 }: AdsterraNativeProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const loadedRef = useRef(false);
 
   useEffect(() => {
-    if (loadedRef.current || !wrapperRef.current) return;
-
-    // Check opt-out (only block if user explicitly rejected advertising cookies)
     const isOptedOut =
       typeof window !== "undefined" &&
       localStorage.getItem("jv_advertising_consent") === "false";
-
     if (isOptedOut) return;
+
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    if (container.hasAttribute("data-ad-loaded")) return;
+    container.setAttribute("data-ad-loaded", "true");
 
     const script = document.createElement("script");
     script.src = scriptUrl;
     script.async = true;
     script.setAttribute("data-cfasync", "false");
-
-    wrapperRef.current.appendChild(script);
-    loadedRef.current = true;
-  }, [scriptUrl]);
+    document.body.appendChild(script);
+  }, [containerId, scriptUrl]);
 
   return (
     <div ref={wrapperRef} className={cn("my-6 w-full flex flex-col items-center justify-center", className)}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface AdsterraBannerProps {
@@ -16,55 +16,46 @@ export default function AdsterraBanner({
   height,
   className,
 }: AdsterraBannerProps) {
-  const htmlContent = useMemo(() => {
-    return `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-  </style>
-</head>
-<body>
-  <script type="text/javascript">
-    atOptions = {
-      'key' : '${bannerKey}',
-      'format' : 'iframe',
-      'height' : ${height},
-      'width' : ${width},
-      'params' : {}
-    };
-  </script>
-  <script type="text/javascript" src="https://www.highrevenueformat.com/${bannerKey}/invoke.js"></script>
-</body>
-</html>`;
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Check opt-out
+    const isOptedOut =
+      typeof window !== "undefined" &&
+      localStorage.getItem("jv_advertising_consent") === "false";
+    if (isOptedOut) return;
+
+    // Reset container
+    container.innerHTML = "";
+
+    const confScript = document.createElement("script");
+    confScript.type = "text/javascript";
+    confScript.text = `
+      atOptions = {
+        'key' : '${bannerKey}',
+        'format' : 'iframe',
+        'height' : ${height},
+        'width' : ${width},
+        'params' : {}
+      };
+    `;
+
+    const invokeScript = document.createElement("script");
+    invokeScript.type = "text/javascript";
+    invokeScript.src = `https://www.highrevenueformat.com/${bannerKey}/invoke.js`;
+
+    container.appendChild(confScript);
+    container.appendChild(invokeScript);
   }, [bannerKey, width, height]);
 
   return (
-    <div className={cn("flex justify-center items-center overflow-hidden my-2", className)}>
-      <iframe
-        srcDoc={htmlContent}
-        width={width}
-        height={height}
-        style={{
-          width: `${width}px`,
-          height: `${height}px`,
-          border: "none",
-          overflow: "hidden",
-        }}
-        title="Werbung"
-        scrolling="no"
-        loading="lazy"
-      />
-    </div>
+    <div
+      ref={containerRef}
+      className={cn("flex justify-center items-center my-3 overflow-hidden", className)}
+      style={{ minHeight: `${height}px` }}
+    />
   );
 }
