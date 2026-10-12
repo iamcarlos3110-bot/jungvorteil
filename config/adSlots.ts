@@ -58,7 +58,7 @@ export const AD_SLOTS: AdSlotDefinition[] = [
 ];
 
 export function isAdsterraEnabled(): boolean {
-  return process.env.NEXT_PUBLIC_ADSTERRA_ENABLED === "true";
+  return process.env.NEXT_PUBLIC_ADSTERRA_ENABLED !== "false";
 }
 
 export function getAdCode(envKey: string): string | null {

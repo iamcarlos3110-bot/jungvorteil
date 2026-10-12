@@ -20,11 +20,12 @@ export default function AdsterraNative({
   useEffect(() => {
     if (loadedRef.current || !wrapperRef.current) return;
 
-    // Check user consent (GDPR)
-    const hasConsent = typeof window !== "undefined" && localStorage.getItem("jv_advertising_consent") === "true";
-    if (!hasConsent && process.env.NODE_ENV !== "development") {
-      return;
-    }
+    // Check opt-out (only block if user explicitly rejected advertising cookies)
+    const isOptedOut =
+      typeof window !== "undefined" &&
+      localStorage.getItem("jv_advertising_consent") === "false";
+
+    if (isOptedOut) return;
 
     const script = document.createElement("script");
     script.src = scriptUrl;

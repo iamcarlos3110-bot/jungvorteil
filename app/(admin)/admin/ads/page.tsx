@@ -1,9 +1,7 @@
-import { ADSTERRA_CONFIG } from "@/config/adSlots";
+import { ADSTERRA_CONFIG, isAdsterraEnabled } from "@/config/adSlots";
 
 export default function AdsPage() {
-  const isAdsterraEnabled =
-    process.env.NEXT_PUBLIC_ADSTERRA_ENABLED === "true" ||
-    process.env.ADSTERRA_ENABLED === "true";
+  const isEnabled = isAdsterraEnabled();
 
   return (
     <div className="space-y-6 text-gray-200">
@@ -11,28 +9,25 @@ export default function AdsPage() {
         <h1 className="text-3xl font-bold">Publicidad (Adsterra)</h1>
         <span
           className={`px-3 py-1 rounded-full text-xs font-bold ${
-            isAdsterraEnabled
+            isEnabled
               ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
               : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
           }`}
         >
-          {isAdsterraEnabled ? "● Publicidad Activa" : "○ Desactivada"}
+          {isEnabled ? "● Publicidad Activa" : "○ Desactivada"}
         </span>
       </div>
 
-      {!isAdsterraEnabled ? (
+      {!isEnabled ? (
         <div className="bg-amber-900/30 border border-amber-800 text-amber-200 p-4 rounded-xl">
           <h2 className="font-bold">Publicidad desactivada</h2>
           <p className="mt-1 text-sm">
-            Para activar los anuncios de Adsterra, define en Vercel o en <code>.env.local</code>:
+            Para desactivar los anuncios de Adsterra, define <code>NEXT_PUBLIC_ADSTERRA_ENABLED=false</code>.
           </p>
-          <code className="block mt-2 bg-black/40 p-2 rounded text-xs text-amber-300">
-            NEXT_PUBLIC_ADSTERRA_ENABLED=true
-          </code>
         </div>
       ) : (
         <div className="bg-emerald-950/40 border border-emerald-800 text-emerald-200 p-4 rounded-xl text-sm">
-          ✅ Los bloques publicitarios de Adsterra están configurados y activos en el portal.
+          ✅ Los 4 bloques publicitarios de Adsterra están configurados y activos automáticamente en todo el portal.
         </div>
       )}
 

@@ -2,20 +2,35 @@
 
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { ADSTERRA_CONFIG } from "@/config/adSlots";
+import { ADSTERRA_CONFIG, isAdsterraEnabled } from "@/config/adSlots";
 
 export default function AdsterraSocialBar() {
   const [canLoad, setCanLoad] = useState(false);
 
   useEffect(() => {
-    // Check user consent (GDPR)
-    const hasConsent = typeof window !== "undefined" && localStorage.getItem("jv_advertising_consent") === "true";
-    if (hasConsent || process.env.NODE_ENV === "development") {
+    // Only block if user explicitly opted out
+    const isOptedOut =
+      typeof window !== "undefined" &&
+      localStorage.getItem("jv_advertising_consent") === "false";
+
+    if (!isOptedOut) {
       setCanLoad(true);
     }
+
+    const handleConsent = () => {
+      const optedOut = localStorage.getItem("jv_advertising_consent") === "false";
+      setCanLoad(!optedOut);
+    };
+
+    window.addEventListener("jv_consent_updated", handleConsent);
+    window.addEventListener("storage", handleConsent);
+    return () => {
+      window.removeEventListener("jv_consent_updated", handleConsent);
+      window.removeEventListener("storage", handleConsent);
+    };
   }, []);
 
-  const isEnabled = process.env.NEXT_PUBLIC_ADSTERRA_ENABLED === "true";
+  const isEnabled = isAdsterraEnabled();
   if (!isEnabled || !canLoad) return null;
 
   return (
