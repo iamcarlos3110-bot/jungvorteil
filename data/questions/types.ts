@@ -38,4 +38,6 @@ export interface TestMetadata {
   questionCount: number;
   timeMinutes: number;
   maxErrorPoints: number;
+  difficulty?: "EASY" | "MEDIUM" | "HARD";
+  tags?: string[];
 }
