@@ -1,88 +1,94 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { Sparkles } from "lucide-react";
+import { Car } from "lucide-react";
 
 interface FooterProps {
   locale: string;
 }
 
 export default function Footer({ locale }: FooterProps) {
-  const t = useTranslations("footer");
-
   return (
-    <footer className="bg-[#111827] text-white pt-16 pb-8 border-t border-gray-800">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+    <footer className="bg-slate-950 text-white pt-16 pb-12 border-t border-slate-800">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Col */}
-          <div className="col-span-2 flex flex-col gap-4">
+          <div className="md:col-span-1 flex flex-col gap-3">
             <Link
               href={`/${locale}`}
-              className="flex items-center gap-1.5 text-xl font-bold text-white group"
+              className="flex items-center gap-2 text-xl font-black text-white"
             >
-              JungVorteil
-              <Sparkles className="w-5 h-5 text-[#537A4B]" />
+              <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+                <Car className="w-4 h-4" />
+              </div>
+              <span>
+                Auto<span className="text-indigo-400">Theorie</span> Schweiz
+              </span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              {t("tagline")}
+            <p className="text-slate-400 text-xs leading-relaxed">
+              Kostenlose Schweizer Theorieprüfung online üben für Auto (Kategorie B) und Motorrad (Kategorie A/A1). 
+              Basierend auf den offiziellen Vorschriften der ASA, SVG, VRV und SSV.
             </p>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-gray-200 mb-2">{t("columns.vorteile")}</h4>
-            <Link href={`/${locale}/angebote`} className="text-gray-400 hover:text-white text-sm transition-colors">Alle Vorteile</Link>
-            <Link href={`/${locale}/gratis`} className="text-gray-400 hover:text-white text-sm transition-colors">Kostenlos</Link>
+          {/* Col 2: Lernen & Prüfung */}
+          <div className="flex flex-col gap-2.5">
+            <h4 className="font-bold text-slate-200 text-sm mb-1 uppercase tracking-wider">Lernen & Prüfung</h4>
+            <Link href={`/${locale}/pruefung`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Offizielle Prüfungssimulation (50 Fragen)
+            </Link>
+            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Themen-Training (Vortritt, Tempo, etc.)
+            </Link>
+            <Link href={`/${locale}/signale`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Schweizer Verkehrssignale (SSV)
+            </Link>
+            <Link href={`/${locale}/ratgeber`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Führerschein mit 17: Schritt für Schritt
+            </Link>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-gray-200 mb-2">{t("columns.fuerJunge") || "Für Junge"}</h4>
-            <Link href={`/${locale}/studentenrabatte`} className="text-gray-400 hover:text-white text-sm transition-colors">Studierende</Link>
-            <Link href={`/${locale}/unter-25`} className="text-gray-400 hover:text-white text-sm transition-colors">Unter 25</Link>
-            <Link href={`/${locale}/unter-30`} className="text-gray-400 hover:text-white text-sm transition-colors">Unter 30</Link>
+          {/* Col 3: Wichtige Themen */}
+          <div className="flex flex-col gap-2.5">
+            <h4 className="font-bold text-slate-200 text-sm mb-1 uppercase tracking-wider">Themenbereiche</h4>
+            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Rechtsvortritt & Kreisverkehr
+            </Link>
+            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Geschwindigkeit & Tempo-30-Zonen
+            </Link>
+            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Autobahn & Rettungsgasse
+            </Link>
+            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Promillegrenzen & Neulenker (0.1‰)
+            </Link>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-gray-200 mb-2">Entdecken</h4>
-            <Link href={`/${locale}/staedte`} className="text-gray-400 hover:text-white text-sm transition-colors">Städte</Link>
-            <Link href={`/${locale}/kategorien`} className="text-gray-400 hover:text-white text-sm transition-colors">Kategorien</Link>
-            <Link href={`/${locale}/marken`} className="text-gray-400 hover:text-white text-sm transition-colors">Unternehmen</Link>
-            <Link href={`/${locale}/unternehmen`} className="text-gray-400 hover:text-white text-sm transition-colors">Für Unternehmen</Link>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-gray-200 mb-2">{t("columns.ueber")}</h4>
-            <Link href={`/${locale}/ueber-uns`} className="text-gray-400 hover:text-white text-sm transition-colors font-medium text-emerald-400">Über uns</Link>
-            <Link href={`/${locale}/redaktionelle-richtlinien`} className="text-gray-400 hover:text-white text-sm transition-colors">Redaktionelle Richtlinien</Link>
-            <Link href={`/${locale}/magazin`} className="text-gray-400 hover:text-white text-sm transition-colors">Magazin</Link>
-            <Link href={`/${locale}/kontakt`} className="text-gray-400 hover:text-white text-sm transition-colors">Kontakt</Link>
-            <Link href={`/${locale}/datenschutz`} className="text-gray-400 hover:text-white text-sm transition-colors">Datenschutz</Link>
+          {/* Col 4: Rechtliches & Info */}
+          <div className="flex flex-col gap-2.5">
+            <h4 className="font-bold text-slate-200 text-sm mb-1 uppercase tracking-wider">Rechtliches</h4>
+            <Link href={`/${locale}/impressum`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Impressum
+            </Link>
+            <Link href={`/${locale}/datenschutz`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Datenschutz
+            </Link>
+            <Link href={`/${locale}/nutzungsbedingungen`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Nutzungsbedingungen
+            </Link>
+            <Link href={`/${locale}/kontakt`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Kontakt
+            </Link>
           </div>
         </div>
 
-        {/* Explicit Transparency & Independence Block */}
-        <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-5 my-6 text-xs text-gray-400 space-y-2">
-          <div className="flex items-center gap-2 font-bold text-gray-200">
-            <Sparkles className="w-4 h-4 text-[#537A4B]" />
-            <span>Transparenz &amp; Unabhängigkeit</span>
-          </div>
-          <p className="leading-relaxed">
-            JungVorteil ist ein von Carlos Piñeiro betriebenes, unabhängiges Schweizer Vorteilsportal. Alle Angebote werden manuell geprüft. Einige Verweise sind sogenannte Affiliate-Links: Bei einer erfolgreichen Vermittlung erhalten wir unter Umständen eine kleine Provision – für dich als Nutzer entstehen dabei <strong>zu keinem Zeitpunkt Zusatzkosten</strong>.
+        {/* Disclaimer & Copyright */}
+        <div className="pt-8 border-t border-slate-900 text-slate-400 text-[11px] leading-relaxed flex flex-col md:flex-row items-center justify-between gap-4">
+          <p>
+            © {new Date().getFullYear()} AutoTheorie Schweiz. Alle Rechte vorbehalten. Pädagogisches Übungsportal zur Vorbereitung auf die amtliche Theorieprüfung.
           </p>
-        </div>
-
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} JungVorteil. {t("copyright")}
+          <p className="text-slate-400">
+            Keine offizielle Webseite der Vereinigung der Strassenverkehrsämter (asa).
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <Link href={`/${locale}/ueber-uns`} className="hover:text-white transition-colors">Über uns</Link>
-            <Link href={`/${locale}/datenschutz`} className="hover:text-white transition-colors">{t("links.datenschutz")}</Link>
-            <Link href={`/${locale}/impressum`} className="hover:text-white transition-colors">{t("links.impressum")}</Link>
-            <Link href={`/${locale}/nutzungsbedingungen`} className="hover:text-white transition-colors">{t("links.nutzungsbedingungen")}</Link>
-          </div>
-        </div>
-        
-        <div className="mt-6 text-xs text-gray-600 text-center md:text-left max-w-4xl">
-          <p>{t("disclaimer")}</p>
         </div>
       </div>
     </footer>

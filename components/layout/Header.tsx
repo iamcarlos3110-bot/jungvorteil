@@ -2,29 +2,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Search, Sparkles } from "lucide-react";
+import { Menu, X, Car, Award, BookOpen, AlertTriangle, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
 
 interface HeaderProps {
   locale: string;
 }
 
 export default function Header({ locale }: HeaderProps) {
-  const t = useTranslations("nav");
-  const tSearch = useTranslations("search");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const [prevPathname, setPrevPathname] = useState(pathname);
-
-  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
-  const isTransparent = !isScrolled && isHomePage;
-
-  if (pathname !== prevPathname) {
-    setPrevPathname(pathname);
-    setIsMobileMenuOpen(false);
-  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,176 +24,167 @@ export default function Header({ locale }: HeaderProps) {
   }, []);
 
   const navLinks = [
-    { href: `/${locale}/angebote`, label: t("angebote") },
-    { href: `/${locale}/rabatte`, label: t("rabatte") },
-    { href: `/${locale}/studentenrabatte`, label: t("studierende") },
-    { href: `/${locale}/unter-30`, label: t("unter30") },
-    { href: `/${locale}/staedte`, label: t("staedte") },
-    { href: `/${locale}/kategorien`, label: t("kategorien") },
+    { href: `/${locale}/pruefung`, label: "Prüfungssimulation", icon: Award },
+    { href: `/${locale}/themen`, label: "Themen-Training", icon: BookOpen },
+    { href: `/${locale}/signale`, label: "Verkehrssignale", icon: AlertTriangle },
+    { href: `/${locale}/ratgeber`, label: "Führerschein-Guide", icon: HelpCircle },
   ];
 
   return (
     <>
       <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isTransparent
-          ? "bg-gradient-to-b from-emerald-950/60 via-emerald-950/20 to-transparent py-4"
-          : "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm py-3"
-      )}
-    >
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href={`/${locale}`}
-            className={cn(
-              "flex items-center gap-2 text-xl font-black tracking-tight transition-colors group",
-              isTransparent ? "text-white" : "text-gray-900"
-            )}
-          >
-            <div
+        className={cn(
+          "sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3"
+            : "bg-indigo-950/90 backdrop-blur-md border-b border-indigo-900/50 py-4 text-white"
+        )}
+      >
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link
+              href={`/${locale}`}
               className={cn(
-                "w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm",
-                isTransparent
-                  ? "bg-white/20 text-white backdrop-blur-md border border-white/20 group-hover:bg-white/30"
-                  : "bg-[#3F5E39] text-white group-hover:bg-[#324B2D]"
+                "flex items-center gap-2.5 text-xl font-black tracking-tight transition-colors group",
+                isScrolled ? "text-slate-900" : "text-white"
               )}
             >
-              <Sparkles className="w-4 h-4" />
-            </div>
-            <span>
-              Jung
-              <span
-                className={
-                  isTransparent ? "text-emerald-200" : "text-[#3F5E39]"
-                }
+              <div
+                className={cn(
+                  "w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm",
+                  isScrolled
+                    ? "bg-indigo-600 text-white group-hover:bg-indigo-700"
+                    : "bg-indigo-500 text-white group-hover:bg-indigo-400"
+                )}
               >
-                Vorteil
-              </span>
-            </span>
-          </Link>
+                <Car className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="leading-tight font-black text-lg">
+                  Auto<span className="text-indigo-400">Theorie</span>
+                </span>
+                <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400 -mt-1">
+                  Schweiz Kat. B/A
+                </span>
+              </div>
+            </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-1.5">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "text-xs font-bold transition-all px-3.5 py-2 rounded-xl flex items-center gap-1.5",
+                      isScrolled
+                        ? isActive
+                          ? "text-indigo-600 bg-indigo-50 font-extrabold"
+                          : "text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                        : isActive
+                        ? "text-white bg-white/20 font-extrabold"
+                        : "text-slate-300 hover:text-white hover:bg-white/10"
+                    )}
+                  >
+                    <Icon className="w-4 h-4 opacity-75" />
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* Right Action: Language + CTA */}
+            <div className="flex items-center gap-3">
+              {/* Language Switcher */}
+              <div
+                className={cn(
+                  "flex items-center p-1 rounded-xl text-xs font-bold border",
+                  isScrolled
+                    ? "bg-slate-100 border-slate-200 text-slate-700"
+                    : "bg-white/10 border-white/15 text-white"
+                )}
+              >
+                {["de", "fr", "it"].map((lang) => {
+                  const href = pathname.replace(`/${locale}`, `/${lang}`);
+                  const isLangActive = locale === lang;
+                  return (
+                    <Link
+                      key={lang}
+                      href={href}
+                      className={cn(
+                        "px-2 py-0.5 rounded-lg uppercase text-[11px] font-bold transition-all",
+                        isLangActive
+                          ? isScrolled
+                            ? "bg-indigo-600 text-white shadow-sm"
+                            : "bg-white text-indigo-950 font-black shadow-sm"
+                          : "hover:opacity-80"
+                      )}
+                    >
+                      {lang}
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Start Test CTA */}
+              <Link
+                href={`/${locale}/pruefung`}
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-extrabold shadow-sm transition active:scale-95"
+              >
+                <Award className="w-4 h-4" />
+                <span>Test starten</span>
+              </Link>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={cn(
+                  "lg:hidden p-2 rounded-xl transition cursor-pointer",
+                  isScrolled
+                    ? "text-slate-700 hover:bg-slate-100"
+                    : "text-white hover:bg-white/10"
+                )}
+                aria-label="Menü öffnen"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-x-0 top-[65px] bg-white border-b border-slate-200 z-40 p-4 shadow-xl lg:hidden animate-fade-in">
+          <div className="flex flex-col gap-2">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const Icon = link.icon;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={cn(
-                    "text-sm font-medium transition-all px-3.5 py-1.5 rounded-full",
-                    isTransparent
-                      ? isActive
-                        ? "text-white bg-white/20 font-semibold"
-                        : "text-white/85 hover:text-white hover:bg-white/10"
-                      : isActive
-                      ? "text-[#3F5E39] bg-[#EAF0E5] font-semibold"
-                      : "text-gray-600 hover:text-[#3F5E39] hover:bg-[#F4F7F2]"
-                  )}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 text-slate-800 font-bold text-sm"
                 >
+                  <Icon className="w-5 h-5 text-indigo-600" />
                   {link.label}
                 </Link>
               );
             })}
-          </nav>
-
-          {/* Actions */}
-          <div className="flex items-center gap-2 md:gap-3">
-            {/* Language Switcher */}
-            <div
-              className={cn(
-                "flex items-center p-1 rounded-full text-xs font-bold transition-all border",
-                isTransparent
-                  ? "bg-white/15 backdrop-blur-md border-white/20 text-white shadow-inner"
-                  : "bg-gray-100 border-gray-200/80 text-gray-700"
-              )}
-            >
-              {["de", "fr", "it"].map((lang) => {
-                const href = pathname.replace(`/${locale}`, `/${lang}`);
-                const isLangActive = locale === lang;
-                return (
-                  <Link
-                    key={lang}
-                    href={href}
-                    className={cn(
-                      "px-2.5 py-1 rounded-full uppercase transition-all duration-200",
-                      isLangActive
-                        ? isTransparent
-                          ? "bg-white text-[#253D22] font-black shadow-md"
-                          : "bg-[#3F5E39] text-white font-black shadow-sm"
-                        : isTransparent
-                        ? "text-white/80 hover:text-white hover:bg-white/20"
-                        : "text-gray-600 hover:text-[#3F5E39] hover:bg-white/80"
-                    )}
-                  >
-                    {lang}
-                  </Link>
-                );
-              })}
-            </div>
-
-            {/* Search Icon */}
             <Link
-              href={`/${locale}/suche`}
-              className={cn(
-                "p-2 rounded-full transition-colors flex items-center justify-center",
-                isTransparent
-                  ? "text-white/85 hover:text-white hover:bg-white/15"
-                  : "text-gray-600 hover:text-[#3F5E39] hover:bg-[#F4F7F2]"
-              )}
-              aria-label={tSearch("title")}
+              href={`/${locale}/pruefung`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-2 w-full py-3 bg-indigo-600 text-white text-center rounded-xl font-bold text-sm shadow flex items-center justify-center gap-2"
             >
-              <Search className="w-5 h-5" />
+              <Award className="w-4 h-4" /> Offizielle Prüfung starten
             </Link>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              className={cn(
-                "lg:hidden p-2 rounded-xl transition-colors",
-                isTransparent
-                  ? "text-white hover:bg-white/15"
-                  : "text-gray-600 hover:text-[#3F5E39] hover:bg-[#F4F7F2]"
-              )}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Menu Dropdown */}
-      <div
-        className={cn(
-          "lg:hidden fixed inset-x-0 top-[65px] bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-2xl transition-all duration-300 ease-in-out origin-top px-4 py-6",
-          isMobileMenuOpen
-            ? "scale-y-100 opacity-100 pointer-events-auto"
-            : "scale-y-0 opacity-0 pointer-events-none h-0 p-0"
-        )}
-      >
-        <div className="flex flex-col space-y-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-base font-semibold text-gray-800 hover:text-[#3F5E39] hover:bg-[#F4F7F2] px-4 py-3 rounded-xl transition-colors flex items-center justify-between"
-            >
-              <span>{link.label}</span>
-              <span className="text-gray-400">&rarr;</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </header>
-      {!isTransparent && <div className="h-16 lg:h-20 shrink-0" aria-hidden="true" />}
+      )}
     </>
   );
 }
-
