@@ -13,7 +13,6 @@ import {
   Brain,
   RotateCcw,
   BarChart2,
-  BookMarked,
   Wine
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -46,7 +45,6 @@ export default function Header({ locale }: HeaderProps) {
     { href: `/${locale}/pruefung`, label: "50 Fragen", icon: Award },
     { href: `/${locale}/memorizar`, label: "Memorizar", icon: Brain },
     { href: `/${locale}/progreso`, label: "Fortschritt", icon: BarChart2 },
-    { href: `/${locale}/por-libre`, label: "Por Libre", icon: BookMarked },
     { href: `/${locale}/magazin`, label: "Magazin", icon: BookOpen },
     { href: `/${locale}/promille`, label: "Promille", icon: Wine },
     { href: `/${locale}/fallos`, label: "Fehler", icon: RotateCcw },

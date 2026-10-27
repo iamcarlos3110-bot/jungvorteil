@@ -44,9 +44,6 @@ export default function Footer({ locale }: FooterProps) {
             <Link href={`/${locale}/ratgeber`} className="text-slate-400 hover:text-white text-xs transition-colors">
               Führerschein mit 17: Schritt für Schritt
             </Link>
-            <Link href={`/${locale}/por-libre`} className="text-slate-400 hover:text-white text-xs transition-colors">
-              Führerschein Por Libre (CHF 1'800 sparen)
-            </Link>
           </div>
 
           {/* Col 3: Magazin & Ratgeber */}
