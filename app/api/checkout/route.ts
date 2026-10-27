@@ -28,6 +28,7 @@ export async function POST(req: NextRequest) {
             product_data: {
               name: "AutoTheorie PRO • Schweizer VIP-Pass",
               description: "Zugang zu allen 600 ASA-Theoriefragen, Prüfungsfallen & 100% werbefrei",
+              tax_code: "txcd_10000000",
               images: [`${origin}/icon.png`],
             },
           },
