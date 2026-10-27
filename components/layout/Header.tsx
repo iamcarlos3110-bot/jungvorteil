@@ -167,10 +167,20 @@ export default function Header({ locale }: HeaderProps) {
                 })}
               </div>
 
+              {/* PRO Pass VIP Button */}
+              <Link
+                href={`/${locale}/premium`}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-black rounded-xl text-xs shadow-sm transition active:scale-95 cursor-pointer"
+              >
+                <span>👑</span>
+                <span className="hidden sm:inline">PRO</span>
+                <span>CHF 7.-</span>
+              </Link>
+
               {/* Start Test CTA */}
               <Link
                 href={`/${locale}/pruefung`}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-extrabold shadow-sm transition active:scale-95 cursor-pointer"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-extrabold shadow-sm transition active:scale-95 cursor-pointer"
               >
                 <Award className="w-3.5 h-3.5" />
                 <span>Test</span>

@@ -208,6 +208,34 @@ export default function ExamSimulator({ locale }: ExamSimulatorProps) {
           </div>
         </div>
 
+        {/* PRO VIP PASS CONVERSION CALLOUT */}
+        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-950 border-2 border-amber-400/40 rounded-3xl p-6 sm:p-8 text-white my-6 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-2xl bg-amber-400/20 text-amber-400 flex items-center justify-center text-3xl shrink-0">
+              👑
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-black uppercase text-amber-400">Schweizer VIP-Pass</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 bg-emerald-500/20 text-emerald-300 rounded-full">Erfolgsgarantie</span>
+              </div>
+              <h3 className="text-xl font-black text-white">
+                Sichere dir die 100 tückischsten ASA-Durchfallerfragen!
+              </h3>
+              <p className="text-slate-300 text-xs mt-1 max-w-lg">
+                80% der Fahrschüler scheitern an denselben Fangfragen. Schalte alle Fragen und werbefreies Lernen mit TWINT für nur <strong>CHF 7.-</strong> frei.
+              </p>
+            </div>
+          </div>
+          <Link
+            href={`/${locale}/premium`}
+            className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black rounded-2xl text-xs sm:text-sm shadow-lg whitespace-nowrap transition active:scale-95 flex items-center gap-2 shrink-0 cursor-pointer"
+          >
+            <span>PRO für CHF 7.- holen</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
         {/* Ad Banner after Result */}
         <div className="my-6">
           <AdSlot slot="AD_AFTER_HERO" label />

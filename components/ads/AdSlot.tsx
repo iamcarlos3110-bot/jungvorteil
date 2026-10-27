@@ -5,6 +5,7 @@ import { AdSlotId, AD_SLOTS, ADSTERRA_CONFIG, isAdsterraEnabled } from "@/config
 import AdSenseUnit from "./AdSenseUnit";
 import AdsterraBanner, { ResponsiveAdsterraBanner } from "./AdsterraBanner";
 import AdsterraNative from "./AdsterraNative";
+import { getPremiumStatus } from "@/lib/premium";
 
 interface AdSlotProps {
   slot: AdSlotId;
@@ -22,6 +23,11 @@ export default function AdSlot({
   className,
   label = true,
 }: AdSlotProps) {
+  // If user has PRO Pass, never render ads
+  if (typeof window !== "undefined" && getPremiumStatus()) {
+    return null;
+  }
+
   const adsterraActive = isAdsterraEnabled();
   const isDev = process.env.NODE_ENV === "development";
 
