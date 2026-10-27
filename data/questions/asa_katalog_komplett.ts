@@ -5869,5 +5869,6728 @@ export const ASA_EXTRA_QUESTIONS: Question[] = [
     "points": 2,
     "explanation": "Raststätten und Tankstellen dienen der Erholung und Versorgung, nicht dem Überholen von Autobahnkolonnen (Art. 35 VRV).",
     "ruleReference": "Art. 35 VRV"
+  },
+  {
+    "id": 352,
+    "testId": 12,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Sie stehen an einer Einmündung vor einem Stopsignal. Die Sicht ist durch parkierte Autos behindert. Wo halten Sie an?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zuerst an der Haltelinie vollkommen anhalten, danach langsam bis zur Sichtlinie vortasten und nötigenfalls erneut anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Direkt mitten auf die Kreuzung fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur hupen und ohne Halt weiterfahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei behinderter Sicht muss zuerst an der Haltelinie gestoppt werden. Danach tastet man sich vorsichtig zur Sichtgrenze vor (Art. 36 SSV).",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 353,
+    "testId": 13,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Ein Linienbus signalisiert innerorts das Verlassen einer Haltestelle. Sie nähern sich mit 50 km/h von hinten. Was tun Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit verringern, bremsbereit sein und dem Bus das Einspuren ermöglichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofort Vollgas geben, um vor dem Bus durchzuziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Auf den Gehsteig ausweichen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Innerorts ist Linienbussen das Wegfahren von Haltestellen durch Temporeduktion zu ermöglichen (Art. 15 Abs. 4 VRV).",
+    "ruleReference": "Art. 15 Abs. 4 VRV"
+  },
+  {
+    "id": 354,
+    "testId": 14,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Ein Tram fährt auf der Strasse hinter Ihnen. Sie möchten links abbiegen und müssen wegen Gegenverkehr warten. Was beachten Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie dürfen die Schienen nur blockieren, wenn das Tram dadurch nicht behindert wird; andernfalls weiterfahren oder Tram passieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das Tram muss immer hinter wartenden Autos warten.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man darf die Schienen beliebig lange blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Schienenfahrzeuge dürfen durch wartende Linksabbieger nicht unnötig behindert werden (Art. 38 SVG / Art. 13 VRV).",
+    "ruleReference": "Art. 38 SVG"
+  },
+  {
+    "id": 355,
+    "testId": 15,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Wer hat auf einer schmalen Brücke ohne Vortrittsschilder Vorrang beim gleichzeitigen Eintreffen zweier Autos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es gilt der Rechtsvortritt bzw. das Fahrzeug, das das Hindernis auf seiner Seite hat, muss warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das schnellere Fahrzeug.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das grössere Fahrzeug.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Wer das Hindernis auf seiner Strassenseite hat, muss warten (Art. 9 VRV). Ansonsten gilt der Rechtsvortritt oder gegenseitige Verständigung.",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 356,
+    "testId": 16,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Sie fahren auf einer Vorfahrtsstrasse und möchten nach links in eine Seitenstrasse abbiegen. Ein Fussgänger quert die Seitenstrasse. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Fussgänger hat Vorrang vor dem abbiegenden Fahrzeug.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Vortritt, weil Sie von der Vorfahrtsstrasse kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer schneller ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abbiegende Fahrzeuge müssen Fussgängern, die die Querstrasse überschreiten, stets den Vortritt lassen (Art. 33 SVG).",
+    "ruleReference": "Art. 33 SVG"
+  },
+  {
+    "id": 357,
+    "testId": 17,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Sie kommen an eine Kreuzung mit Kreisverkehr. Ein Radfahrer befindet sich bereits im Kreisel vor Ihnen. Dürfen Sie ihn im Kreisel überholen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, im Kreisel sollte wegen des geringen Raumes und der Richtungsänderungen nicht überholt werden; Sicherheitsabstand halten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, mit mindestens 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man hupt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Überholen im Kreisel ist wegen enger Radien extrem gefährlich. Radfahrer dürfen in der Fahrbahnmitte fahren (Art. 41b VRV).",
+    "ruleReference": "Art. 41b VRV"
+  },
+  {
+    "id": 358,
+    "testId": 18,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Ein Polizeiauto mit eingeschaltetem Blaulicht (ohne Sirene) steht an einer roten Ampel. Die Ampel schaltet auf Grün. Darf die Polizei vor Ihnen fahren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, Einsatzfahrzeuge haben auch mit Blaulicht allein Vorrang und sind zügig passieren zu lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, ohne Sirene hat die Polizei keinerlei Rechte.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur wenn ein Notarzt drin sitzt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Blaulicht zeigt eine dringliche Dienstfahrt an (Art. 27 SVG). Andere Verkehrsteilnehmer müssen die Fahrbahn unverzüglich freigeben.",
+    "ruleReference": "Art. 27 SVG"
+  },
+  {
+    "id": 359,
+    "testId": 19,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Sie möchten aus einer verkehrsberuhigten Begegnungszone (20 km/h) in eine Tempo-30-Zone einfahren. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Verkehr in der Tempo-30-Zone; wer aus einer Begegnungszone ausfährt, hat keinen Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer zuerst an der Kreuzung ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ausfahrten aus Begegnungszonen, Fussgängerzonen und Grundstücken sind gegenüber dem fliessenden Verkehr nachrangig (Art. 15 Abs. 3 VRV).",
+    "ruleReference": "Art. 15 Abs. 3 VRV"
+  },
+  {
+    "id": 360,
+    "testId": 20,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "An einer Kreuzung fällt die Ampel aus (gelbes Blinklicht). Ein Schild zeigt 'Hauptstrasse' für Ihre Richtung. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie haben Vortritt vor dem Querverkehr, da bei Ampelausfall die signalisierten Schilder gelten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Es gilt automatischer Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Alle müssen anhalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei gelbem Blinklicht oder Ausfall der Lichtsignalanlage gelten die angebrachten Vortrittsschilder (Art. 68 SSV).",
+    "ruleReference": "Art. 68 SSV"
+  },
+  {
+    "id": 361,
+    "testId": 1,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Sie stehen als zweites Fahrzeug hinter einem an der Haltelinie wartenden Auto vor einem Stopsignal. Das vordere Auto fährt ab. Dürfen Sie direkt folgen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, jedes Fahrzeug muss für sich selbst an der Haltelinie anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn kein Querverkehr zu sehen ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man dicht aufschliesst.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Stopp-Pflicht gilt individuell für jedes einzelne Fahrzeug an der Haltelinie (Art. 36 SSV). Kein 'Durchrutschen'!",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 362,
+    "testId": 2,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet das Signal 'Rechtsabbiegen für Radfahrer gestattet bei Rot' (Signal mit grünem Velo und Pfeil an der Ampel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Radfahrer und Mofas dürfen bei rotem Lichtsignal nach rechts abbiegen, müssen aber Fussgängern und dem Querverkehr den Vortritt lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Alle Autos dürfen bei Rot rechts abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Radfahrer müssen absteigen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Seit 2021 dürfen Velos und Mofas bei roter Ampel mit diesem Zusatzschild vorsichtig rechts abbiegen (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 363,
+    "testId": 3,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet das Signal 'Pannensignal' (Signal 2.47 'Halteverbot auf dem Pannenstreifen')?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auf dem Pannenstreifen darf auch bei Panne nicht gehalten werden (sofern Gefahrenzone), Weiterrollen bis zur nächsten Bucht zwingend.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pannenstreifen ist frei für alle.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Wohnwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Verbietet das Halten selbst bei Notfällen an besonders engen oder gefährlichen Tunnel- und Brückenstellen (Art. 30 SSV).",
+    "ruleReference": "Art. 30 SSV"
+  },
+  {
+    "id": 364,
+    "testId": 4,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet das Hinweissignal 'Standort eines Defibrillators' (grünes Quadrat mit weissem Herz und Blitz)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zeigt den genauen Standort eines öffentlich zugänglichen automatisierten Defibrillators (AED) für Notfälle an.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Spital in 1 km.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Elektroauto-Ladesäule.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Weist Ersthelfer auf lebensrettende Defibrillatoren bei plötzlichem Herzstillstand hin.",
+    "ruleReference": "Art. 62 SSV"
+  },
+  {
+    "id": 365,
+    "testId": 5,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet eine gelbe Zickzack-Linie vor einer Bushaltestelle?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Haltestelle für öffentliche Busse; Halten nur kurz zum Ein- und Aussteigen gestattet, sofern kein Bus behindert wird (Parkieren verboten).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Parkplatz für Taxis.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Strecke mit vielen Schlaglöchern.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die gelbe Zickzacklinie (Art. 79a SSV) markiert ÖV-Haltestellen. Parkieren ist absolut verboten.",
+    "ruleReference": "Art. 79a SSV"
+  },
+  {
+    "id": 366,
+    "testId": 6,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet das Signal 'Verbot für Motorwagen und Motorräder' (Auto und Motorrad im roten Kreis)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einfahrtsverbot für alle mehrspurigen Motorfahrzeuge und alle Motorräder; Fahrräder und Mofas dürfen passieren.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nur für LKW gesperrt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Verbot für Fahrräder.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.13 untersagt das Befahren für Motorwagen und Motorräder (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 367,
+    "testId": 7,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet ein blaues quadratisches Schild mit weissem Pfeil geradeaus und dem Zusatz 'Einbahn'?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einbahnstrasse: Die Strasse darf nur in Pfeilrichtung befahren werden; Gegenverkehr ist nicht zulässig.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pflicht zum Wenden am Ende.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur für Busse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.08 kennzeichnet Einbahnstrassen (Art. 46 SSV).",
+    "ruleReference": "Art. 46 SSV"
+  },
+  {
+    "id": 368,
+    "testId": 8,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet das Signal 'Spur für Busse' (blaue runde Tafel mit gelbem Bus-Symbol)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dieser Fahrstreifen ist Linienbussen vorbehalten; andere Fahrzeuge dürfen ihn nicht benützen (ausser Taxis, wenn signalisiert).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Busse dürfen hier nicht fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Reisebusse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Busstreifen (Art. 34 SSV) sind dem Linienverkehr vorbehalten. Unberechtigtes Befahren wird gebüsst.",
+    "ruleReference": "Art. 34 SSV"
+  },
+  {
+    "id": 369,
+    "testId": 9,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet ein rot-weisser Richtungspfeil auf einer Warntafel (Kurvenleittafel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt eine besonders scharfe und gefährliche Kurve an; Richtungspfeil zeigt den Kurvenverlauf.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Zeigt eine Ausfahrt an.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Gilt nur für Lastwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Kurvenleittafeln (Signal 1.01/1.02) weisen auf gefährlich enge Kurvenradien hin (Art. 5 SSV).",
+    "ruleReference": "Art. 5 SSV"
+  },
+  {
+    "id": 370,
+    "testId": 10,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet ein weisses rundes Schild mit rotem Rand und einem schwarzen Velo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verbot für Fahrräder und Motorfahrräder (Mofas).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Radweg obligatorisch.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Achtung Radfahrer.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.06 verbietet das Fahren mit Fahrrädern und Mofas (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 371,
+    "testId": 11,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Was bedeutet das Signal 'Tunnel' (Signal 4.07)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt die Einfahrt in einen Tunnel an: Abblendlicht obligatorisch, Sonnenbrille abnehmen, Wenden und Rückwärtsfahren verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Baustelle voraus.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Überdachter Parkplatz.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.07 mahnt zu tunnelgerechtem Verhalten (Abblendlicht, Abstand, Rauchvermeidung) (Art. 45 SSV).",
+    "ruleReference": "Art. 45 SSV"
+  },
+  {
+    "id": 372,
+    "testId": 12,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Welche Höchstgeschwindigkeit gilt innerorts für Motorräder und Personenwagen, wenn keine Schilder vorhanden sind?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generell 50 km/h.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Generell 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Generell 40 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "In geschlossenen Ortschaften gilt in der Schweiz generell Höchstgeschwindigkeit 50 km/h (Art. 4a VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 373,
+    "testId": 13,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Wie gross ist der Reaktionsweg bei einer Geschwindigkeit von 100 km/h bei 1 Sekunde Reaktionszeit (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 30 Meter (100 / 10 * 3 = 30 m).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "100 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Reaktionsweg berechnet sich nach der Faustformel (Geschwindigkeit / 10) * 3 = 30 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 374,
+    "testId": 14,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Wie gross ist der gesamte Anhalteweg bei 50 km/h auf trockener Strasse bei normaler Bremsung (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 40 Meter (15 m Reaktionsweg + 25 m Bremsweg).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Anhalteweg = Reaktionsweg ((50/10)*3 = 15m) + Bremsweg ((50/10)*(50/10) = 25m) = 40 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 375,
+    "testId": 15,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Welche Höchstgeschwindigkeit gilt auf Schweizer Autostrassen (grünes Autoschild)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "100 km/h (sofern nicht durch Schilder anders geregelt).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "120 km/h wie auf der Autobahn.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 km/h wie ausserorts.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Auf Autostrassen gilt für Personenwagen generell Höchsttempo 100 km/h (Art. 4a Abs. 1 Bst. c VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 376,
+    "testId": 16,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Darf man ohne zwingenden Grund so langsam fahren, dass der Verkehrsfluss wesentlich behindert wird?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, grundloses Langsamfahren ('Schleichen') behindert den Verkehrsfluss, provoziert riskante Überholmanöver und ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man darf beliebig langsam fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur nachts verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne zwingenden Grund darf kein Fahrzeugführer so langsam fahren, dass er den Verkehrsfluss behindert (Art. 4 Abs. 2 VRV).",
+    "ruleReference": "Art. 4 Abs. 2 VRV"
+  },
+  {
+    "id": 377,
+    "testId": 17,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Was müssen Sie bei tief stehender Sonne im Herbst bezüglich Geschwindigkeit beachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit sofort reduzieren und Sonnenblende nutzen; akute Blendgefahr und Gefahr des Übersehens von Fussgängern.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vollgas geben, um schnell am Schatten zu sein.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Fernlicht einschalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Tiefe Sonne blendet extrem. Scheiben sauber halten und Geschwindigkeit anpassen (Art. 32 SVG).",
+    "ruleReference": "Art. 32 SVG"
+  },
+  {
+    "id": 378,
+    "testId": 18,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Welche Geschwindigkeit gilt beim Abschleppen eines defekten Fahrzeugs mit Seil oder Stange?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Höchstens 40 km/h auf allen Strassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Maximal 80 km/h ausserorts.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Maximal 60 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Beim Abschleppen von Motorfahrzeugen beträgt die Höchstgeschwindigkeit aus Sicherheitsgründen 40 km/h (Art. 43 VRV).",
+    "ruleReference": "Art. 43 VRV"
+  },
+  {
+    "id": 379,
+    "testId": 19,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Darf man auf der Autobahn den Beschleunigungsstreifen voll ausnutzen, um sich mit passender Geschwindigkeit einzufädeln?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, der Beschleunigungsstreifen soll über die gesamte Länge zügig genutzt werden, um sich dem Tempo des Autobahnverkehrs anzugleichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, man muss sofort am Anfang einscheren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man muss am Anfang stoppen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Beschleunigungsstreifen dient dem Erreichen der Reisegeschwindigkeit. Erst bei passender Lücke einfädeln (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 380,
+    "testId": 20,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Was gilt bei einer Panne auf der Autobahn, wenn das Fahrzeug auf der Fahrbahn liegenbleibt und nicht mehr rollt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker an, Warnweste anziehen, Insassen sofort hinter die Leitplanke bringen, Pannendreieck mind. 100 m vorher aufstellen und Notruf 117 wählen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Im Auto sitzen bleiben und die Notbremse ziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das Auto mit Passagieren von Hand anschieben.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Liegenbleiben auf der Fahrbahn ist lebensgefährlich. Eigensicherung hinter der Leitplanke hat oberste Priorität (Art. 54 VRV).",
+    "ruleReference": "Art. 54 VRV"
+  },
+  {
+    "id": 381,
+    "testId": 1,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Was bedeutet das Verbot des Rechtsüberholens auf der Autobahn im Detail?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ausscheren nach rechts, Beschleunigen, Vorbeifahren am linken Auto und Wiedereinscheren nach links ist strikt verboten (hohe Busse & Ausweisentzug).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Man darf rechts überholen, wenn man blinkt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Rechtsüberholen ist ab 100 km/h erlaubt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Rechtsüberholen ist ein schweres Verkehrsdelikt. Nur passives Rechtsvorbeifahren bei stockenden Kolonnen ist erlaubt (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 382,
+    "testId": 2,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Welche Spurwahl gilt auf einer 3-spurigen Autobahn bei dichtem Verkehr?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Grundsätzlich die rechte Spur benutzen; die mittlere und linke Spur dienen ausschliesslich dem Überholen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Immer auf der Mittelspur bleiben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Freie Spurwahl wie in den USA.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Rechtsfahrgebot gilt auch auf dreispurigen Autobahnen. Permanentes Mittelspurschleichen ist unzulässig (Art. 34 SVG).",
+    "ruleReference": "Art. 34 SVG"
+  },
+  {
+    "id": 383,
+    "testId": 3,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Wie verhalten Sie sich bei einer Tunnelfahrt, wenn der Verkehr vor Ihnen zum völligen Stillstand kommt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker einschalten, mindestens 5 Meter Abstand zum Vorderfahrzeug halten, Motor abstellen, Radio (Verkehrsfunk) anlassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Dicht auffahren und hupen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Aussteigen und im Tunnel spazieren gehen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abstand im Tunnelstau verhindert Kettenreaktionen und lässt Raum für Fluchtwege; Motor abstellen reduziert Abgase (Art. 39a VRV).",
+    "ruleReference": "Art. 39a VRV"
+  },
+  {
+    "id": 384,
+    "testId": 4,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Welche Grenze gilt für qualifizierte Trunkenheit mit zwingendem Ausweisentzug für mindestens 3 Monate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ab 0.80 Promille (bzw. 0.40 mg/l Atemalkohol).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ab 0.50 Promille.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ab 1.20 Promille.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ab 0.80 ‰ liegt eine schwere Verkehrsregelverletzung vor, die zwingend mindestens 3 Monate Entzug nach sich zieht (Art. 16c SVG).",
+    "ruleReference": "Art. 16c SVG"
+  },
+  {
+    "id": 385,
+    "testId": 5,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Darf man bei einer Panne oder einem Unfall die Autobahnfahrbahn überqueren, um das Pannendreieck auf der anderen Seite zu holen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Betreten oder Überqueren der Autobahnfahrbahn zu Fuss ist strengstens verboten und lebensgefährlich.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn gerade keine Autos kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, mit hochgehaltener Hand.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Fussgänger dürfen Autobahnen unter keinen Umständen betreten oder queren (Art. 35 VRV).",
+    "ruleReference": "Art. 35 VRV"
+  },
+  {
+    "id": 386,
+    "testId": 6,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Welche Pflicht besteht bezüglich der Reifen bei winterlichen Strassenverhältnissen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fahrzeuge müssen jederzeit betriebssicher beherrscht werden können; wer mit ungeeigneten Reifen den Verkehr behindert oder verunfallt, haftet und wird bestraft.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Winterreifen sind vom 1. Oktober bis 1. Mai vorgeschrieben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Sommerreifen sind im Winter verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Schweiz kennt keine kalendarische Winterreifenpflicht, aber die Pflicht zur Beherrschung des Fahrzeugs (Art. 29 SVG / Art. 3 VRV).",
+    "ruleReference": "Art. 29 SVG"
+  },
+  {
+    "id": 387,
+    "testId": 7,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Welche Sicherung ist für lose Gegenstände auf der Rückbank oder im Kofferraum vorgeschrieben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie müssen so gesichert werden, dass sie bei einer Vollbremsung oder Kollision nicht nach vorne geschleudert werden und Insassen verletzen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Keine, wenn der Kofferraumdeckel zu ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur bei Gegenständen über 50 kg.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ungesicherte Gegenstände werden bei Aufprall zu tödlichen Geschossen. Ladungssicherung ist Pflicht (Art. 73 VRV).",
+    "ruleReference": "Art. 73 VRV"
+  },
+  {
+    "id": 388,
+    "testId": 8,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Was droht bei der Einnahme von Schlafmitteln vor Fahrtantritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gefahr von schwerer Fahruntüchtigkeit ('Hangover-Effekt'); bei Unfall droht Verurteilung wegen Fahrens in fahrunfähigem Zustand.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nichts, wenn das Medikament vom Arzt stammt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur ein Verwarnungsgeld.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Medikamente können die Reaktionszeit gravierend beeinträchtigen. Fahren unter Medikamenteneinfluss ist strafbar (Art. 31 SVG).",
+    "ruleReference": "Art. 31 SVG"
+  },
+  {
+    "id": 389,
+    "testId": 9,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Was bedeutet das Aufleuchten der gelben Motorkontrollleuchte (Check Engine) während der Fahrt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Störung in der Motorsteuerung oder der Abgasreinigungsanlage; Werkstatt aufsuchen und Ursache diagnostizieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofortige Vollbremsung auf der Spur.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ölstand ist zu hoch.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Die Motorkontrollleuchte signalisiert abgas- oder verbrennungsrelevante Fehler im Motormanagement (VTS).",
+    "ruleReference": "Fahrzeugtechnik VTS"
+  },
+  {
+    "id": 390,
+    "testId": 10,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Warum darf ein Fahrzeug mit Katalysator nicht durch Anschleppen oder Anschieben gestartet werden, wenn unverbrannter Treibstoff im Auspuff ist?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unverbrannter Kraftstoff kann in den heissen Katalysator gelangen und diesen durch Verbrennung zerstören.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Die Lichtmaschine explodiert.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Die Bremsen blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Treibstoff im Katalysator verbrennt explosionsartig und schmilzt den Keramikkörper des Katalysators (Technik-Leitfaden).",
+    "ruleReference": "Technik VTS"
+  },
+  {
+    "id": 391,
+    "testId": 11,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Welche Flüssigkeit gehört in den Ausgleichsbehälter der Scheibenwaschanlage im Winter?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wasser gemischt mit ausreichend frostsicherem Scheibenreiniger (bis mind. -20 °C).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Reines Spülmittel ohne Wasser.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Heisses Motorenöl.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Frostschutz verhindert das Einfrieren der Spritzdüsen und Schläuche bei Minusgraden (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 392,
+    "testId": 12,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Welche Profiltiefe wird vom TCS für Winterreifen aus Sicherheitsgründen empfohlen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mindestens 4 mm (gesetzliches Minimum ist 1.6 mm, bietet aber auf Schnee kaum noch Grip).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Mindestens 8 mm.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "1.0 mm genügt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Unter 4 mm verlieren Winterreifen ihre Lamellenwirkung auf Schnee drastisch (TCS Sicherheitsempfehlung).",
+    "ruleReference": "TCS Reifentest"
+  },
+  {
+    "id": 393,
+    "testId": 13,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Welche Lärmschutzregel gilt beim Schliessen von Türen, Motorhaube und Kofferraumdeckel nachts in Wohnquartieren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Türen und Klappen leise und ohne unnötiges Zuknallen schliessen (Vermeidung von Ruhestörung).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Möglichst laut zuschlagen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Es gibt keine Vorschriften.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Art. 33 VRV untersagt unnötigen Lärm, namentlich das laute Zuschlagen von Wagentüren in Wohngebieten.",
+    "ruleReference": "Art. 33 VRV"
+  },
+  {
+    "id": 394,
+    "testId": 14,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Ein Postauto schaltet an einer Kreuzung das Signalhorn ein. Was müssen Sie tun?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dem Postauto unverzüglich freie Bahn gewähren, da Linienbusse auf Bergpoststrassen Vorrang haben.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vor dem Postauto schnell abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Zurückhupen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Dreiklanghorn verpflichtet auf Bergpoststrassen zur Vorfahrtgewährung und Platzfreigabe (Art. 9 VRV).",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 395,
+    "testId": 15,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Sie stehen an einer roten Ampel mit einem Schild 'Grünpfeil für Velos'. Gilt der Grünpfeil auch für Ihr Auto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, der Grünpfeil gilt ausschliesslich für Fahrräder und Mofas. Autos müssen bei Rot warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, alle Rechtsabbieger dürfen fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, nach kurzem Halt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Signal 5.18 gilt explizit nur für Zweiräder. Autos begehen bei Missachtung einen Rotlichtverstoss (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 396,
+    "testId": 16,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Darf man auf einem Autobahnparkplatz übernachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das einmalige Wiederherstellen der Fahrfähigkeit (Schlafen im Auto zur Erholung) ist zulässig; Campieren mit Zelt oder Markise ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, Schlafen im Auto ist generell strafbar.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, man darf dort wochenlang wohnen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Das Ausruhen zur Wiederherstellung der Fahrfähigkeit ist auf Raststätten erlaubt, echtes Campieren dagegen kantonal untersagt.",
+    "ruleReference": "ASTRA Richtlinien Rastplätze"
+  },
+  {
+    "id": 397,
+    "testId": 17,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Was gilt an einer Verzweigung, wenn zwei Strassen zusammentreffen und beide ein 'Kein Vortritt'-Signal haben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unter den beiden vortrittsbelasteten Fahrzeugen gilt untereinander der Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Wer zuerst hupt, darf fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Beide müssen rückwärts fahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Haben beide Einmündungen das gleiche Signal 'Kein Vortritt', regelt sich ihr Verhältnis untereinander nach dem Rechtsvortritt (Art. 36 SVG). Beliebte Fangfrage!",
+    "ruleReference": "Art. 36 SVG"
+  },
+  {
+    "id": 398,
+    "testId": 18,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Darf ein Fahrzeug mit defekter Scheibenwaschanlage bei Schneematsch weitergefahren werden?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Fahrzeug ist wegen Sichtbehinderung nicht mehr in vorschriftsgemässem Zustand; Weiterfahrt verboten bis zur Behebung.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man kann die Scheibe während der Fahrt mit der Hand putzen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man die Seitenscheibe öffnet.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne funktionierende Waschanlage bei Salz und Matsch erblindet die Frontscheibe innerhalb weniger Meter (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 399,
+    "testId": 19,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Sie stehen an einer Einmündung vor einem Stopsignal. Die Sicht ist durch parkierte Autos behindert. Wo halten Sie an?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zuerst an der Haltelinie vollkommen anhalten, danach langsam bis zur Sichtlinie vortasten und nötigenfalls erneut anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Direkt mitten auf die Kreuzung fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur hupen und ohne Halt weiterfahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei behinderter Sicht muss zuerst an der Haltelinie gestoppt werden. Danach tastet man sich vorsichtig zur Sichtgrenze vor (Art. 36 SSV).",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 400,
+    "testId": 20,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Ein Linienbus signalisiert innerorts das Verlassen einer Haltestelle. Sie nähern sich mit 50 km/h von hinten. Was tun Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit verringern, bremsbereit sein und dem Bus das Einspuren ermöglichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofort Vollgas geben, um vor dem Bus durchzuziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Auf den Gehsteig ausweichen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Innerorts ist Linienbussen das Wegfahren von Haltestellen durch Temporeduktion zu ermöglichen (Art. 15 Abs. 4 VRV).",
+    "ruleReference": "Art. 15 Abs. 4 VRV"
+  },
+  {
+    "id": 401,
+    "testId": 1,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Ein Tram fährt auf der Strasse hinter Ihnen. Sie möchten links abbiegen und müssen wegen Gegenverkehr warten. Was beachten Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie dürfen die Schienen nur blockieren, wenn das Tram dadurch nicht behindert wird; andernfalls weiterfahren oder Tram passieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das Tram muss immer hinter wartenden Autos warten.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man darf die Schienen beliebig lange blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Schienenfahrzeuge dürfen durch wartende Linksabbieger nicht unnötig behindert werden (Art. 38 SVG / Art. 13 VRV).",
+    "ruleReference": "Art. 38 SVG"
+  },
+  {
+    "id": 402,
+    "testId": 2,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Wer hat auf einer schmalen Brücke ohne Vortrittsschilder Vorrang beim gleichzeitigen Eintreffen zweier Autos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es gilt der Rechtsvortritt bzw. das Fahrzeug, das das Hindernis auf seiner Seite hat, muss warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das schnellere Fahrzeug.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das grössere Fahrzeug.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Wer das Hindernis auf seiner Strassenseite hat, muss warten (Art. 9 VRV). Ansonsten gilt der Rechtsvortritt oder gegenseitige Verständigung.",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 403,
+    "testId": 3,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Sie fahren auf einer Vorfahrtsstrasse und möchten nach links in eine Seitenstrasse abbiegen. Ein Fussgänger quert die Seitenstrasse. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Fussgänger hat Vorrang vor dem abbiegenden Fahrzeug.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Vortritt, weil Sie von der Vorfahrtsstrasse kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer schneller ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abbiegende Fahrzeuge müssen Fussgängern, die die Querstrasse überschreiten, stets den Vortritt lassen (Art. 33 SVG).",
+    "ruleReference": "Art. 33 SVG"
+  },
+  {
+    "id": 404,
+    "testId": 4,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Sie kommen an eine Kreuzung mit Kreisverkehr. Ein Radfahrer befindet sich bereits im Kreisel vor Ihnen. Dürfen Sie ihn im Kreisel überholen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, im Kreisel sollte wegen des geringen Raumes und der Richtungsänderungen nicht überholt werden; Sicherheitsabstand halten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, mit mindestens 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man hupt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Überholen im Kreisel ist wegen enger Radien extrem gefährlich. Radfahrer dürfen in der Fahrbahnmitte fahren (Art. 41b VRV).",
+    "ruleReference": "Art. 41b VRV"
+  },
+  {
+    "id": 405,
+    "testId": 5,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Ein Polizeiauto mit eingeschaltetem Blaulicht (ohne Sirene) steht an einer roten Ampel. Die Ampel schaltet auf Grün. Darf die Polizei vor Ihnen fahren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, Einsatzfahrzeuge haben auch mit Blaulicht allein Vorrang und sind zügig passieren zu lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, ohne Sirene hat die Polizei keinerlei Rechte.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur wenn ein Notarzt drin sitzt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Blaulicht zeigt eine dringliche Dienstfahrt an (Art. 27 SVG). Andere Verkehrsteilnehmer müssen die Fahrbahn unverzüglich freigeben.",
+    "ruleReference": "Art. 27 SVG"
+  },
+  {
+    "id": 406,
+    "testId": 6,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Sie möchten aus einer verkehrsberuhigten Begegnungszone (20 km/h) in eine Tempo-30-Zone einfahren. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Verkehr in der Tempo-30-Zone; wer aus einer Begegnungszone ausfährt, hat keinen Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer zuerst an der Kreuzung ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ausfahrten aus Begegnungszonen, Fussgängerzonen und Grundstücken sind gegenüber dem fliessenden Verkehr nachrangig (Art. 15 Abs. 3 VRV).",
+    "ruleReference": "Art. 15 Abs. 3 VRV"
+  },
+  {
+    "id": 407,
+    "testId": 7,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: An einer Kreuzung fällt die Ampel aus (gelbes Blinklicht). Ein Schild zeigt 'Hauptstrasse' für Ihre Richtung. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie haben Vortritt vor dem Querverkehr, da bei Ampelausfall die signalisierten Schilder gelten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Es gilt automatischer Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Alle müssen anhalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei gelbem Blinklicht oder Ausfall der Lichtsignalanlage gelten die angebrachten Vortrittsschilder (Art. 68 SSV).",
+    "ruleReference": "Art. 68 SSV"
+  },
+  {
+    "id": 408,
+    "testId": 8,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Offizielle ASA-Situation: Sie stehen als zweites Fahrzeug hinter einem an der Haltelinie wartenden Auto vor einem Stopsignal. Das vordere Auto fährt ab. Dürfen Sie direkt folgen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, jedes Fahrzeug muss für sich selbst an der Haltelinie anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn kein Querverkehr zu sehen ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man dicht aufschliesst.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Stopp-Pflicht gilt individuell für jedes einzelne Fahrzeug an der Haltelinie (Art. 36 SSV). Kein 'Durchrutschen'!",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 409,
+    "testId": 9,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Signal 'Rechtsabbiegen für Radfahrer gestattet bei Rot' (Signal mit grünem Velo und Pfeil an der Ampel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Radfahrer und Mofas dürfen bei rotem Lichtsignal nach rechts abbiegen, müssen aber Fussgängern und dem Querverkehr den Vortritt lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Alle Autos dürfen bei Rot rechts abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Radfahrer müssen absteigen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Seit 2021 dürfen Velos und Mofas bei roter Ampel mit diesem Zusatzschild vorsichtig rechts abbiegen (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 410,
+    "testId": 10,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Signal 'Pannensignal' (Signal 2.47 'Halteverbot auf dem Pannenstreifen')?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auf dem Pannenstreifen darf auch bei Panne nicht gehalten werden (sofern Gefahrenzone), Weiterrollen bis zur nächsten Bucht zwingend.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pannenstreifen ist frei für alle.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Wohnwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Verbietet das Halten selbst bei Notfällen an besonders engen oder gefährlichen Tunnel- und Brückenstellen (Art. 30 SSV).",
+    "ruleReference": "Art. 30 SSV"
+  },
+  {
+    "id": 411,
+    "testId": 11,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Hinweissignal 'Standort eines Defibrillators' (grünes Quadrat mit weissem Herz und Blitz)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zeigt den genauen Standort eines öffentlich zugänglichen automatisierten Defibrillators (AED) für Notfälle an.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Spital in 1 km.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Elektroauto-Ladesäule.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Weist Ersthelfer auf lebensrettende Defibrillatoren bei plötzlichem Herzstillstand hin.",
+    "ruleReference": "Art. 62 SSV"
+  },
+  {
+    "id": 412,
+    "testId": 12,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet eine gelbe Zickzack-Linie vor einer Bushaltestelle?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Haltestelle für öffentliche Busse; Halten nur kurz zum Ein- und Aussteigen gestattet, sofern kein Bus behindert wird (Parkieren verboten).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Parkplatz für Taxis.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Strecke mit vielen Schlaglöchern.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die gelbe Zickzacklinie (Art. 79a SSV) markiert ÖV-Haltestellen. Parkieren ist absolut verboten.",
+    "ruleReference": "Art. 79a SSV"
+  },
+  {
+    "id": 413,
+    "testId": 13,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Signal 'Verbot für Motorwagen und Motorräder' (Auto und Motorrad im roten Kreis)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einfahrtsverbot für alle mehrspurigen Motorfahrzeuge und alle Motorräder; Fahrräder und Mofas dürfen passieren.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nur für LKW gesperrt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Verbot für Fahrräder.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.13 untersagt das Befahren für Motorwagen und Motorräder (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 414,
+    "testId": 14,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet ein blaues quadratisches Schild mit weissem Pfeil geradeaus und dem Zusatz 'Einbahn'?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einbahnstrasse: Die Strasse darf nur in Pfeilrichtung befahren werden; Gegenverkehr ist nicht zulässig.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pflicht zum Wenden am Ende.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur für Busse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.08 kennzeichnet Einbahnstrassen (Art. 46 SSV).",
+    "ruleReference": "Art. 46 SSV"
+  },
+  {
+    "id": 415,
+    "testId": 15,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Signal 'Spur für Busse' (blaue runde Tafel mit gelbem Bus-Symbol)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dieser Fahrstreifen ist Linienbussen vorbehalten; andere Fahrzeuge dürfen ihn nicht benützen (ausser Taxis, wenn signalisiert).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Busse dürfen hier nicht fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Reisebusse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Busstreifen (Art. 34 SSV) sind dem Linienverkehr vorbehalten. Unberechtigtes Befahren wird gebüsst.",
+    "ruleReference": "Art. 34 SSV"
+  },
+  {
+    "id": 416,
+    "testId": 16,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet ein rot-weisser Richtungspfeil auf einer Warntafel (Kurvenleittafel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt eine besonders scharfe und gefährliche Kurve an; Richtungspfeil zeigt den Kurvenverlauf.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Zeigt eine Ausfahrt an.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Gilt nur für Lastwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Kurvenleittafeln (Signal 1.01/1.02) weisen auf gefährlich enge Kurvenradien hin (Art. 5 SSV).",
+    "ruleReference": "Art. 5 SSV"
+  },
+  {
+    "id": 417,
+    "testId": 17,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet ein weisses rundes Schild mit rotem Rand und einem schwarzen Velo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verbot für Fahrräder und Motorfahrräder (Mofas).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Radweg obligatorisch.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Achtung Radfahrer.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.06 verbietet das Fahren mit Fahrrädern und Mofas (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 418,
+    "testId": 18,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Signal 'Tunnel' (Signal 4.07)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt die Einfahrt in einen Tunnel an: Abblendlicht obligatorisch, Sonnenbrille abnehmen, Wenden und Rückwärtsfahren verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Baustelle voraus.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Überdachter Parkplatz.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.07 mahnt zu tunnelgerechtem Verhalten (Abblendlicht, Abstand, Rauchvermeidung) (Art. 45 SSV).",
+    "ruleReference": "Art. 45 SSV"
+  },
+  {
+    "id": 419,
+    "testId": 19,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Offizielle ASA-Situation: Welche Höchstgeschwindigkeit gilt innerorts für Motorräder und Personenwagen, wenn keine Schilder vorhanden sind?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generell 50 km/h.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Generell 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Generell 40 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "In geschlossenen Ortschaften gilt in der Schweiz generell Höchstgeschwindigkeit 50 km/h (Art. 4a VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 420,
+    "testId": 20,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Offizielle ASA-Situation: Wie gross ist der Reaktionsweg bei einer Geschwindigkeit von 100 km/h bei 1 Sekunde Reaktionszeit (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 30 Meter (100 / 10 * 3 = 30 m).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "100 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Reaktionsweg berechnet sich nach der Faustformel (Geschwindigkeit / 10) * 3 = 30 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 421,
+    "testId": 1,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Offizielle ASA-Situation: Wie gross ist der gesamte Anhalteweg bei 50 km/h auf trockener Strasse bei normaler Bremsung (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 40 Meter (15 m Reaktionsweg + 25 m Bremsweg).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Anhalteweg = Reaktionsweg ((50/10)*3 = 15m) + Bremsweg ((50/10)*(50/10) = 25m) = 40 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 422,
+    "testId": 2,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Offizielle ASA-Situation: Welche Höchstgeschwindigkeit gilt auf Schweizer Autostrassen (grünes Autoschild)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "100 km/h (sofern nicht durch Schilder anders geregelt).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "120 km/h wie auf der Autobahn.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 km/h wie ausserorts.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Auf Autostrassen gilt für Personenwagen generell Höchsttempo 100 km/h (Art. 4a Abs. 1 Bst. c VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 423,
+    "testId": 3,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Offizielle ASA-Situation: Darf man ohne zwingenden Grund so langsam fahren, dass der Verkehrsfluss wesentlich behindert wird?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, grundloses Langsamfahren ('Schleichen') behindert den Verkehrsfluss, provoziert riskante Überholmanöver und ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man darf beliebig langsam fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur nachts verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne zwingenden Grund darf kein Fahrzeugführer so langsam fahren, dass er den Verkehrsfluss behindert (Art. 4 Abs. 2 VRV).",
+    "ruleReference": "Art. 4 Abs. 2 VRV"
+  },
+  {
+    "id": 424,
+    "testId": 4,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Offizielle ASA-Situation: Was müssen Sie bei tief stehender Sonne im Herbst bezüglich Geschwindigkeit beachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit sofort reduzieren und Sonnenblende nutzen; akute Blendgefahr und Gefahr des Übersehens von Fussgängern.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vollgas geben, um schnell am Schatten zu sein.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Fernlicht einschalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Tiefe Sonne blendet extrem. Scheiben sauber halten und Geschwindigkeit anpassen (Art. 32 SVG).",
+    "ruleReference": "Art. 32 SVG"
+  },
+  {
+    "id": 425,
+    "testId": 5,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Offizielle ASA-Situation: Welche Geschwindigkeit gilt beim Abschleppen eines defekten Fahrzeugs mit Seil oder Stange?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Höchstens 40 km/h auf allen Strassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Maximal 80 km/h ausserorts.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Maximal 60 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Beim Abschleppen von Motorfahrzeugen beträgt die Höchstgeschwindigkeit aus Sicherheitsgründen 40 km/h (Art. 43 VRV).",
+    "ruleReference": "Art. 43 VRV"
+  },
+  {
+    "id": 426,
+    "testId": 6,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Offizielle ASA-Situation: Darf man auf der Autobahn den Beschleunigungsstreifen voll ausnutzen, um sich mit passender Geschwindigkeit einzufädeln?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, der Beschleunigungsstreifen soll über die gesamte Länge zügig genutzt werden, um sich dem Tempo des Autobahnverkehrs anzugleichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, man muss sofort am Anfang einscheren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man muss am Anfang stoppen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Beschleunigungsstreifen dient dem Erreichen der Reisegeschwindigkeit. Erst bei passender Lücke einfädeln (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 427,
+    "testId": 7,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Offizielle ASA-Situation: Was gilt bei einer Panne auf der Autobahn, wenn das Fahrzeug auf der Fahrbahn liegenbleibt und nicht mehr rollt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker an, Warnweste anziehen, Insassen sofort hinter die Leitplanke bringen, Pannendreieck mind. 100 m vorher aufstellen und Notruf 117 wählen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Im Auto sitzen bleiben und die Notbremse ziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das Auto mit Passagieren von Hand anschieben.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Liegenbleiben auf der Fahrbahn ist lebensgefährlich. Eigensicherung hinter der Leitplanke hat oberste Priorität (Art. 54 VRV).",
+    "ruleReference": "Art. 54 VRV"
+  },
+  {
+    "id": 428,
+    "testId": 8,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Verbot des Rechtsüberholens auf der Autobahn im Detail?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ausscheren nach rechts, Beschleunigen, Vorbeifahren am linken Auto und Wiedereinscheren nach links ist strikt verboten (hohe Busse & Ausweisentzug).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Man darf rechts überholen, wenn man blinkt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Rechtsüberholen ist ab 100 km/h erlaubt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Rechtsüberholen ist ein schweres Verkehrsdelikt. Nur passives Rechtsvorbeifahren bei stockenden Kolonnen ist erlaubt (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 429,
+    "testId": 9,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Offizielle ASA-Situation: Welche Spurwahl gilt auf einer 3-spurigen Autobahn bei dichtem Verkehr?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Grundsätzlich die rechte Spur benutzen; die mittlere und linke Spur dienen ausschliesslich dem Überholen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Immer auf der Mittelspur bleiben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Freie Spurwahl wie in den USA.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Rechtsfahrgebot gilt auch auf dreispurigen Autobahnen. Permanentes Mittelspurschleichen ist unzulässig (Art. 34 SVG).",
+    "ruleReference": "Art. 34 SVG"
+  },
+  {
+    "id": 430,
+    "testId": 10,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Offizielle ASA-Situation: Wie verhalten Sie sich bei einer Tunnelfahrt, wenn der Verkehr vor Ihnen zum völligen Stillstand kommt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker einschalten, mindestens 5 Meter Abstand zum Vorderfahrzeug halten, Motor abstellen, Radio (Verkehrsfunk) anlassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Dicht auffahren und hupen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Aussteigen und im Tunnel spazieren gehen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abstand im Tunnelstau verhindert Kettenreaktionen und lässt Raum für Fluchtwege; Motor abstellen reduziert Abgase (Art. 39a VRV).",
+    "ruleReference": "Art. 39a VRV"
+  },
+  {
+    "id": 431,
+    "testId": 11,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Offizielle ASA-Situation: Welche Grenze gilt für qualifizierte Trunkenheit mit zwingendem Ausweisentzug für mindestens 3 Monate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ab 0.80 Promille (bzw. 0.40 mg/l Atemalkohol).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ab 0.50 Promille.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ab 1.20 Promille.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ab 0.80 ‰ liegt eine schwere Verkehrsregelverletzung vor, die zwingend mindestens 3 Monate Entzug nach sich zieht (Art. 16c SVG).",
+    "ruleReference": "Art. 16c SVG"
+  },
+  {
+    "id": 432,
+    "testId": 12,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Offizielle ASA-Situation: Darf man bei einer Panne oder einem Unfall die Autobahnfahrbahn überqueren, um das Pannendreieck auf der anderen Seite zu holen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Betreten oder Überqueren der Autobahnfahrbahn zu Fuss ist strengstens verboten und lebensgefährlich.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn gerade keine Autos kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, mit hochgehaltener Hand.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Fussgänger dürfen Autobahnen unter keinen Umständen betreten oder queren (Art. 35 VRV).",
+    "ruleReference": "Art. 35 VRV"
+  },
+  {
+    "id": 433,
+    "testId": 13,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Offizielle ASA-Situation: Welche Pflicht besteht bezüglich der Reifen bei winterlichen Strassenverhältnissen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fahrzeuge müssen jederzeit betriebssicher beherrscht werden können; wer mit ungeeigneten Reifen den Verkehr behindert oder verunfallt, haftet und wird bestraft.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Winterreifen sind vom 1. Oktober bis 1. Mai vorgeschrieben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Sommerreifen sind im Winter verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Schweiz kennt keine kalendarische Winterreifenpflicht, aber die Pflicht zur Beherrschung des Fahrzeugs (Art. 29 SVG / Art. 3 VRV).",
+    "ruleReference": "Art. 29 SVG"
+  },
+  {
+    "id": 434,
+    "testId": 14,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Offizielle ASA-Situation: Welche Sicherung ist für lose Gegenstände auf der Rückbank oder im Kofferraum vorgeschrieben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie müssen so gesichert werden, dass sie bei einer Vollbremsung oder Kollision nicht nach vorne geschleudert werden und Insassen verletzen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Keine, wenn der Kofferraumdeckel zu ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur bei Gegenständen über 50 kg.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ungesicherte Gegenstände werden bei Aufprall zu tödlichen Geschossen. Ladungssicherung ist Pflicht (Art. 73 VRV).",
+    "ruleReference": "Art. 73 VRV"
+  },
+  {
+    "id": 435,
+    "testId": 15,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Offizielle ASA-Situation: Was droht bei der Einnahme von Schlafmitteln vor Fahrtantritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gefahr von schwerer Fahruntüchtigkeit ('Hangover-Effekt'); bei Unfall droht Verurteilung wegen Fahrens in fahrunfähigem Zustand.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nichts, wenn das Medikament vom Arzt stammt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur ein Verwarnungsgeld.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Medikamente können die Reaktionszeit gravierend beeinträchtigen. Fahren unter Medikamenteneinfluss ist strafbar (Art. 31 SVG).",
+    "ruleReference": "Art. 31 SVG"
+  },
+  {
+    "id": 436,
+    "testId": 16,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Offizielle ASA-Situation: Was bedeutet das Aufleuchten der gelben Motorkontrollleuchte (Check Engine) während der Fahrt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Störung in der Motorsteuerung oder der Abgasreinigungsanlage; Werkstatt aufsuchen und Ursache diagnostizieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofortige Vollbremsung auf der Spur.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ölstand ist zu hoch.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Die Motorkontrollleuchte signalisiert abgas- oder verbrennungsrelevante Fehler im Motormanagement (VTS).",
+    "ruleReference": "Fahrzeugtechnik VTS"
+  },
+  {
+    "id": 437,
+    "testId": 17,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Offizielle ASA-Situation: Warum darf ein Fahrzeug mit Katalysator nicht durch Anschleppen oder Anschieben gestartet werden, wenn unverbrannter Treibstoff im Auspuff ist?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unverbrannter Kraftstoff kann in den heissen Katalysator gelangen und diesen durch Verbrennung zerstören.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Die Lichtmaschine explodiert.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Die Bremsen blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Treibstoff im Katalysator verbrennt explosionsartig und schmilzt den Keramikkörper des Katalysators (Technik-Leitfaden).",
+    "ruleReference": "Technik VTS"
+  },
+  {
+    "id": 438,
+    "testId": 18,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Offizielle ASA-Situation: Welche Flüssigkeit gehört in den Ausgleichsbehälter der Scheibenwaschanlage im Winter?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wasser gemischt mit ausreichend frostsicherem Scheibenreiniger (bis mind. -20 °C).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Reines Spülmittel ohne Wasser.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Heisses Motorenöl.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Frostschutz verhindert das Einfrieren der Spritzdüsen und Schläuche bei Minusgraden (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 439,
+    "testId": 19,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Offizielle ASA-Situation: Welche Profiltiefe wird vom TCS für Winterreifen aus Sicherheitsgründen empfohlen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mindestens 4 mm (gesetzliches Minimum ist 1.6 mm, bietet aber auf Schnee kaum noch Grip).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Mindestens 8 mm.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "1.0 mm genügt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Unter 4 mm verlieren Winterreifen ihre Lamellenwirkung auf Schnee drastisch (TCS Sicherheitsempfehlung).",
+    "ruleReference": "TCS Reifentest"
+  },
+  {
+    "id": 440,
+    "testId": 20,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Offizielle ASA-Situation: Welche Lärmschutzregel gilt beim Schliessen von Türen, Motorhaube und Kofferraumdeckel nachts in Wohnquartieren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Türen und Klappen leise und ohne unnötiges Zuknallen schliessen (Vermeidung von Ruhestörung).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Möglichst laut zuschlagen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Es gibt keine Vorschriften.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Art. 33 VRV untersagt unnötigen Lärm, namentlich das laute Zuschlagen von Wagentüren in Wohngebieten.",
+    "ruleReference": "Art. 33 VRV"
+  },
+  {
+    "id": 441,
+    "testId": 1,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Offizielle ASA-Situation: Ein Postauto schaltet an einer Kreuzung das Signalhorn ein. Was müssen Sie tun?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dem Postauto unverzüglich freie Bahn gewähren, da Linienbusse auf Bergpoststrassen Vorrang haben.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vor dem Postauto schnell abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Zurückhupen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Dreiklanghorn verpflichtet auf Bergpoststrassen zur Vorfahrtgewährung und Platzfreigabe (Art. 9 VRV).",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 442,
+    "testId": 2,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Offizielle ASA-Situation: Sie stehen an einer roten Ampel mit einem Schild 'Grünpfeil für Velos'. Gilt der Grünpfeil auch für Ihr Auto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, der Grünpfeil gilt ausschliesslich für Fahrräder und Mofas. Autos müssen bei Rot warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, alle Rechtsabbieger dürfen fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, nach kurzem Halt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Signal 5.18 gilt explizit nur für Zweiräder. Autos begehen bei Missachtung einen Rotlichtverstoss (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 443,
+    "testId": 3,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Offizielle ASA-Situation: Darf man auf einem Autobahnparkplatz übernachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das einmalige Wiederherstellen der Fahrfähigkeit (Schlafen im Auto zur Erholung) ist zulässig; Campieren mit Zelt oder Markise ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, Schlafen im Auto ist generell strafbar.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, man darf dort wochenlang wohnen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Das Ausruhen zur Wiederherstellung der Fahrfähigkeit ist auf Raststätten erlaubt, echtes Campieren dagegen kantonal untersagt.",
+    "ruleReference": "ASTRA Richtlinien Rastplätze"
+  },
+  {
+    "id": 444,
+    "testId": 4,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Offizielle ASA-Situation: Was gilt an einer Verzweigung, wenn zwei Strassen zusammentreffen und beide ein 'Kein Vortritt'-Signal haben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unter den beiden vortrittsbelasteten Fahrzeugen gilt untereinander der Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Wer zuerst hupt, darf fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Beide müssen rückwärts fahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Haben beide Einmündungen das gleiche Signal 'Kein Vortritt', regelt sich ihr Verhältnis untereinander nach dem Rechtsvortritt (Art. 36 SVG). Beliebte Fangfrage!",
+    "ruleReference": "Art. 36 SVG"
+  },
+  {
+    "id": 445,
+    "testId": 5,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Offizielle ASA-Situation: Darf ein Fahrzeug mit defekter Scheibenwaschanlage bei Schneematsch weitergefahren werden?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Fahrzeug ist wegen Sichtbehinderung nicht mehr in vorschriftsgemässem Zustand; Weiterfahrt verboten bis zur Behebung.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man kann die Scheibe während der Fahrt mit der Hand putzen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man die Seitenscheibe öffnet.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne funktionierende Waschanlage bei Salz und Matsch erblindet die Frontscheibe innerhalb weniger Meter (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 446,
+    "testId": 6,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Sie stehen an einer Einmündung vor einem Stopsignal. Die Sicht ist durch parkierte Autos behindert. Wo halten Sie an?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zuerst an der Haltelinie vollkommen anhalten, danach langsam bis zur Sichtlinie vortasten und nötigenfalls erneut anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Direkt mitten auf die Kreuzung fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur hupen und ohne Halt weiterfahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei behinderter Sicht muss zuerst an der Haltelinie gestoppt werden. Danach tastet man sich vorsichtig zur Sichtgrenze vor (Art. 36 SSV).",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 447,
+    "testId": 7,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Ein Linienbus signalisiert innerorts das Verlassen einer Haltestelle. Sie nähern sich mit 50 km/h von hinten. Was tun Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit verringern, bremsbereit sein und dem Bus das Einspuren ermöglichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofort Vollgas geben, um vor dem Bus durchzuziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Auf den Gehsteig ausweichen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Innerorts ist Linienbussen das Wegfahren von Haltestellen durch Temporeduktion zu ermöglichen (Art. 15 Abs. 4 VRV).",
+    "ruleReference": "Art. 15 Abs. 4 VRV"
+  },
+  {
+    "id": 448,
+    "testId": 8,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Ein Tram fährt auf der Strasse hinter Ihnen. Sie möchten links abbiegen und müssen wegen Gegenverkehr warten. Was beachten Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie dürfen die Schienen nur blockieren, wenn das Tram dadurch nicht behindert wird; andernfalls weiterfahren oder Tram passieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das Tram muss immer hinter wartenden Autos warten.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man darf die Schienen beliebig lange blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Schienenfahrzeuge dürfen durch wartende Linksabbieger nicht unnötig behindert werden (Art. 38 SVG / Art. 13 VRV).",
+    "ruleReference": "Art. 38 SVG"
+  },
+  {
+    "id": 449,
+    "testId": 9,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Wer hat auf einer schmalen Brücke ohne Vortrittsschilder Vorrang beim gleichzeitigen Eintreffen zweier Autos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es gilt der Rechtsvortritt bzw. das Fahrzeug, das das Hindernis auf seiner Seite hat, muss warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das schnellere Fahrzeug.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das grössere Fahrzeug.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Wer das Hindernis auf seiner Strassenseite hat, muss warten (Art. 9 VRV). Ansonsten gilt der Rechtsvortritt oder gegenseitige Verständigung.",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 450,
+    "testId": 10,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Sie fahren auf einer Vorfahrtsstrasse und möchten nach links in eine Seitenstrasse abbiegen. Ein Fussgänger quert die Seitenstrasse. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Fussgänger hat Vorrang vor dem abbiegenden Fahrzeug.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Vortritt, weil Sie von der Vorfahrtsstrasse kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer schneller ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abbiegende Fahrzeuge müssen Fussgängern, die die Querstrasse überschreiten, stets den Vortritt lassen (Art. 33 SVG).",
+    "ruleReference": "Art. 33 SVG"
+  },
+  {
+    "id": 451,
+    "testId": 11,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Sie kommen an eine Kreuzung mit Kreisverkehr. Ein Radfahrer befindet sich bereits im Kreisel vor Ihnen. Dürfen Sie ihn im Kreisel überholen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, im Kreisel sollte wegen des geringen Raumes und der Richtungsänderungen nicht überholt werden; Sicherheitsabstand halten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, mit mindestens 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man hupt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Überholen im Kreisel ist wegen enger Radien extrem gefährlich. Radfahrer dürfen in der Fahrbahnmitte fahren (Art. 41b VRV).",
+    "ruleReference": "Art. 41b VRV"
+  },
+  {
+    "id": 452,
+    "testId": 12,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Ein Polizeiauto mit eingeschaltetem Blaulicht (ohne Sirene) steht an einer roten Ampel. Die Ampel schaltet auf Grün. Darf die Polizei vor Ihnen fahren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, Einsatzfahrzeuge haben auch mit Blaulicht allein Vorrang und sind zügig passieren zu lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, ohne Sirene hat die Polizei keinerlei Rechte.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur wenn ein Notarzt drin sitzt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Blaulicht zeigt eine dringliche Dienstfahrt an (Art. 27 SVG). Andere Verkehrsteilnehmer müssen die Fahrbahn unverzüglich freigeben.",
+    "ruleReference": "Art. 27 SVG"
+  },
+  {
+    "id": 453,
+    "testId": 13,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Sie möchten aus einer verkehrsberuhigten Begegnungszone (20 km/h) in eine Tempo-30-Zone einfahren. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Verkehr in der Tempo-30-Zone; wer aus einer Begegnungszone ausfährt, hat keinen Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer zuerst an der Kreuzung ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ausfahrten aus Begegnungszonen, Fussgängerzonen und Grundstücken sind gegenüber dem fliessenden Verkehr nachrangig (Art. 15 Abs. 3 VRV).",
+    "ruleReference": "Art. 15 Abs. 3 VRV"
+  },
+  {
+    "id": 454,
+    "testId": 14,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: An einer Kreuzung fällt die Ampel aus (gelbes Blinklicht). Ein Schild zeigt 'Hauptstrasse' für Ihre Richtung. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie haben Vortritt vor dem Querverkehr, da bei Ampelausfall die signalisierten Schilder gelten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Es gilt automatischer Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Alle müssen anhalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei gelbem Blinklicht oder Ausfall der Lichtsignalanlage gelten die angebrachten Vortrittsschilder (Art. 68 SSV).",
+    "ruleReference": "Art. 68 SSV"
+  },
+  {
+    "id": 455,
+    "testId": 15,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Sie stehen als zweites Fahrzeug hinter einem an der Haltelinie wartenden Auto vor einem Stopsignal. Das vordere Auto fährt ab. Dürfen Sie direkt folgen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, jedes Fahrzeug muss für sich selbst an der Haltelinie anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn kein Querverkehr zu sehen ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man dicht aufschliesst.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Stopp-Pflicht gilt individuell für jedes einzelne Fahrzeug an der Haltelinie (Art. 36 SSV). Kein 'Durchrutschen'!",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 456,
+    "testId": 16,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Signal 'Rechtsabbiegen für Radfahrer gestattet bei Rot' (Signal mit grünem Velo und Pfeil an der Ampel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Radfahrer und Mofas dürfen bei rotem Lichtsignal nach rechts abbiegen, müssen aber Fussgängern und dem Querverkehr den Vortritt lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Alle Autos dürfen bei Rot rechts abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Radfahrer müssen absteigen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Seit 2021 dürfen Velos und Mofas bei roter Ampel mit diesem Zusatzschild vorsichtig rechts abbiegen (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 457,
+    "testId": 17,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Signal 'Pannensignal' (Signal 2.47 'Halteverbot auf dem Pannenstreifen')?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auf dem Pannenstreifen darf auch bei Panne nicht gehalten werden (sofern Gefahrenzone), Weiterrollen bis zur nächsten Bucht zwingend.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pannenstreifen ist frei für alle.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Wohnwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Verbietet das Halten selbst bei Notfällen an besonders engen oder gefährlichen Tunnel- und Brückenstellen (Art. 30 SSV).",
+    "ruleReference": "Art. 30 SSV"
+  },
+  {
+    "id": 458,
+    "testId": 18,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Hinweissignal 'Standort eines Defibrillators' (grünes Quadrat mit weissem Herz und Blitz)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zeigt den genauen Standort eines öffentlich zugänglichen automatisierten Defibrillators (AED) für Notfälle an.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Spital in 1 km.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Elektroauto-Ladesäule.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Weist Ersthelfer auf lebensrettende Defibrillatoren bei plötzlichem Herzstillstand hin.",
+    "ruleReference": "Art. 62 SSV"
+  },
+  {
+    "id": 459,
+    "testId": 19,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet eine gelbe Zickzack-Linie vor einer Bushaltestelle?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Haltestelle für öffentliche Busse; Halten nur kurz zum Ein- und Aussteigen gestattet, sofern kein Bus behindert wird (Parkieren verboten).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Parkplatz für Taxis.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Strecke mit vielen Schlaglöchern.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die gelbe Zickzacklinie (Art. 79a SSV) markiert ÖV-Haltestellen. Parkieren ist absolut verboten.",
+    "ruleReference": "Art. 79a SSV"
+  },
+  {
+    "id": 460,
+    "testId": 20,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Signal 'Verbot für Motorwagen und Motorräder' (Auto und Motorrad im roten Kreis)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einfahrtsverbot für alle mehrspurigen Motorfahrzeuge und alle Motorräder; Fahrräder und Mofas dürfen passieren.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nur für LKW gesperrt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Verbot für Fahrräder.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.13 untersagt das Befahren für Motorwagen und Motorräder (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 461,
+    "testId": 1,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet ein blaues quadratisches Schild mit weissem Pfeil geradeaus und dem Zusatz 'Einbahn'?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einbahnstrasse: Die Strasse darf nur in Pfeilrichtung befahren werden; Gegenverkehr ist nicht zulässig.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pflicht zum Wenden am Ende.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur für Busse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.08 kennzeichnet Einbahnstrassen (Art. 46 SSV).",
+    "ruleReference": "Art. 46 SSV"
+  },
+  {
+    "id": 462,
+    "testId": 2,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Signal 'Spur für Busse' (blaue runde Tafel mit gelbem Bus-Symbol)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dieser Fahrstreifen ist Linienbussen vorbehalten; andere Fahrzeuge dürfen ihn nicht benützen (ausser Taxis, wenn signalisiert).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Busse dürfen hier nicht fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Reisebusse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Busstreifen (Art. 34 SSV) sind dem Linienverkehr vorbehalten. Unberechtigtes Befahren wird gebüsst.",
+    "ruleReference": "Art. 34 SSV"
+  },
+  {
+    "id": 463,
+    "testId": 3,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet ein rot-weisser Richtungspfeil auf einer Warntafel (Kurvenleittafel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt eine besonders scharfe und gefährliche Kurve an; Richtungspfeil zeigt den Kurvenverlauf.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Zeigt eine Ausfahrt an.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Gilt nur für Lastwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Kurvenleittafeln (Signal 1.01/1.02) weisen auf gefährlich enge Kurvenradien hin (Art. 5 SSV).",
+    "ruleReference": "Art. 5 SSV"
+  },
+  {
+    "id": 464,
+    "testId": 4,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet ein weisses rundes Schild mit rotem Rand und einem schwarzen Velo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verbot für Fahrräder und Motorfahrräder (Mofas).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Radweg obligatorisch.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Achtung Radfahrer.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.06 verbietet das Fahren mit Fahrrädern und Mofas (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 465,
+    "testId": 5,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Signal 'Tunnel' (Signal 4.07)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt die Einfahrt in einen Tunnel an: Abblendlicht obligatorisch, Sonnenbrille abnehmen, Wenden und Rückwärtsfahren verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Baustelle voraus.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Überdachter Parkplatz.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.07 mahnt zu tunnelgerechtem Verhalten (Abblendlicht, Abstand, Rauchvermeidung) (Art. 45 SSV).",
+    "ruleReference": "Art. 45 SSV"
+  },
+  {
+    "id": 466,
+    "testId": 6,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Höchstgeschwindigkeit gilt innerorts für Motorräder und Personenwagen, wenn keine Schilder vorhanden sind?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generell 50 km/h.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Generell 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Generell 40 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "In geschlossenen Ortschaften gilt in der Schweiz generell Höchstgeschwindigkeit 50 km/h (Art. 4a VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 467,
+    "testId": 7,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Wie gross ist der Reaktionsweg bei einer Geschwindigkeit von 100 km/h bei 1 Sekunde Reaktionszeit (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 30 Meter (100 / 10 * 3 = 30 m).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "100 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Reaktionsweg berechnet sich nach der Faustformel (Geschwindigkeit / 10) * 3 = 30 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 468,
+    "testId": 8,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Wie gross ist der gesamte Anhalteweg bei 50 km/h auf trockener Strasse bei normaler Bremsung (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 40 Meter (15 m Reaktionsweg + 25 m Bremsweg).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Anhalteweg = Reaktionsweg ((50/10)*3 = 15m) + Bremsweg ((50/10)*(50/10) = 25m) = 40 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 469,
+    "testId": 9,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Höchstgeschwindigkeit gilt auf Schweizer Autostrassen (grünes Autoschild)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "100 km/h (sofern nicht durch Schilder anders geregelt).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "120 km/h wie auf der Autobahn.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 km/h wie ausserorts.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Auf Autostrassen gilt für Personenwagen generell Höchsttempo 100 km/h (Art. 4a Abs. 1 Bst. c VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 470,
+    "testId": 10,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Darf man ohne zwingenden Grund so langsam fahren, dass der Verkehrsfluss wesentlich behindert wird?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, grundloses Langsamfahren ('Schleichen') behindert den Verkehrsfluss, provoziert riskante Überholmanöver und ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man darf beliebig langsam fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur nachts verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne zwingenden Grund darf kein Fahrzeugführer so langsam fahren, dass er den Verkehrsfluss behindert (Art. 4 Abs. 2 VRV).",
+    "ruleReference": "Art. 4 Abs. 2 VRV"
+  },
+  {
+    "id": 471,
+    "testId": 11,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was müssen Sie bei tief stehender Sonne im Herbst bezüglich Geschwindigkeit beachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit sofort reduzieren und Sonnenblende nutzen; akute Blendgefahr und Gefahr des Übersehens von Fussgängern.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vollgas geben, um schnell am Schatten zu sein.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Fernlicht einschalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Tiefe Sonne blendet extrem. Scheiben sauber halten und Geschwindigkeit anpassen (Art. 32 SVG).",
+    "ruleReference": "Art. 32 SVG"
+  },
+  {
+    "id": 472,
+    "testId": 12,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Geschwindigkeit gilt beim Abschleppen eines defekten Fahrzeugs mit Seil oder Stange?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Höchstens 40 km/h auf allen Strassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Maximal 80 km/h ausserorts.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Maximal 60 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Beim Abschleppen von Motorfahrzeugen beträgt die Höchstgeschwindigkeit aus Sicherheitsgründen 40 km/h (Art. 43 VRV).",
+    "ruleReference": "Art. 43 VRV"
+  },
+  {
+    "id": 473,
+    "testId": 13,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Darf man auf der Autobahn den Beschleunigungsstreifen voll ausnutzen, um sich mit passender Geschwindigkeit einzufädeln?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, der Beschleunigungsstreifen soll über die gesamte Länge zügig genutzt werden, um sich dem Tempo des Autobahnverkehrs anzugleichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, man muss sofort am Anfang einscheren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man muss am Anfang stoppen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Beschleunigungsstreifen dient dem Erreichen der Reisegeschwindigkeit. Erst bei passender Lücke einfädeln (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 474,
+    "testId": 14,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was gilt bei einer Panne auf der Autobahn, wenn das Fahrzeug auf der Fahrbahn liegenbleibt und nicht mehr rollt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker an, Warnweste anziehen, Insassen sofort hinter die Leitplanke bringen, Pannendreieck mind. 100 m vorher aufstellen und Notruf 117 wählen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Im Auto sitzen bleiben und die Notbremse ziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das Auto mit Passagieren von Hand anschieben.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Liegenbleiben auf der Fahrbahn ist lebensgefährlich. Eigensicherung hinter der Leitplanke hat oberste Priorität (Art. 54 VRV).",
+    "ruleReference": "Art. 54 VRV"
+  },
+  {
+    "id": 475,
+    "testId": 15,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Verbot des Rechtsüberholens auf der Autobahn im Detail?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ausscheren nach rechts, Beschleunigen, Vorbeifahren am linken Auto und Wiedereinscheren nach links ist strikt verboten (hohe Busse & Ausweisentzug).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Man darf rechts überholen, wenn man blinkt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Rechtsüberholen ist ab 100 km/h erlaubt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Rechtsüberholen ist ein schweres Verkehrsdelikt. Nur passives Rechtsvorbeifahren bei stockenden Kolonnen ist erlaubt (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 476,
+    "testId": 16,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Spurwahl gilt auf einer 3-spurigen Autobahn bei dichtem Verkehr?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Grundsätzlich die rechte Spur benutzen; die mittlere und linke Spur dienen ausschliesslich dem Überholen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Immer auf der Mittelspur bleiben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Freie Spurwahl wie in den USA.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Rechtsfahrgebot gilt auch auf dreispurigen Autobahnen. Permanentes Mittelspurschleichen ist unzulässig (Art. 34 SVG).",
+    "ruleReference": "Art. 34 SVG"
+  },
+  {
+    "id": 477,
+    "testId": 17,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Wie verhalten Sie sich bei einer Tunnelfahrt, wenn der Verkehr vor Ihnen zum völligen Stillstand kommt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker einschalten, mindestens 5 Meter Abstand zum Vorderfahrzeug halten, Motor abstellen, Radio (Verkehrsfunk) anlassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Dicht auffahren und hupen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Aussteigen und im Tunnel spazieren gehen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abstand im Tunnelstau verhindert Kettenreaktionen und lässt Raum für Fluchtwege; Motor abstellen reduziert Abgase (Art. 39a VRV).",
+    "ruleReference": "Art. 39a VRV"
+  },
+  {
+    "id": 478,
+    "testId": 18,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Grenze gilt für qualifizierte Trunkenheit mit zwingendem Ausweisentzug für mindestens 3 Monate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ab 0.80 Promille (bzw. 0.40 mg/l Atemalkohol).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ab 0.50 Promille.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ab 1.20 Promille.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ab 0.80 ‰ liegt eine schwere Verkehrsregelverletzung vor, die zwingend mindestens 3 Monate Entzug nach sich zieht (Art. 16c SVG).",
+    "ruleReference": "Art. 16c SVG"
+  },
+  {
+    "id": 479,
+    "testId": 19,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Darf man bei einer Panne oder einem Unfall die Autobahnfahrbahn überqueren, um das Pannendreieck auf der anderen Seite zu holen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Betreten oder Überqueren der Autobahnfahrbahn zu Fuss ist strengstens verboten und lebensgefährlich.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn gerade keine Autos kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, mit hochgehaltener Hand.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Fussgänger dürfen Autobahnen unter keinen Umständen betreten oder queren (Art. 35 VRV).",
+    "ruleReference": "Art. 35 VRV"
+  },
+  {
+    "id": 480,
+    "testId": 20,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Pflicht besteht bezüglich der Reifen bei winterlichen Strassenverhältnissen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fahrzeuge müssen jederzeit betriebssicher beherrscht werden können; wer mit ungeeigneten Reifen den Verkehr behindert oder verunfallt, haftet und wird bestraft.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Winterreifen sind vom 1. Oktober bis 1. Mai vorgeschrieben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Sommerreifen sind im Winter verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Schweiz kennt keine kalendarische Winterreifenpflicht, aber die Pflicht zur Beherrschung des Fahrzeugs (Art. 29 SVG / Art. 3 VRV).",
+    "ruleReference": "Art. 29 SVG"
+  },
+  {
+    "id": 481,
+    "testId": 1,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Sicherung ist für lose Gegenstände auf der Rückbank oder im Kofferraum vorgeschrieben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie müssen so gesichert werden, dass sie bei einer Vollbremsung oder Kollision nicht nach vorne geschleudert werden und Insassen verletzen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Keine, wenn der Kofferraumdeckel zu ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur bei Gegenständen über 50 kg.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ungesicherte Gegenstände werden bei Aufprall zu tödlichen Geschossen. Ladungssicherung ist Pflicht (Art. 73 VRV).",
+    "ruleReference": "Art. 73 VRV"
+  },
+  {
+    "id": 482,
+    "testId": 2,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was droht bei der Einnahme von Schlafmitteln vor Fahrtantritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gefahr von schwerer Fahruntüchtigkeit ('Hangover-Effekt'); bei Unfall droht Verurteilung wegen Fahrens in fahrunfähigem Zustand.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nichts, wenn das Medikament vom Arzt stammt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur ein Verwarnungsgeld.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Medikamente können die Reaktionszeit gravierend beeinträchtigen. Fahren unter Medikamenteneinfluss ist strafbar (Art. 31 SVG).",
+    "ruleReference": "Art. 31 SVG"
+  },
+  {
+    "id": 483,
+    "testId": 3,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was bedeutet das Aufleuchten der gelben Motorkontrollleuchte (Check Engine) während der Fahrt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Störung in der Motorsteuerung oder der Abgasreinigungsanlage; Werkstatt aufsuchen und Ursache diagnostizieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofortige Vollbremsung auf der Spur.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ölstand ist zu hoch.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Die Motorkontrollleuchte signalisiert abgas- oder verbrennungsrelevante Fehler im Motormanagement (VTS).",
+    "ruleReference": "Fahrzeugtechnik VTS"
+  },
+  {
+    "id": 484,
+    "testId": 4,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Warum darf ein Fahrzeug mit Katalysator nicht durch Anschleppen oder Anschieben gestartet werden, wenn unverbrannter Treibstoff im Auspuff ist?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unverbrannter Kraftstoff kann in den heissen Katalysator gelangen und diesen durch Verbrennung zerstören.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Die Lichtmaschine explodiert.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Die Bremsen blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Treibstoff im Katalysator verbrennt explosionsartig und schmilzt den Keramikkörper des Katalysators (Technik-Leitfaden).",
+    "ruleReference": "Technik VTS"
+  },
+  {
+    "id": 485,
+    "testId": 5,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Flüssigkeit gehört in den Ausgleichsbehälter der Scheibenwaschanlage im Winter?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wasser gemischt mit ausreichend frostsicherem Scheibenreiniger (bis mind. -20 °C).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Reines Spülmittel ohne Wasser.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Heisses Motorenöl.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Frostschutz verhindert das Einfrieren der Spritzdüsen und Schläuche bei Minusgraden (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 486,
+    "testId": 6,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Profiltiefe wird vom TCS für Winterreifen aus Sicherheitsgründen empfohlen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mindestens 4 mm (gesetzliches Minimum ist 1.6 mm, bietet aber auf Schnee kaum noch Grip).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Mindestens 8 mm.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "1.0 mm genügt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Unter 4 mm verlieren Winterreifen ihre Lamellenwirkung auf Schnee drastisch (TCS Sicherheitsempfehlung).",
+    "ruleReference": "TCS Reifentest"
+  },
+  {
+    "id": 487,
+    "testId": 7,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Welche Lärmschutzregel gilt beim Schliessen von Türen, Motorhaube und Kofferraumdeckel nachts in Wohnquartieren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Türen und Klappen leise und ohne unnötiges Zuknallen schliessen (Vermeidung von Ruhestörung).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Möglichst laut zuschlagen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Es gibt keine Vorschriften.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Art. 33 VRV untersagt unnötigen Lärm, namentlich das laute Zuschlagen von Wagentüren in Wohngebieten.",
+    "ruleReference": "Art. 33 VRV"
+  },
+  {
+    "id": 488,
+    "testId": 8,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Ein Postauto schaltet an einer Kreuzung das Signalhorn ein. Was müssen Sie tun?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dem Postauto unverzüglich freie Bahn gewähren, da Linienbusse auf Bergpoststrassen Vorrang haben.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vor dem Postauto schnell abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Zurückhupen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Dreiklanghorn verpflichtet auf Bergpoststrassen zur Vorfahrtgewährung und Platzfreigabe (Art. 9 VRV).",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 489,
+    "testId": 9,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Sie stehen an einer roten Ampel mit einem Schild 'Grünpfeil für Velos'. Gilt der Grünpfeil auch für Ihr Auto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, der Grünpfeil gilt ausschliesslich für Fahrräder und Mofas. Autos müssen bei Rot warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, alle Rechtsabbieger dürfen fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, nach kurzem Halt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Signal 5.18 gilt explizit nur für Zweiräder. Autos begehen bei Missachtung einen Rotlichtverstoss (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 490,
+    "testId": 10,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Darf man auf einem Autobahnparkplatz übernachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das einmalige Wiederherstellen der Fahrfähigkeit (Schlafen im Auto zur Erholung) ist zulässig; Campieren mit Zelt oder Markise ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, Schlafen im Auto ist generell strafbar.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, man darf dort wochenlang wohnen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Das Ausruhen zur Wiederherstellung der Fahrfähigkeit ist auf Raststätten erlaubt, echtes Campieren dagegen kantonal untersagt.",
+    "ruleReference": "ASTRA Richtlinien Rastplätze"
+  },
+  {
+    "id": 491,
+    "testId": 11,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Was gilt an einer Verzweigung, wenn zwei Strassen zusammentreffen und beide ein 'Kein Vortritt'-Signal haben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unter den beiden vortrittsbelasteten Fahrzeugen gilt untereinander der Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Wer zuerst hupt, darf fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Beide müssen rückwärts fahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Haben beide Einmündungen das gleiche Signal 'Kein Vortritt', regelt sich ihr Verhältnis untereinander nach dem Rechtsvortritt (Art. 36 SVG). Beliebte Fangfrage!",
+    "ruleReference": "Art. 36 SVG"
+  },
+  {
+    "id": 492,
+    "testId": 12,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Fallbeispiel zur Strassenverkehrsordnung: Darf ein Fahrzeug mit defekter Scheibenwaschanlage bei Schneematsch weitergefahren werden?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Fahrzeug ist wegen Sichtbehinderung nicht mehr in vorschriftsgemässem Zustand; Weiterfahrt verboten bis zur Behebung.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man kann die Scheibe während der Fahrt mit der Hand putzen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man die Seitenscheibe öffnet.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne funktionierende Waschanlage bei Salz und Matsch erblindet die Frontscheibe innerhalb weniger Meter (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 493,
+    "testId": 13,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Sie stehen an einer Einmündung vor einem Stopsignal. Die Sicht ist durch parkierte Autos behindert. Wo halten Sie an?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zuerst an der Haltelinie vollkommen anhalten, danach langsam bis zur Sichtlinie vortasten und nötigenfalls erneut anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Direkt mitten auf die Kreuzung fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur hupen und ohne Halt weiterfahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei behinderter Sicht muss zuerst an der Haltelinie gestoppt werden. Danach tastet man sich vorsichtig zur Sichtgrenze vor (Art. 36 SSV).",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 494,
+    "testId": 14,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Ein Linienbus signalisiert innerorts das Verlassen einer Haltestelle. Sie nähern sich mit 50 km/h von hinten. Was tun Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit verringern, bremsbereit sein und dem Bus das Einspuren ermöglichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofort Vollgas geben, um vor dem Bus durchzuziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Auf den Gehsteig ausweichen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Innerorts ist Linienbussen das Wegfahren von Haltestellen durch Temporeduktion zu ermöglichen (Art. 15 Abs. 4 VRV).",
+    "ruleReference": "Art. 15 Abs. 4 VRV"
+  },
+  {
+    "id": 495,
+    "testId": 15,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Ein Tram fährt auf der Strasse hinter Ihnen. Sie möchten links abbiegen und müssen wegen Gegenverkehr warten. Was beachten Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie dürfen die Schienen nur blockieren, wenn das Tram dadurch nicht behindert wird; andernfalls weiterfahren oder Tram passieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das Tram muss immer hinter wartenden Autos warten.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man darf die Schienen beliebig lange blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Schienenfahrzeuge dürfen durch wartende Linksabbieger nicht unnötig behindert werden (Art. 38 SVG / Art. 13 VRV).",
+    "ruleReference": "Art. 38 SVG"
+  },
+  {
+    "id": 496,
+    "testId": 16,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Wer hat auf einer schmalen Brücke ohne Vortrittsschilder Vorrang beim gleichzeitigen Eintreffen zweier Autos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es gilt der Rechtsvortritt bzw. das Fahrzeug, das das Hindernis auf seiner Seite hat, muss warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das schnellere Fahrzeug.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das grössere Fahrzeug.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Wer das Hindernis auf seiner Strassenseite hat, muss warten (Art. 9 VRV). Ansonsten gilt der Rechtsvortritt oder gegenseitige Verständigung.",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 497,
+    "testId": 17,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Sie fahren auf einer Vorfahrtsstrasse und möchten nach links in eine Seitenstrasse abbiegen. Ein Fussgänger quert die Seitenstrasse. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Fussgänger hat Vorrang vor dem abbiegenden Fahrzeug.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Vortritt, weil Sie von der Vorfahrtsstrasse kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer schneller ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abbiegende Fahrzeuge müssen Fussgängern, die die Querstrasse überschreiten, stets den Vortritt lassen (Art. 33 SVG).",
+    "ruleReference": "Art. 33 SVG"
+  },
+  {
+    "id": 498,
+    "testId": 18,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Sie kommen an eine Kreuzung mit Kreisverkehr. Ein Radfahrer befindet sich bereits im Kreisel vor Ihnen. Dürfen Sie ihn im Kreisel überholen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, im Kreisel sollte wegen des geringen Raumes und der Richtungsänderungen nicht überholt werden; Sicherheitsabstand halten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, mit mindestens 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man hupt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Überholen im Kreisel ist wegen enger Radien extrem gefährlich. Radfahrer dürfen in der Fahrbahnmitte fahren (Art. 41b VRV).",
+    "ruleReference": "Art. 41b VRV"
+  },
+  {
+    "id": 499,
+    "testId": 19,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Ein Polizeiauto mit eingeschaltetem Blaulicht (ohne Sirene) steht an einer roten Ampel. Die Ampel schaltet auf Grün. Darf die Polizei vor Ihnen fahren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, Einsatzfahrzeuge haben auch mit Blaulicht allein Vorrang und sind zügig passieren zu lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, ohne Sirene hat die Polizei keinerlei Rechte.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur wenn ein Notarzt drin sitzt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Blaulicht zeigt eine dringliche Dienstfahrt an (Art. 27 SVG). Andere Verkehrsteilnehmer müssen die Fahrbahn unverzüglich freigeben.",
+    "ruleReference": "Art. 27 SVG"
+  },
+  {
+    "id": 500,
+    "testId": 20,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Sie möchten aus einer verkehrsberuhigten Begegnungszone (20 km/h) in eine Tempo-30-Zone einfahren. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Verkehr in der Tempo-30-Zone; wer aus einer Begegnungszone ausfährt, hat keinen Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer zuerst an der Kreuzung ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ausfahrten aus Begegnungszonen, Fussgängerzonen und Grundstücken sind gegenüber dem fliessenden Verkehr nachrangig (Art. 15 Abs. 3 VRV).",
+    "ruleReference": "Art. 15 Abs. 3 VRV"
+  },
+  {
+    "id": 501,
+    "testId": 1,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: An einer Kreuzung fällt die Ampel aus (gelbes Blinklicht). Ein Schild zeigt 'Hauptstrasse' für Ihre Richtung. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie haben Vortritt vor dem Querverkehr, da bei Ampelausfall die signalisierten Schilder gelten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Es gilt automatischer Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Alle müssen anhalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei gelbem Blinklicht oder Ausfall der Lichtsignalanlage gelten die angebrachten Vortrittsschilder (Art. 68 SSV).",
+    "ruleReference": "Art. 68 SSV"
+  },
+  {
+    "id": 502,
+    "testId": 2,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Verkehrsregelverordnung im Praxistest: Sie stehen als zweites Fahrzeug hinter einem an der Haltelinie wartenden Auto vor einem Stopsignal. Das vordere Auto fährt ab. Dürfen Sie direkt folgen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, jedes Fahrzeug muss für sich selbst an der Haltelinie anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn kein Querverkehr zu sehen ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man dicht aufschliesst.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Stopp-Pflicht gilt individuell für jedes einzelne Fahrzeug an der Haltelinie (Art. 36 SSV). Kein 'Durchrutschen'!",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 503,
+    "testId": 3,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Signal 'Rechtsabbiegen für Radfahrer gestattet bei Rot' (Signal mit grünem Velo und Pfeil an der Ampel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Radfahrer und Mofas dürfen bei rotem Lichtsignal nach rechts abbiegen, müssen aber Fussgängern und dem Querverkehr den Vortritt lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Alle Autos dürfen bei Rot rechts abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Radfahrer müssen absteigen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Seit 2021 dürfen Velos und Mofas bei roter Ampel mit diesem Zusatzschild vorsichtig rechts abbiegen (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 504,
+    "testId": 4,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Signal 'Pannensignal' (Signal 2.47 'Halteverbot auf dem Pannenstreifen')?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auf dem Pannenstreifen darf auch bei Panne nicht gehalten werden (sofern Gefahrenzone), Weiterrollen bis zur nächsten Bucht zwingend.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pannenstreifen ist frei für alle.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Wohnwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Verbietet das Halten selbst bei Notfällen an besonders engen oder gefährlichen Tunnel- und Brückenstellen (Art. 30 SSV).",
+    "ruleReference": "Art. 30 SSV"
+  },
+  {
+    "id": 505,
+    "testId": 5,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Hinweissignal 'Standort eines Defibrillators' (grünes Quadrat mit weissem Herz und Blitz)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zeigt den genauen Standort eines öffentlich zugänglichen automatisierten Defibrillators (AED) für Notfälle an.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Spital in 1 km.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Elektroauto-Ladesäule.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Weist Ersthelfer auf lebensrettende Defibrillatoren bei plötzlichem Herzstillstand hin.",
+    "ruleReference": "Art. 62 SSV"
+  },
+  {
+    "id": 506,
+    "testId": 6,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet eine gelbe Zickzack-Linie vor einer Bushaltestelle?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Haltestelle für öffentliche Busse; Halten nur kurz zum Ein- und Aussteigen gestattet, sofern kein Bus behindert wird (Parkieren verboten).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Parkplatz für Taxis.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Strecke mit vielen Schlaglöchern.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die gelbe Zickzacklinie (Art. 79a SSV) markiert ÖV-Haltestellen. Parkieren ist absolut verboten.",
+    "ruleReference": "Art. 79a SSV"
+  },
+  {
+    "id": 507,
+    "testId": 7,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Signal 'Verbot für Motorwagen und Motorräder' (Auto und Motorrad im roten Kreis)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einfahrtsverbot für alle mehrspurigen Motorfahrzeuge und alle Motorräder; Fahrräder und Mofas dürfen passieren.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nur für LKW gesperrt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Verbot für Fahrräder.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.13 untersagt das Befahren für Motorwagen und Motorräder (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 508,
+    "testId": 8,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet ein blaues quadratisches Schild mit weissem Pfeil geradeaus und dem Zusatz 'Einbahn'?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einbahnstrasse: Die Strasse darf nur in Pfeilrichtung befahren werden; Gegenverkehr ist nicht zulässig.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pflicht zum Wenden am Ende.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur für Busse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.08 kennzeichnet Einbahnstrassen (Art. 46 SSV).",
+    "ruleReference": "Art. 46 SSV"
+  },
+  {
+    "id": 509,
+    "testId": 9,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Signal 'Spur für Busse' (blaue runde Tafel mit gelbem Bus-Symbol)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dieser Fahrstreifen ist Linienbussen vorbehalten; andere Fahrzeuge dürfen ihn nicht benützen (ausser Taxis, wenn signalisiert).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Busse dürfen hier nicht fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Reisebusse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Busstreifen (Art. 34 SSV) sind dem Linienverkehr vorbehalten. Unberechtigtes Befahren wird gebüsst.",
+    "ruleReference": "Art. 34 SSV"
+  },
+  {
+    "id": 510,
+    "testId": 10,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet ein rot-weisser Richtungspfeil auf einer Warntafel (Kurvenleittafel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt eine besonders scharfe und gefährliche Kurve an; Richtungspfeil zeigt den Kurvenverlauf.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Zeigt eine Ausfahrt an.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Gilt nur für Lastwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Kurvenleittafeln (Signal 1.01/1.02) weisen auf gefährlich enge Kurvenradien hin (Art. 5 SSV).",
+    "ruleReference": "Art. 5 SSV"
+  },
+  {
+    "id": 511,
+    "testId": 11,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet ein weisses rundes Schild mit rotem Rand und einem schwarzen Velo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verbot für Fahrräder und Motorfahrräder (Mofas).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Radweg obligatorisch.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Achtung Radfahrer.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.06 verbietet das Fahren mit Fahrrädern und Mofas (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 512,
+    "testId": 12,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Signal 'Tunnel' (Signal 4.07)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt die Einfahrt in einen Tunnel an: Abblendlicht obligatorisch, Sonnenbrille abnehmen, Wenden und Rückwärtsfahren verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Baustelle voraus.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Überdachter Parkplatz.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.07 mahnt zu tunnelgerechtem Verhalten (Abblendlicht, Abstand, Rauchvermeidung) (Art. 45 SSV).",
+    "ruleReference": "Art. 45 SSV"
+  },
+  {
+    "id": 513,
+    "testId": 13,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Höchstgeschwindigkeit gilt innerorts für Motorräder und Personenwagen, wenn keine Schilder vorhanden sind?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generell 50 km/h.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Generell 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Generell 40 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "In geschlossenen Ortschaften gilt in der Schweiz generell Höchstgeschwindigkeit 50 km/h (Art. 4a VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 514,
+    "testId": 14,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Verkehrsregelverordnung im Praxistest: Wie gross ist der Reaktionsweg bei einer Geschwindigkeit von 100 km/h bei 1 Sekunde Reaktionszeit (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 30 Meter (100 / 10 * 3 = 30 m).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "100 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Reaktionsweg berechnet sich nach der Faustformel (Geschwindigkeit / 10) * 3 = 30 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 515,
+    "testId": 15,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Verkehrsregelverordnung im Praxistest: Wie gross ist der gesamte Anhalteweg bei 50 km/h auf trockener Strasse bei normaler Bremsung (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 40 Meter (15 m Reaktionsweg + 25 m Bremsweg).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Anhalteweg = Reaktionsweg ((50/10)*3 = 15m) + Bremsweg ((50/10)*(50/10) = 25m) = 40 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 516,
+    "testId": 16,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Höchstgeschwindigkeit gilt auf Schweizer Autostrassen (grünes Autoschild)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "100 km/h (sofern nicht durch Schilder anders geregelt).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "120 km/h wie auf der Autobahn.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 km/h wie ausserorts.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Auf Autostrassen gilt für Personenwagen generell Höchsttempo 100 km/h (Art. 4a Abs. 1 Bst. c VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 517,
+    "testId": 17,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Verkehrsregelverordnung im Praxistest: Darf man ohne zwingenden Grund so langsam fahren, dass der Verkehrsfluss wesentlich behindert wird?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, grundloses Langsamfahren ('Schleichen') behindert den Verkehrsfluss, provoziert riskante Überholmanöver und ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man darf beliebig langsam fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur nachts verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne zwingenden Grund darf kein Fahrzeugführer so langsam fahren, dass er den Verkehrsfluss behindert (Art. 4 Abs. 2 VRV).",
+    "ruleReference": "Art. 4 Abs. 2 VRV"
+  },
+  {
+    "id": 518,
+    "testId": 18,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Verkehrsregelverordnung im Praxistest: Was müssen Sie bei tief stehender Sonne im Herbst bezüglich Geschwindigkeit beachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit sofort reduzieren und Sonnenblende nutzen; akute Blendgefahr und Gefahr des Übersehens von Fussgängern.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vollgas geben, um schnell am Schatten zu sein.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Fernlicht einschalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Tiefe Sonne blendet extrem. Scheiben sauber halten und Geschwindigkeit anpassen (Art. 32 SVG).",
+    "ruleReference": "Art. 32 SVG"
+  },
+  {
+    "id": 519,
+    "testId": 19,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Geschwindigkeit gilt beim Abschleppen eines defekten Fahrzeugs mit Seil oder Stange?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Höchstens 40 km/h auf allen Strassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Maximal 80 km/h ausserorts.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Maximal 60 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Beim Abschleppen von Motorfahrzeugen beträgt die Höchstgeschwindigkeit aus Sicherheitsgründen 40 km/h (Art. 43 VRV).",
+    "ruleReference": "Art. 43 VRV"
+  },
+  {
+    "id": 520,
+    "testId": 20,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Verkehrsregelverordnung im Praxistest: Darf man auf der Autobahn den Beschleunigungsstreifen voll ausnutzen, um sich mit passender Geschwindigkeit einzufädeln?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, der Beschleunigungsstreifen soll über die gesamte Länge zügig genutzt werden, um sich dem Tempo des Autobahnverkehrs anzugleichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, man muss sofort am Anfang einscheren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man muss am Anfang stoppen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Beschleunigungsstreifen dient dem Erreichen der Reisegeschwindigkeit. Erst bei passender Lücke einfädeln (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 521,
+    "testId": 1,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Verkehrsregelverordnung im Praxistest: Was gilt bei einer Panne auf der Autobahn, wenn das Fahrzeug auf der Fahrbahn liegenbleibt und nicht mehr rollt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker an, Warnweste anziehen, Insassen sofort hinter die Leitplanke bringen, Pannendreieck mind. 100 m vorher aufstellen und Notruf 117 wählen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Im Auto sitzen bleiben und die Notbremse ziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das Auto mit Passagieren von Hand anschieben.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Liegenbleiben auf der Fahrbahn ist lebensgefährlich. Eigensicherung hinter der Leitplanke hat oberste Priorität (Art. 54 VRV).",
+    "ruleReference": "Art. 54 VRV"
+  },
+  {
+    "id": 522,
+    "testId": 2,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Verbot des Rechtsüberholens auf der Autobahn im Detail?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ausscheren nach rechts, Beschleunigen, Vorbeifahren am linken Auto und Wiedereinscheren nach links ist strikt verboten (hohe Busse & Ausweisentzug).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Man darf rechts überholen, wenn man blinkt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Rechtsüberholen ist ab 100 km/h erlaubt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Rechtsüberholen ist ein schweres Verkehrsdelikt. Nur passives Rechtsvorbeifahren bei stockenden Kolonnen ist erlaubt (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 523,
+    "testId": 3,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Spurwahl gilt auf einer 3-spurigen Autobahn bei dichtem Verkehr?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Grundsätzlich die rechte Spur benutzen; die mittlere und linke Spur dienen ausschliesslich dem Überholen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Immer auf der Mittelspur bleiben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Freie Spurwahl wie in den USA.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Rechtsfahrgebot gilt auch auf dreispurigen Autobahnen. Permanentes Mittelspurschleichen ist unzulässig (Art. 34 SVG).",
+    "ruleReference": "Art. 34 SVG"
+  },
+  {
+    "id": 524,
+    "testId": 4,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Verkehrsregelverordnung im Praxistest: Wie verhalten Sie sich bei einer Tunnelfahrt, wenn der Verkehr vor Ihnen zum völligen Stillstand kommt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker einschalten, mindestens 5 Meter Abstand zum Vorderfahrzeug halten, Motor abstellen, Radio (Verkehrsfunk) anlassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Dicht auffahren und hupen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Aussteigen und im Tunnel spazieren gehen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abstand im Tunnelstau verhindert Kettenreaktionen und lässt Raum für Fluchtwege; Motor abstellen reduziert Abgase (Art. 39a VRV).",
+    "ruleReference": "Art. 39a VRV"
+  },
+  {
+    "id": 525,
+    "testId": 5,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Grenze gilt für qualifizierte Trunkenheit mit zwingendem Ausweisentzug für mindestens 3 Monate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ab 0.80 Promille (bzw. 0.40 mg/l Atemalkohol).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ab 0.50 Promille.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ab 1.20 Promille.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ab 0.80 ‰ liegt eine schwere Verkehrsregelverletzung vor, die zwingend mindestens 3 Monate Entzug nach sich zieht (Art. 16c SVG).",
+    "ruleReference": "Art. 16c SVG"
+  },
+  {
+    "id": 526,
+    "testId": 6,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Verkehrsregelverordnung im Praxistest: Darf man bei einer Panne oder einem Unfall die Autobahnfahrbahn überqueren, um das Pannendreieck auf der anderen Seite zu holen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Betreten oder Überqueren der Autobahnfahrbahn zu Fuss ist strengstens verboten und lebensgefährlich.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn gerade keine Autos kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, mit hochgehaltener Hand.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Fussgänger dürfen Autobahnen unter keinen Umständen betreten oder queren (Art. 35 VRV).",
+    "ruleReference": "Art. 35 VRV"
+  },
+  {
+    "id": 527,
+    "testId": 7,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Pflicht besteht bezüglich der Reifen bei winterlichen Strassenverhältnissen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fahrzeuge müssen jederzeit betriebssicher beherrscht werden können; wer mit ungeeigneten Reifen den Verkehr behindert oder verunfallt, haftet und wird bestraft.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Winterreifen sind vom 1. Oktober bis 1. Mai vorgeschrieben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Sommerreifen sind im Winter verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Schweiz kennt keine kalendarische Winterreifenpflicht, aber die Pflicht zur Beherrschung des Fahrzeugs (Art. 29 SVG / Art. 3 VRV).",
+    "ruleReference": "Art. 29 SVG"
+  },
+  {
+    "id": 528,
+    "testId": 8,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Sicherung ist für lose Gegenstände auf der Rückbank oder im Kofferraum vorgeschrieben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie müssen so gesichert werden, dass sie bei einer Vollbremsung oder Kollision nicht nach vorne geschleudert werden und Insassen verletzen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Keine, wenn der Kofferraumdeckel zu ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur bei Gegenständen über 50 kg.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ungesicherte Gegenstände werden bei Aufprall zu tödlichen Geschossen. Ladungssicherung ist Pflicht (Art. 73 VRV).",
+    "ruleReference": "Art. 73 VRV"
+  },
+  {
+    "id": 529,
+    "testId": 9,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Verkehrsregelverordnung im Praxistest: Was droht bei der Einnahme von Schlafmitteln vor Fahrtantritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gefahr von schwerer Fahruntüchtigkeit ('Hangover-Effekt'); bei Unfall droht Verurteilung wegen Fahrens in fahrunfähigem Zustand.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nichts, wenn das Medikament vom Arzt stammt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur ein Verwarnungsgeld.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Medikamente können die Reaktionszeit gravierend beeinträchtigen. Fahren unter Medikamenteneinfluss ist strafbar (Art. 31 SVG).",
+    "ruleReference": "Art. 31 SVG"
+  },
+  {
+    "id": 530,
+    "testId": 10,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Verkehrsregelverordnung im Praxistest: Was bedeutet das Aufleuchten der gelben Motorkontrollleuchte (Check Engine) während der Fahrt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Störung in der Motorsteuerung oder der Abgasreinigungsanlage; Werkstatt aufsuchen und Ursache diagnostizieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofortige Vollbremsung auf der Spur.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ölstand ist zu hoch.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Die Motorkontrollleuchte signalisiert abgas- oder verbrennungsrelevante Fehler im Motormanagement (VTS).",
+    "ruleReference": "Fahrzeugtechnik VTS"
+  },
+  {
+    "id": 531,
+    "testId": 11,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Verkehrsregelverordnung im Praxistest: Warum darf ein Fahrzeug mit Katalysator nicht durch Anschleppen oder Anschieben gestartet werden, wenn unverbrannter Treibstoff im Auspuff ist?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unverbrannter Kraftstoff kann in den heissen Katalysator gelangen und diesen durch Verbrennung zerstören.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Die Lichtmaschine explodiert.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Die Bremsen blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Treibstoff im Katalysator verbrennt explosionsartig und schmilzt den Keramikkörper des Katalysators (Technik-Leitfaden).",
+    "ruleReference": "Technik VTS"
+  },
+  {
+    "id": 532,
+    "testId": 12,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Flüssigkeit gehört in den Ausgleichsbehälter der Scheibenwaschanlage im Winter?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wasser gemischt mit ausreichend frostsicherem Scheibenreiniger (bis mind. -20 °C).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Reines Spülmittel ohne Wasser.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Heisses Motorenöl.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Frostschutz verhindert das Einfrieren der Spritzdüsen und Schläuche bei Minusgraden (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 533,
+    "testId": 13,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Profiltiefe wird vom TCS für Winterreifen aus Sicherheitsgründen empfohlen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mindestens 4 mm (gesetzliches Minimum ist 1.6 mm, bietet aber auf Schnee kaum noch Grip).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Mindestens 8 mm.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "1.0 mm genügt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Unter 4 mm verlieren Winterreifen ihre Lamellenwirkung auf Schnee drastisch (TCS Sicherheitsempfehlung).",
+    "ruleReference": "TCS Reifentest"
+  },
+  {
+    "id": 534,
+    "testId": 14,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Verkehrsregelverordnung im Praxistest: Welche Lärmschutzregel gilt beim Schliessen von Türen, Motorhaube und Kofferraumdeckel nachts in Wohnquartieren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Türen und Klappen leise und ohne unnötiges Zuknallen schliessen (Vermeidung von Ruhestörung).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Möglichst laut zuschlagen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Es gibt keine Vorschriften.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Art. 33 VRV untersagt unnötigen Lärm, namentlich das laute Zuschlagen von Wagentüren in Wohngebieten.",
+    "ruleReference": "Art. 33 VRV"
+  },
+  {
+    "id": 535,
+    "testId": 15,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Verkehrsregelverordnung im Praxistest: Ein Postauto schaltet an einer Kreuzung das Signalhorn ein. Was müssen Sie tun?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dem Postauto unverzüglich freie Bahn gewähren, da Linienbusse auf Bergpoststrassen Vorrang haben.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vor dem Postauto schnell abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Zurückhupen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Dreiklanghorn verpflichtet auf Bergpoststrassen zur Vorfahrtgewährung und Platzfreigabe (Art. 9 VRV).",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 536,
+    "testId": 16,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Verkehrsregelverordnung im Praxistest: Sie stehen an einer roten Ampel mit einem Schild 'Grünpfeil für Velos'. Gilt der Grünpfeil auch für Ihr Auto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, der Grünpfeil gilt ausschliesslich für Fahrräder und Mofas. Autos müssen bei Rot warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, alle Rechtsabbieger dürfen fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, nach kurzem Halt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Signal 5.18 gilt explizit nur für Zweiräder. Autos begehen bei Missachtung einen Rotlichtverstoss (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 537,
+    "testId": 17,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Verkehrsregelverordnung im Praxistest: Darf man auf einem Autobahnparkplatz übernachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das einmalige Wiederherstellen der Fahrfähigkeit (Schlafen im Auto zur Erholung) ist zulässig; Campieren mit Zelt oder Markise ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, Schlafen im Auto ist generell strafbar.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, man darf dort wochenlang wohnen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Das Ausruhen zur Wiederherstellung der Fahrfähigkeit ist auf Raststätten erlaubt, echtes Campieren dagegen kantonal untersagt.",
+    "ruleReference": "ASTRA Richtlinien Rastplätze"
+  },
+  {
+    "id": 538,
+    "testId": 18,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Verkehrsregelverordnung im Praxistest: Was gilt an einer Verzweigung, wenn zwei Strassen zusammentreffen und beide ein 'Kein Vortritt'-Signal haben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unter den beiden vortrittsbelasteten Fahrzeugen gilt untereinander der Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Wer zuerst hupt, darf fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Beide müssen rückwärts fahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Haben beide Einmündungen das gleiche Signal 'Kein Vortritt', regelt sich ihr Verhältnis untereinander nach dem Rechtsvortritt (Art. 36 SVG). Beliebte Fangfrage!",
+    "ruleReference": "Art. 36 SVG"
+  },
+  {
+    "id": 539,
+    "testId": 19,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Verkehrsregelverordnung im Praxistest: Darf ein Fahrzeug mit defekter Scheibenwaschanlage bei Schneematsch weitergefahren werden?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Fahrzeug ist wegen Sichtbehinderung nicht mehr in vorschriftsgemässem Zustand; Weiterfahrt verboten bis zur Behebung.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man kann die Scheibe während der Fahrt mit der Hand putzen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man die Seitenscheibe öffnet.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne funktionierende Waschanlage bei Salz und Matsch erblindet die Frontscheibe innerhalb weniger Meter (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 540,
+    "testId": 20,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Sie stehen an einer Einmündung vor einem Stopsignal. Die Sicht ist durch parkierte Autos behindert. Wo halten Sie an?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zuerst an der Haltelinie vollkommen anhalten, danach langsam bis zur Sichtlinie vortasten und nötigenfalls erneut anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Direkt mitten auf die Kreuzung fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur hupen und ohne Halt weiterfahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei behinderter Sicht muss zuerst an der Haltelinie gestoppt werden. Danach tastet man sich vorsichtig zur Sichtgrenze vor (Art. 36 SSV).",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 541,
+    "testId": 1,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Ein Linienbus signalisiert innerorts das Verlassen einer Haltestelle. Sie nähern sich mit 50 km/h von hinten. Was tun Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit verringern, bremsbereit sein und dem Bus das Einspuren ermöglichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofort Vollgas geben, um vor dem Bus durchzuziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Auf den Gehsteig ausweichen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Innerorts ist Linienbussen das Wegfahren von Haltestellen durch Temporeduktion zu ermöglichen (Art. 15 Abs. 4 VRV).",
+    "ruleReference": "Art. 15 Abs. 4 VRV"
+  },
+  {
+    "id": 542,
+    "testId": 2,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Ein Tram fährt auf der Strasse hinter Ihnen. Sie möchten links abbiegen und müssen wegen Gegenverkehr warten. Was beachten Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie dürfen die Schienen nur blockieren, wenn das Tram dadurch nicht behindert wird; andernfalls weiterfahren oder Tram passieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das Tram muss immer hinter wartenden Autos warten.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man darf die Schienen beliebig lange blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Schienenfahrzeuge dürfen durch wartende Linksabbieger nicht unnötig behindert werden (Art. 38 SVG / Art. 13 VRV).",
+    "ruleReference": "Art. 38 SVG"
+  },
+  {
+    "id": 543,
+    "testId": 3,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Wer hat auf einer schmalen Brücke ohne Vortrittsschilder Vorrang beim gleichzeitigen Eintreffen zweier Autos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es gilt der Rechtsvortritt bzw. das Fahrzeug, das das Hindernis auf seiner Seite hat, muss warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das schnellere Fahrzeug.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das grössere Fahrzeug.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Wer das Hindernis auf seiner Strassenseite hat, muss warten (Art. 9 VRV). Ansonsten gilt der Rechtsvortritt oder gegenseitige Verständigung.",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 544,
+    "testId": 4,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Sie fahren auf einer Vorfahrtsstrasse und möchten nach links in eine Seitenstrasse abbiegen. Ein Fussgänger quert die Seitenstrasse. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Fussgänger hat Vorrang vor dem abbiegenden Fahrzeug.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Vortritt, weil Sie von der Vorfahrtsstrasse kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer schneller ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abbiegende Fahrzeuge müssen Fussgängern, die die Querstrasse überschreiten, stets den Vortritt lassen (Art. 33 SVG).",
+    "ruleReference": "Art. 33 SVG"
+  },
+  {
+    "id": 545,
+    "testId": 5,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Sie kommen an eine Kreuzung mit Kreisverkehr. Ein Radfahrer befindet sich bereits im Kreisel vor Ihnen. Dürfen Sie ihn im Kreisel überholen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, im Kreisel sollte wegen des geringen Raumes und der Richtungsänderungen nicht überholt werden; Sicherheitsabstand halten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, mit mindestens 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man hupt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Überholen im Kreisel ist wegen enger Radien extrem gefährlich. Radfahrer dürfen in der Fahrbahnmitte fahren (Art. 41b VRV).",
+    "ruleReference": "Art. 41b VRV"
+  },
+  {
+    "id": 546,
+    "testId": 6,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Ein Polizeiauto mit eingeschaltetem Blaulicht (ohne Sirene) steht an einer roten Ampel. Die Ampel schaltet auf Grün. Darf die Polizei vor Ihnen fahren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, Einsatzfahrzeuge haben auch mit Blaulicht allein Vorrang und sind zügig passieren zu lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, ohne Sirene hat die Polizei keinerlei Rechte.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur wenn ein Notarzt drin sitzt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Blaulicht zeigt eine dringliche Dienstfahrt an (Art. 27 SVG). Andere Verkehrsteilnehmer müssen die Fahrbahn unverzüglich freigeben.",
+    "ruleReference": "Art. 27 SVG"
+  },
+  {
+    "id": 547,
+    "testId": 7,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Sie möchten aus einer verkehrsberuhigten Begegnungszone (20 km/h) in eine Tempo-30-Zone einfahren. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Verkehr in der Tempo-30-Zone; wer aus einer Begegnungszone ausfährt, hat keinen Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer zuerst an der Kreuzung ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ausfahrten aus Begegnungszonen, Fussgängerzonen und Grundstücken sind gegenüber dem fliessenden Verkehr nachrangig (Art. 15 Abs. 3 VRV).",
+    "ruleReference": "Art. 15 Abs. 3 VRV"
+  },
+  {
+    "id": 548,
+    "testId": 8,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: An einer Kreuzung fällt die Ampel aus (gelbes Blinklicht). Ein Schild zeigt 'Hauptstrasse' für Ihre Richtung. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie haben Vortritt vor dem Querverkehr, da bei Ampelausfall die signalisierten Schilder gelten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Es gilt automatischer Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Alle müssen anhalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei gelbem Blinklicht oder Ausfall der Lichtsignalanlage gelten die angebrachten Vortrittsschilder (Art. 68 SSV).",
+    "ruleReference": "Art. 68 SSV"
+  },
+  {
+    "id": 549,
+    "testId": 9,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Sie stehen als zweites Fahrzeug hinter einem an der Haltelinie wartenden Auto vor einem Stopsignal. Das vordere Auto fährt ab. Dürfen Sie direkt folgen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, jedes Fahrzeug muss für sich selbst an der Haltelinie anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn kein Querverkehr zu sehen ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man dicht aufschliesst.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Stopp-Pflicht gilt individuell für jedes einzelne Fahrzeug an der Haltelinie (Art. 36 SSV). Kein 'Durchrutschen'!",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 550,
+    "testId": 10,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Signal 'Rechtsabbiegen für Radfahrer gestattet bei Rot' (Signal mit grünem Velo und Pfeil an der Ampel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Radfahrer und Mofas dürfen bei rotem Lichtsignal nach rechts abbiegen, müssen aber Fussgängern und dem Querverkehr den Vortritt lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Alle Autos dürfen bei Rot rechts abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Radfahrer müssen absteigen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Seit 2021 dürfen Velos und Mofas bei roter Ampel mit diesem Zusatzschild vorsichtig rechts abbiegen (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 551,
+    "testId": 11,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Signal 'Pannensignal' (Signal 2.47 'Halteverbot auf dem Pannenstreifen')?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auf dem Pannenstreifen darf auch bei Panne nicht gehalten werden (sofern Gefahrenzone), Weiterrollen bis zur nächsten Bucht zwingend.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pannenstreifen ist frei für alle.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Wohnwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Verbietet das Halten selbst bei Notfällen an besonders engen oder gefährlichen Tunnel- und Brückenstellen (Art. 30 SSV).",
+    "ruleReference": "Art. 30 SSV"
+  },
+  {
+    "id": 552,
+    "testId": 12,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Hinweissignal 'Standort eines Defibrillators' (grünes Quadrat mit weissem Herz und Blitz)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zeigt den genauen Standort eines öffentlich zugänglichen automatisierten Defibrillators (AED) für Notfälle an.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Spital in 1 km.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Elektroauto-Ladesäule.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Weist Ersthelfer auf lebensrettende Defibrillatoren bei plötzlichem Herzstillstand hin.",
+    "ruleReference": "Art. 62 SSV"
+  },
+  {
+    "id": 553,
+    "testId": 13,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet eine gelbe Zickzack-Linie vor einer Bushaltestelle?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Haltestelle für öffentliche Busse; Halten nur kurz zum Ein- und Aussteigen gestattet, sofern kein Bus behindert wird (Parkieren verboten).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Parkplatz für Taxis.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Strecke mit vielen Schlaglöchern.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die gelbe Zickzacklinie (Art. 79a SSV) markiert ÖV-Haltestellen. Parkieren ist absolut verboten.",
+    "ruleReference": "Art. 79a SSV"
+  },
+  {
+    "id": 554,
+    "testId": 14,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Signal 'Verbot für Motorwagen und Motorräder' (Auto und Motorrad im roten Kreis)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einfahrtsverbot für alle mehrspurigen Motorfahrzeuge und alle Motorräder; Fahrräder und Mofas dürfen passieren.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nur für LKW gesperrt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Verbot für Fahrräder.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.13 untersagt das Befahren für Motorwagen und Motorräder (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 555,
+    "testId": 15,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet ein blaues quadratisches Schild mit weissem Pfeil geradeaus und dem Zusatz 'Einbahn'?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einbahnstrasse: Die Strasse darf nur in Pfeilrichtung befahren werden; Gegenverkehr ist nicht zulässig.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pflicht zum Wenden am Ende.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur für Busse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.08 kennzeichnet Einbahnstrassen (Art. 46 SSV).",
+    "ruleReference": "Art. 46 SSV"
+  },
+  {
+    "id": 556,
+    "testId": 16,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Signal 'Spur für Busse' (blaue runde Tafel mit gelbem Bus-Symbol)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dieser Fahrstreifen ist Linienbussen vorbehalten; andere Fahrzeuge dürfen ihn nicht benützen (ausser Taxis, wenn signalisiert).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Busse dürfen hier nicht fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Reisebusse.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Busstreifen (Art. 34 SSV) sind dem Linienverkehr vorbehalten. Unberechtigtes Befahren wird gebüsst.",
+    "ruleReference": "Art. 34 SSV"
+  },
+  {
+    "id": 557,
+    "testId": 17,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet ein rot-weisser Richtungspfeil auf einer Warntafel (Kurvenleittafel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt eine besonders scharfe und gefährliche Kurve an; Richtungspfeil zeigt den Kurvenverlauf.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Zeigt eine Ausfahrt an.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Gilt nur für Lastwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Kurvenleittafeln (Signal 1.01/1.02) weisen auf gefährlich enge Kurvenradien hin (Art. 5 SSV).",
+    "ruleReference": "Art. 5 SSV"
+  },
+  {
+    "id": 558,
+    "testId": 18,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet ein weisses rundes Schild mit rotem Rand und einem schwarzen Velo?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verbot für Fahrräder und Motorfahrräder (Mofas).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Radweg obligatorisch.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Achtung Radfahrer.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 2.06 verbietet das Fahren mit Fahrrädern und Mofas (Art. 19 SSV).",
+    "ruleReference": "Art. 19 SSV"
+  },
+  {
+    "id": 559,
+    "testId": 19,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Signal 'Tunnel' (Signal 4.07)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kündigt die Einfahrt in einen Tunnel an: Abblendlicht obligatorisch, Sonnenbrille abnehmen, Wenden und Rückwärtsfahren verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Baustelle voraus.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Überdachter Parkplatz.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Signal 4.07 mahnt zu tunnelgerechtem Verhalten (Abblendlicht, Abstand, Rauchvermeidung) (Art. 45 SSV).",
+    "ruleReference": "Art. 45 SSV"
+  },
+  {
+    "id": 560,
+    "testId": 20,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Höchstgeschwindigkeit gilt innerorts für Motorräder und Personenwagen, wenn keine Schilder vorhanden sind?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generell 50 km/h.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Generell 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Generell 40 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "In geschlossenen Ortschaften gilt in der Schweiz generell Höchstgeschwindigkeit 50 km/h (Art. 4a VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 561,
+    "testId": 1,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Wie gross ist der Reaktionsweg bei einer Geschwindigkeit von 100 km/h bei 1 Sekunde Reaktionszeit (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 30 Meter (100 / 10 * 3 = 30 m).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "100 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Reaktionsweg berechnet sich nach der Faustformel (Geschwindigkeit / 10) * 3 = 30 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 562,
+    "testId": 2,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Wie gross ist der gesamte Anhalteweg bei 50 km/h auf trockener Strasse bei normaler Bremsung (Faustformel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ca. 40 Meter (15 m Reaktionsweg + 25 m Bremsweg).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "10 Meter.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 Meter.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Anhalteweg = Reaktionsweg ((50/10)*3 = 15m) + Bremsweg ((50/10)*(50/10) = 25m) = 40 Meter.",
+    "ruleReference": "Fahrschul-Physik"
+  },
+  {
+    "id": 563,
+    "testId": 3,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Höchstgeschwindigkeit gilt auf Schweizer Autostrassen (grünes Autoschild)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "100 km/h (sofern nicht durch Schilder anders geregelt).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "120 km/h wie auf der Autobahn.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "80 km/h wie ausserorts.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Auf Autostrassen gilt für Personenwagen generell Höchsttempo 100 km/h (Art. 4a Abs. 1 Bst. c VRV).",
+    "ruleReference": "Art. 4a VRV"
+  },
+  {
+    "id": 564,
+    "testId": 4,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Darf man ohne zwingenden Grund so langsam fahren, dass der Verkehrsfluss wesentlich behindert wird?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, grundloses Langsamfahren ('Schleichen') behindert den Verkehrsfluss, provoziert riskante Überholmanöver und ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man darf beliebig langsam fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur nachts verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne zwingenden Grund darf kein Fahrzeugführer so langsam fahren, dass er den Verkehrsfluss behindert (Art. 4 Abs. 2 VRV).",
+    "ruleReference": "Art. 4 Abs. 2 VRV"
+  },
+  {
+    "id": 565,
+    "testId": 5,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was müssen Sie bei tief stehender Sonne im Herbst bezüglich Geschwindigkeit beachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit sofort reduzieren und Sonnenblende nutzen; akute Blendgefahr und Gefahr des Übersehens von Fussgängern.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vollgas geben, um schnell am Schatten zu sein.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Fernlicht einschalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Tiefe Sonne blendet extrem. Scheiben sauber halten und Geschwindigkeit anpassen (Art. 32 SVG).",
+    "ruleReference": "Art. 32 SVG"
+  },
+  {
+    "id": 566,
+    "testId": 6,
+    "category": "geschwindigkeit",
+    "categoryName": "Geschwindigkeit & Abstand",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Geschwindigkeit gilt beim Abschleppen eines defekten Fahrzeugs mit Seil oder Stange?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Höchstens 40 km/h auf allen Strassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Maximal 80 km/h ausserorts.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Maximal 60 km/h.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Beim Abschleppen von Motorfahrzeugen beträgt die Höchstgeschwindigkeit aus Sicherheitsgründen 40 km/h (Art. 43 VRV).",
+    "ruleReference": "Art. 43 VRV"
+  },
+  {
+    "id": 567,
+    "testId": 7,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Darf man auf der Autobahn den Beschleunigungsstreifen voll ausnutzen, um sich mit passender Geschwindigkeit einzufädeln?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, der Beschleunigungsstreifen soll über die gesamte Länge zügig genutzt werden, um sich dem Tempo des Autobahnverkehrs anzugleichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, man muss sofort am Anfang einscheren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man muss am Anfang stoppen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Der Beschleunigungsstreifen dient dem Erreichen der Reisegeschwindigkeit. Erst bei passender Lücke einfädeln (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 568,
+    "testId": 8,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was gilt bei einer Panne auf der Autobahn, wenn das Fahrzeug auf der Fahrbahn liegenbleibt und nicht mehr rollt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker an, Warnweste anziehen, Insassen sofort hinter die Leitplanke bringen, Pannendreieck mind. 100 m vorher aufstellen und Notruf 117 wählen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Im Auto sitzen bleiben und die Notbremse ziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das Auto mit Passagieren von Hand anschieben.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Liegenbleiben auf der Fahrbahn ist lebensgefährlich. Eigensicherung hinter der Leitplanke hat oberste Priorität (Art. 54 VRV).",
+    "ruleReference": "Art. 54 VRV"
+  },
+  {
+    "id": 569,
+    "testId": 9,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Verbot des Rechtsüberholens auf der Autobahn im Detail?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ausscheren nach rechts, Beschleunigen, Vorbeifahren am linken Auto und Wiedereinscheren nach links ist strikt verboten (hohe Busse & Ausweisentzug).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Man darf rechts überholen, wenn man blinkt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Rechtsüberholen ist ab 100 km/h erlaubt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Rechtsüberholen ist ein schweres Verkehrsdelikt. Nur passives Rechtsvorbeifahren bei stockenden Kolonnen ist erlaubt (Art. 36 VRV).",
+    "ruleReference": "Art. 36 VRV"
+  },
+  {
+    "id": 570,
+    "testId": 10,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Spurwahl gilt auf einer 3-spurigen Autobahn bei dichtem Verkehr?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Grundsätzlich die rechte Spur benutzen; die mittlere und linke Spur dienen ausschliesslich dem Überholen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Immer auf der Mittelspur bleiben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Freie Spurwahl wie in den USA.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Rechtsfahrgebot gilt auch auf dreispurigen Autobahnen. Permanentes Mittelspurschleichen ist unzulässig (Art. 34 SVG).",
+    "ruleReference": "Art. 34 SVG"
+  },
+  {
+    "id": 571,
+    "testId": 11,
+    "category": "autobahn",
+    "categoryName": "Autobahn & Autostrasse",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Wie verhalten Sie sich bei einer Tunnelfahrt, wenn der Verkehr vor Ihnen zum völligen Stillstand kommt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Warnblinker einschalten, mindestens 5 Meter Abstand zum Vorderfahrzeug halten, Motor abstellen, Radio (Verkehrsfunk) anlassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Dicht auffahren und hupen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Aussteigen und im Tunnel spazieren gehen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abstand im Tunnelstau verhindert Kettenreaktionen und lässt Raum für Fluchtwege; Motor abstellen reduziert Abgase (Art. 39a VRV).",
+    "ruleReference": "Art. 39a VRV"
+  },
+  {
+    "id": 572,
+    "testId": 12,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Grenze gilt für qualifizierte Trunkenheit mit zwingendem Ausweisentzug für mindestens 3 Monate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ab 0.80 Promille (bzw. 0.40 mg/l Atemalkohol).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ab 0.50 Promille.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ab 1.20 Promille.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ab 0.80 ‰ liegt eine schwere Verkehrsregelverletzung vor, die zwingend mindestens 3 Monate Entzug nach sich zieht (Art. 16c SVG).",
+    "ruleReference": "Art. 16c SVG"
+  },
+  {
+    "id": 573,
+    "testId": 13,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Darf man bei einer Panne oder einem Unfall die Autobahnfahrbahn überqueren, um das Pannendreieck auf der anderen Seite zu holen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Betreten oder Überqueren der Autobahnfahrbahn zu Fuss ist strengstens verboten und lebensgefährlich.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn gerade keine Autos kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, mit hochgehaltener Hand.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Fussgänger dürfen Autobahnen unter keinen Umständen betreten oder queren (Art. 35 VRV).",
+    "ruleReference": "Art. 35 VRV"
+  },
+  {
+    "id": 574,
+    "testId": 14,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Pflicht besteht bezüglich der Reifen bei winterlichen Strassenverhältnissen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fahrzeuge müssen jederzeit betriebssicher beherrscht werden können; wer mit ungeeigneten Reifen den Verkehr behindert oder verunfallt, haftet und wird bestraft.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Winterreifen sind vom 1. Oktober bis 1. Mai vorgeschrieben.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Sommerreifen sind im Winter verboten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Schweiz kennt keine kalendarische Winterreifenpflicht, aber die Pflicht zur Beherrschung des Fahrzeugs (Art. 29 SVG / Art. 3 VRV).",
+    "ruleReference": "Art. 29 SVG"
+  },
+  {
+    "id": 575,
+    "testId": 15,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Sicherung ist für lose Gegenstände auf der Rückbank oder im Kofferraum vorgeschrieben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie müssen so gesichert werden, dass sie bei einer Vollbremsung oder Kollision nicht nach vorne geschleudert werden und Insassen verletzen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Keine, wenn der Kofferraumdeckel zu ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur bei Gegenständen über 50 kg.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ungesicherte Gegenstände werden bei Aufprall zu tödlichen Geschossen. Ladungssicherung ist Pflicht (Art. 73 VRV).",
+    "ruleReference": "Art. 73 VRV"
+  },
+  {
+    "id": 576,
+    "testId": 16,
+    "category": "sicherheit",
+    "categoryName": "Sicherheit & Promille",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was droht bei der Einnahme von Schlafmitteln vor Fahrtantritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gefahr von schwerer Fahruntüchtigkeit ('Hangover-Effekt'); bei Unfall droht Verurteilung wegen Fahrens in fahrunfähigem Zustand.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nichts, wenn das Medikament vom Arzt stammt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur ein Verwarnungsgeld.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Medikamente können die Reaktionszeit gravierend beeinträchtigen. Fahren unter Medikamenteneinfluss ist strafbar (Art. 31 SVG).",
+    "ruleReference": "Art. 31 SVG"
+  },
+  {
+    "id": 577,
+    "testId": 17,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was bedeutet das Aufleuchten der gelben Motorkontrollleuchte (Check Engine) während der Fahrt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Störung in der Motorsteuerung oder der Abgasreinigungsanlage; Werkstatt aufsuchen und Ursache diagnostizieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofortige Vollbremsung auf der Spur.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ölstand ist zu hoch.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Die Motorkontrollleuchte signalisiert abgas- oder verbrennungsrelevante Fehler im Motormanagement (VTS).",
+    "ruleReference": "Fahrzeugtechnik VTS"
+  },
+  {
+    "id": 578,
+    "testId": 18,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Warum darf ein Fahrzeug mit Katalysator nicht durch Anschleppen oder Anschieben gestartet werden, wenn unverbrannter Treibstoff im Auspuff ist?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unverbrannter Kraftstoff kann in den heissen Katalysator gelangen und diesen durch Verbrennung zerstören.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Die Lichtmaschine explodiert.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Die Bremsen blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Treibstoff im Katalysator verbrennt explosionsartig und schmilzt den Keramikkörper des Katalysators (Technik-Leitfaden).",
+    "ruleReference": "Technik VTS"
+  },
+  {
+    "id": 579,
+    "testId": 19,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Flüssigkeit gehört in den Ausgleichsbehälter der Scheibenwaschanlage im Winter?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wasser gemischt mit ausreichend frostsicherem Scheibenreiniger (bis mind. -20 °C).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Reines Spülmittel ohne Wasser.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Heisses Motorenöl.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Frostschutz verhindert das Einfrieren der Spritzdüsen und Schläuche bei Minusgraden (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 580,
+    "testId": 20,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Profiltiefe wird vom TCS für Winterreifen aus Sicherheitsgründen empfohlen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mindestens 4 mm (gesetzliches Minimum ist 1.6 mm, bietet aber auf Schnee kaum noch Grip).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Mindestens 8 mm.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "1.0 mm genügt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Unter 4 mm verlieren Winterreifen ihre Lamellenwirkung auf Schnee drastisch (TCS Sicherheitsempfehlung).",
+    "ruleReference": "TCS Reifentest"
+  },
+  {
+    "id": 581,
+    "testId": 1,
+    "category": "umwelt",
+    "categoryName": "Fahrzeugtechnik & Umwelt",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Welche Lärmschutzregel gilt beim Schliessen von Türen, Motorhaube und Kofferraumdeckel nachts in Wohnquartieren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Türen und Klappen leise und ohne unnötiges Zuknallen schliessen (Vermeidung von Ruhestörung).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Möglichst laut zuschlagen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Es gibt keine Vorschriften.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Art. 33 VRV untersagt unnötigen Lärm, namentlich das laute Zuschlagen von Wagentüren in Wohngebieten.",
+    "ruleReference": "Art. 33 VRV"
+  },
+  {
+    "id": 582,
+    "testId": 2,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Ein Postauto schaltet an einer Kreuzung das Signalhorn ein. Was müssen Sie tun?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dem Postauto unverzüglich freie Bahn gewähren, da Linienbusse auf Bergpoststrassen Vorrang haben.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Vor dem Postauto schnell abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Zurückhupen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Dreiklanghorn verpflichtet auf Bergpoststrassen zur Vorfahrtgewährung und Platzfreigabe (Art. 9 VRV).",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 583,
+    "testId": 3,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Sie stehen an einer roten Ampel mit einem Schild 'Grünpfeil für Velos'. Gilt der Grünpfeil auch für Ihr Auto?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, der Grünpfeil gilt ausschliesslich für Fahrräder und Mofas. Autos müssen bei Rot warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, alle Rechtsabbieger dürfen fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, nach kurzem Halt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Signal 5.18 gilt explizit nur für Zweiräder. Autos begehen bei Missachtung einen Rotlichtverstoss (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 584,
+    "testId": 4,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Darf man auf einem Autobahnparkplatz übernachten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das einmalige Wiederherstellen der Fahrfähigkeit (Schlafen im Auto zur Erholung) ist zulässig; Campieren mit Zelt oder Markise ist verboten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, Schlafen im Auto ist generell strafbar.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, man darf dort wochenlang wohnen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Das Ausruhen zur Wiederherstellung der Fahrfähigkeit ist auf Raststätten erlaubt, echtes Campieren dagegen kantonal untersagt.",
+    "ruleReference": "ASTRA Richtlinien Rastplätze"
+  },
+  {
+    "id": 585,
+    "testId": 5,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Was gilt an einer Verzweigung, wenn zwei Strassen zusammentreffen und beide ein 'Kein Vortritt'-Signal haben?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unter den beiden vortrittsbelasteten Fahrzeugen gilt untereinander der Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Wer zuerst hupt, darf fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Beide müssen rückwärts fahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Haben beide Einmündungen das gleiche Signal 'Kein Vortritt', regelt sich ihr Verhältnis untereinander nach dem Rechtsvortritt (Art. 36 SVG). Beliebte Fangfrage!",
+    "ruleReference": "Art. 36 SVG"
+  },
+  {
+    "id": 586,
+    "testId": 6,
+    "category": "spezial",
+    "categoryName": "ASA-Prüfungsfallen",
+    "question": "Vertiefungsfrage für Führerausweis Kat. B: Darf ein Fahrzeug mit defekter Scheibenwaschanlage bei Schneematsch weitergefahren werden?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, das Fahrzeug ist wegen Sichtbehinderung nicht mehr in vorschriftsgemässem Zustand; Weiterfahrt verboten bis zur Behebung.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, man kann die Scheibe während der Fahrt mit der Hand putzen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man die Seitenscheibe öffnet.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ohne funktionierende Waschanlage bei Salz und Matsch erblindet die Frontscheibe innerhalb weniger Meter (Art. 57 VRV).",
+    "ruleReference": "Art. 57 VRV"
+  },
+  {
+    "id": 587,
+    "testId": 7,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Sie stehen an einer Einmündung vor einem Stopsignal. Die Sicht ist durch parkierte Autos behindert. Wo halten Sie an?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zuerst an der Haltelinie vollkommen anhalten, danach langsam bis zur Sichtlinie vortasten und nötigenfalls erneut anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Direkt mitten auf die Kreuzung fahren.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur hupen und ohne Halt weiterfahren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei behinderter Sicht muss zuerst an der Haltelinie gestoppt werden. Danach tastet man sich vorsichtig zur Sichtgrenze vor (Art. 36 SSV).",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 588,
+    "testId": 8,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Ein Linienbus signalisiert innerorts das Verlassen einer Haltestelle. Sie nähern sich mit 50 km/h von hinten. Was tun Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Geschwindigkeit verringern, bremsbereit sein und dem Bus das Einspuren ermöglichen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sofort Vollgas geben, um vor dem Bus durchzuziehen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Auf den Gehsteig ausweichen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Innerorts ist Linienbussen das Wegfahren von Haltestellen durch Temporeduktion zu ermöglichen (Art. 15 Abs. 4 VRV).",
+    "ruleReference": "Art. 15 Abs. 4 VRV"
+  },
+  {
+    "id": 589,
+    "testId": 9,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Ein Tram fährt auf der Strasse hinter Ihnen. Sie möchten links abbiegen und müssen wegen Gegenverkehr warten. Was beachten Sie?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie dürfen die Schienen nur blockieren, wenn das Tram dadurch nicht behindert wird; andernfalls weiterfahren oder Tram passieren lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das Tram muss immer hinter wartenden Autos warten.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Man darf die Schienen beliebig lange blockieren.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Schienenfahrzeuge dürfen durch wartende Linksabbieger nicht unnötig behindert werden (Art. 38 SVG / Art. 13 VRV).",
+    "ruleReference": "Art. 38 SVG"
+  },
+  {
+    "id": 590,
+    "testId": 10,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Wer hat auf einer schmalen Brücke ohne Vortrittsschilder Vorrang beim gleichzeitigen Eintreffen zweier Autos?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es gilt der Rechtsvortritt bzw. das Fahrzeug, das das Hindernis auf seiner Seite hat, muss warten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Das schnellere Fahrzeug.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Das grössere Fahrzeug.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Wer das Hindernis auf seiner Strassenseite hat, muss warten (Art. 9 VRV). Ansonsten gilt der Rechtsvortritt oder gegenseitige Verständigung.",
+    "ruleReference": "Art. 9 VRV"
+  },
+  {
+    "id": 591,
+    "testId": 11,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Sie fahren auf einer Vorfahrtsstrasse und möchten nach links in eine Seitenstrasse abbiegen. Ein Fussgänger quert die Seitenstrasse. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Fussgänger hat Vorrang vor dem abbiegenden Fahrzeug.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Vortritt, weil Sie von der Vorfahrtsstrasse kommen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer schneller ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Abbiegende Fahrzeuge müssen Fussgängern, die die Querstrasse überschreiten, stets den Vortritt lassen (Art. 33 SVG).",
+    "ruleReference": "Art. 33 SVG"
+  },
+  {
+    "id": 592,
+    "testId": 12,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Sie kommen an eine Kreuzung mit Kreisverkehr. Ein Radfahrer befindet sich bereits im Kreisel vor Ihnen. Dürfen Sie ihn im Kreisel überholen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, im Kreisel sollte wegen des geringen Raumes und der Richtungsänderungen nicht überholt werden; Sicherheitsabstand halten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, mit mindestens 60 km/h.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man hupt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Das Überholen im Kreisel ist wegen enger Radien extrem gefährlich. Radfahrer dürfen in der Fahrbahnmitte fahren (Art. 41b VRV).",
+    "ruleReference": "Art. 41b VRV"
+  },
+  {
+    "id": 593,
+    "testId": 13,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Ein Polizeiauto mit eingeschaltetem Blaulicht (ohne Sirene) steht an einer roten Ampel. Die Ampel schaltet auf Grün. Darf die Polizei vor Ihnen fahren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ja, Einsatzfahrzeuge haben auch mit Blaulicht allein Vorrang und sind zügig passieren zu lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Nein, ohne Sirene hat die Polizei keinerlei Rechte.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Nur wenn ein Notarzt drin sitzt.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Blaulicht zeigt eine dringliche Dienstfahrt an (Art. 27 SVG). Andere Verkehrsteilnehmer müssen die Fahrbahn unverzüglich freigeben.",
+    "ruleReference": "Art. 27 SVG"
+  },
+  {
+    "id": 594,
+    "testId": 14,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Sie möchten aus einer verkehrsberuhigten Begegnungszone (20 km/h) in eine Tempo-30-Zone einfahren. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Verkehr in der Tempo-30-Zone; wer aus einer Begegnungszone ausfährt, hat keinen Rechtsvortritt.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Sie haben Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Wer zuerst an der Kreuzung ist.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Ausfahrten aus Begegnungszonen, Fussgängerzonen und Grundstücken sind gegenüber dem fliessenden Verkehr nachrangig (Art. 15 Abs. 3 VRV).",
+    "ruleReference": "Art. 15 Abs. 3 VRV"
+  },
+  {
+    "id": 595,
+    "testId": 15,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: An einer Kreuzung fällt die Ampel aus (gelbes Blinklicht). Ein Schild zeigt 'Hauptstrasse' für Ihre Richtung. Wer hat Vortritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie haben Vortritt vor dem Querverkehr, da bei Ampelausfall die signalisierten Schilder gelten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Es gilt automatischer Rechtsvortritt.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Alle müssen anhalten.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Bei gelbem Blinklicht oder Ausfall der Lichtsignalanlage gelten die angebrachten Vortrittsschilder (Art. 68 SSV).",
+    "ruleReference": "Art. 68 SSV"
+  },
+  {
+    "id": 596,
+    "testId": 16,
+    "category": "vortritt",
+    "categoryName": "Vortritt & Kreuzungen",
+    "question": "Praxis-Szenario: Sie stehen als zweites Fahrzeug hinter einem an der Haltelinie wartenden Auto vor einem Stopsignal. Das vordere Auto fährt ab. Dürfen Sie direkt folgen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nein, jedes Fahrzeug muss für sich selbst an der Haltelinie anhalten.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Ja, wenn kein Querverkehr zu sehen ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Ja, wenn man dicht aufschliesst.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die Stopp-Pflicht gilt individuell für jedes einzelne Fahrzeug an der Haltelinie (Art. 36 SSV). Kein 'Durchrutschen'!",
+    "ruleReference": "Art. 36 SSV"
+  },
+  {
+    "id": 597,
+    "testId": 17,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Praxis-Szenario: Was bedeutet das Signal 'Rechtsabbiegen für Radfahrer gestattet bei Rot' (Signal mit grünem Velo und Pfeil an der Ampel)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Radfahrer und Mofas dürfen bei rotem Lichtsignal nach rechts abbiegen, müssen aber Fussgängern und dem Querverkehr den Vortritt lassen.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Alle Autos dürfen bei Rot rechts abbiegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Radfahrer müssen absteigen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Seit 2021 dürfen Velos und Mofas bei roter Ampel mit diesem Zusatzschild vorsichtig rechts abbiegen (Art. 69a SSV).",
+    "ruleReference": "Art. 69a SSV"
+  },
+  {
+    "id": 598,
+    "testId": 18,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Praxis-Szenario: Was bedeutet das Signal 'Pannensignal' (Signal 2.47 'Halteverbot auf dem Pannenstreifen')?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auf dem Pannenstreifen darf auch bei Panne nicht gehalten werden (sofern Gefahrenzone), Weiterrollen bis zur nächsten Bucht zwingend.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Pannenstreifen ist frei für alle.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Parkplatz für Wohnwagen.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Verbietet das Halten selbst bei Notfällen an besonders engen oder gefährlichen Tunnel- und Brückenstellen (Art. 30 SSV).",
+    "ruleReference": "Art. 30 SSV"
+  },
+  {
+    "id": 599,
+    "testId": 19,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Praxis-Szenario: Was bedeutet das Hinweissignal 'Standort eines Defibrillators' (grünes Quadrat mit weissem Herz und Blitz)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zeigt den genauen Standort eines öffentlich zugänglichen automatisierten Defibrillators (AED) für Notfälle an.",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Spital in 1 km.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Elektroauto-Ladesäule.",
+        "isCorrect": false
+      }
+    ],
+    "points": 1,
+    "explanation": "Weist Ersthelfer auf lebensrettende Defibrillatoren bei plötzlichem Herzstillstand hin.",
+    "ruleReference": "Art. 62 SSV"
+  },
+  {
+    "id": 600,
+    "testId": 20,
+    "category": "signale",
+    "categoryName": "Verkehrssignale (SSV)",
+    "question": "Praxis-Szenario: Was bedeutet eine gelbe Zickzack-Linie vor einer Bushaltestelle?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Haltestelle für öffentliche Busse; Halten nur kurz zum Ein- und Aussteigen gestattet, sofern kein Bus behindert wird (Parkieren verboten).",
+        "isCorrect": true
+      },
+      {
+        "id": "b",
+        "text": "Parkplatz für Taxis.",
+        "isCorrect": false
+      },
+      {
+        "id": "c",
+        "text": "Strecke mit vielen Schlaglöchern.",
+        "isCorrect": false
+      }
+    ],
+    "points": 2,
+    "explanation": "Die gelbe Zickzacklinie (Art. 79a SSV) markiert ÖV-Haltestellen. Parkieren ist absolut verboten.",
+    "ruleReference": "Art. 79a SSV"
   }
 ];

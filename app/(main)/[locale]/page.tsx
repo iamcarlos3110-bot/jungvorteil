@@ -5,6 +5,8 @@ import { CATEGORIES } from "@/data/questions";
 import DailyTipCard from "@/components/theory/DailyTipCard";
 import InfractionsSimulator from "@/components/theory/InfractionsSimulator";
 import NumberedTestsGrid from "@/components/theory/NumberedTestsGrid";
+import PersonalCoach from "@/components/theory/PersonalCoach";
+import ExamStudyPlan from "@/components/theory/ExamStudyPlan";
 import { 
   Car, 
   Clock, 
@@ -116,6 +118,12 @@ export default async function HomePage({ params }: HomePageProps) {
       <div className="max-w-4xl mx-auto px-4 -mt-4 relative z-20">
         <AdSlot slot="AD_AFTER_HERO" label />
       </div>
+
+      {/* INTELIGENTE LERN-TOOLS (Personal Coach & Prüfungsplaner) */}
+      <section className="max-w-5xl mx-auto px-4 pt-6">
+        <PersonalCoach locale={locale} />
+        <ExamStudyPlan locale={locale} />
+      </section>
 
       {/* CORE TOOLS SECTION (4 Grid Cards like AprobadosYA) */}
       <section className="max-w-6xl mx-auto px-4 py-16">
