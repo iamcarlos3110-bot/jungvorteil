@@ -42,18 +42,18 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-950 via-slate-950 to-slate-950 text-white pt-12 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#818cf8_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-12 pb-20 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#708F52_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-olive-500/20 border border-olive-400/30 text-olive-300 text-xs font-bold uppercase tracking-wider mb-6">
+            <Sparkles className="w-3.5 h-3.5 text-olive-400" />
             🇨🇭 Kostenlose Schweizer Theorieprüfung (ASA-Standard)
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto mb-4">
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto mb-4 text-white">
             Wähle deinen Führerschein<br />
-            und bestehe <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-300">beim 1. Versuch</span>
+            und bestehe <span className="text-transparent bg-clip-text bg-gradient-to-r from-olive-300 via-emerald-300 to-olive-200">beim 1. Versuch</span>
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed font-normal">

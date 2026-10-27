@@ -8,19 +8,22 @@
    DESIGN TOKENS
    ============================================= */
 :root {
-  --color-bg: #F0F4EE;
-  --color-text: #0D1B0C;
-  --color-primary: #2E4D28;
-  --color-primary-hover: #1F3519;
-  --color-primary-light: #E4EDE1;
-  --color-accent: #7CB87A;
+  --color-bg: #F7FAF5;
+  --color-text: #090D08;
+  --color-primary: #556F3B;
+  --color-primary-hover: #43592E;
+  --color-primary-light: #E5ECE0;
+  --color-accent: #708F52;
   --color-gold: #D4A017;
-  --color-saving: #16A34A;
+  --color-saving: #556F3B;
   --color-danger: #DC2626;
-  --color-border: #D8E3D5;
+  --color-border: #DCE3D6;
   --color-surface: #FFFFFF;
-  --color-muted: #6B7280;
-  --color-muted-bg: #F3F7F2;
+  --color-muted: #5D6B5B;
+  --color-muted-bg: #EDF2EA;
+
+  --background: #F7FAF5;
+  --foreground: #090D08;
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -28,10 +31,10 @@
   --radius-xl: 28px;
   --radius-2xl: 36px;
 
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-  --shadow-md: 0 8px 24px rgba(46,77,40,0.10), 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-lg: 0 20px 48px rgba(46,77,40,0.14), 0 8px 16px rgba(0,0,0,0.06);
-  --shadow-glow: 0 0 40px rgba(124,184,122,0.25);
+  --shadow-sm: 0 2px 8px rgba(9,13,8,0.06);
+  --shadow-md: 0 8px 24px rgba(85,111,59,0.12), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-lg: 0 20px 48px rgba(85,111,59,0.16), 0 8px 16px rgba(0,0,0,0.06);
+  --shadow-glow: 0 0 40px rgba(112,143,82,0.25);
 }
 
 /* =============================================
