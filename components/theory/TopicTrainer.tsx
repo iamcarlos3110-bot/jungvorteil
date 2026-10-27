@@ -78,6 +78,8 @@ export default function TopicTrainer({ initialCategory = "vortritt" }: TopicTrai
       case "autobahn": return <Milestone className="w-4 h-4" />;
       case "sicherheit": return <ShieldCheck className="w-4 h-4" />;
       case "umwelt": return <Leaf className="w-4 h-4" />;
+      case "spezial": return <Sparkles className="w-4 h-4" />;
+      default: return <Sparkles className="w-4 h-4" />;
     }
   };
 

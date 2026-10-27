@@ -6,6 +6,7 @@ import { GESCHWINDIGKEIT_QUESTIONS } from "./questions/geschwindigkeit";
 import { AUTOBAHN_QUESTIONS } from "./questions/autobahn";
 import { SICHERHEIT_QUESTIONS } from "./questions/sicherheit";
 import { TECHNIK_UMWELT_QUESTIONS } from "./questions/technik_umwelt";
+import { FALLEN_QUESTIONS } from "./questions/fallen";
 
 export * from "./questions/types";
 export * from "./questions/tests_catalog";
@@ -17,6 +18,7 @@ export const CATEGORIES = [
   { id: "autobahn" as const, name: "Autobahn & Autostrasse", icon: "Milestone", count: AUTOBAHN_QUESTIONS.length },
   { id: "sicherheit" as const, name: "Sicherheit & Promille", icon: "ShieldCheck", count: SICHERHEIT_QUESTIONS.length },
   { id: "umwelt" as const, name: "Fahrzeugtechnik & Umwelt", icon: "Leaf", count: TECHNIK_UMWELT_QUESTIONS.length },
+  { id: "spezial" as const, name: "ASA-Prüfungsfallen", icon: "Flame", count: FALLEN_QUESTIONS.length },
 ];
 
 export const QUESTIONS_DATABASE: Question[] = [
@@ -26,4 +28,6 @@ export const QUESTIONS_DATABASE: Question[] = [
   ...AUTOBAHN_QUESTIONS,
   ...SICHERHEIT_QUESTIONS,
   ...TECHNIK_UMWELT_QUESTIONS,
+  ...FALLEN_QUESTIONS,
 ];
+

@@ -345,6 +345,95 @@ function renderTrafficSignSvg(signType: string, className: string = "") {
       );
       break;
 
+    case "sign_allgemeines_fahrverbot":
+      title = "SIGNAL 2.01: ALLGEMEINES FAHRVERBOT";
+      inner = (
+        <div className="w-24 h-24 rounded-full border-8 border-red-600 bg-white shadow-md flex items-center justify-center" />
+      );
+      break;
+
+    case "sign_tempo_30":
+      title = "SIGNAL 2.30.1: TEMPO 30";
+      inner = (
+        <div className="w-24 h-24 rounded-full border-8 border-red-600 bg-white flex items-center justify-center shadow-md">
+          <span className="text-black font-black text-3xl">30</span>
+        </div>
+      );
+      break;
+
+    case "sign_tempo_100":
+      title = "SIGNAL 2.30.1: TEMPO 100";
+      inner = (
+        <div className="w-24 h-24 rounded-full border-8 border-red-600 bg-white flex items-center justify-center shadow-md">
+          <span className="text-black font-black text-2xl">100</span>
+        </div>
+      );
+      break;
+
+    case "sign_fussgaengerstreifen":
+      title = "SIGNAL 4.11: FUSSGÄNGERSTREIFEN";
+      inner = (
+        <div className="w-24 h-24 rounded-xl bg-blue-600 border-4 border-white flex flex-col items-center justify-center shadow-md p-2">
+          <svg viewBox="0 0 100 100" className="w-16 h-16">
+            <polygon points="50,10 90,90 10,90" fill="#ffffff" />
+            <circle cx="50" cy="35" r="7" fill="#2563eb" />
+            <line x1="50" y1="42" x2="50" y2="65" stroke="#2563eb" strokeWidth="5" />
+            <line x1="35" y1="55" x2="65" y2="55" stroke="#2563eb" strokeWidth="4" />
+            <line x1="50" y1="65" x2="38" y2="82" stroke="#2563eb" strokeWidth="4" />
+            <line x1="50" y1="65" x2="62" y2="82" stroke="#2563eb" strokeWidth="4" />
+          </svg>
+        </div>
+      );
+      break;
+
+    case "sign_lichtsignal":
+      title = "SIGNAL 1.25: LICHTSIGNALE";
+      inner = (
+        <div className="w-16 h-28 rounded-2xl bg-black border-2 border-slate-600 p-2 flex flex-col items-center justify-between shadow-lg">
+          <div className="w-6 h-6 rounded-full bg-red-600 shadow-sm shadow-red-500/50" />
+          <div className="w-6 h-6 rounded-full bg-amber-400 shadow-sm shadow-amber-400/50" />
+          <div className="w-6 h-6 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50" />
+        </div>
+      );
+      break;
+
+    case "sign_baustelle":
+      title = "SIGNAL 1.14: BAUSTELLE";
+      inner = (
+        <svg viewBox="0 0 100 100" className="w-24 h-24">
+          <polygon points="50,10 95,85 5,85" fill="#ffffff" stroke="#dc2626" strokeWidth="8" strokeLinejoin="round" />
+          <circle cx="50" cy="40" r="5" fill="#000000" />
+          <line x1="50" y1="45" x2="50" y2="68" stroke="#000000" strokeWidth="4" />
+          <line x1="38" y1="58" x2="62" y2="58" stroke="#000000" strokeWidth="4" />
+          <line x1="50" y1="68" x2="40" y2="80" stroke="#000000" strokeWidth="4" />
+          <line x1="50" y1="68" x2="60" y2="80" stroke="#000000" strokeWidth="4" />
+        </svg>
+      );
+      break;
+
+    case "sign_parkieren_verboten":
+      title = "SIGNAL 2.50: PARKIERE VERBOTEN";
+      inner = (
+        <div className="w-24 h-24 rounded-full border-8 border-red-600 bg-blue-600 flex items-center justify-center relative shadow-md">
+          <div className="w-24 h-2 bg-red-600 rotate-45 absolute" />
+        </div>
+      );
+      break;
+
+    case "sign_kreisverkehr":
+      title = "SIGNAL 2.15: KREISVERKEHR";
+      inner = (
+        <div className="w-24 h-24 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center shadow-md">
+          <svg viewBox="0 0 100 100" className="w-16 h-16">
+            <circle cx="50" cy="50" r="28" fill="none" stroke="#ffffff" strokeWidth="6" strokeDasharray="25,12" />
+            <polygon points="50,15 58,25 42,25" fill="#ffffff" />
+            <polygon points="80,55 70,63 70,47" fill="#ffffff" />
+            <polygon points="25,75 33,65 17,65" fill="#ffffff" />
+          </svg>
+        </div>
+      );
+      break;
+
     default:
       inner = (
         <div className="w-20 h-20 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-bold text-slate-300">
