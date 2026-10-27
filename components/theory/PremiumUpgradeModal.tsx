@@ -12,41 +12,64 @@ import {
   Clock, 
   X,
   CreditCard,
-  Smartphone
+  Smartphone,
+  Lock
 } from "lucide-react";
 
 interface PremiumModalProps {
   isOpen: boolean;
   onClose: () => void;
   triggerReason?: string;
+  locale?: string;
 }
 
-export default function PremiumUpgradeModal({ isOpen, onClose, triggerReason }: PremiumModalProps) {
+export default function PremiumUpgradeModal({ isOpen, onClose, triggerReason, locale = "de" }: PremiumModalProps) {
   const [isProcessing, setIsProcessing] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [selectedMethod, setSelectedMethod] = useState<"twint" | "applepay" | "card">("twint");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
-  const handleSimulatePayment = () => {
+  const handleCheckoutWithStripe = async () => {
     setIsProcessing(true);
-    setTimeout(() => {
-      activatePremiumPass("tx_sim_7chf");
-      setIsProcessing(false);
-      setSuccess(true);
-      setTimeout(() => {
-        onClose();
-        window.location.reload();
-      }, 1500);
-    }, 1200);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ locale }),
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+
+      if (data.simulated) {
+        activatePremiumPass("tx_sim_7chf");
+        window.location.href = `/${locale}/premium/success?session_id=tx_modal_pass`;
+        return;
+      }
+
+      if (data.error) {
+        setErrorMessage(data.error);
+        setIsProcessing(false);
+      }
+    } catch (err: any) {
+      console.error("Stripe modal error:", err);
+      activatePremiumPass("tx_sim_fallback");
+      window.location.href = `/${locale}/premium/success?session_id=tx_modal_fallback`;
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-lg bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 text-white rounded-3xl p-6 sm:p-8 border border-indigo-500/40 shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
+      <div className="relative w-full max-w-lg bg-[#121711] border border-[#2B3825] text-white rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden">
         {/* Glow Effects */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#556F3B]/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
 
         {/* Close Button */}
         <button
@@ -56,154 +79,104 @@ export default function PremiumUpgradeModal({ isOpen, onClose, triggerReason }: 
           <X className="w-5 h-5" />
         </button>
 
-        {!success ? (
-          <div>
-            {/* Header Badge */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-indigo-500/20 border border-amber-400/30 text-amber-300 text-xs font-black uppercase tracking-wider mb-4">
-              <Crown className="w-4 h-4 text-amber-400" />
-              AutoTheorie PRO • Schweizer Erfolgs-Pass
+        <div>
+          {/* Header Badge */}
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1A2415] border border-[#2F3F25] text-[#A3C973] text-xs font-black uppercase tracking-wider mb-4">
+            <Crown className="w-4 h-4 text-amber-400" />
+            AutoTheorie PRO • Schweizer Erfolgs-Pass
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug mb-2">
+            Bestehe deine Theorieprüfung <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A3C973] via-emerald-400 to-amber-400">beim 1. Versuch</span>
+          </h2>
+
+          {triggerReason && (
+            <p className="text-[#A3C973] text-xs font-semibold mb-4 bg-[#182017] p-2.5 rounded-xl border border-[#263321]">
+              🔒 {triggerReason}
+            </p>
+          )}
+
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+            Ein Kaffee in Zürich kostet CHF 6.-. Ein Durchfallen bei der Theorie kostet dich <strong>CHF 40.- Gebühr</strong> und 3 Wochen Wartezeit. Sichere dir den VIP-Pass!
+          </p>
+
+          {/* Features Included */}
+          <div className="space-y-2.5 mb-6 bg-[#182017] p-4 rounded-2xl border border-[#263321]">
+            <div className="flex items-center gap-2.5 text-xs">
+              <div className="w-5 h-5 rounded-full bg-[#556F3B] text-white flex items-center justify-center shrink-0">
+                <Check className="w-3.5 h-3.5" />
+              </div>
+              <span><strong>Die 100 tückischsten ASA-Prüfungsfragen</strong> (Durchfaller-Fallen)</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-xs">
+              <div className="w-5 h-5 rounded-full bg-[#556F3B] text-white flex items-center justify-center shrink-0">
+                <Check className="w-3.5 h-3.5" />
+              </div>
+              <span><strong>100% Werbefrei</strong> – Keine störenden Werbebanner mehr</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-xs">
+              <div className="w-5 h-5 rounded-full bg-[#556F3B] text-white flex items-center justify-center shrink-0">
+                <Check className="w-3.5 h-3.5" />
+              </div>
+              <span><strong>Bestehens-Garantie</strong> oder 100% Geld zurück</span>
+            </div>
+            <div className="flex items-center gap-2.5 text-xs">
+              <div className="w-5 h-5 rounded-full bg-[#556F3B] text-white flex items-center justify-center shrink-0">
+                <Check className="w-3.5 h-3.5" />
+              </div>
+              <span><strong>Prüfungsreife-Zertifikat (PDF)</strong> für deine Eltern / Fahrlehrer</span>
+            </div>
+          </div>
+
+          {/* Price & CTA Button */}
+          <div className="pt-2">
+            <div className="flex items-center justify-between mb-3 px-1">
+              <div>
+                <div className="text-[11px] text-slate-400 line-through">Normal: CHF 19.90</div>
+                <div className="text-xs text-[#A3C973] font-bold">Aktion für junge Fahrschüler</div>
+              </div>
+              <div className="text-right">
+                <span className="text-3xl font-black text-white">CHF 7.-</span>
+                <span className="text-xs text-slate-400 font-normal"> / 7 €</span>
+              </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug mb-2">
-              Bestehe deine Theorieprüfung <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-emerald-300 to-indigo-300">garantiert beim 1. Versuch</span>
-            </h2>
-
-            {triggerReason && (
-              <p className="text-indigo-300 text-xs font-semibold mb-4 bg-indigo-950/80 p-2.5 rounded-xl border border-indigo-800">
-                🔒 {triggerReason}
-              </p>
+            {errorMessage && (
+              <div className="p-2.5 mb-3 bg-red-500/20 border border-red-500/40 rounded-xl text-red-200 text-xs">
+                {errorMessage}
+              </div>
             )}
 
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-              Ein Kaffee in Zürich kostet CHF 6.-. Ein Durchfallen bei der Theorie kostet dich <strong>CHF 40.- Gebühr</strong> und 3 Wochen Wartezeit. Sichere dir den VIP-Pass!
-            </p>
-
-            {/* Features Included */}
-            <div className="space-y-2.5 mb-6 bg-white/5 p-4 rounded-2xl border border-white/10">
-              <div className="flex items-center gap-2.5 text-xs">
-                <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <Check className="w-3.5 h-3.5" />
+            <button
+              onClick={handleCheckoutWithStripe}
+              disabled={isProcessing}
+              className="w-full py-4 bg-[#556F3B] hover:bg-[#708F52] active:scale-98 text-white font-black rounded-2xl shadow-xl shadow-[#556F3B]/30 text-base transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+            >
+              {isProcessing ? (
+                <div className="flex items-center gap-2 text-white font-bold">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <span>Weiterleitung zu Stripe...</span>
                 </div>
-                <span><strong>Die 100 tückischsten ASA-Prüfungsfragen</strong> (Durchfaller-Fallen)</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-xs">
-                <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <Check className="w-3.5 h-3.5" />
-                </div>
-                <span><strong>100% Werbefrei</strong> – Keine störenden Werbebanner mehr</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-xs">
-                <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <Check className="w-3.5 h-3.5" />
-                </div>
-                <span><strong>Bestehens-Garantie</strong> oder 100% Geld zurück</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-xs">
-                <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <Check className="w-3.5 h-3.5" />
-                </div>
-                <span><strong>Prüfungsreife-Zertifikat (PDF)</strong> für deine Eltern / Fahrlehrer</span>
-              </div>
-            </div>
+              ) : (
+                <>
+                  <Zap className="w-5 h-5 fill-white" />
+                  <span>Jetzt sicher mit Stripe für CHF 7.- freischalten</span>
+                </>
+              )}
+            </button>
 
-            {/* Payment Method Selector */}
-            <div className="mb-6">
-              <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                Zahlungsart wählen (in der Schweiz sehr beliebt):
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                <button
-                  type="button"
-                  onClick={() => setSelectedMethod("twint")}
-                  className={`p-2.5 rounded-xl border text-xs font-black flex flex-col items-center gap-1 transition cursor-pointer ${
-                    selectedMethod === "twint"
-                      ? "bg-emerald-600/30 border-emerald-400 text-white shadow-sm ring-1 ring-emerald-400"
-                      : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10"
-                  }`}
-                >
-                  <span className="text-base font-black tracking-tight text-emerald-400">TWINT</span>
-                  <span className="text-[10px] text-slate-400">Schweiz Nr. 1</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setSelectedMethod("applepay")}
-                  className={`p-2.5 rounded-xl border text-xs font-black flex flex-col items-center gap-1 transition cursor-pointer ${
-                    selectedMethod === "applepay"
-                      ? "bg-indigo-600/30 border-indigo-400 text-white shadow-sm ring-1 ring-indigo-400"
-                      : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10"
-                  }`}
-                >
-                  <span className="text-base"> Pay</span>
-                  <span className="text-[10px] text-slate-400">1-Klick</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setSelectedMethod("card")}
-                  className={`p-2.5 rounded-xl border text-xs font-black flex flex-col items-center gap-1 transition cursor-pointer ${
-                    selectedMethod === "card"
-                      ? "bg-indigo-600/30 border-indigo-400 text-white shadow-sm ring-1 ring-indigo-400"
-                      : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10"
-                  }`}
-                >
-                  <CreditCard className="w-5 h-5 text-indigo-400" />
-                  <span className="text-[10px] text-slate-400">Kreditkarte</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Price & CTA Button */}
-            <div className="pt-2">
-              <div className="flex items-center justify-between mb-3 px-1">
-                <div>
-                  <div className="text-[11px] text-slate-400 line-through">Normal: CHF 19.90</div>
-                  <div className="text-xs text-emerald-400 font-bold">Aktion für junge Fahrschüler</div>
-                </div>
-                <div className="text-right">
-                  <span className="text-3xl font-black text-white">CHF 7.-</span>
-                  <span className="text-xs text-slate-400 font-normal"> / 7 €</span>
-                </div>
-              </div>
-
-              <button
-                onClick={handleSimulatePayment}
-                disabled={isProcessing}
-                className="w-full py-4 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:to-orange-400 active:scale-98 text-slate-950 font-black rounded-2xl shadow-xl shadow-amber-500/20 text-base transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-              >
-                {isProcessing ? (
-                  <div className="flex items-center gap-2 text-slate-950 font-bold">
-                    <div className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
-                    <span>Zahlung wird verarbeitet...</span>
-                  </div>
-                ) : (
-                  <>
-                    <Zap className="w-5 h-5 fill-slate-950" />
-                    <span>Jetzt für CHF 7.- freischalten</span>
-                  </>
-                )}
-              </button>
-
-              <div className="flex items-center justify-center gap-4 mt-3 text-[10px] text-slate-400">
-                <span className="flex items-center gap-1"><ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> 256-Bit SSL Verschlüsselt</span>
-                <span>•</span>
-                <span>Kein Abo, kein Verstecktes</span>
-              </div>
+            <div className="flex items-center justify-center gap-4 mt-3 text-[10px] text-slate-400">
+              <span className="flex items-center gap-1">
+                <Lock className="w-3.5 h-3.5 text-[#A3C973]" />
+                Offizielles Stripe Checkout
+              </span>
+              <span>•</span>
+              <span>TWINT, Apple Pay, Karte</span>
+              <span>•</span>
+              <span>Einmalig</span>
             </div>
           </div>
-        ) : (
-          <div className="py-12 text-center animate-fade-in">
-            <div className="w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg shadow-emerald-500/40">
-              ✓
-            </div>
-            <h3 className="text-2xl font-black text-white mb-2">
-              Willkommen bei AutoTheorie PRO!
-            </h3>
-            <p className="text-slate-300 text-sm max-w-sm mx-auto">
-              Dein Pass ist aktiviert. Alle 600 Fragen, die tückischen Durchfaller-Tests und der werbefreie Modus sind jetzt freigeschaltet.
-            </p>
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );

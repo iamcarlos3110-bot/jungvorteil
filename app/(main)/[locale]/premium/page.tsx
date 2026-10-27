@@ -20,7 +20,7 @@ export default async function PremiumPage({ params }: PremiumPageProps) {
   const { locale } = await params;
 
   return (
-    <div className="min-h-screen bg-slate-50 py-4">
+    <div className="min-h-screen bg-[#090D08] text-white py-4">
       <PremiumLanding locale={locale} />
     </div>
   );

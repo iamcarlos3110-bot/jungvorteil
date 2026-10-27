@@ -252,6 +252,7 @@ export default function NumberedTestsGrid({ locale }: NumberedTestsGridProps) {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         triggerReason={modalReason}
+        locale={locale}
       />
     </div>
   );
