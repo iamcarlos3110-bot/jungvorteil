@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   Leaf
 } from "lucide-react";
+import { recordQuestionResult } from "@/lib/studyProgress";
 
 interface TopicTrainerProps {
   initialCategory?: QuestionCategory;
@@ -43,6 +44,7 @@ export default function TopicTrainer({ initialCategory = "vortritt" }: TopicTrai
     setHasChecked(true);
 
     const isCorrect = selectedAnswer === currentQ.options.find((o) => o.isCorrect)?.id;
+    recordQuestionResult(currentQ.id, isCorrect);
     setScore((prev) => ({
       correct: prev.correct + (isCorrect ? 1 : 0),
       total: prev.total + 1,

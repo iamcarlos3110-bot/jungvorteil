@@ -19,6 +19,7 @@ import {
   HelpCircle,
   ArrowRight
 } from "lucide-react";
+import { recordQuestionResult, recordCompletedTest } from "@/lib/studyProgress";
 
 interface ExamSimulatorProps {
   locale: string;
@@ -78,6 +79,14 @@ export default function ExamSimulator({ locale }: ExamSimulatorProps) {
 
   const finishExam = () => {
     setIsFinished(true);
+    recordCompletedTest();
+
+    // Record each question result for mistakes repetition
+    questions.forEach((q) => {
+      const chosen = answers[q.id];
+      const correctOpt = q.options.find((o) => o.isCorrect);
+      recordQuestionResult(q.id, chosen === correctOpt?.id);
+    });
 
     // Save to localStorage stats
     try {
