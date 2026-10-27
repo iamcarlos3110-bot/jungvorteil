@@ -7,7 +7,7 @@ export const getStripe = () => {
     return null;
   }
   return new Stripe(apiKey, {
-    apiVersion: "2025-02-24.acacia" as any,
+    apiVersion: "2025-03-31.basil" as any,
     appInfo: {
       name: "JungVorteil AutoTheorie",
       version: "1.0.0",
