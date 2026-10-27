@@ -45,10 +45,11 @@ export default function Header({ locale }: HeaderProps) {
   const navLinks = [
     { href: `/${locale}/pruefung`, label: "50 Fragen", icon: Award },
     { href: `/${locale}/memorizar`, label: "Memorizar", icon: Brain },
-    { href: `/${locale}/progreso`, label: "Mein Fortschritt", icon: BarChart2 },
+    { href: `/${locale}/progreso`, label: "Fortschritt", icon: BarChart2 },
     { href: `/${locale}/por-libre`, label: "Por Libre", icon: BookMarked },
+    { href: `/${locale}/magazin`, label: "Magazin", icon: BookOpen },
     { href: `/${locale}/promille`, label: "Promille", icon: Wine },
-    { href: `/${locale}/fallos`, label: "Meine Fehler", icon: RotateCcw },
+    { href: `/${locale}/fallos`, label: "Fehler", icon: RotateCcw },
     { href: `/${locale}/signale`, label: "Signale", icon: AlertTriangle },
   ];
 

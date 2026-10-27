@@ -21,19 +21,31 @@ export async function GET() {
   const now = new Date().toISOString();
 
   const items: SitemapItem[] = [
-    // Core Static Pages
+    // Core Theory & Driving License Pages (AutoTheorie Schweiz)
     { path: "", priority: 1.0, changeFreq: "daily" },
-    { path: "/studentenrabatte", priority: 0.95, changeFreq: "daily" },
-    { path: "/unter-30", priority: 0.9, changeFreq: "daily" },
-    { path: "/unter-25", priority: 0.9, changeFreq: "daily" },
-    { path: "/gratis", priority: 0.9, changeFreq: "daily" },
-    { path: "/kategorien", priority: 0.85, changeFreq: "weekly" },
-    { path: "/marken", priority: 0.85, changeFreq: "weekly" },
-    { path: "/staedte", priority: 0.85, changeFreq: "weekly" },
-    { path: "/magazin", priority: 0.85, changeFreq: "daily" },
-    { path: "/ueber-uns", priority: 0.7, changeFreq: "weekly" },
-    { path: "/redaktionelle-richtlinien", priority: 0.7, changeFreq: "weekly" },
-    { path: "/unternehmen", priority: 0.7, changeFreq: "weekly" },
+    { path: "/pruefung", priority: 1.0, changeFreq: "daily" },
+    { path: "/themen", priority: 0.95, changeFreq: "daily" },
+    { path: "/signale", priority: 0.95, changeFreq: "weekly" },
+    { path: "/ratgeber", priority: 0.95, changeFreq: "weekly" },
+    { path: "/memorizar", priority: 0.90, changeFreq: "daily" },
+    { path: "/fallos", priority: 0.90, changeFreq: "daily" },
+    { path: "/progreso", priority: 0.90, changeFreq: "daily" },
+    { path: "/por-libre", priority: 0.95, changeFreq: "weekly" },
+    { path: "/promille", priority: 0.90, changeFreq: "weekly" },
+    { path: "/premium", priority: 0.95, changeFreq: "daily" },
+    { path: "/magazin", priority: 0.90, changeFreq: "daily" },
+
+    // Core Youth & Student Portal Pages
+    { path: "/studentenrabatte", priority: 0.85, changeFreq: "daily" },
+    { path: "/unter-30", priority: 0.80, changeFreq: "daily" },
+    { path: "/unter-25", priority: 0.80, changeFreq: "daily" },
+    { path: "/gratis", priority: 0.80, changeFreq: "daily" },
+    { path: "/kategorien", priority: 0.75, changeFreq: "weekly" },
+    { path: "/marken", priority: 0.75, changeFreq: "weekly" },
+    { path: "/staedte", priority: 0.75, changeFreq: "weekly" },
+    { path: "/ueber-uns", priority: 0.6, changeFreq: "weekly" },
+    { path: "/redaktionelle-richtlinien", priority: 0.6, changeFreq: "weekly" },
+    { path: "/unternehmen", priority: 0.6, changeFreq: "weekly" },
     { path: "/kontakt", priority: 0.4, changeFreq: "monthly" },
     { path: "/datenschutz", priority: 0.3, changeFreq: "monthly" },
     { path: "/impressum", priority: 0.3, changeFreq: "monthly" },

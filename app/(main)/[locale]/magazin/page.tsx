@@ -23,7 +23,7 @@ export default async function MagazinPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   const articles = await getArticles(50);
 
-  const categories = ["Alle", "Finanzen", "Reisen", "Studium", "Technik", "Bildung"];
+  const categories = ["Alle", "Theorieprüfung", "Führerschein", "Verkehrsregeln", "Finanzen", "Studium", "Reisen", "Technik"];
 
   return (
     <div className="bg-[#F8FAF6] min-h-screen pb-20">
@@ -31,13 +31,13 @@ export default async function MagazinPage({ params }: { params: Promise<{ locale
       <section className="relative overflow-hidden bg-gradient-to-br from-[#1C331B] via-[#2F5229] to-[#162916] text-white py-16 lg:py-20 mb-12 shadow-inner">
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#EAF0E5] text-xs sm:text-sm font-semibold mb-6">
-            <Newspaper className="w-4 h-4 text-[#A3E635]" /> Wissen & Spartipps
+            <Newspaper className="w-4 h-4 text-[#A3E635]" /> Ratgeber & Wissen Schweiz
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
-            JungVorteil Magazin
+            AutoTheorie & JungVorteil Magazin
           </h1>
           <p className="text-base sm:text-xl text-gray-200 max-w-2xl mx-auto font-normal leading-relaxed">
-            Praktische Ratgeber, Finanztipps und Guides für dein Leben & Studium in der Schweiz.
+            Offizielle Schweizer Verkehrsregeln, ASA-Fangfragen, Führerschein-Spartipps und Ratgeber für junge Leute.
           </p>
         </div>
       </section>

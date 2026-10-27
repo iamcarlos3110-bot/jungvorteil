@@ -44,22 +44,28 @@ export default function Footer({ locale }: FooterProps) {
             <Link href={`/${locale}/ratgeber`} className="text-slate-400 hover:text-white text-xs transition-colors">
               Führerschein mit 17: Schritt für Schritt
             </Link>
+            <Link href={`/${locale}/por-libre`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Führerschein Por Libre (CHF 1'800 sparen)
+            </Link>
           </div>
 
-          {/* Col 3: Wichtige Themen */}
+          {/* Col 3: Magazin & Ratgeber */}
           <div className="flex flex-col gap-2.5">
-            <h4 className="font-bold text-slate-200 text-sm mb-1 uppercase tracking-wider">Themenbereiche</h4>
-            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
-              Rechtsvortritt & Kreisverkehr
+            <h4 className="font-bold text-slate-200 text-sm mb-1 uppercase tracking-wider">Magazin & Ratgeber</h4>
+            <Link href={`/${locale}/magazin`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Alle Ratgeber & Guides
             </Link>
-            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
-              Geschwindigkeit & Tempo-30-Zonen
+            <Link href={`/${locale}/magazin/die-10-tueckischsten-theoriefragen-schweiz`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Die 10 ASA-Fangfragen
             </Link>
-            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
-              Autobahn & Rettungsgasse
+            <Link href={`/${locale}/magazin/kreisel-regeln-schweiz-vortritt-blinken`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Kreiselregeln & Blinken (Art. 41b VRV)
             </Link>
-            <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
-              Promillegrenzen & Neulenker (0.1‰)
+            <Link href={`/${locale}/promille`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Promillerechner (0.1‰ Neulenker)
+            </Link>
+            <Link href={`/${locale}/premium`} className="text-amber-400 hover:text-amber-300 text-xs font-semibold transition-colors">
+              AutoTheorie PRO (CHF 7.–)
             </Link>
           </div>
 
