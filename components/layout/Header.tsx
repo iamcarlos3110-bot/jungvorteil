@@ -41,14 +41,19 @@ export default function Header({ locale }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const getMemorizarLabel = (loc: string) => {
+    if (loc === "fr") return "Cartes mémoire";
+    if (loc === "it") return "Flashcard";
+    return "Lernkarten";
+  };
+
   const navLinks = [
-    { href: `/${locale}/pruefung`, label: "50 Fragen", icon: Award },
-    { href: `/${locale}/memorizar`, label: "Memorizar", icon: Brain },
-    { href: `/${locale}/progreso`, label: "Fortschritt", icon: BarChart2 },
-    { href: `/${locale}/magazin`, label: "Magazin", icon: BookOpen },
-    { href: `/${locale}/promille`, label: "Promille", icon: Wine },
-    { href: `/${locale}/fallos`, label: "Fehler", icon: RotateCcw },
-    { href: `/${locale}/signale`, label: "Signale", icon: AlertTriangle },
+    { href: `/${locale}/pruefung`, label: locale === "fr" ? "50 Questions" : locale === "it" ? "50 Domande" : "50 Fragen", icon: Award },
+    { href: `/${locale}/memorizar`, label: getMemorizarLabel(locale), icon: Brain },
+    { href: `/${locale}/themen`, label: locale === "fr" ? "Par Thème" : locale === "it" ? "Per Tema" : "Thementests", icon: BookOpen },
+    { href: `/${locale}/fallos`, label: locale === "fr" ? "Erreurs" : locale === "it" ? "Errori" : "Fehler-Trainer", icon: RotateCcw },
+    { href: `/${locale}/signale`, label: locale === "fr" ? "Signaux" : locale === "it" ? "Segnali" : "Signale", icon: AlertTriangle },
+    { href: `/${locale}/progreso`, label: locale === "fr" ? "Progrès" : locale === "it" ? "Progressi" : "Fortschritt", icon: BarChart2 },
   ];
 
   return (

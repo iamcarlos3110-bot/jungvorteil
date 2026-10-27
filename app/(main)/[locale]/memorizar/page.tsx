@@ -9,8 +9,8 @@ interface MemorizarPageProps {
 export async function generateMetadata({ params }: MemorizarPageProps): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Modo Memorizar: Schweizer Verkehrsregeln Flashcards & Lernkarten",
-    description: "Lerne die wichtigsten Schweizer Verkehrsregeln, Tempolimits und Promillegrenzen durch interaktive Flashcards für die Theorieprüfung.",
+    title: "Lernkarten & Theoriefragen memorisieren – AutoTheorie Schweiz",
+    description: "Lerne alle offiziellen Schweizer Theoriefragen, Verkehrsregeln, Tempolimits und Promillegrenzen durch interaktive Lernkarten für die Führerprüfung.",
     alternates: {
       canonical: `https://jungvorteil.ch/${locale}/memorizar`,
     },

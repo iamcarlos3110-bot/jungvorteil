@@ -596,25 +596,26 @@ html, body {
   color: #FFFFFF !important;
 }
 
-/* Secondary descriptions */
+/* Primary body text & prominent descriptions */
 .text-slate-700,
 .text-gray-700 {
-  color: #D3DDD0 !important;
+  color: #E2E8F0 !important;
 }
 
+/* Secondary descriptions and labels */
 .text-slate-600,
 .text-slate-500,
 .text-gray-600,
 .text-gray-500 {
-  color: #9AA797 !important;
+  color: #94A3B8 !important;
 }
 
-/* Light olive badge backgrounds */
+/* Light olive badge backgrounds with crisp readable accent */
 .bg-indigo-50,
 .bg-olive-50 {
-  background-color: #1A2415 !important;
-  color: #A3C973 !important;
-  border-color: #2F3F25 !important;
+  background-color: #162615 !important;
+  color: #B2D884 !important;
+  border-color: #36502E !important;
 }
 
 /* Inputs and interactive elements */

@@ -95,7 +95,7 @@ export default function FlashcardsViewer() {
           <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Schweizer Lernkarten & Memorier-Modus
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-          Modo Memorizar: Theoriefragen
+          Lernkarten: Fragenkatalog memorisieren
         </h1>
         <p className="text-slate-300 text-xs sm:text-sm mt-1 max-w-xl mx-auto">
           Präge dir alle offiziellen Schweizer Prüfungsfragen, Vorfahrtsregeln und Verkehrssignale mit hervorgehobener Lösung direkt ein.
@@ -108,10 +108,10 @@ export default function FlashcardsViewer() {
             className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition flex items-center gap-2 cursor-pointer ${
               activeTab === "questions"
                 ? "bg-[#556F3B] text-white shadow-lg shadow-[#556F3B]/30"
-                : "bg-[#121711] border border-[#222B1E] text-slate-300 hover:text-white"
+                : "bg-[#141A15] border border-[#263329] text-slate-200 hover:text-white"
             }`}
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen className="w-4 h-4 text-[#A3C973]" />
             <span>Alle Prüfungsfragen ({QUESTIONS_DATABASE.length})</span>
           </button>
 
@@ -120,10 +120,10 @@ export default function FlashcardsViewer() {
             className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition flex items-center gap-2 cursor-pointer ${
               activeTab === "flashcards"
                 ? "bg-[#556F3B] text-white shadow-lg shadow-[#556F3B]/30"
-                : "bg-[#121711] border border-[#222B1E] text-slate-300 hover:text-white"
+                : "bg-[#141A15] border border-[#263329] text-slate-200 hover:text-white"
             }`}
           >
-            <RotateCw className="w-4 h-4" />
+            <RotateCw className="w-4 h-4 text-amber-400" />
             <span>Regel-Flashcards ({FLASHCARDS_DATA.length})</span>
           </button>
         </div>
@@ -139,10 +139,10 @@ export default function FlashcardsViewer() {
                 setSelectedCategory("all");
                 setCurrentQIndex(0);
               }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${
                 selectedCategory === "all"
-                  ? "bg-[#556F3B] text-white shadow-sm"
-                  : "bg-[#121711] border border-[#222B1E] text-slate-300 hover:bg-[#1A2217]"
+                  ? "bg-[#556F3B] text-white shadow-sm ring-1 ring-[#708F52]"
+                  : "bg-[#141A15] border border-[#263329] text-slate-200 hover:bg-[#1A241C]"
               }`}
             >
               Alle ({QUESTIONS_DATABASE.length})
@@ -155,14 +155,14 @@ export default function FlashcardsViewer() {
                   setSelectedCategory(cat.id);
                   setCurrentQIndex(0);
                 }}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 ${
                   selectedCategory === cat.id
-                    ? "bg-[#556F3B] text-white shadow-sm"
-                    : "bg-[#121711] border border-[#222B1E] text-slate-300 hover:bg-[#1A2217]"
+                    ? "bg-[#556F3B] text-white shadow-sm ring-1 ring-[#708F52]"
+                    : "bg-[#141A15] border border-[#263329] text-slate-200 hover:bg-[#1A241C]"
                 }`}
               >
                 <span>{cat.name}</span>
-                <span className="opacity-60 text-[10px]">({cat.count})</span>
+                <span className="text-[10px] text-slate-400">({cat.count})</span>
               </button>
             ))}
 
@@ -171,10 +171,10 @@ export default function FlashcardsViewer() {
                 setSelectedCategory("bookmarked");
                 setCurrentQIndex(0);
               }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 ${
                 selectedCategory === "bookmarked"
-                  ? "bg-amber-500 text-slate-950 font-black shadow-sm"
-                  : "bg-[#121711] border border-[#222B1E] text-amber-300 hover:bg-[#1A2217]"
+                  ? "bg-amber-500 text-slate-950 font-black shadow-sm ring-1 ring-amber-400"
+                  : "bg-[#141A15] border border-[#263329] text-amber-300 hover:bg-[#1A241C]"
               }`}
             >
               <Bookmark className="w-3.5 h-3.5" />
@@ -183,14 +183,14 @@ export default function FlashcardsViewer() {
           </div>
 
           {currentQ ? (
-            <div className="bg-[#121711] border border-[#222B1E] rounded-3xl p-6 md:p-8 shadow-xl">
+            <div className="bg-[#111612] border border-[#273528] rounded-3xl p-6 md:p-8 shadow-2xl">
               {/* Question Header Status */}
-              <div className="flex items-center justify-between gap-3 mb-5 pb-4 border-b border-[#1F271B]">
+              <div className="flex items-center justify-between gap-3 mb-5 pb-4 border-b border-[#222E23]">
                 <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 bg-[#1A2415] border border-[#2F3F25] text-[#A3C973] rounded-lg text-xs font-bold">
+                  <span className="px-3 py-1 bg-[#1A261B] border border-[#2D422E] text-[#B2D884] rounded-lg text-xs font-extrabold uppercase tracking-wide">
                     {currentQ.categoryName}
                   </span>
-                  <span className="text-xs text-slate-400 font-semibold">
+                  <span className="text-xs text-slate-300 font-bold">
                     Frage {currentQIndex + 1} von {filteredQuestions.length}
                   </span>
                 </div>
@@ -199,7 +199,7 @@ export default function FlashcardsViewer() {
                   {/* Toggle Show/Hide Answer */}
                   <button
                     onClick={() => setShowAnswer(!showAnswer)}
-                    className="px-3 py-1.5 rounded-xl bg-[#1A2217] hover:bg-[#253121] border border-[#263321] text-xs font-bold text-slate-300 transition flex items-center gap-1.5 cursor-pointer"
+                    className="px-3 py-1.5 rounded-xl bg-[#1A241C] hover:bg-[#233125] border border-[#2C3E2E] text-xs font-bold text-slate-200 transition flex items-center gap-1.5 cursor-pointer"
                     title="Antwort verdecken/anzeigen"
                   >
                     {showAnswer ? (
@@ -209,7 +209,7 @@ export default function FlashcardsViewer() {
                       </>
                     ) : (
                       <>
-                        <Eye className="w-3.5 h-3.5 text-[#A3C973]" />
+                        <Eye className="w-3.5 h-3.5 text-[#B2D884]" />
                         <span className="hidden sm:inline">Lösung aufdecken</span>
                       </>
                     )}
@@ -220,8 +220,8 @@ export default function FlashcardsViewer() {
                     onClick={() => toggleBookmark(currentQ.id)}
                     className={`p-2 rounded-xl border transition cursor-pointer ${
                       bookmarkedIds.includes(currentQ.id)
-                        ? "bg-amber-500/20 text-amber-300 border-amber-400/40"
-                        : "bg-[#1A2217] text-slate-400 border-[#263321] hover:text-white"
+                        ? "bg-amber-500/20 text-amber-300 border-amber-400/50"
+                        : "bg-[#1A241C] text-slate-400 border-[#2C3E2E] hover:text-white"
                     }`}
                     title="Frage zum Wiederholen merken"
                   >
@@ -242,7 +242,7 @@ export default function FlashcardsViewer() {
               )}
 
               {/* Question Statement */}
-              <h2 className="text-lg md:text-xl font-black text-white leading-snug mb-6">
+              <h2 className="text-xl md:text-2xl font-black text-white leading-snug mb-6 tracking-tight">
                 {currentQ.question}
               </h2>
 
@@ -253,30 +253,30 @@ export default function FlashcardsViewer() {
                   return (
                     <div
                       key={opt.id}
-                      className={`p-4 rounded-2xl border transition-all flex items-start gap-3 ${
+                      className={`p-4 rounded-2xl border transition-all flex items-start gap-3.5 ${
                         showAnswer && isCorrect
-                          ? "bg-[#182B17] border-[#487834] text-white shadow-md ring-1 ring-[#556F3B]/50"
+                          ? "bg-[#142C1B] border-[#22C55E] text-white shadow-lg ring-1 ring-[#22C55E]/40"
                           : showAnswer && !isCorrect
-                          ? "bg-[#161C14] border-[#1F271B] text-slate-400 opacity-60"
-                          : "bg-[#161C14] border-[#1F271B] text-slate-200"
+                          ? "bg-[#161C17] border-[#263329] text-slate-200"
+                          : "bg-[#161C17] border-[#263329] text-slate-100 hover:border-slate-500"
                       }`}
                     >
                       <div
                         className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black uppercase shrink-0 mt-0.5 ${
                           showAnswer && isCorrect
-                            ? "bg-[#556F3B] text-white shadow"
-                            : "bg-[#1F271B] text-slate-400"
+                            ? "bg-[#22C55E] text-slate-950 font-black shadow"
+                            : "bg-[#263329] text-slate-200 font-bold"
                         }`}
                       >
                         {showAnswer && isCorrect ? "✓" : opt.id}
                       </div>
 
-                      <div className="text-sm font-medium leading-relaxed">
+                      <div className="text-sm font-semibold leading-relaxed text-slate-100">
                         {opt.text}
                       </div>
 
                       {showAnswer && isCorrect && (
-                        <span className="ml-auto text-[10px] uppercase font-black tracking-wider text-[#A3C973] bg-[#1A2415] px-2 py-0.5 rounded-md shrink-0">
+                        <span className="ml-auto text-[11px] uppercase font-black tracking-wider text-[#4ADE80] bg-[#163820] border border-[#22C55E]/40 px-2.5 py-0.5 rounded-md shrink-0">
                           Richtig
                         </span>
                       )}
@@ -287,16 +287,16 @@ export default function FlashcardsViewer() {
 
               {/* Official Explanation Box */}
               {showAnswer && (
-                <div className="p-4 md:p-5 rounded-2xl bg-[#182017] border border-[#2B3825] mb-6 animate-fade-in">
-                  <div className="flex items-center gap-2 text-[#A3C973] font-bold text-xs uppercase tracking-wide mb-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#A3C973]" />
-                    <span>Amtliche Schweizer Erklärung:</span>
+                <div className="p-5 rounded-2xl bg-[#141E16] border border-[#2B402E] mb-6 shadow-inner animate-fade-in">
+                  <div className="flex items-center gap-2 text-[#4ADE80] font-black text-xs uppercase tracking-wide mb-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#4ADE80]" />
+                    <span>Amtliche Schweizer Begründung:</span>
                   </div>
-                  <p className="text-xs md:text-sm text-slate-200 leading-relaxed">
+                  <p className="text-sm text-slate-100 leading-relaxed font-normal">
                     {currentQ.explanation}
                   </p>
                   {currentQ.ruleReference && (
-                    <div className="mt-2 text-[11px] font-mono text-[#A3C973]/80">
+                    <div className="mt-2.5 inline-block text-[11px] font-mono text-slate-300 bg-[#1C2C20] px-2.5 py-1 rounded-md border border-[#2B402E]">
                       Rechtsgrundlage: {currentQ.ruleReference}
                     </div>
                   )}
@@ -304,11 +304,11 @@ export default function FlashcardsViewer() {
               )}
 
               {/* Navigation Controls */}
-              <div className="flex items-center justify-between gap-3 pt-4 border-t border-[#1F271B]">
+              <div className="flex items-center justify-between gap-3 pt-5 border-t border-[#222E23]">
                 <button
                   onClick={handlePrevQ}
                   disabled={filteredQuestions.length <= 1}
-                  className="px-4 py-2.5 rounded-xl border border-[#2B3825] bg-[#1A2217] hover:bg-[#253121] text-slate-200 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer disabled:opacity-40"
+                  className="px-4 py-2.5 rounded-xl border border-[#2B3B2D] bg-[#1A241C] hover:bg-[#253327] text-white text-xs font-bold flex items-center gap-1.5 transition cursor-pointer disabled:opacity-40"
                 >
                   <ChevronLeft className="w-4 h-4" />
                   <span>Vorherige</span>
@@ -316,7 +316,7 @@ export default function FlashcardsViewer() {
 
                 <button
                   onClick={handleRandomQ}
-                  className="px-3.5 py-2.5 rounded-xl bg-[#1A2217] hover:bg-[#253121] border border-[#2B3825] text-slate-300 hover:text-white text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
+                  className="px-3.5 py-2.5 rounded-xl bg-[#1A241C] hover:bg-[#253327] border border-[#2B3B2D] text-amber-300 hover:text-white text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
                   title="Zufällige Frage"
                 >
                   <Shuffle className="w-3.5 h-3.5 text-amber-400" />

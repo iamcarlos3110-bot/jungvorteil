@@ -38,6 +38,9 @@ export default function Footer({ locale }: FooterProps) {
             <Link href={`/${locale}/themen`} className="text-slate-400 hover:text-white text-xs transition-colors">
               Themen-Training (Vortritt, Tempo, etc.)
             </Link>
+            <Link href={`/${locale}/memorizar`} className="text-slate-400 hover:text-white text-xs transition-colors">
+              Lernkarten & Fragen memorisieren
+            </Link>
             <Link href={`/${locale}/signale`} className="text-slate-400 hover:text-white text-xs transition-colors">
               Schweizer Verkehrssignale (SSV)
             </Link>
@@ -62,7 +65,7 @@ export default function Footer({ locale }: FooterProps) {
               Promillerechner (0.1‰ Neulenker)
             </Link>
             <Link href={`/${locale}/premium`} className="text-amber-400 hover:text-amber-300 text-xs font-semibold transition-colors">
-              AutoTheorie PRO (CHF 7.–)
+              AutoTheorie PRO (CHF 10.–)
             </Link>
           </div>
 
