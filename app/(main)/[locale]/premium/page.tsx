@@ -8,7 +8,7 @@ interface PremiumPageProps {
 export async function generateMetadata({ params }: PremiumPageProps): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "AutoTheorie PRO (CHF 7.-): Bestehe die Schweizer Theorieprüfung beim 1. Versuch",
+    title: "AutoTheorie PRO (CHF 10.-): Bestehe die Schweizer Theorieprüfung beim 1. Versuch",
     description: "Hol dir den VIP-Pass für die Schweizer Führerprüfung: Alle 600 ASA-Fragen, die 100 tückischsten Prüfungsfallen, 100% werbefrei und Bestehens-Garantie.",
     alternates: {
       canonical: `https://jungvorteil.ch/${locale}/premium`,

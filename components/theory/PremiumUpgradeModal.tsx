@@ -136,8 +136,8 @@ export default function PremiumUpgradeModal({ isOpen, onClose, triggerReason, lo
                 <div className="text-xs text-[#A3C973] font-bold">Aktion für junge Fahrschüler</div>
               </div>
               <div className="text-right">
-                <span className="text-3xl font-black text-white">CHF 7.-</span>
-                <span className="text-xs text-slate-400 font-normal"> / 7 €</span>
+                <span className="text-3xl font-black text-white">CHF 10.-</span>
+                <span className="text-xs text-slate-400 font-normal"> / 10 €</span>
               </div>
             </div>
 
@@ -160,7 +160,7 @@ export default function PremiumUpgradeModal({ isOpen, onClose, triggerReason, lo
               ) : (
                 <>
                   <Zap className="w-5 h-5 fill-white" />
-                  <span>Jetzt sicher mit Stripe für CHF 7.- freischalten</span>
+                  <span>Jetzt sicher mit Stripe für CHF 10.- freischalten</span>
                 </>
               )}
             </button>

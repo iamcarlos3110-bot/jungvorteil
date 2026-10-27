@@ -45,7 +45,7 @@ export default function NumberedTestsGrid({ locale }: NumberedTestsGridProps) {
     // Tests 1 and 2 are free; Tests 3+ require PRO
     const isLocked = !isPremium && test.id > 2;
     if (isLocked) {
-      setModalReason(`Schalte ${test.title} und alle 600 ASA-Fragen für nur CHF 7.- frei!`);
+      setModalReason(`Schalte ${test.title} und alle 600 ASA-Fragen für nur CHF 10.- frei!`);
       setShowModal(true);
     }
   };
@@ -230,7 +230,7 @@ export default function NumberedTestsGrid({ locale }: NumberedTestsGridProps) {
                     className="w-full py-2.5 px-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 rounded-xl font-black text-xs transition flex items-center justify-center gap-1.5 shadow-sm cursor-pointer"
                   >
                     <Lock className="w-3.5 h-3.5" />
-                    <span>Mit PRO freischalten (CHF 7.-)</span>
+                    <span>Mit PRO freischalten (CHF 10.-)</span>
                   </button>
                 ) : (
                   <Link

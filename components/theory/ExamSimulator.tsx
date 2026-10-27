@@ -223,7 +223,7 @@ export default function ExamSimulator({ locale }: ExamSimulatorProps) {
                 Sichere dir die 100 tückischsten ASA-Durchfallerfragen!
               </h3>
               <p className="text-slate-300 text-xs mt-1 max-w-lg">
-                80% der Fahrschüler scheitern an denselben Fangfragen. Schalte alle Fragen und werbefreies Lernen mit TWINT für nur <strong>CHF 7.-</strong> frei.
+                80% der Fahrschüler scheitern an denselben Fangfragen. Schalte alle Fragen und werbefreies Lernen mit TWINT für nur <strong>CHF 10.-</strong> frei.
               </p>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function ExamSimulator({ locale }: ExamSimulatorProps) {
             href={`/${locale}/premium`}
             className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black rounded-2xl text-xs sm:text-sm shadow-lg whitespace-nowrap transition active:scale-95 flex items-center gap-2 shrink-0 cursor-pointer"
           >
-            <span>PRO für CHF 7.- holen</span>
+            <span>PRO für CHF 10.- holen</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
         {
           price_data: {
             currency: "chf",
-            unit_amount: 700, // 7.00 CHF
+            unit_amount: 1000, // 10.00 CHF
             product_data: {
               name: "AutoTheorie PRO • Schweizer VIP-Pass",
               description: "Zugang zu allen 600 ASA-Theoriefragen, Prüfungsfallen & 100% werbefrei",

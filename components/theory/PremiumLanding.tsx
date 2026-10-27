@@ -80,7 +80,7 @@ export default function PremiumLanding({ locale }: { locale: string }) {
         <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-4">
           Bestehe die Theorieprüfung <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A3C973] via-emerald-400 to-amber-400">
-            ohne Stress für nur CHF 7.-
+            ohne Stress für nur CHF 10.-
           </span>
         </h1>
 
@@ -134,7 +134,7 @@ export default function PremiumLanding({ locale }: { locale: string }) {
           </Link>
         </div>
 
-        {/* PRO PLAN (The 7 CHF offer with Stripe) */}
+        {/* PRO PLAN (The 10 CHF offer with Stripe) */}
         <div className="bg-gradient-to-br from-[#121711] via-[#162114] to-[#0D140C] text-white rounded-3xl border-2 border-[#556F3B] p-8 shadow-2xl relative flex flex-col justify-between overflow-hidden">
           <div className="absolute top-0 right-0 bg-gradient-to-l from-amber-400 to-[#556F3B] text-slate-950 text-[10px] font-black uppercase px-4 py-1.5 rounded-bl-2xl tracking-wider">
             Sehr Beliebt in der Schweiz
@@ -145,7 +145,7 @@ export default function PremiumLanding({ locale }: { locale: string }) {
             <h3 className="text-2xl font-black text-white mb-2">AutoTheorie PRO</h3>
             
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-5xl font-black text-white">CHF 7.-</span>
+              <span className="text-5xl font-black text-white">CHF 10.-</span>
               <span className="text-xs text-slate-400 line-through">CHF 19.90</span>
               <span className="text-xs text-[#A3C973] font-bold ml-1">Einmalige Zahlung</span>
             </div>
@@ -205,7 +205,7 @@ export default function PremiumLanding({ locale }: { locale: string }) {
                 ) : (
                   <>
                     <Zap className="w-5 h-5 fill-white" />
-                    <span>Sicher mit Stripe für CHF 7.- freischalten</span>
+                    <span>Sicher mit Stripe für CHF 10.- freischalten</span>
                   </>
                 )}
               </button>
@@ -247,7 +247,7 @@ export default function PremiumLanding({ locale }: { locale: string }) {
           <div className="bg-[#182017] p-5 rounded-2xl border border-[#263321]">
             <div className="flex items-center gap-2 text-amber-400 mb-2">★★★★★</div>
             <p className="text-xs text-slate-300 leading-relaxed mb-3">
-              &quot;Die App iTheorie hat mich 24 Franken gekostet und war total unübersichtlich. Hier habe ich für 7 Franken über Stripe bezahlt und in Zürich mit 0 Fehlern bestanden!&quot;
+              &quot;Die App iTheorie hat mich 24 Franken gekostet und war total unübersichtlich. Hier habe ich für 10 Franken über Stripe bezahlt und in Zürich mit 0 Fehlern bestanden!&quot;
             </p>
             <div className="text-xs font-bold text-white">Noah M. (17 J.), Zürich</div>
           </div>
@@ -263,7 +263,7 @@ export default function PremiumLanding({ locale }: { locale: string }) {
           <div className="bg-[#182017] p-5 rounded-2xl border border-[#263321]">
             <div className="flex items-center gap-2 text-amber-400 mb-2">★★★★★</div>
             <p className="text-xs text-slate-300 leading-relaxed mb-3">
-              &quot;Bester Deal überhaupt. 7 Franken sind weniger als ein Döner in Basel und ich habe den Führerausweis sofort auf eigene Faust geschafft.&quot;
+              &quot;Bester Deal überhaupt. 10 Franken sind fair und ich habe den Führerausweis sofort auf eigene Faust geschafft.&quot;
             </p>
             <div className="text-xs font-bold text-white">Marco S. (17 J.), Basel</div>
           </div>
@@ -280,7 +280,7 @@ export default function PremiumLanding({ locale }: { locale: string }) {
             Offizielle Schweizer Bestehens-Garantie
           </h4>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Wir sind so überzeugt von unserer Prüfungsvorbereitung: Wenn du alle PRO-Tests absolvierst und deine offizielle Theorieprüfung beim Strassenverkehrsamt dennoch nicht bestehst, erstatten wir dir die CHF 7.- ohne Wenn und Aber über Stripe zurück.
+            Wir sind so überzeugt von unserer Prüfungsvorbereitung: Wenn du alle PRO-Tests absolvierst und deine offizielle Theorieprüfung beim Strassenverkehrsamt dennoch nicht bestehst, erstatten wir dir die CHF 10.- ohne Wenn und Aber über Stripe zurück.
           </p>
         </div>
       </div>
