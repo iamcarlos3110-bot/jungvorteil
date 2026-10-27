@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: MemorizarPageProps): Promise<
 
 export default async function MemorizarPage() {
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-[#090D08] text-white py-8">
       <div className="max-w-2xl mx-auto px-4 mb-4">
         <AdSlot slot="AD_AFTER_HERO" label />
       </div>
