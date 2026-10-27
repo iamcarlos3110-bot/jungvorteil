@@ -78,7 +78,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
         <link rel="manifest" href="/manifest.json?v=3" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-[#090D08] text-[#F4F6F0] min-h-screen antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <GoogleAnalytics />
           <Script
@@ -93,7 +93,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             strategy="afterInteractive"
           />
           <Header locale={locale} />
-          <main id="main-content">{children}</main>
+          <main id="main-content" className="bg-[#090D08] text-[#F4F6F0] min-h-screen">{children}</main>
           <Footer locale={locale} />
           <CookieBanner />
         </NextIntlClientProvider>

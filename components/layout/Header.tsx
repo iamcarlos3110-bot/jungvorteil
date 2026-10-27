@@ -55,10 +55,10 @@ export default function Header({ locale }: HeaderProps) {
     <>
       <header
         className={cn(
-          "sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
+          "sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b backdrop-blur-md",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-2.5"
-            : "bg-slate-950/95 backdrop-blur-md border-b border-slate-800 py-3 text-white"
+            ? "bg-[#090D08]/95 border-[#1F271B] shadow-lg shadow-black/40 py-2.5 text-white"
+            : "bg-[#090D08]/90 border-[#1A2216] py-3 text-white"
         )}
       >
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
@@ -66,24 +66,14 @@ export default function Header({ locale }: HeaderProps) {
             {/* Logo */}
             <Link
               href={`/${locale}`}
-              className={cn(
-                "flex items-center gap-2 text-xl font-black tracking-tight transition-colors group",
-                isScrolled ? "text-slate-900" : "text-white"
-              )}
+              className="flex items-center gap-2 text-xl font-black tracking-tight text-white transition-colors group"
             >
-              <div
-                className={cn(
-                  "w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm",
-                  isScrolled
-                    ? "bg-indigo-600 text-white group-hover:bg-indigo-700"
-                    : "bg-indigo-500 text-white group-hover:bg-indigo-400"
-                )}
-              >
+              <div className="w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm bg-[#556F3B] text-white group-hover:bg-[#708F52]">
                 <Car className="w-4 h-4" />
               </div>
               <div className="flex flex-col">
-                <span className="leading-tight font-black text-base md:text-lg">
-                  Auto<span className="text-indigo-400">Theorie</span>
+                <span className="leading-tight font-black text-base md:text-lg text-white">
+                  Auto<span className="text-[#8EAC73]">Theorie</span>
                 </span>
                 <span className="text-[9px] font-bold tracking-wider uppercase text-slate-400 -mt-0.5">
                   Schweiz Kat. B/A
@@ -102,12 +92,8 @@ export default function Header({ locale }: HeaderProps) {
                     href={link.href}
                     className={cn(
                       "text-xs font-bold transition-all px-2.5 py-1.5 rounded-xl flex items-center gap-1.5",
-                      isScrolled
-                        ? isActive
-                          ? "text-indigo-600 bg-indigo-50 font-extrabold"
-                          : "text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
-                        : isActive
-                        ? "text-white bg-white/20 font-extrabold"
+                      isActive
+                        ? "text-white bg-[#556F3B] font-extrabold shadow-sm"
                         : "text-slate-300 hover:text-white hover:bg-white/10"
                     )}
                   >
@@ -123,12 +109,7 @@ export default function Header({ locale }: HeaderProps) {
               {/* Streak Badge */}
               <Link
                 href={`/${locale}/progreso`}
-                className={cn(
-                  "flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-black shadow-inner cursor-pointer hover:scale-105 transition",
-                  isScrolled 
-                    ? "bg-amber-50 text-amber-700 border border-amber-200" 
-                    : "bg-amber-500/20 text-amber-300 border border-amber-400/30"
-                )}
+                className="flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-black bg-amber-500/20 text-amber-300 border border-amber-400/30 cursor-pointer hover:scale-105 transition"
                 title="Tägliche Lernserie ansehen"
               >
                 <span className="animate-pulse">🔥</span>
@@ -136,14 +117,7 @@ export default function Header({ locale }: HeaderProps) {
               </Link>
 
               {/* Language Switcher */}
-              <div
-                className={cn(
-                  "flex items-center p-0.5 rounded-xl text-[11px] font-bold border",
-                  isScrolled
-                    ? "bg-slate-100 border-slate-200 text-slate-700"
-                    : "bg-white/10 border-white/15 text-white"
-                )}
-              >
+              <div className="flex items-center p-0.5 rounded-xl text-[11px] font-bold border bg-white/10 border-white/15 text-white">
                 {["de", "fr", "it"].map((lang) => {
                   const href = pathname.replace(`/${locale}`, `/${lang}`);
                   const isLangActive = locale === lang;
@@ -154,10 +128,8 @@ export default function Header({ locale }: HeaderProps) {
                       className={cn(
                         "px-1.5 py-0.5 rounded-lg uppercase font-bold transition-all",
                         isLangActive
-                          ? isScrolled
-                            ? "bg-indigo-600 text-white shadow-sm"
-                            : "bg-white text-indigo-950 font-black shadow-sm"
-                          : "hover:opacity-80"
+                          ? "bg-[#556F3B] text-white font-black shadow-sm"
+                          : "hover:opacity-80 text-slate-300"
                       )}
                     >
                       {lang}

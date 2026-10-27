@@ -8,22 +8,22 @@
    DESIGN TOKENS
    ============================================= */
 :root {
-  --color-bg: #F7FAF5;
-  --color-text: #090D08;
+  --color-bg: #090D08;
+  --color-text: #F4F6F0;
   --color-primary: #556F3B;
-  --color-primary-hover: #43592E;
-  --color-primary-light: #E5ECE0;
+  --color-primary-hover: #708F52;
+  --color-primary-light: #1A2415;
   --color-accent: #708F52;
   --color-gold: #D4A017;
   --color-saving: #556F3B;
   --color-danger: #DC2626;
-  --color-border: #DCE3D6;
-  --color-surface: #FFFFFF;
-  --color-muted: #5D6B5B;
-  --color-muted-bg: #EDF2EA;
+  --color-border: #1F271B;
+  --color-surface: #121711;
+  --color-muted: #8A9787;
+  --color-muted-bg: #161C14;
 
-  --background: #F7FAF5;
-  --foreground: #090D08;
+  --background: #090D08;
+  --foreground: #F4F6F0;
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -551,4 +551,75 @@ h1, h2, h3, h4 {
 .hero-dots {
   background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+/* =============================================
+   FULL DARK THEME: NEGRO PROFUNDO & VERDE OLIVA
+   ============================================= */
+html, body {
+  background-color: #090D08 !important;
+  color: #F4F6F0 !important;
+}
+
+/* Force dark background on all page wrappers */
+.bg-slate-50,
+.bg-slate-100,
+.bg-gray-50,
+.bg-gray-100,
+.bg-\[\#F8FAF6\],
+.bg-\[\#F7FAF5\],
+.bg-\[\#F0F4EE\] {
+  background-color: #090D08 !important;
+  color: #F4F6F0 !important;
+}
+
+/* Transform white containers into dark carbon cards */
+.bg-white {
+  background-color: #121711 !important;
+  color: #F4F6F0 !important;
+}
+
+/* Dark borders */
+.border-slate-100,
+.border-slate-200,
+.border-slate-200\/80,
+.border-gray-100,
+.border-gray-200 {
+  border-color: #1F271B !important;
+}
+
+/* Headings and primary text */
+.text-slate-900,
+.text-slate-800,
+.text-gray-900,
+.text-gray-800 {
+  color: #FFFFFF !important;
+}
+
+/* Secondary descriptions */
+.text-slate-700,
+.text-gray-700 {
+  color: #D3DDD0 !important;
+}
+
+.text-slate-600,
+.text-slate-500,
+.text-gray-600,
+.text-gray-500 {
+  color: #9AA797 !important;
+}
+
+/* Light olive badge backgrounds */
+.bg-indigo-50,
+.bg-olive-50 {
+  background-color: #1A2415 !important;
+  color: #A3C973 !important;
+  border-color: #2F3F25 !important;
+}
+
+/* Inputs and interactive elements */
+input, select, textarea {
+  background-color: #090D08 !important;
+  color: #FFFFFF !important;
+  border-color: #263321 !important;
 }
