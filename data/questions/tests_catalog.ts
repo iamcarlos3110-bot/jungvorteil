@@ -155,5 +155,72 @@ export const NUMBERED_TESTS: TestMetadata[] = [
     maxErrorPoints: 5,
     difficulty: "EASY",
     tags: ["Mofa", "E-Bike", "Kat. M", "Helmpflicht"]
+  },
+  {
+    id: 15,
+    title: "Test 15: Bahnübergänge, Trams & Schienenverkehr",
+    description: "Vorschriften an Bahnübergängen, Blinklichter, Tramvortritt und Haltestellen ohne Insel.",
+    category: "B",
+    questionCount: 15,
+    timeMinutes: 15,
+    maxErrorPoints: 5,
+    difficulty: "MEDIUM",
+    tags: ["Bahnübergang", "Tram", "Schranken", "Blinklicht"]
+  },
+  {
+    id: 16,
+    title: "Test 16: Halten, Parkieren & Blaue Zone (SSV)",
+    description: "Parkscheibenregeln, Mittagsregelung 11:30–14:30, Parkierverbote vor Kreuzungen und Zebrastreifen.",
+    category: "B",
+    questionCount: 15,
+    timeMinutes: 15,
+    maxErrorPoints: 5,
+    difficulty: "MEDIUM",
+    tags: ["Parkieren", "Blaue Zone", "Parkscheibe", "Halteverbot"]
+  },
+  {
+    id: 17,
+    title: "Test 17: Fahrbahnmarkierungen & Einspuren",
+    description: "Sicherheitslinien, Vorwarnlinien, Haifischzähne, Sperrflächen und verbindliche Richtungspfeile.",
+    category: "B",
+    questionCount: 15,
+    timeMinutes: 15,
+    maxErrorPoints: 5,
+    difficulty: "HARD",
+    tags: ["Markierungen", "Einspuren", "Haifischzähne", "Sperrfläche"]
+  },
+  {
+    id: 18,
+    title: "Test 18: Fahrzeugtechnik, Bremsweg & Fahrdynamik",
+    description: "ABS, ESP, Aquaplaning, Reifendruck, Übersteuern/Untersteuern und Bremswegformeln.",
+    category: "B",
+    questionCount: 15,
+    timeMinutes: 15,
+    maxErrorPoints: 5,
+    difficulty: "HARD",
+    tags: ["Bremsweg", "ABS", "ESP", "Aquaplaning", "Fahrdynamik"]
+  },
+  {
+    id: 19,
+    title: "Test 19: Eco-Drive, Treibstoff sparen & Umwelt",
+    description: "Schubabschaltung, 2000 U/min Schalten, Start-Stopp, Lärmschutz und Standgasverbot.",
+    category: "B",
+    questionCount: 15,
+    timeMinutes: 15,
+    maxErrorPoints: 5,
+    difficulty: "EASY",
+    tags: ["Eco-Drive", "Umweltschutz", "Schubabschaltung", "Treibstoff"]
+  },
+  {
+    id: 20,
+    title: "Test 20: Offizielle ASA-Generalprobe (50 Prüfungsfragen)",
+    description: "Umfassende Prüfungssimulation mit Fragen aus allen 7 Fachgebieten unter realen Prüfungsbedingungen.",
+    category: "B",
+    questionCount: 50,
+    timeMinutes: 45,
+    maxErrorPoints: 15,
+    difficulty: "HARD",
+    tags: ["Generalprobe", "Prüfungssimulation", "Alle Themen", "ASA Examen"]
   }
 ];
+

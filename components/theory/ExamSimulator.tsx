@@ -37,9 +37,9 @@ export default function ExamSimulator({ locale }: ExamSimulatorProps) {
 
   // Initialize questions on mount
   useEffect(() => {
-    // Generate an exam set
+    // Generate an official exam set of 50 questions
     const shuffled = [...QUESTIONS_DATABASE].sort(() => 0.5 - Math.random());
-    setQuestions(shuffled);
+    setQuestions(shuffled.slice(0, 50));
   }, []);
 
   // Timer countdown
