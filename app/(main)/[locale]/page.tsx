@@ -4,6 +4,7 @@ import AdSlot from "@/components/ads/AdSlot";
 import { CATEGORIES } from "@/data/questions";
 import DailyTipCard from "@/components/theory/DailyTipCard";
 import InfractionsSimulator from "@/components/theory/InfractionsSimulator";
+import NumberedTestsGrid from "@/components/theory/NumberedTestsGrid";
 import { 
   Car, 
   Clock, 
@@ -212,6 +213,23 @@ export default async function HomePage({ params }: HomePageProps) {
             </div>
           </Link>
         </div>
+      </section>
+
+      {/* NUMBERED TESTS SECTION (Like AprobadosYA 100 Tests) */}
+      <section className="max-w-6xl mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <span className="text-xs font-black uppercase text-indigo-600 tracking-wider">
+            Offizieller Fragenkatalog ASA
+          </span>
+          <h2 className="text-3xl font-black text-slate-900 mt-1">
+            Tests nach Nummern üben
+          </h2>
+          <p className="text-slate-600 text-xs sm:text-sm mt-1">
+            Absolviere die einzelnen Tests nacheinander, um den gesamten Prüfungsstoff schrittweise zu beherrschen.
+          </p>
+        </div>
+
+        <NumberedTestsGrid locale={locale} />
       </section>
 
       {/* AD SLOT MIDDLE */}
