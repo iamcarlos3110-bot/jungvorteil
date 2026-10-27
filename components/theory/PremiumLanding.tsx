@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { getPremiumStatus, activatePremiumPass } from "@/lib/premium";
+import { getPremiumStatus, activatePremiumPass, cancelPremiumPass } from "@/lib/premium";
 import { 
   Crown, 
   Check, 
@@ -15,7 +15,8 @@ import {
   ArrowRight,
   CreditCard,
   Smartphone,
-  Lock
+  Lock,
+  RefreshCw
 } from "lucide-react";
 
 export default function PremiumLanding({ locale }: { locale: string }) {
@@ -45,26 +46,22 @@ export default function PremiumLanding({ locale }: { locale: string }) {
 
       if (data.url) {
         // Redirect to official Stripe Checkout page
-        window.location.href = data.url;
-        return;
-      }
-
-      if (data.simulated) {
-        // Fallback when Stripe keys are not yet provided in .env.local
-        activatePremiumPass("tx_simulated_7chf");
-        window.location.href = `/${locale}/premium/success?session_id=tx_dev_mode`;
+        window.location.assign(data.url);
         return;
       }
 
       if (data.error) {
         setErrorMessage(data.error);
         setIsProcessing(false);
+        return;
       }
+
+      setErrorMessage("Konnte keine Verbindung zu Stripe herstellen.");
+      setIsProcessing(false);
     } catch (err: any) {
       console.error("Checkout error:", err);
-      // Fallback
-      activatePremiumPass("tx_simulated_fallback");
-      window.location.href = `/${locale}/premium/success?session_id=tx_fallback`;
+      setErrorMessage(err?.message || "Verbindungsfehler zur Zahlungsseite");
+      setIsProcessing(false);
     }
   };
 
@@ -191,29 +188,40 @@ export default function PremiumLanding({ locale }: { locale: string }) {
               </div>
             )}
 
-            {!isPremium ? (
-              <button
-                onClick={handleCheckout}
-                disabled={isProcessing}
-                className="w-full py-4 bg-[#556F3B] hover:bg-[#708F52] active:scale-98 text-white font-black rounded-2xl shadow-xl shadow-[#556F3B]/30 text-base transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-              >
-                {isProcessing ? (
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Weiterleitung zu Stripe Checkout...</span>
-                  </div>
-                ) : (
-                  <>
-                    <Zap className="w-5 h-5 fill-white" />
-                    <span>Sicher mit Stripe für CHF 10.- freischalten</span>
-                  </>
-                )}
-              </button>
-            ) : (
-              <div className="p-3.5 bg-emerald-500/20 border border-emerald-400/40 rounded-2xl text-emerald-300 text-center text-xs font-bold">
-                ✓ Du hast bereits den AutoTheorie PRO-Status aktiv!
+            {isPremium && (
+              <div className="mb-4 p-3 bg-emerald-500/20 border border-emerald-400/40 rounded-2xl text-emerald-300 text-center text-xs">
+                <div className="font-bold">✓ PRO-Pass auf diesem Gerät aktiv</div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    cancelPremiumPass();
+                    setIsPremium(false);
+                  }}
+                  className="mt-1 text-[11px] text-slate-400 hover:text-white underline cursor-pointer inline-flex items-center gap-1"
+                >
+                  <RefreshCw className="w-3 h-3" />
+                  Pass zurücksetzen (um Stripe-Zahlung erneut zu testen)
+                </button>
               </div>
             )}
+
+            <button
+              onClick={handleCheckout}
+              disabled={isProcessing}
+              className="w-full py-4 bg-[#556F3B] hover:bg-[#708F52] active:scale-98 text-white font-black rounded-2xl shadow-xl shadow-[#556F3B]/30 text-base transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+            >
+              {isProcessing ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <span>Weiterleitung zu Stripe Checkout...</span>
+                </div>
+              ) : (
+                <>
+                  <Zap className="w-5 h-5 fill-white" />
+                  <span>Sicher mit Stripe für CHF 10.- freischalten</span>
+                </>
+              )}
+            </button>
 
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mt-3 text-[11px] text-slate-400">
               <span className="flex items-center gap-1">

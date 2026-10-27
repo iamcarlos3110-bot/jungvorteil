@@ -43,24 +43,22 @@ export default function PremiumUpgradeModal({ isOpen, onClose, triggerReason, lo
       const data = await res.json();
 
       if (data.url) {
-        window.location.href = data.url;
-        return;
-      }
-
-      if (data.simulated) {
-        activatePremiumPass("tx_sim_7chf");
-        window.location.href = `/${locale}/premium/success?session_id=tx_modal_pass`;
+        window.location.assign(data.url);
         return;
       }
 
       if (data.error) {
         setErrorMessage(data.error);
         setIsProcessing(false);
+        return;
       }
+
+      setErrorMessage("Konnte keine Verbindung zu Stripe herstellen.");
+      setIsProcessing(false);
     } catch (err: any) {
       console.error("Stripe modal error:", err);
-      activatePremiumPass("tx_sim_fallback");
-      window.location.href = `/${locale}/premium/success?session_id=tx_modal_fallback`;
+      setErrorMessage(err?.message || "Verbindungsfehler zur Zahlungsseite");
+      setIsProcessing(false);
     }
   };
 

@@ -145,7 +145,7 @@ export default function Header({ locale }: HeaderProps) {
               >
                 <span>👑</span>
                 <span className="hidden sm:inline">PRO</span>
-                <span>CHF 7.-</span>
+                <span>CHF 10.-</span>
               </Link>
 
               {/* Start Test CTA */}
