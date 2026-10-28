@@ -16,7 +16,9 @@
       var w = parseInt(p.get("w") || "0", 10) || 0;
       var h = parseInt(p.get("h") || "0", 10) || 0;
       if (!key || !w || !h) return;
-      window.atOptions = { key: key, format: "iframe", height: h, width: w, params: {} };
+      var opts = { key: key, format: "iframe", height: h, width: w, params: {} };
+      window.atOptions = opts;
+      atOptions = opts;
       document.write('<scr' + 'ipt type="text/javascript" src="https://www.highrevenueformat.com/' + key + '/invoke.js"></scr' + 'ipt>');
     })();
   </script>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { AdSlotId, AD_SLOTS, ADSTERRA_CONFIG, isAdsterraEnabled } from "@/config/adSlots";
 import AdSenseUnit from "./AdSenseUnit";
@@ -23,8 +24,21 @@ export default function AdSlot({
   className,
   label = true,
 }: AdSlotProps) {
-  // If user has PRO Pass, never render ads
-  if (typeof window !== "undefined" && getPremiumStatus()) {
+  const [isPro, setIsPro] = useState(false);
+  const [forceAds, setForceAds] = useState(false);
+
+  useEffect(() => {
+    setIsPro(getPremiumStatus());
+    const search = new URLSearchParams(window.location.search);
+    setForceAds(search.has("ads") || search.has("test_ads"));
+
+    const handleStatus = () => setIsPro(getPremiumStatus());
+    window.addEventListener("premium_status_changed", handleStatus);
+    return () => window.removeEventListener("premium_status_changed", handleStatus);
+  }, []);
+
+  // If user has PRO Pass and is not testing ads with ?ads=1, do not render ads
+  if (isPro && !forceAds) {
     return null;
   }
 

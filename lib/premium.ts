@@ -55,3 +55,10 @@ export function cancelPremiumPass(): void {
     window.dispatchEvent(new Event("premium_status_changed"));
   } catch {}
 }
+
+// Global browser console helpers for testing
+if (typeof window !== "undefined") {
+  (window as unknown as { cancelPremium?: () => void; activatePremium?: () => void; getPremiumStatus?: () => boolean }).cancelPremium = cancelPremiumPass;
+  (window as unknown as { activatePremium?: () => void }).activatePremium = () => activatePremiumPass("dev_test");
+  (window as unknown as { getPremiumStatus?: () => boolean }).getPremiumStatus = getPremiumStatus;
+}
