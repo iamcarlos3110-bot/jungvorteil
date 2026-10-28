@@ -34,7 +34,7 @@ export const ADSTERRA_CONFIG = {
   banner728x90Key: process.env.NEXT_PUBLIC_ADSTERRA_BANNER_728X90_KEY || "907186d5a8845926e388e50c77cdca81",
   banner320x50Key: process.env.NEXT_PUBLIC_ADSTERRA_BANNER_320X50_KEY || "bd7ac4794772bc2ee8985c92f84ac6d3",
   nativeContainerId: process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_CONTAINER_ID || "container-73033babfb4767c65846699bd2a8866b",
-  nativeScriptUrl: process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT || "https://pl31783577.profitableratecpmnetwork.com/73033babfb4767c65846699bd2a8866b/invoke.js",
+  nativeScriptUrl: process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT || "https://bauval.org/21/73033babfb4767c65846699bd2a8866b",
   socialBarScriptUrl: process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT || "https://pl31783576.profitableratecpmnetwork.com/f8/10/1e/f8101eb96ef4f77c15a01ffc39057722.js",
 };
 
