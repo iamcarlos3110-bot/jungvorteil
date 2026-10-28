@@ -17,7 +17,12 @@ interface AdsterraBannerProps {
  * and the ad request comes from jungvorteil.ch.
  */
 export default function AdsterraBanner({ bannerKey, width, height, className }: AdsterraBannerProps) {
-  const src = `/adframe/banner.html?key=${encodeURIComponent(bannerKey)}&w=${width}&h=${height}`;
+  const src =
+    width === 728 && height === 90
+      ? "/adframe/banner-728x90.html"
+      : width === 320 && height === 50
+      ? "/adframe/banner-320x50.html"
+      : `/adframe/banner.html?key=${encodeURIComponent(bannerKey)}&w=${width}&h=${height}`;
 
   return (
     <div

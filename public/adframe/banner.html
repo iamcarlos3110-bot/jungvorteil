@@ -16,10 +16,21 @@
       var w = parseInt(p.get("w") || "0", 10) || 0;
       var h = parseInt(p.get("h") || "0", 10) || 0;
       if (!key || !w || !h) return;
-      var opts = { key: key, format: "iframe", height: h, width: w, params: {} };
-      window.atOptions = opts;
-      atOptions = opts;
-      document.write('<scr' + 'ipt type="text/javascript" src="https://www.highrevenueformat.com/' + key + '/invoke.js"></scr' + 'ipt>');
+
+      if (key === "907186d5a8845926e388e50c77cdca81") {
+        window.location.replace("/adframe/banner-728x90.html");
+        return;
+      }
+      if (key === "bd7ac4794772bc2ee8985c92f84ac6d3") {
+        window.location.replace("/adframe/banner-320x50.html");
+        return;
+      }
+
+      window.atOptions = { key: key, format: "iframe", height: h, width: w, params: {} };
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.src = "https://www.highrevenueformat.com/" + key + "/invoke.js";
+      document.body.appendChild(s);
     })();
   </script>
 </body>
