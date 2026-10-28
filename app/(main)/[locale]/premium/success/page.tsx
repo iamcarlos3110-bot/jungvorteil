@@ -4,6 +4,7 @@ import React, { useEffect, useState, use } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { activatePremiumPass } from "@/lib/premium";
+import { saveLocalStudent } from "@/lib/studentAuth";
 import { 
   ShieldCheck, 
   CheckCircle2, 
@@ -13,7 +14,8 @@ import {
   BookOpen, 
   FileText, 
   Award,
-  Zap
+  Zap,
+  User
 } from "lucide-react";
 
 interface SuccessPageProps {
@@ -39,6 +41,19 @@ export default function PremiumSuccessPage({ params }: SuccessPageProps) {
         .then((data) => {
           if (data.customerEmail) {
             setCustomerEmail(data.customerEmail);
+            // Automatically link / create student account
+            fetch("/api/auth/student", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ credentialsAction: "restore-stripe", email: data.customerEmail }),
+            })
+              .then((r) => r.json())
+              .then((res) => {
+                if (res.student) {
+                  saveLocalStudent(res.student);
+                }
+              })
+              .catch(() => {});
           }
         })
         .catch(() => {})
@@ -138,11 +153,11 @@ export default function PremiumSuccessPage({ params }: SuccessPageProps) {
                 <span>Themenkatalog</span>
               </Link>
               <Link
-                href={`/${locale}/memorizar`}
+                href={`/${locale}/konto`}
                 className="py-3 px-4 bg-[#1A2217] hover:bg-[#253121] border border-[#2B3825] text-slate-200 rounded-xl text-xs font-bold text-center transition flex items-center justify-center gap-1.5"
               >
-                <Award className="w-4 h-4 text-amber-400" />
-                <span>Memorier-Trainer</span>
+                <User className="w-4 h-4 text-amber-400" />
+                <span>Mein Schülerkonto</span>
               </Link>
             </div>
           </div>

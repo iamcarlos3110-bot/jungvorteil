@@ -233,6 +233,15 @@ export default function PremiumLanding({ locale }: { locale: string }) {
               <span>•</span>
               <span>Sofortige Freischaltung</span>
             </div>
+
+            <div className="mt-4 text-center">
+              <Link
+                href={`/${locale}/login`}
+                className="text-xs text-amber-300 hover:text-amber-200 underline font-bold"
+              >
+                👑 Schon bezahlt? Hier klicken, um deinen PRO-Pass wiederherzustellen
+              </Link>
+            </div>
           </div>
         </div>
       </div>

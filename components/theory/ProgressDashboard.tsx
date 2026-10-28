@@ -13,8 +13,11 @@ import {
   TrendingUp, 
   ShieldCheck,
   ArrowRight,
-  AlertTriangle
+  AlertTriangle,
+  User,
+  Cloud
 } from "lucide-react";
+import { getLocalStudent, StudentUser } from "@/lib/studentAuth";
 
 interface ExamHistoryEntry {
   date: string;
@@ -27,14 +30,20 @@ interface ExamHistoryEntry {
 export default function ProgressDashboard({ locale }: { locale: string }) {
   const [stats, setStats] = useState<StudyStats | null>(null);
   const [history, setHistory] = useState<ExamHistoryEntry[]>([]);
+  const [student, setStudent] = useState<StudentUser | null>(null);
 
   useEffect(() => {
     setStats(getStudyProgress());
+    setStudent(getLocalStudent());
 
     try {
       const storedHistory = JSON.parse(localStorage.getItem("autotheorie_stats") || "[]");
       setHistory(storedHistory);
     } catch {}
+
+    const handleAuth = () => setStudent(getLocalStudent());
+    window.addEventListener("student_auth_changed", handleAuth);
+    return () => window.removeEventListener("student_auth_changed", handleAuth);
   }, []);
 
   const totalExams = history.length;
@@ -55,16 +64,38 @@ export default function ProgressDashboard({ locale }: { locale: string }) {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Title */}
-      <div className="mb-8">
-        <span className="text-xs font-black uppercase text-indigo-600 tracking-wider">
-          Deine persönliche Statistik
-        </span>
-        <h1 className="text-3xl font-black text-slate-900 mt-1">
-          📊 Mein Vorbereitungsstatus
-        </h1>
-        <p className="text-slate-600 text-xs sm:text-sm mt-1">
-          Verfolge deinen Lernfortschritt und erfahre, wann du bereit für die offizielle Theorieprüfung beim Strassenverkehrsamt bist.
-        </p>
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span className="text-xs font-black uppercase text-indigo-600 tracking-wider">
+            Deine persönliche Statistik
+          </span>
+          <h1 className="text-3xl font-black text-slate-900 mt-1">
+            📊 Mein Vorbereitungsstatus
+          </h1>
+          <p className="text-slate-600 text-xs sm:text-sm mt-1">
+            Verfolge deinen Lernfortschritt und erfahre, wann du bereit für die offizielle Theorieprüfung beim Strassenverkehrsamt bist.
+          </p>
+        </div>
+
+        {/* Account Sync Card */}
+        {student ? (
+          <Link
+            href={`/${locale}/konto`}
+            className="inline-flex items-center gap-2 px-3.5 py-2 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-bold shadow-sm hover:bg-emerald-100 transition shrink-0"
+          >
+            <Cloud className="w-4 h-4 text-emerald-600" />
+            <span>Konto verbunden: {student.name || student.email.split("@")[0]}</span>
+            {student.isPremium && <span className="bg-amber-400 text-slate-900 px-1 rounded text-[10px] font-black">PRO</span>}
+          </Link>
+        ) : (
+          <Link
+            href={`/${locale}/login`}
+            className="inline-flex items-center gap-2 px-3.5 py-2 bg-indigo-50 border border-indigo-200 text-indigo-700 rounded-xl text-xs font-bold shadow-sm hover:bg-indigo-100 transition shrink-0"
+          >
+            <User className="w-4 h-4" />
+            <span>Fortschritt & PRO-Pass online sichern</span>
+          </Link>
+        )}
       </div>
 
       {/* Main Readiness Gauge Card */}

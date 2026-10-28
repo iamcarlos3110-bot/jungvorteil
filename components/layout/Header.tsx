@@ -13,10 +13,13 @@ import {
   Brain,
   RotateCcw,
   BarChart2,
-  Wine
+  Wine,
+  User,
+  ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getStudyProgress } from "@/lib/studyProgress";
+import { getLocalStudent, StudentUser } from "@/lib/studentAuth";
 
 interface HeaderProps {
   locale: string;
@@ -26,6 +29,7 @@ export default function Header({ locale }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [streak, setStreak] = useState(1);
+  const [student, setStudent] = useState<StudentUser | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -37,8 +41,17 @@ export default function Header({ locale }: HeaderProps) {
 
     const progress = getStudyProgress();
     setStreak(progress.streak || 1);
+    setStudent(getLocalStudent());
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleAuth = () => {
+      setStudent(getLocalStudent());
+    };
+    window.addEventListener("student_auth_changed", handleAuth);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("student_auth_changed", handleAuth);
+    };
   }, []);
 
   const getMemorizarLabel = (loc: string) => {
@@ -153,6 +166,15 @@ export default function Header({ locale }: HeaderProps) {
                 <span className="hidden sm:inline">CHF 10.-</span>
               </Link>
 
+              {/* Student Login / Account Button (desktop) */}
+              <Link
+                href={student ? `/${locale}/konto` : `/${locale}/login`}
+                className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 hover:bg-white/15 text-white rounded-xl text-xs font-bold transition active:scale-95 border border-white/10 cursor-pointer"
+              >
+                <User className="w-3.5 h-3.5 text-[#8EAC73]" />
+                <span>{student ? (student.name || "Konto") : (locale === "fr" ? "Connexion" : locale === "it" ? "Accedi" : "Anmelden")}</span>
+              </Link>
+
               {/* Start Test CTA (desktop only) */}
               <Link
                 href={`/${locale}/pruefung`}
@@ -179,6 +201,33 @@ export default function Header({ locale }: HeaderProps) {
       {isMobileMenuOpen && (
         <div className="fixed inset-x-0 top-[52px] sm:top-[57px] bg-[#0E140C] border-b border-[#1F271B] z-40 p-4 shadow-2xl xl:hidden text-white animate-fade-in max-h-[calc(100vh-60px)] overflow-y-auto">
           <div className="flex flex-col gap-2.5">
+            {/* Student Account Card in Mobile Menu */}
+            <Link
+              href={student ? `/${locale}/konto` : `/${locale}/login`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3 bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl transition"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#556F3B] to-[#708F52] flex items-center justify-center text-white font-black text-sm shrink-0 shadow-sm">
+                  {student ? (student.name ? student.name[0].toUpperCase() : "S") : <User className="w-4 h-4" />}
+                </div>
+                <div>
+                  <div className="text-xs font-black text-white flex items-center gap-1.5">
+                    <span>{student ? student.name || student.email.split("@")[0] : (locale === "fr" ? "Connexion Élève" : locale === "it" ? "Accesso Studente" : "Schüler-Login")}</span>
+                    {student?.isPremium && (
+                      <span className="text-[10px] bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 px-1.5 py-0.5 rounded-full font-black">
+                        👑 PRO
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-[10px] text-slate-400">
+                    {student ? "Fortschritt & Konto verwalten" : "Fortschritt & PRO-Pass synchronisieren"}
+                  </div>
+                </div>
+              </div>
+              <ChevronRight className="w-4 h-4 text-slate-400" />
+            </Link>
+
             {/* Mobile Language Switcher */}
             <div className="flex items-center justify-between p-2.5 bg-white/5 border border-white/10 rounded-xl">
               <span className="text-xs text-slate-300 font-bold">Sprache / Langue:</span>
