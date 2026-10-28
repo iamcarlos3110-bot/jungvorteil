@@ -70,23 +70,11 @@ export default function AdSlot({
 
   if (activeNetwork === "adsterra") {
     return (
-      <div className={cn("flex flex-col items-center justify-center gap-1 my-4", className)}>
+      <div className={cn("flex flex-col items-center justify-center gap-1 my-4 w-full max-w-full overflow-hidden", className)}>
         {label && <span className="text-[10px] text-gray-400 font-semibold tracking-wider">WERBUNG</span>}
         
         {slotDef?.type === "native" ? (
           <AdsterraNative />
-        ) : slotDef?.mobile && !slotDef?.desktop ? (
-          <AdsterraBanner
-            bannerKey={ADSTERRA_CONFIG.banner320x50Key}
-            width={320}
-            height={50}
-          />
-        ) : slotDef?.desktop && !slotDef?.mobile ? (
-          <AdsterraBanner
-            bannerKey={ADSTERRA_CONFIG.banner728x90Key}
-            width={728}
-            height={90}
-          />
         ) : (
           <ResponsiveAdsterraBanner
             desktopKey={ADSTERRA_CONFIG.banner728x90Key}
